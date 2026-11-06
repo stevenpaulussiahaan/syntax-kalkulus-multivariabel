@@ -1,0 +1,55 @@
+<p>Bila daerah berupa lingkaran, cincin, atau juring, atau bila integran memuat \(x^2+y^2\), koordinat kutub jauh lebih cocok daripada koordinat Kartesius.</p>
+
+<h2>1. Persegi panjang kutub</h2>
+<p>Dalam koordinat kutub, \(x=r\cos\theta\), \(y=r\sin\theta\), \(r^2=x^2+y^2\). <strong>Persegi panjang kutub</strong> adalah \(R=\{(r,\theta):a\le r\le b,\ \alpha\le\theta\le\beta\}\) (dengan \(0\le a\lt b\), \(\beta-\alpha\le2\pi\)).</p>
+<figure><img src="assets/img/b15-4-kutub.png" alt="Persegi panjang kutub dan kardioid"><figcaption>Kiri: persegi panjang kutub. Kanan: daerah di dalam kardioid.</figcaption></figure>
+<p><strong>Mengapa muncul faktor \(r\).</strong> Bagi \(R\) menjadi persegi panjang kutub kecil \(R_{ij}\) dengan lebar \(\Delta r\) dan sudut \(\Delta\theta\). Luas sektor cincin \(=\tfrac12(r_i^2-r_{i-1}^2)\Delta\theta=\tfrac12(r_i+r_{i-1})(r_i-r_{i-1})\Delta\theta=r_i^*\,\Delta r\,\Delta\theta\) dengan \(r_i^*\) rata-rata jari-jari. Jadi \(\Delta A_{ij}=r_i^*\Delta r\Delta\theta\): luas elemen lebih besar bila lebih jauh dari titik asal.</p>
+<div class="box def"><span class="t">Perubahan ke koordinat kutub</span>
+<p>Jika \(f\) kontinu pada persegi panjang kutub \(R\): \(0\le a\le r\le b\), \(\alpha\le\theta\le\beta\), maka
+\[ \iint_Rf(x,y)\,dA=\int_\alpha^\beta\int_a^bf(r\cos\theta,\,r\sin\theta)\;r\,dr\,d\theta. \]
+Bentuk \(dA=r\,dr\,d\theta\). Jangan lupa faktor \(r\).</p></div>
+<div class="box ex"><span class="t">Contoh 1 — paraboloid</span>
+<p>Volume di bawah \(z=4-x^2-y^2\) dan di atas bidang \(xy\): daerah \(x^2+y^2\le4\), \(0\le r\le2\), \(0\le\theta\le2\pi\). \(V=\int_0^{2\pi}\int_0^2(4-r^2)r\,dr\,d\theta=2\pi\Bigl[2r^2-\tfrac{r^4}4\Bigr]_0^2=2\pi(8-4)=8\pi\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — belahan bola dan kerucut</span>
+<p>Belahan bola atas \(z=\sqrt{9-x^2-y^2}\) (jari-jari 3): \(V=\int_0^{2\pi}\int_0^3\sqrt{9-r^2}\,r\,dr\,d\theta=2\pi\cdot\tfrac13\cdot27=18\pi\) (sesuai \(\frac23\pi\cdot27\)). Padatan di bawah kerucut \(z=3-\sqrt{x^2+y^2}\) dan di atas bidang \(xy\): \(V=\int_0^{2\pi}\int_0^3(3-r)r\,dr\,d\theta=2\pi\bigl(\tfrac{27}2-9\bigr)=9\pi\), sesuai rumus kerucut \(\frac13\pi r^2h=\frac13\pi\cdot9\cdot3\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — integran dengan \(x^2+y^2\)</span>
+<p>\(\displaystyle\iint_De^{x^2+y^2}dA\), \(D\) cakram satuan: \(\int_0^{2\pi}\int_0^1e^{r^2}r\,dr\,d\theta=2\pi\cdot\tfrac12(e-1)=\pi(e-1)\approx5{,}398\). Di Kartesius integral ini tak dapat dihitung secara elementer.</p></div>
+
+<h2>2. Daerah kutub umum</h2>
+<div class="box def"><span class="t">Daerah \(\theta\)-sederhana</span>
+<p>Jika \(D=\{(r,\theta):\alpha\le\theta\le\beta,\ h_1(\theta)\le r\le h_2(\theta)\}\), maka
+\[ \iint_Df\,dA=\int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}f(r\cos\theta,r\sin\theta)\,r\,dr\,d\theta. \]
+Dengan \(f=1\): \(A(D)=\int_\alpha^\beta\tfrac12\bigl[h_2^2-h_1^2\bigr]d\theta\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — luas kardioid</span>
+<p>\(r=1+\cos\theta\): \(A=\int_0^{2\pi}\int_0^{1+\cos\theta}r\,dr\,d\theta=\tfrac12\int_0^{2\pi}(1+2\cos\theta+\cos^2\theta)\,d\theta=\tfrac12(2\pi+0+\pi)=\tfrac{3\pi}2\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — lingkaran yang tidak berpusat di asal</span>
+<p>\(\iint_Dx\,dA\) dengan \(D:\ x^2+y^2\le2x\), yaitu \((x-1)^2+y^2\le1\). Dalam kutub: \(r^2\le2r\cos\theta\Rightarrow r\le2\cos\theta\), \(-\frac\pi2\le\theta\le\frac\pi2\). \(\displaystyle\int_{-\pi/2}^{\pi/2}\int_0^{2\cos\theta}r\cos\theta\cdot r\,dr\,d\theta=\int_{-\pi/2}^{\pi/2}\tfrac83\cos^4\theta\,d\theta=\tfrac83\cdot\tfrac{3\pi}8=\pi\). Cek: \(\iint x\,dA=\bar x\cdot A=1\cdot\pi\) (pusat massa di \(x=1\), luas \(\pi\)).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — cincin</span>
+<p>\(\displaystyle\iint_D\dfrac1{\sqrt{x^2+y^2}}dA\) untuk \(1\le x^2+y^2\le9\): \(\int_0^{2\pi}\int_1^3\frac1r\,r\,dr\,d\theta=2\pi\cdot2=4\pi\).</p></div>
+
+<h2>3. Integral Gauss</h2>
+<div class="box ex"><span class="t">Contoh 7 — \(\int_{-\infty}^\infty e^{-x^2}dx=\sqrt\pi\)</span>
+<p>Misalkan \(I=\int_{-\infty}^\infty e^{-x^2}dx\). Maka \(I^2=\int\!\!\int e^{-x^2}e^{-y^2}dx\,dy=\iint_{\mathbb R^2}e^{-(x^2+y^2)}dA=\int_0^{2\pi}\int_0^\infty e^{-r^2}r\,dr\,d\theta=2\pi\cdot\tfrac12=\pi\). Jadi \(I=\sqrt\pi\) (karena \(I\gt0\)). Hasil ini fondasi distribusi normal dalam statistika.</p></div>
+
+<h2>4. Kapan memakai koordinat kutub?</h2>
+<ul>
+<li>Daerah: lingkaran, cakram, cincin, juring, kardioid, kurva \(r=f(\theta)\).</li>
+<li>Integran: bergantung pada \(x^2+y^2\), atau pada \(y/x=\tan\theta\).</li>
+<li>Hindari bila daerah berbentuk persegi atau segitiga umum.</li>
+</ul>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Lupa faktor \(r\) di \(dA=r\,dr\,d\theta\).</li>
+<li>Lupa mengubah \(x,y\) dalam integran menjadi \(r\cos\theta\), \(r\sin\theta\).</li>
+<li>Batas \(\theta\) salah untuk lingkaran yang tidak berpusat di asal (mis. \(r=2\cos\theta\) hanya memakai \(\theta\in[-\frac\pi2,\frac\pi2]\)).</li>
+<li>Memakai \(0\le\theta\le\pi\) untuk lingkaran penuh. Lingkaran penuh di sekitar asal perlu \(2\pi\).</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(dA=r\,dr\,d\theta\); \(x=r\cos\theta\), \(y=r\sin\theta\).</li>
+<li>Daerah: \(\alpha\le\theta\le\beta\), \(h_1(\theta)\le r\le h_2(\theta)\).</li>
+<li>Aplikasi: volume paraboloid/bola/kerucut, integral Gauss.</li>
+</ul>
+<p>Berikutnya <a href="b15-5.html">15.5 Penerapan Integral Ganda Dua</a>.</p>

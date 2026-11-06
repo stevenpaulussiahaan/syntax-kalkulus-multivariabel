@@ -1,0 +1,74 @@
+<p>Kita sudah punya banyak uji kekonvergenan: uji divergensi, integral, perbandingan, perbandingan limit, Leibniz, rasio, akar, ditambah deret geometri, deret-\(p\), dan deret teleskop. Kesulitan baru muncul: <em>uji mana yang dipakai untuk deret tertentu?</em> Tidak ada resep mekanis yang selalu benar, tetapi ada urutan pertimbangan yang hampir selalu menolong. Subbab ini merangkumnya dan melatihnya pada banyak contoh.</p>
+
+<h2>1. Langkah-langkah strategi</h2>
+<figure><img src="assets/img/b11-7-diagram.png" alt="Diagram alur memilih uji deret"><figcaption>Alur keputusan: mulai dari uji divergensi, lalu kenali bentuk suku.</figcaption></figure>
+<ol>
+<li><strong>Cek dulu apakah \(a_n\to0\).</strong> Bila tidak (atau limit tidak ada), deret divergen menurut uji divergensi. Langkah ini cepat dan sering menyelesaikan soal.</li>
+<li><strong>Kenali deret standar.</strong>
+ <ul>
+ <li>Geometri \(\sum ar^{n-1}\): konvergen bila \(|r|\lt1\), jumlah \(\frac a{1-r}\).</li>
+ <li>Deret-\(p\) \(\sum\frac1{n^p}\): konvergen bila \(p\gt1\).</li>
+ <li>Teleskop: uraikan dengan pecahan parsial, lihat suku yang bertahan.</li>
+ </ul></li>
+<li><strong>Suku rasional atau memuat akar dari polinomial</strong> \(\Rightarrow\) uji perbandingan limit dengan \(\frac1{n^p}\) dari suku dominan; bila ada pertidaksamaan jelas, perbandingan langsung.</li>
+<li><strong>Berganti tanda</strong> (\((-1)^n\)) \(\Rightarrow\) uji Leibniz; bila gagal, periksa uji rasio atau uji divergensi. Lalu periksa kemutlakan: apakah \(\sum|a_n|\) konvergen?</li>
+<li><strong>Faktorial, pangkat \(c^n\), atau hasil kali/pembagian dalam \(n\)</strong> \(\Rightarrow\) uji rasio. Bila seluruh suku berpangkat \(n\): uji akar.</li>
+<li><strong>Suku \(a_n=f(n)\) dengan \(f\) mudah diintegralkan dan menurun</strong> \(\Rightarrow\) uji integral (misalnya \(\frac1{n(\ln n)^p}\), \(ne^{-n^2}\)).</li>
+<li><strong>Bila semua gagal</strong>: tulis ulang suku (rasionalkan akar, pecahan parsial, identitas trigonometri), atau cari batas dengan \(|\sin|\le1\), \(\ln n\lt n^{\varepsilon}\).</li>
+</ol>
+<div class="box note"><span class="t">Dua jebakan yang paling sering</span>
+<ul>
+<li>Uji rasio dan akar <em>gagal</em> (\(L=1\)) untuk suku rasional murni. Jangan buang waktu; pakai perbandingan.</li>
+<li>Uji divergensi tidak pernah membuktikan kekonvergenan. \(a_n\to0\) hanyalah syarat perlu.</li>
+</ul></div>
+
+<h2>2. Contoh-contoh</h2>
+<p>Untuk tiap deret, tentukan konvergen/divergen, dan jelaskan ujinya.</p>
+
+<div class="box ex"><span class="t">Contoh 1 — \(\sum\dfrac{n-1}{3n+1}\)</span>
+<p>\(\lim\dfrac{n-1}{3n+1}=\dfrac13\ne0\). Divergen (uji divergensi).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — \(\sum\dfrac{\sqrt{n^3+1}}{3n^3+4n^2+2}\)</span>
+<p>Suku dominan: \(\dfrac{n^{3/2}}{3n^3}=\dfrac13\cdot\dfrac1{n^{3/2}}\). Bandingkan limit dengan \(b_n=\frac1{n^{3/2}}\): \(\dfrac{a_n}{b_n}\to\dfrac13\). Deret-\(p\) dengan \(p=\frac32\gt1\) konvergen, jadi konvergen. (Jumlahnya \(\approx0{,}591\).)</p></div>
+<div class="box ex"><span class="t">Contoh 3 — \(\sum ne^{-n^2}\)</span>
+<p>Fungsi \(xe^{-x^2}\) mudah diintegralkan: \(\int_1^\infty xe^{-x^2}dx=\frac1{2e}\). Menurun untuk \(x\ge1\). Konvergen (uji integral). Uji rasio juga bisa: \(\frac{(n+1)e^{-(n+1)^2}}{ne^{-n^2}}=\frac{n+1}{n}e^{-2n-1}\to0\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — \(\sum(-1)^n\dfrac{3^n}{n^22^n}\)</span>
+<p>Berganti tanda, tetapi \(\dfrac{(3/2)^n}{n^2}\to\infty\) (eksponensial mengalahkan polinomial). Suku tidak menuju 0, jadi divergen. (Uji rasio juga memberi \(L=\frac32\gt1\).)</p></div>
+<div class="box ex"><span class="t">Contoh 5 — \(\sum\dfrac{n!}{2\cdot5\cdot8\cdots(3n+2)}\)</span>
+<p>Faktorial dan hasil kali: uji rasio. \(\dfrac{a_{n+1}}{a_n}=\dfrac{(n+1)}{3(n+1)+2}=\dfrac{n+1}{3n+5}\to\dfrac13\lt1\). Konvergen.</p></div>
+<div class="box ex"><span class="t">Contoh 6 — \(\sum_{n=2}^\infty\dfrac1{n(\ln n)^2}\)</span>
+<p>Uji integral: dengan \(u=\ln x\), \(\int_2^\infty\dfrac{dx}{x(\ln x)^2}=\Bigl[-\dfrac1{\ln x}\Bigr]_2^\infty=\dfrac1{\ln2}\). Konvergen. Bandingkan dengan \(\sum\frac1{n\ln n}\) yang divergen: pangkat tambahan pada \(\ln n\) mengubah hasil.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — \(\sum\Bigl(\dfrac{\ln n}{n}\Bigr)^n\)</span>
+<p>Seluruh suku berpangkat \(n\): uji akar. \(\sqrt[n]{a_n}=\dfrac{\ln n}n\to0\lt1\). Konvergen mutlak.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — \(\sum n\sin\dfrac1n\)</span>
+<p>\(n\sin\frac1n=\dfrac{\sin(1/n)}{1/n}\to1\ne0\). Divergen (uji divergensi). Sebaliknya \(\sum\sin\frac1n\) divergen karena \(\sin(1/n)\big/\tfrac1n\to1\) dan harmonik divergen (perbandingan limit).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — \(\sum(-1)^{n}\dfrac{1}{\sqrt n+1}\)</span>
+<p>Berganti tanda dengan \(b_n=\frac1{\sqrt n+1}\) menurun dan \(\to0\), jadi konvergen (Leibniz). Kemutlakan: \(\frac1{\sqrt n+1}\) dibandingkan \(\frac1{\sqrt n}\) (limit 1), divergen. Jadi <strong>konvergen bersyarat</strong>.</p></div>
+<div class="box ex"><span class="t">Contoh 10 — \(\sum\dfrac{\cos n}{n^{3/2}}\)</span>
+<p>Tanda tak beraturan. \(\left|\dfrac{\cos n}{n^{3/2}}\right|\le\dfrac1{n^{3/2}}\) dan \(p=\frac32\gt1\). Konvergen mutlak.</p></div>
+<div class="box ex"><span class="t">Contoh 11 — \(\sum\dfrac1{\sqrt{n+1}+\sqrt n}\) (rasionalkan)</span>
+<p>\(\dfrac1{\sqrt{n+1}+\sqrt n}=\sqrt{n+1}-\sqrt n\): deret teleskop dengan \(s_n=\sqrt{n+1}-1\to\infty\). Divergen. (Alternatif: dominan \(\frac1{2\sqrt n}\), \(p=\frac12\).)</p></div>
+<div class="box ex"><span class="t">Contoh 12 — \(\sum\dfrac{2^n}{n!}\)</span>
+<p>Rasio \(\dfrac{2}{n+1}\to0\). Konvergen (jumlahnya \(e^2-1\) bila mulai dari \(n=1\); lihat 11.10).</p></div>
+<div class="box ex"><span class="t">Contoh 13 — \(\sum\dfrac{\ln n}{n^2}\)</span>
+<p>\(\ln n\lt\sqrt n\) untuk \(n\) cukup besar, jadi \(\dfrac{\ln n}{n^2}\lt\dfrac1{n^{3/2}}\), konvergen (perbandingan). Atau uji integral seperti pada <a href="b11-3.html">11.3</a>.</p></div>
+
+<h2>3. Tabel ringkas</h2>
+<table class="t">
+<tr><th>Bentuk deret</th><th>Uji pertama</th></tr>
+<tr><td>\(\sum ar^n\)</td><td>geometri</td></tr>
+<tr><td>\(\sum1/n^p\)</td><td>deret-\(p\)</td></tr>
+<tr><td>polinom/polinom</td><td>perbandingan limit dengan \(1/n^p\)</td></tr>
+<tr><td>\(n!\), \(c^n\), \(\binom{2n}{n}\)</td><td>rasio</td></tr>
+<tr><td>\((\ldots)^n\)</td><td>akar</td></tr>
+<tr><td>\((-1)^n b_n\)</td><td>Leibniz, lalu kemutlakan</td></tr>
+<tr><td>\(f(n)\), \(f\) mudah diintegralkan</td><td>integral</td></tr>
+<tr><td>\(a_n\not\to0\)</td><td>divergensi</td></tr>
+</table>
+
+<h2>4. Ringkasan</h2>
+<ul>
+<li>Selalu mulai dengan uji divergensi dan pengenalan deret standar.</li>
+<li>Pilih uji berdasarkan bentuk suku: rasional (perbandingan), faktorial/eksponensial (rasio), pangkat-\(n\) (akar), berganti tanda (Leibniz), integrabel (integral).</li>
+<li>Bila satu uji tidak menyimpulkan, ganti uji; jangan memaksa.</li>
+</ul>
+<p>Mulai <a href="b11-8.html">11.8</a>, sukunya mengandung peubah \(x\): deret pangkat.</p>

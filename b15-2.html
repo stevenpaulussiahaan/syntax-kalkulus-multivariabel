@@ -1,0 +1,44 @@
+<p>Menghitung integral ganda dari definisi limit hampir mustahil. Untungnya ada teorema yang mengubahnya menjadi dua integral satu peubah berurutan.</p>
+
+<h2>1. Integral parsial dan integral berulang</h2>
+<p>\(\displaystyle\int_c^df(x,y)\,dy\) berarti integrasi terhadap \(y\) dengan \(x\) dianggap konstan; hasilnya fungsi \(x\). Integral hasilnya terhadap \(x\) memberi <strong>integral berulang</strong>:
+\[ \int_a^b\int_c^df(x,y)\,dy\,dx=\int_a^b\Bigl[\int_c^df(x,y)\,dy\Bigr]dx. \]
+Integral dalam dihitung lebih dulu, dari dalam ke luar.</p>
+<div class="box ex"><span class="t">Contoh 1 — dua urutan</span>
+<p>\(\displaystyle\int_0^3\int_1^2x^2y\,dy\,dx=\int_0^3x^2\Bigl[\tfrac{y^2}2\Bigr]_1^2dx=\int_0^3\tfrac32x^2\,dx=\tfrac32\cdot9=\tfrac{27}2\). Dengan urutan dibalik: \(\displaystyle\int_1^2\int_0^3x^2y\,dx\,dy=\int_1^2y\Bigl[\tfrac{x^3}3\Bigr]_0^3dy=\int_1^2 9y\,dy=9\cdot\tfrac32=\tfrac{27}2\). Hasilnya sama.</p></div>
+
+<h2>2. Teorema Fubini</h2>
+<div class="box def"><span class="t">Teorema Fubini</span>
+<p>Jika \(f\) kontinu pada \(R=[a,b]\times[c,d]\), maka
+\[ \iint_Rf\,dA=\int_a^b\int_c^df(x,y)\,dy\,dx=\int_c^d\int_a^bf(x,y)\,dx\,dy. \]
+(Berlaku juga bila \(f\) terbatas dan kontinu kecuali pada sejumlah hingga kurva mulus, asalkan integral berulangnya ada.)</p></div>
+<p><strong>Gagasan geometris.</strong> Untuk \(x\) tetap, \(A(x)=\int_c^df(x,y)\,dy\) adalah luas irisan padatan oleh bidang yang tegak lurus sumbu \(x\). Mengintegrasikan luas irisan sepanjang \(x\) memberi volume (prinsip Cavalieri). Mengiris pada arah lain memberi urutan lain, dengan volume yang sama.</p>
+<div class="box ex"><span class="t">Contoh 2 — volume nyata</span>
+<p>\(\displaystyle\iint_R(16-x^2-2y^2)\,dA\) dengan \(R=[0,2]\times[0,2]\): \(\displaystyle\int_0^2\int_0^2(16-x^2-2y^2)\,dy\,dx=\int_0^2\Bigl[16y-x^2y-\tfrac23y^3\Bigr]_0^2dx=\int_0^2\Bigl(32-2x^2-\tfrac{16}3\Bigr)dx=\int_0^2\Bigl(\tfrac{80}3-2x^2\Bigr)dx=\tfrac{160}3-\tfrac{16}3=48\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — pilih urutan yang mudah</span>
+<p>\(\displaystyle\iint_Rye^{xy}\,dA\), \(R=[0,1]\times[0,2]\). Integrasikan lebih dulu terhadap \(x\) (karena \(\int ye^{xy}dx=e^{xy}\) sederhana): \(\displaystyle\int_0^2\int_0^1ye^{xy}\,dx\,dy=\int_0^2(e^y-1)\,dy=e^2-3\approx4{,}389\). Bila dibalik, integral dalam \(\int ye^{xy}dy\) memerlukan integrasi parsial dan jauh lebih rumit.</p></div>
+<div class="box ex"><span class="t">Contoh 4 — fungsi terpisah</span>
+<p>Bila \(f(x,y)=g(x)h(y)\) dan \(R=[a,b]\times[c,d]\), maka \(\displaystyle\iint_Rg(x)h(y)\,dA=\int_a^bg(x)\,dx\cdot\int_c^dh(y)\,dy\). Misalnya \(\displaystyle\iint_{[0,\pi/2]^2}\sin x\cos y\,dA=1\cdot1=1\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — integrasi terhadap \(x\) lebih dulu</span>
+<p>Hitung \(\displaystyle\iint_{[1,2]\times[0,\pi]}y\sin(xy)\,dA\). Integrasi terhadap \(x\) lebih dulu: \(\int_1^2y\sin(xy)\,dx=[-\cos(xy)]_1^2=\cos y-\cos2y\). Lalu \(\int_0^\pi(\cos y-\cos2y)\,dy=0-0=0\).</p></div>
+
+<h2>3. Penerapan pada volume</h2>
+<div class="box ex"><span class="t">Contoh 6 — padatan di bawah bidang</span>
+<p>Volume padatan di bawah bidang \(z=4-x-2y\) di atas \(R=[0,1]\times[0,1]\): \(\int_0^1\int_0^1(4-x-2y)\,dy\,dx=\int_0^1(4-x-1)\,dx=3-\tfrac12=\tfrac52\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — volume antara dua permukaan</span>
+<p>Volume di antara \(z=x^2+y^2\) (bawah) dan \(z=8-x^2-y^2\) (atas) di atas \(R=[-1,1]\times[-1,1]\). Pada \(R\) berlaku \(x^2+y^2\le2\), sehingga \(x^2+y^2\le8-(x^2+y^2)\) dan urutan permukaan benar. \(V=\iint_R(8-2x^2-2y^2)\,dA=8\cdot4-2\cdot\tfrac23\cdot2-2\cdot\tfrac23\cdot2=32-\tfrac83-\tfrac83=\tfrac{80}3\approx26{,}67\). (Karena \(\iint_Rx^2dA=\int_{-1}^1x^2dx\cdot2=\tfrac23\cdot2=\tfrac43\).)</p></div>
+
+<h2>4. Kesalahan umum</h2>
+<ul>
+<li>Salah menaruh batas: pada \(dy\,dx\), batas dalam untuk \(y\), batas luar untuk \(x\).</li>
+<li>Menjadikan \(x\) variabel saat mengintegrasikan terhadap \(y\) (atau sebaliknya).</li>
+<li>Menganggap faktorisasi \(\iint g(x)h(y)\) bekerja pada daerah bukan persegi panjang. Pada daerah umum, batas bergantung pada peubah lain.</li>
+</ul>
+
+<h2>5. Ringkasan</h2>
+<ul>
+<li>Integral berulang: hitung dari dalam ke luar, menahan peubah lain konstan.</li>
+<li>Fubini: untuk \(f\) kontinu pada persegi panjang, urutan tidak penting.</li>
+<li>Pilih urutan yang membuat integral dalam termudah.</li>
+</ul>
+<p>Berikutnya <a href="b15-3.html">15.3</a>: daerah yang bukan persegi panjang.</p>

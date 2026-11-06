@@ -1,0 +1,76 @@
+<p>Parabola, elips, dan hiperbola disebut <strong>irisan kerucut</strong> (<em>conic sections</em>) karena masing-masing adalah hasil perpotongan sebuah kerucut dengan sebuah bidang, dengan kemiringan bidang yang menentukan jenisnya.
+Dalam bagian ini kita memberi definisi geometris yang berdiri sendiri (tanpa kerucut) dan menurunkan persamaan bakunya.</p>
+<figure><img src="assets/img/b10-5-konik.png" alt="Tiga irisan kerucut"><figcaption>Parabola, elips, dan hiperbola beserta fokusnya (titik hijau).</figcaption></figure>
+
+<h2>1. Parabola</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p><strong>Parabola</strong> adalah himpunan titik di bidang yang berjarak sama dari sebuah titik tetap \(F\) (<strong>fokus</strong>) dan sebuah garis tetap (<strong>direktriks</strong>).
+Titik tengah antara fokus dan direktriks (pada garis tegak lurus direktriks melalui \(F\)) terletak pada parabola dan disebut <strong>puncak</strong>. Garis tegak lurus direktriks melalui fokus disebut <strong>sumbu</strong> parabola.</p></div>
+<h3>Menurunkan persamaan</h3>
+<p>Letakkan puncak di titik asal dan direktriks mendatar: fokus \(F(0,p)\), direktriks \(y=-p\). Titik \(P(x,y)\) memenuhi \(|PF|=\) jarak ke direktriks:
+\[ \sqrt{x^2+(y-p)^2}=|y+p|. \]
+Kuadratkan: \(x^2+y^2-2py+p^2=y^2+2py+p^2\), sehingga</p>
+<div class="box def"><span class="t">Persamaan baku</span>
+\[ x^2=4py\quad(\text{fokus }(0,p),\ \text{direktriks }y=-p). \]
+Terbuka ke atas bila \(p>0\), ke bawah bila \(p\lt 0\). Bila \(x\) dan \(y\) ditukar: \(y^2=4px\), fokus \((p,0)\), direktriks \(x=-p\); terbuka ke kanan bila \(p>0\), ke kiri bila \(p\lt 0\).</div>
+<p>Ekivalen dengan \(y=ax^2\) dengan \(a=\dfrac1{4p}\).</p>
+<div class="box ex"><span class="t">Contoh 1</span>
+<p>Parabola \(y^2+10x=0\). Tulis \(y^2=-10x\), cocokkan dengan \(y^2=4px\): \(4p=-10\Rightarrow p=-\tfrac52\). Fokus \((-\tfrac52,0)\), direktriks \(x=\tfrac52\), terbuka ke kiri.</p></div>
+<p>Parabola dipakai pada lampu depan mobil, teleskop pantul, dan jembatan gantung. Sifat pantulnya: sinar yang sejajar sumbu dipantulkan melewati fokus (dan sebaliknya).</p>
+
+<h2>2. Elips</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p><strong>Elips</strong> adalah himpunan titik \(P\) yang jumlah jaraknya ke dua titik tetap \(F_1,F_2\) (<strong>fokus</strong>) konstan: \(|PF_1|+|PF_2|=2a\) (dengan \(2a>|F_1F_2|\)).</p></div>
+<p>Hukum pertama Kepler: orbit planet berupa elips dengan Matahari di salah satu fokus.</p>
+<h3>Menurunkan persamaan</h3>
+<p>Letakkan fokus di \((\pm c,0)\). Syaratnya \(\sqrt{(x+c)^2+y^2}+\sqrt{(x-c)^2+y^2}=2a\). Pindahkan satu akar dan kuadratkan:
+\[ \sqrt{(x-c)^2+y^2}=2a-\sqrt{(x+c)^2+y^2}\ \Rightarrow\ x^2-2cx+c^2+y^2=4a^2-4a\sqrt{(x+c)^2+y^2}+x^2+2cx+c^2+y^2. \]
+Sederhanakan: \(a\sqrt{(x+c)^2+y^2}=a^2+cx\). Kuadratkan lagi: \(a^2(x^2+2cx+c^2+y^2)=a^4+2a^2cx+c^2x^2\), sehingga
+\((a^2-c^2)x^2+a^2y^2=a^2(a^2-c^2)\). Dari segitiga \(F_1F_2P\) kita tahu \(2c\lt 2a\), jadi \(a^2-c^2>0\); definisikan \(b^2=a^2-c^2\). Pembagian dengan \(a^2b^2\) memberi</p>
+<div class="box def"><span class="t">Persamaan baku elips</span>
+\[ \frac{x^2}{a^2}+\frac{y^2}{b^2}=1,\qquad a\ge b>0,\quad c^2=a^2-b^2. \]
+Fokus \((\pm c,0)\), titik puncak \((\pm a,0)\), sumbu mayor panjang \(2a\) (sepanjang sumbu \(x\)), sumbu minor panjang \(2b\) (titik \((0,\pm b)\)). Bila fokus pada sumbu \(y\): \(\dfrac{x^2}{b^2}+\dfrac{y^2}{a^2}=1\), fokus \((0,\pm c)\), puncak \((0,\pm a)\).</div>
+<p>Bila \(c=0\) (dua fokus berimpit), \(a=b\) dan elips menjadi lingkaran jari-jari \(a\).</p>
+<div class="box ex"><span class="t">Contoh 2 — dari persamaan ke elemen elips</span>
+<p>\(9x^2+16y^2=144\). Bagi dengan 144: \(\dfrac{x^2}{16}+\dfrac{y^2}{9}=1\), \(a=4,\ b=3\). \(c^2=16-9=7\), fokus \((\pm\sqrt7,0)\), puncak \((\pm4,0)\), titik potong sumbu \(y\): \((0,\pm3)\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — dari elemen ke persamaan</span>
+<p>Fokus \((0,\pm2)\), puncak \((0,\pm3)\): fokus di sumbu \(y\), \(c=2,\ a=3\), \(b^2=9-4=5\). Persamaan \(\dfrac{x^2}{5}+\dfrac{y^2}{9}=1\), atau \(9x^2+5y^2=45\).</p></div>
+<p><strong>Sifat pantul:</strong> cahaya atau bunyi dari satu fokus dipantulkan ke fokus lain. Prinsip ini dipakai pada litotripsi (penghancur batu ginjal dengan gelombang kejut) dan pada <em>whispering gallery</em>.</p>
+
+<h2>3. Hiperbola</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p><strong>Hiperbola</strong> adalah himpunan titik \(P\) yang <em>selisih</em> jaraknya ke dua fokus \(F_1,F_2\) konstan: \(\bigl||PF_1|-|PF_2|\bigr|=2a\).</p></div>
+<p>Turunannya paralel dengan elips (dengan selisih menggantikan jumlah, dan \(c>a\)): dengan fokus \((\pm c,0)\) dan \(b^2=c^2-a^2\),</p>
+<div class="box def"><span class="t">Persamaan baku hiperbola</span>
+\[ \frac{x^2}{a^2}-\frac{y^2}{b^2}=1,\qquad c^2=a^2+b^2. \]
+Titik puncak \((\pm a,0)\), fokus \((\pm c,0)\), asimtot \(y=\pm\dfrac bax\). Tidak ada titik potong sumbu \(y\) (karena \(-y^2/b^2=1\) mustahil). Hiperbola memiliki dua cabang, \(x\ge a\) dan \(x\le-a\).
+Bila fokus pada sumbu \(y\): \(\dfrac{y^2}{a^2}-\dfrac{x^2}{b^2}=1\), fokus \((0,\pm c)\), asimtot \(y=\pm\dfrac abx\).</div>
+<p><strong>Cara menggambar:</strong> gambar dulu persegi panjang dengan sisi \(2a\) dan \(2b\) berpusat di titik pusat, tarik diagonalnya sebagai asimtot, lalu lukis cabang yang bersinggungan dengan puncak dan mendekati asimtot.</p>
+<div class="box ex"><span class="t">Contoh 4</span>
+<p>\(9x^2-16y^2=144\to\dfrac{x^2}{16}-\dfrac{y^2}{9}=1\). \(a=4,\ b=3,\ c=5\). Fokus \((\pm5,0)\), puncak \((\pm4,0)\), asimtot \(y=\pm\tfrac34x\).</p></div>
+<div class="box ex"><span class="t">Contoh 5</span>
+<p>Puncak \((0,\pm1)\), asimtot \(y=\pm2x\). Fokus pada sumbu \(y\), \(a=1\); asimtot \(y=\pm\tfrac abx\Rightarrow\tfrac1b=2\Rightarrow b=\tfrac12\). \(c^2=1+\tfrac14=\tfrac54\), fokus \((0,\pm\tfrac{\sqrt5}2)\); persamaan \(y^2-4x^2=1\).</p></div>
+<p>Hiperbola muncul dalam hukum Boyle, hukum Ohm, kurva penawaran dan permintaan, dan sistem navigasi LORAN (stasiun radio di titik \(A,B\); selisih waktu tiba sinyal \(\Rightarrow\) selisih jarak \(\Rightarrow\) kapal berada pada satu cabang hiperbola dengan fokus \(A,B\)).</p>
+
+<h2>4. Irisan kerucut yang digeser</h2>
+<p>Untuk menggeser pusat/puncak ke \((h,k)\), ganti \(x\) dengan \(x-h\) dan \(y\) dengan \(y-k\) pada semua persamaan baku (lihat Lampiran C buku).</p>
+<div class="box ex"><span class="t">Contoh 6 — elips dari fokus dan puncak</span>
+<p>Fokus \((-1,2),(5,2)\), puncak \((-2,2),(6,2)\). Pusat adalah titik tengah: \((2,2)\). Panjang sumbu mayor \(=8\Rightarrow a=4\); jarak fokus \(=6\Rightarrow c=3\); \(b^2=16-9=7\). Persamaan:
+\[ \frac{(x-2)^2}{16}+\frac{(y-2)^2}{7}=1. \]</p></div>
+<div class="box ex"><span class="t">Contoh 7 — melengkapkan kuadrat</span>
+<p>\(9x^2-4y^2-72x+8y+176=0\). Kelompokkan: \(9(x^2-8x)-4(y^2-2y)=-176\). Lengkapkan kuadrat: \(9(x-4)^2-4(y-1)^2=-176+144-4=-36\). Bagi dengan \(-36\):
+\[ \frac{(y-1)^2}{9}-\frac{(x-4)^2}{4}=1. \]
+Hiperbola dengan fokus pada garis vertikal \(x=4\): \(a=3,\ b=2,\ c=\sqrt{13}\), pusat \((4,1)\); puncak \((4,4),(4,-2)\); fokus \((4,1\pm\sqrt{13})\); asimtot \(y-1=\pm\tfrac32(x-4)\).</p></div>
+
+<h2>5. Pendekatan numerik untuk keliling elips</h2>
+<p>Keliling elips \(x=a\sin\theta,\ y=b\cos\theta\) adalah integral eliptik \(L=4a\int_0^{\pi/2}\sqrt{1-e^2\sin^2\theta}\,d\theta\) dengan \(e=c/a\) — tidak punya antiturunan elementer.
+Gunakan integral numerik (Simpson). Dengan kalkulator Python: panjang kurva parametrik \(x=3\cos(t),\ y=2\sin(t)\), \(0\) sampai \(2*pi\), memberi \(\approx15.865\).</p>
+
+<h2>6. Ringkasan</h2>
+<table class="t">
+<tr><th></th><th>Parabola</th><th>Elips</th><th>Hiperbola</th></tr>
+<tr><td>Definisi</td><td>\(|PF|=d(P,\ell)\)</td><td>\(|PF_1|+|PF_2|=2a\)</td><td>\(||PF_1|-|PF_2||=2a\)</td></tr>
+<tr><td>Persamaan baku</td><td>\(x^2=4py\)</td><td>\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</td><td>\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\)</td></tr>
+<tr><td>Hubungan</td><td>—</td><td>\(c^2=a^2-b^2\)</td><td>\(c^2=a^2+b^2\)</td></tr>
+<tr><td>Eksentrisitas \(e\)</td><td>1</td><td>\(c/a\lt 1\)</td><td>\(c/a>1\)</td></tr>
+</table>

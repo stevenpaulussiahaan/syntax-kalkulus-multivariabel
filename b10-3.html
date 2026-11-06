@@ -1,0 +1,104 @@
+<h2>1. Sistem koordinat kutub</h2>
+<p>Koordinat Cartesius menyatakan titik lewat dua jarak berarah dari dua sumbu tegak lurus. Newton memperkenalkan cara lain yang jauh lebih alami untuk persoalan berpusat: lingkaran, spiral, orbit planet, gelombang yang merambat keluar dari sumber.</p>
+<div class="box def"><span class="t">Definisi</span>
+<p>Pilih sebuah titik \(O\) (disebut <strong>kutub</strong> atau titik asal) dan sebuah sinar dari \(O\) (disebut <strong>sumbu kutub</strong>, biasanya digambar horizontal ke kanan, sehingga berimpit dengan sumbu \(x\) positif).
+Untuk titik \(P\) lain, misalkan \(r\) = jarak \(OP\) dan \(\theta\) = sudut dari sumbu kutub ke garis \(OP\) (positif bila berlawanan arah jarum jam, negatif bila searah). Pasangan \((r,\theta)\) disebut <strong>koordinat kutub</strong> \(P\).
+Kutub sendiri adalah \((0,\theta)\) untuk sembarang \(\theta\).</p></div>
+
+<h3>Memperluas ke \(r\) negatif</h3>
+<p>Kita sepakati bahwa \((-r,\theta)\) adalah titik yang terletak pada garis lurus yang sama melalui \(O\) dengan \((r,\theta)\), dengan jarak yang sama dari \(O\), tetapi di sisi <em>berlawanan</em> dari kutub.
+Dengan kata lain, \((-r,\theta)\) dan \((r,\theta+\pi)\) adalah titik yang sama. Jadi \(r\lt 0\) berarti "mundur" sejauh \(|r|\) dari arah \(\theta\).</p>
+<div class="box ex"><span class="t">Contoh 1 — menggambar titik</span>
+<p>(a) \((1,\tfrac{5\pi}4)\): sudut di kuadran III, jarak 1.&nbsp; (b) \((2,3\pi)\): \(3\pi\) = satu setengah putaran, tepat arah negatif sumbu \(x\); jarak 2 sehingga di \((-2,0)\) Cartesius.&nbsp;
+(c) \((2,-\tfrac{2\pi}3)\): berputar \(120^\circ\) searah jarum jam (kuadran III).&nbsp; (d) \((-3,\tfrac{3\pi}4)\): sudut \(135^\circ\) ada di kuadran II, tetapi \(r\) negatif sehingga titik berada di sisi berlawanan, yaitu kuadran IV.</p></div>
+<figure><img src="assets/img/b10-3-titik.png" alt="Titik kutub"><figcaption>Keempat titik pada Contoh 1 (kiri), dan lingkaran \(r=2\cos\theta\) (kanan).</figcaption></figure>
+
+<h3>Satu titik, banyak representasi</h3>
+<p>Berbeda dengan Cartesius, setiap titik punya tak hingga banyak koordinat kutub. Titik \((r,\theta)\) juga dinyatakan oleh
+\[ (r,\theta+2n\pi)\quad\text{dan}\quad(-r,\theta+(2n+1)\pi),\qquad n\in\mathbb Z. \]
+Contoh: \((1,\tfrac{5\pi}4)=(1,-\tfrac{3\pi}4)=(1,\tfrac{13\pi}4)=(-1,\tfrac\pi4)\). Konsekuensi: mencari titik potong dua kurva kutub memerlukan kehati-hatian ekstra (Bagian 10.4).</p>
+
+<h2>2. Hubungan dengan koordinat Cartesius</h2>
+<p>Letakkan kutub di titik asal dan sumbu kutub pada sumbu \(x\) positif. Dari segitiga siku-siku pada gambar standar:</p>
+<div class="box def"><span class="t">Rumus konversi</span>
+\[ \text{(1)}\quad x=r\cos\theta,\quad y=r\sin\theta\qquad\qquad \text{(2)}\quad r^2=x^2+y^2,\quad \tan\theta=\frac yx. \]
+Persamaan (1) berlaku untuk semua \(r\) dan \(\theta\) (termasuk \(r\lt 0\)).</div>
+<div class="box ex"><span class="t">Contoh 2 — kutub ke Cartesius</span>
+<p>\((2,\tfrac\pi3)\): \(x=2\cos\tfrac\pi3=1\), \(y=2\sin\tfrac\pi3=\sqrt3\). Jadi \((1,\sqrt3)\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — Cartesius ke kutub</span>
+<p>Titik \((1,-1)\): \(r=\sqrt{1+1}=\sqrt2\). Dari \(\tan\theta=-1\) ada dua sudut dalam \([0,2\pi)\): \(\tfrac{3\pi}4\) dan \(\tfrac{7\pi}4\). Titik berada di kuadran IV, sehingga \(\theta=\tfrac{7\pi}4\) (atau \(-\tfrac\pi4\)).
+Satu jawaban: \((\sqrt2,\tfrac{7\pi}4)\); jawaban lain: \((-\sqrt2,\tfrac{3\pi}4)\).</p></div>
+<div class="box note"><span class="t">Catatan</span>
+<p>Persamaan \(\tan\theta=y/x\) tidak menentukan \(\theta\) secara tunggal (nilai tangen berulang tiap \(\pi\)). Periksa kuadran yang benar, jangan hanya memakai \(\arctan(y/x)\) mentah. Khusus \(x=0\), tangen tak terdefinisi: \(\theta=\pm\pi/2\) sesuai tanda \(y\).</p></div>
+
+<h2>3. Kurva kutub</h2>
+<p>Grafik persamaan kutub \(r=f(\theta)\) (atau lebih umum \(F(r,\theta)=0\)) terdiri atas semua titik yang <em>memiliki sedikitnya satu</em> representasi kutub yang memenuhi persamaan itu.</p>
+<div class="box ex"><span class="t">Contoh 4 — \(r=2\) dan \(\theta=1\)</span>
+<p>\(r=2\): semua titik berjarak 2 dari kutub, yaitu lingkaran berpusat di \(O\) berjari-jari 2. Umumnya \(r=a\) adalah lingkaran jari-jari \(|a|\).<br>
+\(\theta=1\) (radian): semua titik dengan sudut 1, yaitu garis lurus melalui \(O\) yang membentuk sudut 1 radian dengan sumbu kutub; titik dengan \(r>0\) berada di kuadran I, yang \(r\lt 0\) di kuadran III.</p></div>
+
+<div class="box ex"><span class="t">Contoh 5 — \(r=2\cos\theta\)</span>
+<p><strong>Dengan tabel:</strong> \(\theta=0,\tfrac\pi6,\tfrac\pi4,\tfrac\pi3,\tfrac\pi2\) memberi \(r=2,\sqrt3,\sqrt2,1,0\); bila \(\theta\) dilanjutkan ke \(\pi\), \(r\) negatif dan titiknya jatuh kembali pada lingkaran yang sama, jadi cukup \(0\le\theta\le\pi\).<br>
+<strong>Dengan konversi:</strong> kalikan kedua ruas dengan \(r\): \(r^2=2r\cos\theta\Rightarrow x^2+y^2=2x\Rightarrow(x-1)^2+y^2=1\), lingkaran berpusat \((1,0)\) berjari-jari 1.<br>
+<strong>Geometri:</strong> bila \(P\) pada lingkaran dan \(Q=(2,0)\) ujung diameter, sudut \(OPQ\) adalah sudut siku-siku (sudut keliling pada setengah lingkaran), sehingga \(OP=OQ\cos\theta=2\cos\theta\).</p></div>
+
+<h3>Membuat sketsa: baca dulu dari grafik Cartesius</h3>
+<p>Cara paling dapat diandalkan untuk kurva kutub tanpa komputer: gambar \(r\) terhadap \(\theta\) pada koordinat Cartesius biasa, lalu "baca" bagaimana \(r\) naik/turun saat \(\theta\) bergerak, dan terjemahkan menjadi gerak sepanjang sinar yang berputar.</p>
+<div class="box ex"><span class="t">Contoh 6 — kardioid \(r=1+\sin\theta\)</span>
+<ul>
+<li>\(\theta:0\to\pi/2\): \(r\) naik dari 1 ke 2.</li>
+<li>\(\theta:\pi/2\to\pi\): \(r\) turun dari 2 ke 1.</li>
+<li>\(\theta:\pi\to3\pi/2\): \(r\) turun dari 1 ke 0 (kurva kembali ke kutub dengan "ujung runcing").</li>
+<li>\(\theta:3\pi/2\to2\pi\): \(r\) naik dari 0 ke 1.</li>
+</ul>
+<p>Bentuknya seperti hati (<em>kardia</em> = jantung), makanya disebut kardioid.</p></div>
+<figure><img src="assets/img/b10-3-kardioid.png" alt="Kardioid"><figcaption>Kiri: \(r\) sebagai fungsi \(\theta\); kanan: kurva kutubnya.</figcaption></figure>
+
+<div class="box ex"><span class="t">Contoh 7 — mawar berdaun empat \(r=\cos2\theta\)</span>
+<p>Pada \(0\le\theta\le\pi/4\), \(r\) turun dari 1 ke 0 (daun pertama di kuadran I). Pada \(\pi/4\le\theta\le\pi/2\), \(r\) negatif dari 0 ke \(-1\): titik berada di sisi berlawanan (kuadran III), sehingga daun kedua terbentuk di kuadran III, bukan II. Kelanjutan analog membentuk empat daun.
+Secara umum \(r=\cos n\theta\) dan \(r=\sin n\theta\) menghasilkan mawar berdaun \(n\) bila \(n\) ganjil dan \(2n\) bila \(n\) genap.</p></div>
+
+<h2>4. Simetri</h2>
+<table class="t">
+<tr><th>Bila persamaan tidak berubah jika…</th><th>maka kurva simetris terhadap…</th></tr>
+<tr><td>\(\theta\to-\theta\)</td><td>sumbu kutub (sumbu \(x\))</td></tr>
+<tr><td>\(r\to-r\), atau \(\theta\to\theta+\pi\)</td><td>kutub (putaran \(180^\circ\))</td></tr>
+<tr><td>\(\theta\to\pi-\theta\)</td><td>garis \(\theta=\pi/2\) (sumbu \(y\))</td></tr>
+</table>
+<p>Contoh: \(r=2\cos\theta\) dan \(r=\cos2\theta\) simetris terhadap sumbu kutub; \(r=1+\sin\theta\) dan \(r=\cos2\theta\) simetris terhadap sumbu \(y\) (karena \(\sin(\pi-\theta)=\sin\theta\)); mawar \(r=\cos2\theta\) juga simetris terhadap kutub.
+Dengan simetri, cukup gambar sebagian lalu cerminkan.</p>
+
+<h2>5. Garis singgung kurva kutub</h2>
+<p>Untuk \(r=f(\theta)\), jadikan \(\theta\) parameter: \(x=f(\theta)\cos\theta,\ y=f(\theta)\sin\theta\). Aturan perkalian dan rumus parametrik memberi</p>
+<div class="box def"><span class="t">Rumus (3)</span>
+\[ \frac{dy}{dx}=\frac{\dfrac{dy}{d\theta}}{\dfrac{dx}{d\theta}}=\frac{\dfrac{dr}{d\theta}\sin\theta+r\cos\theta}{\dfrac{dr}{d\theta}\cos\theta-r\sin\theta}. \]</div>
+<ul>
+<li>Tangen horizontal: pembilang \(=0\) (penyebut \(\ne0\)).</li>
+<li>Tangen vertikal: penyebut \(=0\) (pembilang \(\ne0\)).</li>
+<li><strong>Di kutub</strong> (\(r=0\)) rumus menjadi \(dy/dx=\tan\theta\) bila \(dr/d\theta\ne0\): garis singgung di kutub adalah garis \(\theta=\theta_0\) di mana \(r(\theta_0)=0\).
+Misalnya pada \(r=\cos2\theta\), \(r=0\) di \(\theta=\tfrac\pi4,\tfrac{3\pi}4\), jadi garis \(y=x\) dan \(y=-x\) menyinggung kurva di titik asal.</li>
+</ul>
+<div class="box ex"><span class="t">Contoh 8 — kardioid \(r=1+\sin\theta\)</span>
+<p>\(dr/d\theta=\cos\theta\). Maka
+\[ \frac{dy}{dx}=\frac{\cos\theta\sin\theta+(1+\sin\theta)\cos\theta}{\cos\theta\cos\theta-(1+\sin\theta)\sin\theta}=\frac{\cos\theta(1+2\sin\theta)}{1-2\sin^2\theta-\sin\theta}=\frac{\cos\theta(1+2\sin\theta)}{(1+\sin\theta)(1-2\sin\theta)}. \]
+(a) Di \(\theta=\pi/3\): \(\cos=\tfrac12\), \(\sin=\tfrac{\sqrt3}2\). Pembilang \(=\tfrac12(1+\sqrt3)\), penyebut \(=(1+\tfrac{\sqrt3}2)(1-\sqrt3)\). Setelah disederhanakan kemiringannya adalah \(-1\) (perhitungannya: pembilang \(\tfrac{1+\sqrt3}{2}\), penyebut \(\tfrac{(2+\sqrt3)(1-\sqrt3)}{2}=\tfrac{2-2\sqrt3+\sqrt3-3}{2}=\tfrac{-1-\sqrt3}{2}\), rasio \(=-1\)).<br>
+(b) Horizontal: pembilang nol, \(\cos\theta=0\) atau \(1+2\sin\theta=0\), yaitu \(\theta=\tfrac\pi2,\tfrac{3\pi}2,\tfrac{7\pi}6,\tfrac{11\pi}6\); namun di \(\theta=\tfrac{3\pi}2\) penyebut juga nol (faktor \(1+\sin\theta\)), jadi nilai itu dikeluarkan dan ditinjau terpisah. Titik horizontal yang valid: \(\theta=\tfrac\pi2,\tfrac{7\pi}6,\tfrac{11\pi}6\), yaitu \((2,\tfrac\pi2)\), \((\tfrac12,\tfrac{7\pi}6)\), \((\tfrac12,\tfrac{11\pi}6)\).
+Vertikal: penyebut nol dari faktor \(1-2\sin\theta\), yaitu \(\theta=\tfrac\pi6,\tfrac{5\pi}6\), titik \((\tfrac32,\tfrac\pi6)\) dan \((\tfrac32,\tfrac{5\pi}6)\).
+Di \(\theta=\tfrac{3\pi}2\) (kutub) pembilang dan penyebut keduanya nol; dengan l'Hôpital limit \(dy/dx\to\infty\), jadi ada garis singgung vertikal di kutub.</p></div>
+
+<h2>6. Menggambar dengan komputer</h2>
+<p>Bila alat tidak punya perintah kutub langsung, ubah ke parametrik: \(x=f(t)\cos t,\ y=f(t)\sin t\). Tentukan dulu rentang \(t\) agar seluruh kurva tergambar.</p>
+<div class="box ex"><span class="t">Contoh 9 — \(r=\sin(8\theta/5)\)</span>
+<p>Setelah \(n\) putaran penuh (\(\theta\to\theta+2n\pi\)), nilai \(r\) menjadi \(\sin\bigl(\tfrac{8\theta}5+\tfrac{16n\pi}5\bigr)\). Kurva mulai mengulang jika pergeseran sudut itu kelipatan \(2\pi\), yaitu \(\tfrac{16n\pi}5=2\pi k\), atau \(\tfrac{8n}5=k\) bilangan bulat. Nilai \(n\) positif terkecil yang memenuhi adalah \(n=5\), sehingga cukup menggambar \(0\le\theta\le10\pi\). Hasilnya mawar dengan 16 daun.</p></div>
+<figure><img src="assets/img/b10-3-mawar.png" alt="Mawar"></figure>
+
+<h3>Keluarga limaçon \(r=1+c\sin\theta\)</h3>
+<ul>
+<li>\(c>1\): ada simpul dalam yang mengecil saat \(c\downarrow1\).</li>
+<li>\(c=1\): kardioid.</li>
+<li>\(\tfrac12\lt c\lt 1\): ujung runcing kardioid melembut menjadi "lekukan" (dimple) di dekat kutub, yaitu di bagian bawah untuk \(r=1+c\sin\theta\).</li>
+<li>\(0\lt c\le\tfrac12\): bentuk oval yang makin bulat saat \(c\to0\).</li>
+<li>\(c=0\): lingkaran \(r=1\). Untuk \(c\lt 0\) bentuknya adalah pencerminan terhadap sumbu horizontal.</li>
+</ul>
+<figure><img src="assets/img/b10-3-limacon.png" alt="Limaçon"><figcaption>Kata "limaçon" berarti siput (Prancis). Lintasan Mars dilihat dari Bumi dimodelkan oleh limaçon berloop.</figcaption></figure>
+<p>Batas \(c=\tfrac12\) antara "berlekuk" dan "oval" dapat dibuktikan. Di titik bawah \(\theta=\tfrac{3\pi}2\) kita punya \(r=1-c\), \(r'=0\), \(r''=c\). Rumus kelengkungan kurva kutub (pembilang: \(r^2+2r'^2-rr''\)) memberi pembilang \((1-c)^2-(1-c)c=(1-c)(1-2c)\), yang berganti tanda tepat di \(c=\tfrac12\) (untuk \(0\lt c\lt 1\)). Artinya di bawah \(c=\tfrac12\) kurva cembung di titik itu (oval), di atasnya cekung (lekukan).</p>

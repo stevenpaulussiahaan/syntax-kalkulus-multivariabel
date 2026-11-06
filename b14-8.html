@@ -1,0 +1,55 @@
+<p>Banyak masalah optimasi mempunyai <em>kendala</em>: memaksimalkan hasil dengan anggaran tertentu, meminimalkan bahan dengan volume tertentu. Metode <strong>pengali Lagrange</strong> menangani ini tanpa harus menyelesaikan kendala secara eksplisit.</p>
+
+<h2>1. Gagasan geometris</h2>
+<p>Maksimalkan \(f(x,y)\) dengan kendala \(g(x,y)=k\). Kurva kendala \(g=k\) adalah sebuah kurva di bidang. Kita memakai kurva ketinggian \(f=c\) dan menaikkan \(c\) sejauh masih menyentuh kurva kendala. Nilai \(c\) terbesar tercapai pada titik di mana kurva ketinggian <em>menyinggung</em> kurva kendala. Di titik singgung, keduanya mempunyai garis singgung sama, jadi gradiennya sejajar:
+\[ \nabla f=\lambda\nabla g. \]</p>
+<figure><img src="assets/img/b14-8-lagrange.png" alt="Pengali Lagrange"><figcaption>Maksimumkan \(f=x+2y\) pada lingkaran \(x^2+y^2=1\): kontur \(f\) menyinggung lingkaran di titik merah.</figcaption></figure>
+
+<h2>2. Metode</h2>
+<div class="box def"><span class="t">Metode pengali Lagrange (satu kendala)</span>
+<p>Untuk mencari ekstrem \(f(x,y,z)\) dengan kendala \(g(x,y,z)=k\) (dengan \(\nabla g\ne\mathbf0\)):</p>
+<ol>
+<li>Selesaikan sistem \(\nabla f=\lambda\nabla g\) dan \(g=k\); yaitu \(f_x=\lambda g_x\), \(f_y=\lambda g_y\), \(f_z=\lambda g_z\), \(g=k\).</li>
+<li>Hitung \(f\) di semua titik \((x,y,z)\) hasilnya. Terbesar \(=\) maksimum, terkecil \(=\) minimum (bila ekstrem ada).</li>
+</ol></div>
+<p>\(\lambda\) disebut <strong>pengali Lagrange</strong>. Hal yang sama berlaku untuk dua peubah (hilangkan \(z\)).</p>
+<p><strong>Catatan.</strong> Bila \(g\) berupa kurva tertutup dan terbatas (lingkaran, elips, dsb.), teorema nilai ekstrem menjamin ekstrem ada. Pada kendala tak terbatas (mis. hiperbola), periksa dengan cara lain apakah titik yang ditemukan memang maksimum atau minimum.</p>
+<div class="box ex"><span class="t">Contoh 1 — fungsi linear pada lingkaran</span>
+<p>Maksimalkan dan minimalkan \(f=x+2y\) dengan \(x^2+y^2=1\). \(\nabla f=\langle1,2\rangle=\lambda\langle2x,2y\rangle\Rightarrow x=\frac1{2\lambda}\), \(y=\frac1\lambda\). Masukkan ke kendala: \(\frac1{4\lambda^2}+\frac1{\lambda^2}=1\Rightarrow\lambda^2=\frac54\), \(\lambda=\pm\frac{\sqrt5}2\). Titik: \(\bigl(\frac1{\sqrt5},\frac2{\sqrt5}\bigr)\) dengan \(f=\sqrt5\) (maksimum) dan \(\bigl(-\frac1{\sqrt5},-\frac2{\sqrt5}\bigr)\) dengan \(f=-\sqrt5\) (minimum). Cocok dengan Cauchy–Schwarz: \(|x+2y|\le\sqrt{1+4}\sqrt{x^2+y^2}\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — kotak tertutup</span>
+<p>Kotak tertutup bervolume \(1000\) cm³ dengan luas permukaan terkecil. \(f=2(xy+yz+zx)\), \(g=xyz=1000\). \(f_x=2(y+z)=\lambda yz\), \(f_y=2(x+z)=\lambda xz\), \(f_z=2(x+y)=\lambda xy\). Kalikan persamaan pertama dengan \(x\), kedua dengan \(y\), ketiga dengan \(z\): \(2x(y+z)=2y(x+z)=2z(x+y)=\lambda xyz\). Dari dua pertama: \(xz=yz\Rightarrow x=y\) (karena \(z\ne0\)); dari yang kedua dan ketiga: \(xy=xz\Rightarrow y=z\). Jadi \(x=y=z=10\) (kubus), luas \(=600\) cm².</p></div>
+<div class="box ex"><span class="t">Contoh 3 — ekstrem pada cakram</span>
+<p>Cari ekstrem mutlak \(f=x^2+2y^2-x\) pada cakram \(x^2+y^2\le1\). <em>Dalam:</em> \(f_x=2x-1=0\), \(f_y=4y=0\): \((\frac12,0)\), \(f=-\frac14\). <em>Batas</em> \(x^2+y^2=1\) dengan Lagrange: \(2x-1=2\lambda x\), \(4y=2\lambda y\). Dari yang kedua: \(y=0\) atau \(\lambda=2\). Bila \(y=0\): \(x=\pm1\), \(f(1,0)=0\), \(f(-1,0)=2\). Bila \(\lambda=2\): \(2x-1=4x\Rightarrow x=-\frac12\), \(y^2=\frac34\), \(f=\frac14+\frac32+\frac12=\frac94\) di \(\bigl(-\frac12,\pm\frac{\sqrt3}2\bigr)\). Maksimum mutlak \(\frac94\); minimum mutlak \(-\frac14\) di \((\frac12,0)\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — jarak terdekat</span>
+<p>Titik pada \(x^2+y^2=4\) yang terjauh dan terdekat ke \((3,4)\)? Minimalkan \(f=(x-3)^2+(y-4)^2\), \(g=x^2+y^2=4\). \(2(x-3)=2\lambda x\), \(2(y-4)=2\lambda y\Rightarrow x=\frac3{1-\lambda}\), \(y=\frac4{1-\lambda}\), jadi \((x,y)\) sejajar \((3,4)\): \((x,y)=s(3,4)\), \(25s^2=4\), \(s=\pm\frac25\). Terdekat \((\frac65,\frac85)\), jarak \(5-2=3\); terjauh \((-\frac65,-\frac85)\), jarak \(5+2=7\). Sesuai gambaran geometris: pusat lingkaran, titik, dan titik ekstrem segaris.</p></div>
+
+<h2>3. Dua kendala</h2>
+<div class="box def"><span class="t">Dua kendala</span>
+<p>Untuk ekstrem \(f(x,y,z)\) dengan \(g(x,y,z)=k\) dan \(h(x,y,z)=l\): selesaikan
+\[ \nabla f=\lambda\nabla g+\mu\nabla h,\quad g=k,\quad h=l. \]
+Artinya \(\nabla f\) terletak pada bidang yang direntang \(\nabla g,\nabla h\) (tegak lurus kurva irisan).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — silinder dan bidang</span>
+<p>Ekstrem \(f=z\) pada kurva irisan \(x^2+y^2=1\) dan \(x+y+z=2\). \(\langle0,0,1\rangle=\lambda\langle2x,2y,0\rangle+\mu\langle1,1,1\rangle\). Komponen \(z\): \(\mu=1\). Komponen \(x,y\): \(2\lambda x+1=0\), \(2\lambda y+1=0\Rightarrow x=y\). Dari silinder: \(x=y=\pm\frac1{\sqrt2}\). \(z=2-x-y=2\mp\sqrt2\). Maksimum \(2+\sqrt2\approx3{,}414\) di \((-\frac1{\sqrt2},-\frac1{\sqrt2},2+\sqrt2)\); minimum \(2-\sqrt2\approx0{,}586\). (Sesuai dengan elips irisan, titik tertinggi dan terendah.)</p></div>
+
+<h2>4. Contoh ekonomi dan arti \(\lambda\)</h2>
+<div class="box ex"><span class="t">Contoh 6 — produksi dengan anggaran</span>
+<p>Produksi \(P=L^{0,6}K^{0,4}\). Biaya satu unit tenaga kerja 2 dan modal 5; anggaran 100: \(2L+5K=100\). \(P_L=\frac{0{,}6P}L=2\lambda\), \(P_K=\frac{0{,}4P}K=5\lambda\). Bagi: \(\dfrac{0{,}6K}{0{,}4L}=\dfrac25\Rightarrow K=\dfrac{4}{15}L\). Masukkan: \(2L+\frac43L=100\Rightarrow L=30\), \(K=8\). \(P=30^{0,6}8^{0,4}\approx17{,}68\). Pola umum Cobb–Douglas: \(L\) dan \(K\) memakai bagian anggaran \(0{,}6\) dan \(0{,}4\): \(2L=60\), \(5K=40\).</p></div>
+<div class="box note"><span class="t">Arti \(\lambda\)</span>
+<p>\(\lambda=\dfrac{dP^*}{d(\text{anggaran})}\): perubahan nilai optimum akibat kenaikan satu satuan batas kendala. Pada Contoh 6: \(\lambda=\frac{P_L}2=\frac{0{,}6P}{2L}\approx0{,}1768\). Verifikasi: bila anggaran dinaikkan menjadi 101, \(L=30{,}3\), \(K=8{,}08\), \(P\) naik \(\approx0{,}1768\). Disebut <em>harga bayangan</em>.</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Lupa menyertakan persamaan kendala \(g=k\) dalam sistem.</li>
+<li>Membuang solusi \(x=0\) atau \(y=0\) ketika membagi (seperti pada Contoh 3).</li>
+<li>Tidak membandingkan nilai \(f\) di semua titik kandidat.</li>
+<li>Mengira semua titik kandidat adalah maksimum atau semuanya minimum.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>Ekstrem terkendala: \(\nabla f=\lambda\nabla g\) dan \(g=k\).</li>
+<li>Dua kendala: \(\nabla f=\lambda\nabla g+\mu\nabla h\).</li>
+<li>Pada daerah tertutup: titik kritis dalam + Lagrange pada batas.</li>
+<li>\(\lambda\) adalah laju perubahan optimum terhadap batas kendala.</li>
+</ul>
+<p>Bab 14 berakhir di sini. Bab berikutnya, <a href="b15-1.html">15.1</a>, memperkenalkan integral rangkap.</p>

@@ -1,0 +1,72 @@
+<p>Pada integral satu peubah, substitusi \(x=g(u)\) mengubah \(\int f(x)\,dx\) menjadi \(\int f(g(u))\,g'(u)\,du\). Koordinat kutub, tabung, dan bola adalah substitusi khusus untuk integral ganda. Subbab ini memberi aturan umumnya, dengan <strong>Jacobian</strong> menggantikan \(g'(u)\).</p>
+
+<h2>1. Transformasi</h2>
+<p>Transformasi \(T\) dari bidang \(uv\) ke bidang \(xy\): \(T(u,v)=(x,y)\) dengan \(x=g(u,v)\), \(y=h(u,v)\), dengan \(g,h\) mempunyai turunan parsial kontinu. Bila \(T\) satu-satu, \(T\) memetakan daerah \(S\) di bidang \(uv\) ke daerah \(R\) di bidang \(xy\) (\(R=T(S)\)), dan kita dapat berpindah bolak-balik.</p>
+<div class="box ex"><span class="t">Contoh 1 — transformasi linear</span>
+<p>\(T:\ x=2u+v,\ y=u+3v\). Persegi satuan \(S=[0,1]^2\) dipetakan menjadi jajargenjang dengan titik sudut \(T(0,0)=(0,0)\), \(T(1,0)=(2,1)\), \(T(1,1)=(3,4)\), \(T(0,1)=(1,3)\). Luas jajargenjang \(=|\langle2,1\rangle\times\langle1,3\rangle|=|6-1|=5\): luas \(S\) (yaitu 1) dikalikan \(5\).</p></div>
+<figure><img src="assets/img/b15-10-jacobian.png" alt="Transformasi linear"><figcaption>Persegi satuan (kiri) dipetakan ke jajargenjang berluas 5 (kanan).</figcaption></figure>
+
+<h2>2. Jacobian</h2>
+<div class="box def"><span class="t">Determinan Jacobi</span>
+<p>Jacobian \(T\):
+\[ \frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\dfrac{\partial x}{\partial u}&\dfrac{\partial x}{\partial v}\\\dfrac{\partial y}{\partial u}&\dfrac{\partial y}{\partial v}\end{vmatrix}=\frac{\partial x}{\partial u}\frac{\partial y}{\partial v}-\frac{\partial x}{\partial v}\frac{\partial y}{\partial u}. \]</p></div>
+<p><strong>Gagasan.</strong> Persegi kecil \(\Delta u\times\Delta v\) dipetakan hampir menjadi jajargenjang yang dibentangkan oleh \(\mathbf r_u\Delta u\) dan \(\mathbf r_v\Delta v\) (dengan \(\mathbf r=\langle x,y\rangle\)). Luasnya \(|\mathbf r_u\times\mathbf r_v|\Delta u\Delta v=\bigl|\frac{\partial(x,y)}{\partial(u,v)}\bigr|\Delta u\Delta v\). Jadi Jacobian adalah <em>faktor penskalaan luas</em> lokal.</p>
+<div class="box ex"><span class="t">Contoh 2 — Jacobian beberapa transformasi</span>
+<ul>
+<li>Linear di Contoh 1: \(\begin{vmatrix}2&1\\1&3\end{vmatrix}=5\).</li>
+<li>Kutub \(x=r\cos\theta\), \(y=r\sin\theta\): \(\begin{vmatrix}\cos\theta&-r\sin\theta\\\sin\theta&r\cos\theta\end{vmatrix}=r\cos^2\theta+r\sin^2\theta=r\). (Inilah asal faktor \(r\) di \(dA=r\,dr\,d\theta\).)</li>
+<li>\(x=au\), \(y=bv\): Jacobian \(ab\).</li>
+<li>\(x=u^2-v^2\), \(y=2uv\): \(\begin{vmatrix}2u&-2v\\2v&2u\end{vmatrix}=4u^2+4v^2\).</li>
+</ul></div>
+
+<h2>3. Rumus perubahan peubah</h2>
+<div class="box def"><span class="t">Perubahan peubah (dua peubah)</span>
+<p>Misalkan \(T\) transformasi \(C^1\) satu-satu dengan Jacobian tak nol, memetakan \(S\) pada \(R\). Untuk \(f\) kontinu,
+\[ \iint_Rf(x,y)\,dA=\iint_Sf\bigl(x(u,v),y(u,v)\bigr)\,\Bigl|\frac{\partial(x,y)}{\partial(u,v)}\Bigr|\,du\,dv. \]
+Perhatikan tanda nilai mutlak.</p></div>
+<div class="box note"><span class="t">Strategi</span>
+<ol>
+<li>Pilih \(u,v\) sehingga daerah \(R\) menjadi sederhana (mis. persegi panjang) dan/atau integran menjadi sederhana.</li>
+<li>Selesaikan \(x,y\) dalam \(u,v\) dan hitung \(\frac{\partial(x,y)}{\partial(u,v)}\) (atau hitung \(\frac{\partial(u,v)}{\partial(x,y)}\) dan balik: \(\frac{\partial(x,y)}{\partial(u,v)}=1\big/\frac{\partial(u,v)}{\partial(x,y)}\)).</li>
+<li>Tentukan batas baru di bidang \(uv\), lalu hitung.</li>
+</ol></div>
+<div class="box ex"><span class="t">Contoh 3 — jajargenjang</span>
+<p>\(\iint_Rxy\,dA\) dengan \(R=T(S)\), \(S=[0,1]^2\), \(T\) pada Contoh 1. \(xy=(2u+v)(u+3v)=2u^2+7uv+3v^2\). \(\displaystyle\iint_Rxy\,dA=5\int_0^1\int_0^1(2u^2+7uv+3v^2)\,du\,dv=5\Bigl(\tfrac23+\tfrac74+1\Bigr)=5\cdot\tfrac{41}{12}=\tfrac{205}{12}\approx17{,}08\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — elips</span>
+<p>Daerah \(R:\ \frac{x^2}{a^2}+\frac{y^2}{b^2}\le1\). Substitusi \(x=au\), \(y=bv\), \(J=ab\); \(S\): cakram \(u^2+v^2\le1\). Luas \(=\iint_Sab\,du\,dv=\pi ab\). Juga \(\iint_Rx^2\,dA=a^3b\iint_Su^2\,du\,dv=a^3b\cdot\tfrac\pi4\). Untuk \(a=2,b=1\): \(\iint x^2\,dA=2\pi\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — daerah di antara hiperbola dan garis</span>
+<p>Cari luas daerah \(R\) di kuadran pertama yang dibatasi \(xy=1\), \(xy=4\), \(y=x\), \(y=4x\). Pilih \(u=xy\), \(v=\dfrac yx\): \(R\) menjadi persegi \(1\le u\le4\), \(1\le v\le4\). Hitung \(\dfrac{\partial(u,v)}{\partial(x,y)}=\begin{vmatrix}y&x\\-\dfrac y{x^2}&\dfrac1x\end{vmatrix}=\dfrac yx+\dfrac yx=2v\). Maka \(\dfrac{\partial(x,y)}{\partial(u,v)}=\dfrac1{2v}\). Luas \(=\int_1^4\int_1^4\dfrac1{2v}\,dv\,du=3\cdot\tfrac12\ln4=\tfrac32\ln4=3\ln2\approx2{,}079\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — integran yang rumit</span>
+<p>\(\displaystyle\iint_R\exp\Bigl(\frac{x-y}{x+y}\Bigr)dA\), \(R\) segitiga \((0,0),(1,0),(0,1)\). Misalkan \(u=x+y\), \(v=x-y\); maka \(x=\frac{u+v}2\), \(y=\frac{u-v}2\), \(\dfrac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\frac12&\frac12\\\frac12&-\frac12\end{vmatrix}=-\tfrac12\), nilai mutlak \(\tfrac12\). Daerah: \(x\ge0,y\ge0,x+y\le1\) menjadi \(0\le u\le1\), \(-u\le v\le u\). \(\displaystyle\iint=\tfrac12\int_0^1\int_{-u}^ue^{v/u}\,dv\,du=\tfrac12\int_0^1u\bigl(e-e^{-1}\bigr)du=\dfrac{e-e^{-1}}4\approx0{,}588\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — memeriksa kutub</span>
+<p>\(\iint_Dx\,dA\) pada cakram \((x-1)^2+y^2\le1\): geser \(x=1+u\), \(y=v\) (\(J=1\)): \(\iint_{u^2+v^2\le1}(1+u)\,du\,dv=\pi+0=\pi\), sama dengan 15.4 Contoh 5.</p></div>
+
+<h2>4. Tiga peubah</h2>
+<div class="box def"><span class="t">Jacobian tiga peubah</span>
+<p>Untuk \(T(u,v,w)=(x,y,z)\):
+\[ \frac{\partial(x,y,z)}{\partial(u,v,w)}=\begin{vmatrix}x_u&x_v&x_w\\y_u&y_v&y_w\\z_u&z_v&z_w\end{vmatrix},\qquad\iiint_Rf\,dV=\iiint_Sf\,\Bigl|\frac{\partial(x,y,z)}{\partial(u,v,w)}\Bigr|\,du\,dv\,dw. \]</p></div>
+<div class="box ex"><span class="t">Contoh 8 — koordinat tabung dan bola</span>
+<ul>
+<li>Tabung: \(x=r\cos\theta\), \(y=r\sin\theta\), \(z=z\): determinan \(=r\) (sama dengan kutub).</li>
+<li>Bola: \(x=\rho\sin\phi\cos\theta\), \(y=\rho\sin\phi\sin\theta\), \(z=\rho\cos\phi\): determinan terhadap \((\rho,\phi,\theta)\) bernilai mutlak \(\rho^2\sin\phi\), sehingga \(dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\) (15.9).</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 9 — transformasi linear tiga dimensi</span>
+<p>\(x=u+v\), \(y=v+w\), \(z=w+u\): \(\begin{vmatrix}1&1&0\\0&1&1\\1&0&1\end{vmatrix}=1(1-0)-1(0-1)+0=2\). Kubus satuan di \(uvw\) dipetakan ke jajaran genjang tiga dimensi (parallelepiped) bervolume 2.</p></div>
+<div class="box ex"><span class="t">Contoh 10 — volume elipsoid</span>
+<p>Elipsoid \(\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\le1\): \(x=au,y=bv,z=cw\), \(J=abc\), \(S\) bola satuan: \(V=abc\cdot\tfrac43\pi=\tfrac43\pi abc\).</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Lupa nilai mutlak pada Jacobian (luas tak boleh negatif).</li>
+<li>Memakai \(\frac{\partial(u,v)}{\partial(x,y)}\) padahal yang dibutuhkan \(\frac{\partial(x,y)}{\partial(u,v)}\) (saling berkebalikan).</li>
+<li>Tidak mengubah batas daerah ke koordinat baru.</li>
+<li>Transformasi yang tidak satu-satu (mis. \(u=x^2\) pada daerah yang memuat \(x\) positif dan negatif).</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(dA=\bigl|\frac{\partial(x,y)}{\partial(u,v)}\bigr|\,du\,dv\); \(dV=\bigl|\frac{\partial(x,y,z)}{\partial(u,v,w)}\bigr|\,du\,dv\,dw\).</li>
+<li>Kutub: \(J=r\); tabung: \(J=r\); bola: \(J=\rho^2\sin\phi\).</li>
+<li>Pilih transformasi yang menyederhanakan daerah atau integran.</li>
+</ul>
+<p>Bab 15 berakhir di sini. Bab berikutnya, <a href="b16-1.html">16.1</a>, membahas medan vektor dan integral garis.</p>

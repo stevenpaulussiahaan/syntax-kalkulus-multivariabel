@@ -1,0 +1,65 @@
+<p>Kurva ruang kita nyatakan oleh satu parameter \(t\): \(\mathbf r(t)\). Permukaan mempunyai dua dimensi, sehingga memerlukan dua parameter \((u,v)\). Representasi ini jauh lebih fleksibel daripada grafik \(z=f(x,y)\): ia dapat menggambarkan bola, silinder, torus, dan permukaan lain yang bukan grafik fungsi.</p>
+
+<h2>1. Permukaan parametrik</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Permukaan parametrik \(S\) adalah himpunan titik
+\[ \mathbf r(u,v)=\langle x(u,v),\ y(u,v),\ z(u,v)\rangle,\qquad(u,v)\in D\subseteq\mathbb R^2. \]
+\(D\) disebut daerah parameter. Kurva \(u=u_0\) (dengan \(v\) berubah) dan \(v=v_0\) disebut <em>kurva grid</em>; ia membentuk "jaring" yang menyelimuti permukaan.</p></div>
+<figure><img src="assets/img/b16-6-permukaan.png" alt="Bola, torus, helikoid"><figcaption>Tiga permukaan parametrik: bola, torus, dan helikoid.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 1 — bidang</span>
+<p>Bidang melalui titik \(\mathbf r_0\) dengan vektor sejajar \(\mathbf a,\mathbf b\): \(\mathbf r(u,v)=\mathbf r_0+u\mathbf a+v\mathbf b\). Misalnya bidang melalui \((1,2,3)\) yang memuat \(\langle1,0,1\rangle\) dan \(\langle0,1,-1\rangle\): \(\mathbf r=\langle1+u,\,2+v,\,3+u-v\rangle\), yaitu \(z=x-y+4\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — silinder dan bola</span>
+<ul>
+<li>Silinder \(x^2+y^2=a^2\): \(\mathbf r(\theta,z)=\langle a\cos\theta,a\sin\theta,z\rangle\), \(0\le\theta\le2\pi\), \(z\) selang.</li>
+<li>Bola \(x^2+y^2+z^2=a^2\): \(\mathbf r(\phi,\theta)=\langle a\sin\phi\cos\theta,\ a\sin\phi\sin\theta,\ a\cos\phi\rangle\), \(0\le\phi\le\pi\), \(0\le\theta\le2\pi\) (koordinat bola, 15.9).</li>
+<li>Elipsoid \(\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1\): \(\langle a\sin\phi\cos\theta,\ b\sin\phi\sin\theta,\ c\cos\phi\rangle\).</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 3 — grafik dan paraboloid</span>
+<p>Grafik \(z=f(x,y)\): \(\mathbf r(x,y)=\langle x,y,f(x,y)\rangle\) (ambil \(u=x\), \(v=y\)). Paraboloid \(z=x^2+y^2\) dapat ditulis \(\mathbf r(r,\theta)=\langle r\cos\theta,r\sin\theta,r^2\rangle\). Kerucut \(z=\sqrt{x^2+y^2}\): \(\langle u\cos v,u\sin v,u\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — permukaan putar</span>
+<p>Kurva \(y=f(x)\), \(a\le x\le b\), diputar mengelilingi sumbu \(x\): \(\mathbf r(x,\theta)=\langle x,\ f(x)\cos\theta,\ f(x)\sin\theta\rangle\). Untuk \(f=\sqrt x\) pada \(0\le x\le1\): paraboloid \(y^2+z^2=x\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — torus</span>
+<p>Torus (donat) dengan jari-jari pusat tabung \(R\) dan jari-jari tabung \(r\) (\(R\gt r\)): \(\mathbf r(u,v)=\langle(R+r\cos v)\cos u,\ (R+r\cos v)\sin u,\ r\sin v\rangle\), \(0\le u,v\le2\pi\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — helikoid</span>
+<p>\(\mathbf r(u,v)=\langle u\cos v,u\sin v,v\rangle\): setiap kurva \(u=\text{konstan}\) adalah heliks, setiap \(v=\text{konstan}\) adalah garis horizontal yang memotong sumbu \(z\): seperti ulir tangga spiral.</p></div>
+
+<h2>2. Bidang singgung</h2>
+<p>Turunan parsial \(\mathbf r_u=\langle x_u,y_u,z_u\rangle\) dan \(\mathbf r_v\) di titik \((u_0,v_0)\) adalah vektor singgung pada kurva grid, jadi keduanya terletak pada bidang singgung. Permukaan disebut <strong>mulus</strong> bila \(\mathbf r_u\times\mathbf r_v\ne\mathbf0\) (di titik dalam \(D\)); vektor ini adalah <strong>normal</strong>.</p>
+<div class="box ex"><span class="t">Contoh 7 — bidang singgung</span>
+<p>\(\mathbf r(u,v)=\langle u^2,v^2,u+2v\rangle\), di titik \((1,1,3)\) (\(u=v=1\)). \(\mathbf r_u=\langle2u,0,1\rangle=\langle2,0,1\rangle\), \(\mathbf r_v=\langle0,2v,2\rangle=\langle0,2,2\rangle\). \(\mathbf r_u\times\mathbf r_v=\langle0\cdot2-1\cdot2,\ 1\cdot0-2\cdot2,\ 2\cdot2-0\rangle=\langle-2,-4,4\rangle\). Bidang: \(-2(x-1)-4(y-1)+4(z-3)=0\), yaitu \(x+2y-2z=-3\). (Periksa titik: \(1+2-6=-3\).)</p></div>
+
+<h2>3. Luas permukaan</h2>
+<p>Persegi kecil \(\Delta u\times\Delta v\) di \(D\) dipetakan menjadi jajargenjang hampir yang dibentangkan \(\mathbf r_u\Delta u\) dan \(\mathbf r_v\Delta v\), luasnya \(|\mathbf r_u\times\mathbf r_v|\,\Delta u\,\Delta v\) (bandingkan dengan Jacobian, 15.10).</p>
+<div class="box def"><span class="t">Luas permukaan parametrik</span>
+<p>Bila \(S\) mulus dan dilalui tepat satu kali ketika \((u,v)\) menjelajahi \(D\),
+\[ A(S)=\iint_D|\mathbf r_u\times\mathbf r_v|\,dA. \]</p></div>
+<div class="box ex"><span class="t">Contoh 8 — bola</span>
+<p>\(|\mathbf r_\phi\times\mathbf r_\theta|=a^2\sin\phi\) (15.6), \(A=\int_0^{2\pi}\int_0^\pi a^2\sin\phi\,d\phi\,d\theta=4\pi a^2\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — torus</span>
+<p>\(\mathbf r_u=\langle-(R+r\cos v)\sin u,\ (R+r\cos v)\cos u,\ 0\rangle\), \(\mathbf r_v=\langle-r\sin v\cos u,\ -r\sin v\sin u,\ r\cos v\rangle\). \(|\mathbf r_u\times\mathbf r_v|=r(R+r\cos v)\). \(A=\int_0^{2\pi}\int_0^{2\pi}r(R+r\cos v)\,dv\,du=2\pi\cdot2\pi rR=4\pi^2rR\). Untuk \(R=3,r=1\): \(12\pi^2\approx118{,}4\). (Luas = keliling lingkaran tabung \(2\pi r\) kali keliling lintasan pusatnya \(2\pi R\), teorema Pappus.)</p></div>
+<div class="box ex"><span class="t">Contoh 10 — helikoid</span>
+<p>\(\mathbf r=\langle u\cos v,u\sin v,v\rangle\), \(0\le u\le1\), \(0\le v\le\pi\). \(\mathbf r_u=\langle\cos v,\sin v,0\rangle\), \(\mathbf r_v=\langle-u\sin v,u\cos v,1\rangle\). \(\mathbf r_u\times\mathbf r_v=\langle\sin v,\,-\cos v,\,u\rangle\), panjang \(\sqrt{1+u^2}\). \(A=\pi\int_0^1\sqrt{1+u^2}\,du=\dfrac\pi2\bigl[\sqrt2+\sinh^{-1}1\bigr]\approx3{,}606\).</p></div>
+<div class="box ex"><span class="t">Contoh 11 — kerucut</span>
+<p>\(\mathbf r=\langle u\cos v,u\sin v,u\rangle\), \(0\le u\le2\), \(0\le v\le2\pi\). \(|\mathbf r_u\times\mathbf r_v|=\sqrt2\,u\). \(A=\int_0^{2\pi}\int_0^2\sqrt2u\,du\,dv=4\sqrt2\pi\approx17{,}77\), sama dengan \(\pi rs\) dengan \(r=2\), \(s=2\sqrt2\).</p></div>
+<div class="box def"><span class="t">Kasus khusus</span>
+<ul>
+<li>Grafik \(z=f(x,y)\): \(\mathbf r_x\times\mathbf r_y=\langle-f_x,-f_y,1\rangle\), \(A=\iint_D\sqrt{1+f_x^2+f_y^2}\,dA\) (15.6).</li>
+<li>Permukaan putar \(y=f(x)\) di sekitar sumbu \(x\): \(|\mathbf r_x\times\mathbf r_\theta|=f\sqrt{1+f'^2}\), \(A=2\pi\int_a^bf(x)\sqrt{1+f'(x)^2}\,dx\) (10.2).</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 12 — paraboloid putar</span>
+<p>\(f=\sqrt x\), \(0\le x\le1\): \(f\sqrt{1+f'^2}=\sqrt x\sqrt{1+\frac1{4x}}=\sqrt{x+\tfrac14}\). \(A=2\pi\int_0^1\sqrt{x+\tfrac14}\,dx=\tfrac{4\pi}3\Bigl[\bigl(\tfrac54\bigr)^{3/2}-\bigl(\tfrac14\bigr)^{3/2}\Bigr]=\dfrac\pi6\bigl(5\sqrt5-1\bigr)\approx5{,}33\).</p></div>
+
+<h2>4. Kesalahan umum</h2>
+<ul>
+<li>Memakai \(|\mathbf r_u|\,|\mathbf r_v|\) sebagai elemen luas; yang benar \(|\mathbf r_u\times\mathbf r_v|\) (hanya sama bila kedua vektor tegak lurus).</li>
+<li>Batas \(u,v\) yang membuat permukaan terlewati dua kali (mis. bola dengan \(\theta\in[0,4\pi]\)).</li>
+<li>Menganggap parametrisasi tunggal: satu permukaan punya banyak parametrisasi.</li>
+</ul>
+
+<h2>5. Ringkasan</h2>
+<ul>
+<li>\(\mathbf r(u,v)\); \(\mathbf r_u\times\mathbf r_v\) adalah normal bidang singgung.</li>
+<li>\(A=\iint_D|\mathbf r_u\times\mathbf r_v|\,dA\).</li>
+<li>Contoh: bola \(4\pi a^2\), torus \(4\pi^2rR\), kerucut \(\pi rs\).</li>
+</ul>
+<p>Berikutnya <a href="b16-7.html">16.7 Integral Permukaan</a>.</p>

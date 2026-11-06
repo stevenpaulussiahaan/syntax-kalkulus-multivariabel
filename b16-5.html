@@ -1,0 +1,82 @@
+<p>Dua turunan menjelaskan bagaimana sebuah medan vektor berperilaku secara lokal: <strong>curl</strong> mengukur kecenderungan berputar, dan <strong>divergensi</strong> mengukur kecenderungan memancar atau terserap. Keduanya adalah kunci untuk memperluas teorema Green ke ruang (16.8, 16.9).</p>
+
+<h2>1. Operator del</h2>
+<p>Definisikan operator vektor \(\nabla=\Bigl\langle\dfrac\partial{\partial x},\dfrac\partial{\partial y},\dfrac\partial{\partial z}\Bigr\rangle\). Ia bekerja pada fungsi skalar (gradien \(\nabla f\)), dan melalui "hasil kali" titik dan silang pada medan vektor.</p>
+
+<h2>2. Curl</h2>
+<div class="box def"><span class="t">Definisi — curl</span>
+<p>Untuk \(\mathbf F=\langle P,Q,R\rangle\) dengan turunan parsial ada,
+\[ \operatorname{curl}\mathbf F=\nabla\times\mathbf F=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\\partial_x&\partial_y&\partial_z\\P&Q&R\end{vmatrix}=\Bigl\langle R_y-Q_z,\ P_z-R_x,\ Q_x-P_y\Bigr\rangle. \]</p></div>
+<p>Untuk medan bidang \(\langle P,Q,0\rangle\), curl \(=\langle0,0,Q_x-P_y\rangle\): komponen \(\mathbf k\) adalah integran teorema Green.</p>
+<p><strong>Tafsir.</strong> Letakkan roda dayung kecil di aliran fluida \(\mathbf F\), dengan sumbu searah \(\mathbf n\). Roda berputar paling cepat bila \(\mathbf n\) searah \(\operatorname{curl}\mathbf F\), dengan kecepatan sudut \(\frac12|\operatorname{curl}\mathbf F|\). Bila \(\operatorname{curl}\mathbf F=\mathbf0\), aliran disebut <em>tak berputar</em> (irrotasional).</p>
+<figure><img src="assets/img/b16-5-curl.png" alt="Curl dan divergensi"><figcaption>Kiri: medan berputar. Tengah: geseran (curl tak nol, divergensi nol). Kanan: medan yang menyerap (divergensi negatif).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 1 — menghitung curl</span>
+<p>\(\mathbf F=\langle xz,\ xyz,\ -y^2\rangle\). \(R_y-Q_z=-2y-xy\); \(P_z-R_x=x-0=x\); \(Q_x-P_y=yz-0=yz\). \(\operatorname{curl}\mathbf F=\langle-2y-xy,\ x,\ yz\rangle\). Di \((1,1,2)\): \(\langle-3,1,2\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — rotasi benda tegar</span>
+<p>Benda berputar dengan kecepatan sudut \(\boldsymbol\omega=\langle0,0,3\rangle\): kecepatan titik \(\mathbf r\) adalah \(\mathbf v=\boldsymbol\omega\times\mathbf r=\langle-3y,3x,0\rangle\). \(\operatorname{curl}\mathbf v=\langle0,0,3+3\rangle=\langle0,0,6\rangle=2\boldsymbol\omega\). Jadi curl kecepatan sama dengan dua kali kecepatan sudut. Medan geseran \(\langle y,0,0\rangle\): curl \(=\langle0,0,-1\rangle\), roda berputar searah jarum jam.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — curl dan konservatif</span>
+<p>\(\mathbf F=\langle yz,xz,xy\rangle\): \(R_y-Q_z=x-x=0\), \(P_z-R_x=y-y=0\), \(Q_x-P_y=z-z=0\); curl \(=\mathbf0\). Memang \(\mathbf F=\nabla(xyz)\). Sebaliknya \(\mathbf F=\langle xy,yz,zx\rangle\): curl \(=\langle-y,-z,-x\rangle\ne\mathbf0\), tidak konservatif.</p></div>
+<div class="box def"><span class="t">Teorema</span>
+<p>Jika \(f\) mempunyai turunan parsial kedua kontinu, maka
+\[ \operatorname{curl}(\nabla f)=\mathbf0. \]
+Sebaliknya, jika \(\mathbf F\) terdefinisi pada seluruh \(\mathbb R^3\) (atau daerah sederhana terhubung) dengan komponen berturunan parsial kontinu dan \(\operatorname{curl}\mathbf F=\mathbf0\), maka \(\mathbf F\) konservatif.</p></div>
+<p>Bukti bagian pertama: komponen pertama \(\partial_y(f_z)-\partial_z(f_y)=0\) oleh Clairaut; komponen lain serupa. Ini kelanjutan dari syarat \(P_y=Q_x\) di 16.3.</p>
+
+<h2>3. Divergensi</h2>
+<div class="box def"><span class="t">Definisi — divergensi</span>
+<p>\[ \operatorname{div}\mathbf F=\nabla\cdot\mathbf F=\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}. \]
+(Di bidang: \(P_x+Q_y\).) Ini fungsi <em>skalar</em>.</p></div>
+<p><strong>Tafsir.</strong> Bila \(\mathbf F\) kecepatan fluida, \(\operatorname{div}\mathbf F\) di sebuah titik adalah laju fluks keluar per satuan volume: positif bila titik itu <em>sumber</em> (fluida memancar), negatif bila <em>penyerap</em> (sink), dan nol bila aliran <em>tak mampat</em> (volume fluida tidak berubah).</p>
+<div class="box ex"><span class="t">Contoh 4 — menghitung divergensi</span>
+<ul>
+<li>\(\mathbf F=\langle xz,xyz,-y^2\rangle\): \(\operatorname{div}=z+xz+0=z(1+x)\).</li>
+<li>\(\mathbf F=\langle x,y,z\rangle\): \(\operatorname{div}=3\) (memancar seragam).</li>
+<li>\(\mathbf F=\langle x,-y\rangle\): \(\operatorname{div}=1-1=0\): aliran sudut tak mampat (di sekitar titik pelana, mengalir masuk sepanjang sumbu \(y\) dan keluar sepanjang sumbu \(x\)).</li>
+<li>\(\mathbf F=\langle-y,x\rangle\): \(\operatorname{div}=0\): berputar tanpa memampat.</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 5 — medan kuadrat terbalik</span>
+<p>\(\mathbf F=\dfrac{\mathbf r}{|\mathbf r|^3}=\dfrac{\langle x,y,z\rangle}{\rho^3}\), \(\rho=\sqrt{x^2+y^2+z^2}\). \(\dfrac\partial{\partial x}\dfrac x{\rho^3}=\dfrac1{\rho^3}-\dfrac{3x^2}{\rho^5}\). Jumlahkan untuk tiga komponen: \(\dfrac3{\rho^3}-\dfrac{3(x^2+y^2+z^2)}{\rho^5}=0\). Jadi \(\operatorname{div}\mathbf F=0\) di mana pun kecuali di titik asal (sumber titik). Karena inilah fluks medan listrik dan gravitasi muatan titik tidak bergantung pada bentuk permukaan pengurung (16.9).</p></div>
+<div class="box def"><span class="t">Teorema</span>
+<p>Jika \(\mathbf F=\langle P,Q,R\rangle\) mempunyai turunan parsial kedua kontinu, maka
+\[ \operatorname{div}(\operatorname{curl}\mathbf F)=0. \]</p></div>
+<p>Bukti: \(\operatorname{div}\langle R_y-Q_z,\,P_z-R_x,\,Q_x-P_y\rangle=R_{yx}-Q_{zx}+P_{zy}-R_{xy}+Q_{xz}-P_{yz}=0\) oleh Clairaut. Akibatnya, medan yang merupakan curl dari medan lain pasti tak mampat (mis. medan magnet).</p>
+
+<h2>4. Laplacian dan identitas</h2>
+<p>Laplacian fungsi skalar: \(\nabla^2f=\nabla\cdot\nabla f=f_{xx}+f_{yy}+f_{zz}\). Fungsi dengan \(\nabla^2f=0\) disebut <em>harmonik</em> (persamaan Laplace, 14.3).</p>
+<div class="box ex"><span class="t">Contoh 6 — Laplacian</span>
+<ul>
+<li>\(f=x^2+y^2+z^2\): \(\nabla^2f=2+2+2=6\).</li>
+<li>\(f=\dfrac1{\rho}\): \(\nabla f=-\dfrac{\mathbf r}{\rho^3}\), \(\nabla^2f=-\operatorname{div}\dfrac{\mathbf r}{\rho^3}=0\) (Contoh 5): harmonik di mana pun kecuali asal; ini potensial listrik dan gravitasi.</li>
+<li>\(f=x^2-y^2\): \(\nabla^2f=2-2=0\): harmonik.</li>
+</ul></div>
+<table class="t">
+<tr><th>Identitas</th><th>Keterangan</th></tr>
+<tr><td>\(\nabla\times\nabla f=\mathbf0\)</td><td>gradien tak berputar</td></tr>
+<tr><td>\(\nabla\cdot(\nabla\times\mathbf F)=0\)</td><td>curl tak mampat</td></tr>
+<tr><td>\(\nabla\cdot(f\mathbf F)=f\,\nabla\cdot\mathbf F+\mathbf F\cdot\nabla f\)</td><td>aturan hasil kali</td></tr>
+<tr><td>\(\nabla\times(f\mathbf F)=f\,\nabla\times\mathbf F+\nabla f\times\mathbf F\)</td><td>aturan hasil kali</td></tr>
+<tr><td>\(\nabla\cdot(\mathbf F+\mathbf G)=\nabla\cdot\mathbf F+\nabla\cdot\mathbf G\)</td><td>linear</td></tr>
+</table>
+<div class="box ex"><span class="t">Contoh 7 — memakai aturan hasil kali</span>
+<p>\(\nabla\cdot(\rho^2\,\mathbf r)\) dengan \(\mathbf r=\langle x,y,z\rangle\): \(f=\rho^2=x^2+y^2+z^2\), \(\nabla f=2\mathbf r\), \(\nabla\cdot\mathbf r=3\): \(f\,\nabla\cdot\mathbf r+\mathbf r\cdot\nabla f=3\rho^2+2\rho^2=5\rho^2\).</p></div>
+
+<h2>5. Bentuk vektor teorema Green</h2>
+<p>Dengan notasi baru, teorema Green (16.4) berbunyi
+\[ \oint_C\mathbf F\cdot d\mathbf r=\iint_D(\operatorname{curl}\mathbf F)\cdot\mathbf k\,dA,\qquad\oint_C\mathbf F\cdot\mathbf n\,ds=\iint_D\operatorname{div}\mathbf F\,dA. \]
+Bentuk pertama (sirkulasi \(\leftrightarrow\) curl) memperluas diri menjadi Teorema Stokes (16.8); bentuk kedua (fluks \(\leftrightarrow\) divergensi) menjadi Teorema Divergensi (16.9).</p>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Menyamakan curl dan divergensi: curl menghasilkan vektor, divergensi menghasilkan skalar.</li>
+<li>Salah tanda pada determinan curl (komponen \(\mathbf j\) adalah \(P_z-R_x\), bukan \(R_x-P_z\)).</li>
+<li>Menghitung curl atau divergensi dari fungsi skalar, atau gradien dari medan vektor: tipe tidak cocok.</li>
+<li>Menyimpulkan konservatif dari curl nol pada daerah yang tidak sederhana terhubung.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\operatorname{curl}\mathbf F=\nabla\times\mathbf F\): kecenderungan berputar; \(\operatorname{div}\mathbf F=\nabla\cdot\mathbf F\): kecenderungan memancar.</li>
+<li>\(\operatorname{curl}\nabla f=\mathbf0\); \(\operatorname{div}\operatorname{curl}\mathbf F=0\).</li>
+<li>Laplacian \(\nabla^2f=\operatorname{div}\nabla f\); fungsi harmonik: \(\nabla^2f=0\).</li>
+</ul>
+<p>Berikutnya <a href="b16-6.html">16.6 Permukaan Parametrik dan Luasnya</a>.</p>

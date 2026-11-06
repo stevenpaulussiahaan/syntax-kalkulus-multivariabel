@@ -1,0 +1,340 @@
+{
+ "10": {
+  "title": "Persamaan Parametrik dan Koordinat Kutub",
+  "ready": true,
+  "sections": [
+   [
+    "10.1",
+    "Kurva yang Didefinisikan oleh Persamaan Parametrik",
+    "b10-1"
+   ],
+   [
+    "10.2",
+    "Kalkulus pada Kurva Parametrik",
+    "b10-2"
+   ],
+   [
+    "10.3",
+    "Koordinat Kutub",
+    "b10-3"
+   ],
+   [
+    "10.4",
+    "Luas dan Panjang Kurva dalam Koordinat Kutub",
+    "b10-4"
+   ],
+   [
+    "10.5",
+    "Irisan Kerucut",
+    "b10-5"
+   ],
+   [
+    "10.6",
+    "Irisan Kerucut dalam Koordinat Kutub",
+    "b10-6"
+   ]
+  ]
+ },
+ "11": {
+  "title": "Barisan dan Deret Tak Hingga",
+  "ready": true,
+  "sections": [
+   [
+    "11.1",
+    "Barisan",
+    "b11-1"
+   ],
+   [
+    "11.2",
+    "Deret",
+    "b11-2"
+   ],
+   [
+    "11.3",
+    "Uji Integral dan Taksiran Jumlah",
+    "b11-3"
+   ],
+   [
+    "11.4",
+    "Uji Perbandingan",
+    "b11-4"
+   ],
+   [
+    "11.5",
+    "Deret Berganti Tanda",
+    "b11-5"
+   ],
+   [
+    "11.6",
+    "Kekonvergenan Mutlak, Uji Rasio dan Akar",
+    "b11-6"
+   ],
+   [
+    "11.7",
+    "Strategi Menguji Deret",
+    "b11-7"
+   ],
+   [
+    "11.8",
+    "Deret Pangkat",
+    "b11-8"
+   ],
+   [
+    "11.9",
+    "Representasi Fungsi sebagai Deret Pangkat",
+    "b11-9"
+   ],
+   [
+    "11.10",
+    "Deret Taylor dan Maclaurin",
+    "b11-10"
+   ],
+   [
+    "11.11",
+    "Penerapan Polinomial Taylor",
+    "b11-11"
+   ]
+  ]
+ },
+ "12": {
+  "title": "Vektor dan Geometri Ruang",
+  "ready": true,
+  "sections": [
+   [
+    "12.1",
+    "Sistem Koordinat Tiga Dimensi",
+    "b12-1"
+   ],
+   [
+    "12.2",
+    "Vektor",
+    "b12-2"
+   ],
+   [
+    "12.3",
+    "Hasil Kali Titik",
+    "b12-3"
+   ],
+   [
+    "12.4",
+    "Hasil Kali Silang",
+    "b12-4"
+   ],
+   [
+    "12.5",
+    "Persamaan Garis dan Bidang",
+    "b12-5"
+   ],
+   [
+    "12.6",
+    "Silinder dan Permukaan Kuadrik",
+    "b12-6"
+   ]
+  ]
+ },
+ "13": {
+  "title": "Fungsi Vektor",
+  "ready": true,
+  "sections": [
+   [
+    "13.1",
+    "Fungsi Vektor dan Kurva Ruang",
+    "b13-1"
+   ],
+   [
+    "13.2",
+    "Turunan dan Integral Fungsi Vektor",
+    "b13-2"
+   ],
+   [
+    "13.3",
+    "Panjang Busur dan Kelengkungan",
+    "b13-3"
+   ],
+   [
+    "13.4",
+    "Gerak dalam Ruang: Kecepatan dan Percepatan",
+    "b13-4"
+   ]
+  ]
+ },
+ "14": {
+  "title": "Turunan Parsial",
+  "ready": true,
+  "sections": [
+   [
+    "14.1",
+    "Fungsi Beberapa Peubah",
+    "b14-1"
+   ],
+   [
+    "14.2",
+    "Limit dan Kekontinuan",
+    "b14-2"
+   ],
+   [
+    "14.3",
+    "Turunan Parsial",
+    "b14-3"
+   ],
+   [
+    "14.4",
+    "Bidang Singgung dan Hampiran Linear",
+    "b14-4"
+   ],
+   [
+    "14.5",
+    "Aturan Rantai",
+    "b14-5"
+   ],
+   [
+    "14.6",
+    "Turunan Berarah dan Vektor Gradien",
+    "b14-6"
+   ],
+   [
+    "14.7",
+    "Nilai Maksimum dan Minimum",
+    "b14-7"
+   ],
+   [
+    "14.8",
+    "Pengali Lagrange",
+    "b14-8"
+   ]
+  ]
+ },
+ "15": {
+  "title": "Integral Ganda",
+  "ready": true,
+  "sections": [
+   [
+    "15.1",
+    "Integral Ganda Dua atas Persegi Panjang",
+    "b15-1"
+   ],
+   [
+    "15.2",
+    "Integral Berulang",
+    "b15-2"
+   ],
+   [
+    "15.3",
+    "Integral Ganda Dua atas Daerah Umum",
+    "b15-3"
+   ],
+   [
+    "15.4",
+    "Integral Ganda Dua dalam Koordinat Kutub",
+    "b15-4"
+   ],
+   [
+    "15.5",
+    "Penerapan Integral Ganda Dua",
+    "b15-5"
+   ],
+   [
+    "15.6",
+    "Luas Permukaan",
+    "b15-6"
+   ],
+   [
+    "15.7",
+    "Integral Rangkap Tiga",
+    "b15-7"
+   ],
+   [
+    "15.8",
+    "Integral Rangkap Tiga dalam Koordinat Tabung",
+    "b15-8"
+   ],
+   [
+    "15.9",
+    "Integral Rangkap Tiga dalam Koordinat Bola",
+    "b15-9"
+   ],
+   [
+    "15.10",
+    "Perubahan Peubah dalam Integral Ganda",
+    "b15-10"
+   ]
+  ]
+ },
+ "16": {
+  "title": "Kalkulus Vektor",
+  "ready": true,
+  "sections": [
+   [
+    "16.1",
+    "Medan Vektor",
+    "b16-1"
+   ],
+   [
+    "16.2",
+    "Integral Garis",
+    "b16-2"
+   ],
+   [
+    "16.3",
+    "Teorema Dasar Integral Garis",
+    "b16-3"
+   ],
+   [
+    "16.4",
+    "Teorema Green",
+    "b16-4"
+   ],
+   [
+    "16.5",
+    "Curl dan Divergensi",
+    "b16-5"
+   ],
+   [
+    "16.6",
+    "Permukaan Parametrik dan Luasnya",
+    "b16-6"
+   ],
+   [
+    "16.7",
+    "Integral Permukaan",
+    "b16-7"
+   ],
+   [
+    "16.8",
+    "Teorema Stokes",
+    "b16-8"
+   ],
+   [
+    "16.9",
+    "Teorema Divergensi",
+    "b16-9"
+   ]
+  ]
+ },
+ "17": {
+  "title": "Persamaan Diferensial Orde Dua",
+  "ready": true,
+  "sections": [
+   [
+    "17.1",
+    "Persamaan Linear Orde Dua",
+    "b17-1"
+   ],
+   [
+    "17.2",
+    "Persamaan Linear Takhomogen",
+    "b17-2"
+   ],
+   [
+    "17.3",
+    "Penerapan Persamaan Diferensial Orde Dua",
+    "b17-3"
+   ],
+   [
+    "17.4",
+    "Penyelesaian dengan Deret",
+    "b17-4"
+   ]
+  ]
+ }
+}

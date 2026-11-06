@@ -1,0 +1,81 @@
+<p>Di bidang, sebuah garis ditentukan oleh sebuah titik dan kemiringan. Di ruang, <em>kemiringan</em> diganti dengan <strong>vektor arah</strong>. Bidang di ruang ditentukan oleh sebuah titik dan sebuah <strong>vektor normal</strong>. Subbab ini memakai vektor untuk menuliskan garis dan bidang, mencari jarak dan sudut, serta perpotongan.</p>
+
+<h2>1. Persamaan garis</h2>
+<p>Misalkan \(L\) adalah garis yang melalui titik \(P_0(x_0,y_0,z_0)\) dengan vektor posisi \(\mathbf r_0\), sejajar vektor tak nol \(\mathbf v=\langle a,b,c\rangle\) (<strong>vektor arah</strong>). Titik \(P(x,y,z)\) berada di \(L\) bila \(\overrightarrow{P_0P}\) sejajar \(\mathbf v\), yaitu \(\overrightarrow{P_0P}=t\mathbf v\) untuk suatu skalar \(t\).</p>
+<figure><img src="assets/img/b12-5-garis.png" alt="Garis di ruang"><figcaption>Garis melalui \(P_0\) dengan arah \(\mathbf v\); \(P=P_0+t\mathbf v\).</figcaption></figure>
+<div class="box def"><span class="t">Persamaan garis</span>
+<ul>
+<li><strong>Vektor:</strong> \(\mathbf r=\mathbf r_0+t\mathbf v\), \(t\in\mathbb R\).</li>
+<li><strong>Parametrik:</strong> \(x=x_0+at,\quad y=y_0+bt,\quad z=z_0+ct.\)</li>
+<li><strong>Simetrik</strong> (bila \(a,b,c\ne0\)): \(\dfrac{x-x_0}a=\dfrac{y-y_0}b=\dfrac{z-z_0}c\).</li>
+</ul>
+<p>Bilangan \(a,b,c\) disebut <strong>bilangan arah</strong> garis.</p></div>
+<div class="box ex"><span class="t">Contoh 1 — garis dari titik dan arah</span>
+<p>Garis melalui \((5,1,3)\) sejajar \(\mathbf i+4\mathbf j-2\mathbf k\): \(x=5+t,\ y=1+4t,\ z=3-2t\). Dua titik lain: \(t=1\Rightarrow(6,5,1)\); \(t=-1\Rightarrow(4,-3,5)\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — garis melalui dua titik</span>
+<p>\(A(2,4,-3)\), \(B(3,-1,1)\). Arah \(\overrightarrow{AB}=\langle1,-5,4\rangle\). Garis: \(x=2+t,\ y=4-5t,\ z=-3+4t\). Persamaan simetrik: \(x-2=\dfrac{y-4}{-5}=\dfrac{z+3}4\). Titik potong dengan bidang \(xy\) (\(z=0\)): \(t=\frac34\), titik \(\bigl(\tfrac{11}4,\tfrac{1}4,0\bigr)\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — ruas garis</span>
+<p>Ruas dari \(\mathbf r_0\) ke \(\mathbf r_1\): \(\mathbf r(t)=(1-t)\mathbf r_0+t\mathbf r_1\), \(0\le t\le1\). Titik tengahnya \(t=\frac12\).</p></div>
+
+<h3>Hubungan dua garis</h3>
+<p>Dua garis di ruang dapat: <strong>sejajar</strong> (arah sebanding), <strong>berpotongan</strong>, atau <strong>bersilangan</strong> (<em>skew</em>: tidak sejajar dan tidak berpotongan, tidak sebidang).</p>
+<div class="box ex"><span class="t">Contoh 4 — apakah bersilangan?</span>
+<p>\(L_1:\ x=1+t,\ y=-2+3t,\ z=4-t\) dan \(L_2:\ x=2s,\ y=3+s,\ z=-3+4s\). Arahnya \(\langle1,3,-1\rangle\) dan \(\langle2,1,4\rangle\) tidak sebanding, jadi tidak sejajar. Cari potongan: \(1+t=2s\), \(-2+3t=3+s\), \(4-t=-3+4s\). Dari yang pertama \(t=2s-1\); ke yang kedua: \(-2+6s-3=3+s\Rightarrow s=\frac85\), \(t=\frac{11}5\). Cek yang ketiga: \(4-\frac{11}5=\frac95\), sedangkan \(-3+\frac{32}5=\frac{17}5\). Tidak sama, jadi tidak berpotongan: garis <strong>bersilangan</strong>.</p></div>
+<figure><img src="assets/img/b12-5-skew.png" alt="Dua garis bersilangan"><figcaption>Garis bersilangan dan ruas terpendek yang menghubungkannya (merah).</figcaption></figure>
+
+<h2>2. Persamaan bidang</h2>
+<p>Sebuah bidang ditentukan oleh titik \(P_0(x_0,y_0,z_0)\) padanya dan <strong>vektor normal</strong> \(\mathbf n=\langle a,b,c\rangle\) yang tegak lurus bidang. Titik \(P(x,y,z)\) ada di bidang bila \(\overrightarrow{P_0P}\perp\mathbf n\):
+\[ \mathbf n\cdot(\mathbf r-\mathbf r_0)=0. \]</p>
+<figure><img src="assets/img/b12-5-bidang.png" alt="Bidang dengan vektor normal"><figcaption>Bidang melalui \(P_0\) dengan normal \(\mathbf n\).</figcaption></figure>
+<div class="box def"><span class="t">Persamaan bidang</span>
+<p>\[ a(x-x_0)+b(y-y_0)+c(z-z_0)=0\quad\Longleftrightarrow\quad ax+by+cz+d=0,\quad d=-(ax_0+by_0+cz_0). \]
+Vektor \(\langle a,b,c\rangle\) adalah normal bidang \(ax+by+cz+d=0\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — bidang dari titik dan normal</span>
+<p>Titik \((2,4,-1)\), normal \(\langle2,3,4\rangle\): \(2(x-2)+3(y-4)+4(z+1)=0\Rightarrow2x+3y+4z=12\). Titik potong sumbu: \(x=6\), \(y=4\), \(z=3\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — bidang melalui tiga titik</span>
+<p>\(P(1,3,2)\), \(Q(3,-1,6)\), \(R(5,2,0)\). \(\overrightarrow{PQ}=\langle2,-4,4\rangle\), \(\overrightarrow{PR}=\langle4,-1,-2\rangle\). Normal \(\overrightarrow{PQ}\times\overrightarrow{PR}=\langle(-4)(-2)-4(-1),\ 4\cdot4-2\cdot(-2),\ 2(-1)-(-4)4\rangle=\langle12,20,14\rangle\), atau disederhanakan \(\langle6,10,7\rangle\). Bidang: \(6x+10y+7z=6+30+14=50\). Cek \(Q\): \(18-10+42=50\) ✓; \(R\): \(30+20+0=50\) ✓.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — bidang memuat garis dan titik</span>
+<p>Bidang yang memuat titik \(A(3,-1,-2)\) dan garis \(x=2t,\ y=1+t,\ z=-4+t\)? Titik pada garis: \(B(0,1,-4)\) (\(t=0\)), arah \(\mathbf v=\langle2,1,1\rangle\). \(\overrightarrow{BA}=\langle3,-2,2\rangle\). Normal \(=\mathbf v\times\overrightarrow{BA}=\langle1\cdot2-1\cdot(-2),\ 1\cdot3-2\cdot2,\ 2(-2)-1\cdot3\rangle=\langle4,-1,-7\rangle\). Bidang: \(4x-(y-1)-7(z+4)=0\Rightarrow4x-y-7z=27\). Cek \(A\): \(12+1+14=27\) ✓.</p></div>
+
+<h2>3. Sudut, kesejajaran, dan perpotongan bidang</h2>
+<p>Dua bidang <strong>sejajar</strong> bila normalnya sejajar. Bila tidak sejajar, mereka berpotongan pada sebuah garis, dan <strong>sudut antara bidang</strong> adalah sudut antara normalnya (yang lancip):
+\[ \cos\theta=\frac{|\mathbf n_1\cdot\mathbf n_2|}{|\mathbf n_1||\mathbf n_2|}. \]</p>
+<div class="box ex"><span class="t">Contoh 8 — sudut dan garis potong dua bidang</span>
+<p>Bidang \(x+y+z=1\) dan \(x-2y+3z=1\). Normal \(\langle1,1,1\rangle\) dan \(\langle1,-2,3\rangle\); dot \(=2\); \(\cos\theta=\frac{2}{\sqrt3\sqrt{14}}\), \(\theta\approx72{,}0^\circ\). Arah garis potong \(=\mathbf n_1\times\mathbf n_2=\langle1\cdot3-1\cdot(-2),\ 1\cdot1-1\cdot3,\ 1\cdot(-2)-1\cdot1\rangle=\langle5,-2,-3\rangle\). Titik pada garis: pilih \(z=0\): \(x+y=1\), \(x-2y=1\Rightarrow y=0,x=1\). Garis: \(x=1+5t,\ y=-2t,\ z=-3t\).</p></div>
+<figure><img src="assets/img/b12-5-dua-bidang.png" alt="Dua bidang berpotongan"><figcaption>Dua bidang berpotongan pada sebuah garis (merah).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 9 — sudut bidang lain</span>
+<p>Untuk \(x+y+z=1\) dan \(x+2y+3z=1\): \(\cos\theta=\frac{6}{\sqrt3\sqrt{14}}\), \(\theta\approx22{,}2^\circ\). Arah garis potong \(\langle1,1,1\rangle\times\langle1,2,3\rangle=\langle1,-2,1\rangle\); titik \((1,0,0)\) pada keduanya: \(x=1+t,\ y=-2t,\ z=t\).</p></div>
+
+<h2>4. Garis dan bidang</h2>
+<div class="box ex"><span class="t">Contoh 10 — titik tembus garis pada bidang</span>
+<p>Garis \(x=1+2t,\ y=-t,\ z=3+t\) dan bidang \(x+2y-z=4\). Substitusi: \((1+2t)+2(-t)-(3+t)=4\Rightarrow-2-t=4\Rightarrow t=-6\). Titik tembus \((-11,6,-3)\). Bila koefisien \(t\) hilang dan sisi konstan tidak cocok, garis sejajar bidang (tidak berpotongan); bila cocok, garis terletak pada bidang.</p></div>
+
+<h2>5. Jarak</h2>
+<div class="box def"><span class="t">Jarak titik ke bidang</span>
+<p>Jarak titik \(P_1(x_1,y_1,z_1)\) ke bidang \(ax+by+cz+d=0\):
+\[ D=\frac{|ax_1+by_1+cz_1+d|}{\sqrt{a^2+b^2+c^2}}. \]</p></div>
+<p><strong>Penurunan.</strong> Ambil \(P_0\) pada bidang. Jarak \(=|\mathrm{comp}_{\mathbf n}\overrightarrow{P_0P_1}|=\dfrac{|\mathbf n\cdot\overrightarrow{P_0P_1}|}{|\mathbf n|}\), dengan \(\mathbf n\cdot\overrightarrow{P_0P_1}=ax_1+by_1+cz_1-(ax_0+by_0+cz_0)=ax_1+by_1+cz_1+d\). \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 11</span>
+<p>Jarak \((4,-2,3)\) ke bidang \(2x-y+2z=5\): \(\dfrac{|8+2+6-5|}{\sqrt{4+1+4}}=\dfrac{11}3\approx3{,}67\). Jarak antara bidang sejajar \(2x-y+2z=5\) dan \(2x-y+2z=-4\): ambil titik \((0,0,-2)\) pada yang kedua (cek: \(-4\)) dan hitung jaraknya ke yang pertama: \(\frac{|-4-5|}{3}=3\).</p></div>
+<div class="box def"><span class="t">Jarak titik ke garis</span>
+<p>Garis melalui \(P_0\) dengan arah \(\mathbf v\); jarak dari \(P\): \(D=\dfrac{|\overrightarrow{P_0P}\times\mathbf v|}{|\mathbf v|}\) (tinggi jajargenjang).</p></div>
+<div class="box def"><span class="t">Jarak antara dua garis bersilangan</span>
+<p>Untuk garis dengan titik \(P_1,P_2\) dan arah \(\mathbf v_1,\mathbf v_2\): \(D=\dfrac{|(\overrightarrow{P_1P_2})\cdot(\mathbf v_1\times\mathbf v_2)|}{|\mathbf v_1\times\mathbf v_2|}\) (tinggi paralelepipedum).</p></div>
+<div class="box ex"><span class="t">Contoh 12 — jarak garis bersilangan (dari Contoh 4)</span>
+<p>\(P_1(1,-2,4)\), \(\mathbf v_1=\langle1,3,-1\rangle\); \(P_2(0,3,-3)\), \(\mathbf v_2=\langle2,1,4\rangle\). \(\mathbf v_1\times\mathbf v_2=\langle3\cdot4-(-1)\cdot1,\ (-1)\cdot2-1\cdot4,\ 1\cdot1-3\cdot2\rangle=\langle13,-6,-5\rangle\), \(|\cdot|=\sqrt{230}\). \(\overrightarrow{P_1P_2}=\langle-1,5,-7\rangle\); dot \(=-13-30+35=-8\). Jarak \(=\dfrac8{\sqrt{230}}\approx0{,}528\).</p></div>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Memakai titik sebagai vektor arah atau sebaliknya.</li>
+<li>Menganggap garis di ruang punya persamaan tunggal \(ax+by+cz=d\) (itu bidang; garis memerlukan dua persamaan bidang atau bentuk parametrik).</li>
+<li>Menyimpulkan garis berpotongan hanya karena tidak sejajar (bisa bersilangan).</li>
+<li>Lupa nilai mutlak pada rumus jarak.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>Garis: \(\mathbf r=\mathbf r_0+t\mathbf v\); bidang: \(\mathbf n\cdot(\mathbf r-\mathbf r_0)=0\).</li>
+<li>Normal bidang dari tiga titik: \(\overrightarrow{PQ}\times\overrightarrow{PR}\); garis potong dua bidang: arah \(\mathbf n_1\times\mathbf n_2\).</li>
+<li>Jarak titik–bidang \(\frac{|ax_1+by_1+cz_1+d|}{\sqrt{a^2+b^2+c^2}}\); jarak garis bersilangan lewat tripel skalar.</li>
+</ul>
+<p>Berikutnya <a href="b12-6.html">12.6</a>: permukaan yang lebih rumit dari bidang dan bola.</p>

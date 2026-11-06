@@ -1,0 +1,116 @@
+<p>Pada <a href="b12-5.html">12.5</a> kita mempelajari permukaan paling sederhana: bidang. Subbab ini membahas permukaan lengkung yang persamaannya berderajat dua: <strong>silinder</strong> dan <strong>permukaan kuadrik</strong>. Permukaan ini akan sering muncul sebagai grafik fungsi dua peubah (Bab 14) dan sebagai batas daerah integral rangkap tiga (Bab 15).</p>
+
+<h2>1. Jejak (trace)</h2>
+<p>Permukaan di ruang sulit digambar langsung. Cara yang andal: potong permukaan dengan bidang-bidang sejajar bidang koordinat, lalu amati kurva irisannya.</p>
+<div class="box def"><span class="t">Definisi — jejak</span>
+<p><strong>Jejak</strong> suatu permukaan \(S\) adalah kurva perpotongan \(S\) dengan sebuah bidang. Bidang \(x=k\) memberi jejak di bidang \(yz\)-sejajar, bidang \(y=k\) memberi jejak \(xz\)-sejajar, dan bidang \(z=k\) memberi jejak \(xy\)-sejajar (sering disebut <em>kurva ketinggian</em> atau <em>irisan horizontal</em>).</p></div>
+<p>Dengan menggabungkan beberapa jejak, bentuk permukaan terbayang seperti tumpukan irisan roti.</p>
+
+<h2>2. Silinder</h2>
+<div class="box def"><span class="t">Definisi — silinder</span>
+<p><strong>Silinder</strong> adalah permukaan yang dibentuk oleh semua garis (disebut <em>garis pelukis</em>) yang sejajar suatu garis tertentu dan memotong suatu kurva bidang yang diberikan.</p></div>
+<p>Kuncinya: <em>persamaan yang tidak memuat satu peubah</em> menggambarkan silinder yang garis pelukisnya sejajar sumbu peubah yang hilang. Persamaan di \(\mathbb R^3\) yang hanya memuat \(x\) dan \(y\) adalah kurva di bidang \(xy\) yang "ditarik" sepanjang sumbu \(z\).</p>
+<figure><img src="assets/img/b12-6-silinder.png" alt="Tiga silinder"><figcaption>Contoh silinder: kurva bidang yang digeser sepanjang sumbu yang peubahnya tidak muncul dalam persamaan.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 1 — silinder parabolik</span>
+<p>\(z=x^2\) tidak memuat \(y\). Untuk setiap \(y\), irisan \(y=k\) adalah parabola \(z=x^2\) yang sama. Jadi permukaannya adalah <strong>silinder parabolik</strong> dengan garis pelukis sejajar sumbu \(y\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — silinder lingkaran</span>
+<p>\(x^2+y^2=1\) di \(\mathbb R^3\): setiap bidang \(z=k\) memotongnya di lingkaran satuan. Hasilnya pipa tak hingga berjari-jari 1 dengan sumbu \(z\) sebagai sumbu simetri. Sebaliknya \(x^2+z^2=4\) adalah silinder berjari-jari 2 sepanjang sumbu \(y\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — silinder hiperbolik dan eliptik</span>
+<p>\(y^2-z^2=1\) (tanpa \(x\)): silinder hiperbolik sepanjang sumbu \(x\). \(\dfrac{x^2}{9}+\dfrac{z^2}{4}=1\): silinder eliptik sepanjang sumbu \(y\).</p></div>
+<div class="box note"><span class="t">Hati-hati</span>
+<p>Di bidang, \(x^2+y^2=1\) adalah lingkaran; di ruang ia silinder. Selalu periksa ruang tempat persamaan dibaca. Untuk membatasi silinder menjadi lingkaran saja, tambahkan persamaan kedua, mis. \(\{x^2+y^2=1,\ z=0\}\).</p></div>
+
+<h2>3. Permukaan kuadrik</h2>
+<div class="box def"><span class="t">Definisi — kuadrik</span>
+<p><strong>Permukaan kuadrik</strong> adalah grafik persamaan derajat dua dalam tiga peubah:
+\[ Ax^2+By^2+Cz^2+Dxy+Exz+Fyz+Gx+Hy+Iz+J=0. \]
+Dengan translasi dan rotasi, persamaan ini dapat disederhanakan menjadi salah satu dari dua bentuk baku: \(Ax^2+By^2+Cz^2+J=0\) atau \(Ax^2+By^2+Iz=0\).</p></div>
+<p>Berikut enam jenis utama (konstanta \(a,b,c\gt0\)). Untuk tiap jenis kita lihat jejaknya.</p>
+
+<h3>3.1 Elipsoid</h3>
+<div class="box def"><span class="t">Elipsoid</span>
+<p>\[ \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1. \]</p></div>
+<p>Jejak di \(z=k\): \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1-\dfrac{k^2}{c^2}\), elips untuk \(|k|\lt c\), satu titik untuk \(|k|=c\), kosong untuk \(|k|\gt c\). Jejak di bidang lain juga elips. Titik potong sumbu: \((\pm a,0,0)\), \((0,\pm b,0)\), \((0,0,\pm c)\). Jika \(a=b=c\), elipsoid menjadi bola.</p>
+<figure><img src="assets/img/b12-6-elipsoid.png" alt="Elipsoid"><figcaption>Elipsoid; semua jejaknya elips.</figcaption></figure>
+
+<h3>3.2 Paraboloid eliptik</h3>
+<div class="box def"><span class="t">Paraboloid eliptik</span>
+<p>\[ z=\frac{x^2}{a^2}+\frac{y^2}{b^2}. \]</p></div>
+<p>Jejak \(z=k\): elips untuk \(k\gt0\), titik asal untuk \(k=0\), kosong untuk \(k\lt0\). Jejak \(x=k\) dan \(y=k\): parabola. Bentuk seperti mangkuk atau antena parabola yang membuka ke atas. Untuk \(a=b\) disebut paraboloid putar.</p>
+<figure><img src="assets/img/b12-6-paraboloid-eliptik.png" alt="Paraboloid eliptik"><figcaption>Paraboloid eliptik \(z=x^2/a^2+y^2/b^2\).</figcaption></figure>
+
+<h3>3.3 Paraboloid hiperbolik</h3>
+<div class="box def"><span class="t">Paraboloid hiperbolik (pelana)</span>
+<p>\[ z=\frac{y^2}{b^2}-\frac{x^2}{a^2}. \]</p></div>
+<p>Jejak \(z=k\): hiperbola (untuk \(k\ne0\)), dua garis berpotongan \(y=\pm\frac bax\) untuk \(k=0\). Jejak \(x=k\): parabola membuka ke atas; jejak \(y=k\): parabola membuka ke bawah. Titik asal adalah <em>titik pelana</em>: minimum sepanjang sumbu \(y\) tetapi maksimum sepanjang sumbu \(x\).</p>
+<figure><img src="assets/img/b12-6-paraboloid-hiperbolik.png" alt="Paraboloid hiperbolik"><figcaption>Paraboloid hiperbolik (pelana).</figcaption></figure>
+
+<h3>3.4 Kerucut eliptik</h3>
+<div class="box def"><span class="t">Kerucut eliptik</span>
+<p>\[ \frac{z^2}{c^2}=\frac{x^2}{a^2}+\frac{y^2}{b^2}. \]</p></div>
+<p>Jejak \(z=k\): elips \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{k^2}{c^2}\) yang membesar dengan \(|k|\) (satu titik di \(k=0\)). Jejak \(x=k\), \(y=k\): hiperbola (dan dua garis berpotongan di \(k=0\)). Permukaan terdiri dari dua "lembar" yang bertemu di titik asal.</p>
+<figure><img src="assets/img/b12-6-kerucut.png" alt="Kerucut eliptik"><figcaption>Kerucut eliptik.</figcaption></figure>
+
+<h3>3.5 Hiperboloid satu lembar</h3>
+<div class="box def"><span class="t">Hiperboloid satu lembar</span>
+<p>\[ \frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1. \]</p></div>
+<p>Jejak \(z=k\): elips \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1+\frac{k^2}{c^2}\) untuk semua \(k\), paling kecil di \(k=0\) ("pinggang"). Jejak \(x=k\), \(y=k\): hiperbola. Satu permukaan yang tersambung, seperti menara pendingin.</p>
+<figure><img src="assets/img/b12-6-hiperboloid-1.png" alt="Hiperboloid satu lembar"><figcaption>Hiperboloid satu lembar.</figcaption></figure>
+
+<h3>3.6 Hiperboloid dua lembar</h3>
+<div class="box def"><span class="t">Hiperboloid dua lembar</span>
+<p>\[ -\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1. \]</p></div>
+<p>Jejak \(z=k\): \(\frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{k^2}{c^2}-1\), kosong untuk \(|k|\lt c\), titik untuk \(|k|=c\), elips untuk \(|k|\gt c\). Jejak \(x=k\), \(y=k\): hiperbola. Permukaannya terdiri dari <em>dua bagian terpisah</em> (\(z\ge c\) dan \(z\le-c\)).</p>
+<figure><img src="assets/img/b12-6-hiperboloid-2.png" alt="Hiperboloid dua lembar"><figcaption>Hiperboloid dua lembar.</figcaption></figure>
+
+<h3>Tabel ringkasan</h3>
+<table class="t">
+<tr><th>Permukaan</th><th>Persamaan baku</th><th>Jejak \(z=k\)</th><th>Jejak vertikal</th></tr>
+<tr><td>Elipsoid</td><td>\(\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1\)</td><td>elips (\(|k|\lt c\))</td><td>elips</td></tr>
+<tr><td>Paraboloid eliptik</td><td>\(z=\frac{x^2}{a^2}+\frac{y^2}{b^2}\)</td><td>elips (\(k\gt0\))</td><td>parabola</td></tr>
+<tr><td>Paraboloid hiperbolik</td><td>\(z=\frac{y^2}{b^2}-\frac{x^2}{a^2}\)</td><td>hiperbola</td><td>parabola</td></tr>
+<tr><td>Kerucut eliptik</td><td>\(\frac{z^2}{c^2}=\frac{x^2}{a^2}+\frac{y^2}{b^2}\)</td><td>elips</td><td>hiperbola</td></tr>
+<tr><td>Hiperboloid satu lembar</td><td>\(\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1\)</td><td>elips (semua \(k\))</td><td>hiperbola</td></tr>
+<tr><td>Hiperboloid dua lembar</td><td>\(-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1\)</td><td>elips (\(|k|\gt c\))</td><td>hiperbola</td></tr>
+</table>
+<div class="box note"><span class="t">Cara cepat mengenali</span>
+<ul>
+<li>Semua peubah berpangkat dua, ruas kanan 1: ada tanda minus? Tidak ada → elipsoid; satu minus → hiperboloid satu lembar; dua minus → hiperboloid dua lembar.</li>
+<li>Ruas kanan 0 dengan semua pangkat dua → kerucut.</li>
+<li>Satu peubah berpangkat satu, dua lainnya kuadrat → paraboloid (elips jika tanda sama, hiperbolik jika berbeda).</li>
+</ul></div>
+
+<h2>4. Contoh</h2>
+<div class="box ex"><span class="t">Contoh 4 — mengenali permukaan</span>
+<p>\(x^2+2z^2-6x-y+10=0\). Lengkapkan kuadrat \(x\): \((x-3)^2+2z^2=y-1\), yaitu \(y-1=(x-3)^2+2z^2\). Ini paraboloid eliptik dengan sumbu sejajar sumbu \(y\) dan titik puncak \((3,1,0)\), membuka ke arah \(y\) positif.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — kuadrik dengan pergeseran</span>
+<p>\(x^2-y^2+z^2-2x+2y-2z=1\). Lengkapkan kuadrat: \((x-1)^2-(y-1)^2+(z-1)^2=1+1-1+1=2\). Persamaannya \(\dfrac{(x-1)^2}{2}-\dfrac{(y-1)^2}{2}+\dfrac{(z-1)^2}{2}=1\): hiperboloid satu lembar dengan pusat \((1,1,1)\) dan sumbu sejajar sumbu \(y\) (peubah yang bertanda minus).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — elipsoid dari persamaan umum</span>
+<p>\(4x^2+y^2+9z^2-8x+2y-36z+13=0\) → \(4(x-1)^2+(y+1)^2+9(z-2)^2=-13+4+1+36=28\). Bagi 28: \(\dfrac{(x-1)^2}{7}+\dfrac{(y+1)^2}{28}+\dfrac{(z-2)^2}{28/9}=1\). Elipsoid dengan pusat \((1,-1,2)\), setengah sumbu \(\sqrt7,\ \sqrt{28},\ \sqrt{28}/3\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — hiperboloid dua lembar</span>
+<p>\(z^2-x^2-y^2=4\) adalah hiperboloid dua lembar: jejak \(z=k\) adalah \(x^2+y^2=k^2-4\), kosong untuk \(|k|\lt2\), titik di \(k=\pm2\) (titik puncak \((0,0,\pm2)\)). Sedangkan \(z^2-x^2-y^2=-4\) (ruas kanan negatif) berarti \(x^2+y^2-z^2=4\), hiperboloid satu lembar. Perubahan tanda di ruas kanan mengubah jenis permukaan.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — irisan dua permukaan</span>
+<p>Kerucut \(z^2=x^2+y^2\) dipotong bidang \(z=1+y\): substitusi, \((1+y)^2=x^2+y^2\Rightarrow x^2=1+2y\), yaitu \(y=\frac{x^2-1}2\). Proyeksi irisan pada bidang \(xy\) adalah parabola, dan kurva irisannya sendiri adalah parabola di bidang miring itu. Inilah salah satu <em>irisan kerucut</em>: elips, parabola, atau hiperbola, tergantung kemiringan bidang potong.</p></div>
+<figure><img src="assets/img/b12-6-irisan.png" alt="Irisan kerucut"><figcaption>Kerucut yang dipotong bidang menghasilkan kurva irisan.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 9 — benda padat yang dibatasi permukaan</span>
+<p>Daerah di dalam paraboloid \(z=x^2+y^2\) dan di bawah bidang \(z=4\): jejak \(z=4\) adalah lingkaran \(x^2+y^2=4\). Untuk tiap \(z\in[0,4]\) irisannya cakram berjari-jari \(\sqrt z\). Volumnya (dengan irisan) \(\displaystyle\int_0^4\pi z\,dz=8\pi\).</p></div>
+<div class="box ex"><span class="t">Contoh 10 — satelit antena</span>
+<p>Antena parabola dengan lebar 2 m dan kedalaman 0,25 m dimodelkan \(z=kr^2\), \(r^2=x^2+y^2\): di \(r=1\), \(z=0{,}25\), jadi \(k=0{,}25\); persamaan \(z=\tfrac14(x^2+y^2)\). Paraboloid putar ini fokus pada \(z=\frac1{4k}=1\) m: semua sinar sejajar sumbu terpantul menuju titik tersebut.</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Mengira \(x^2+y^2=1\) di ruang adalah lingkaran. Ia silinder (peubah \(z\) bebas).</li>
+<li>Menyamakan paraboloid dan kerucut: kerucut \(z^2=\dots\) (kuadrat), paraboloid \(z=\dots\) (linear).</li>
+<li>Mengabaikan tanda: satu minus (satu lembar) vs dua minus (dua lembar).</li>
+<li>Menggambar permukaan dari satu jejak saja. Gabungkan beberapa jejak.</li>
+<li>Lupa melengkapkan kuadrat sehingga pusat/puncak salah.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>Jejak: irisan permukaan dengan bidang \(x=k\), \(y=k\), atau \(z=k\).</li>
+<li>Silinder: persamaan tanpa satu peubah; garis pelukis sejajar sumbu peubah itu.</li>
+<li>Enam kuadrik: elipsoid, paraboloid eliptik/hiperbolik, kerucut, hiperboloid satu/dua lembar.</li>
+<li>Untuk mengenali: lengkapkan kuadrat, bawa ke bentuk baku, lihat tanda dan pangkat.</li>
+</ul>
+<p>Bab 12 berakhir di sini. Bab berikutnya, <a href="b13-1.html">13.1</a>, memakai vektor untuk menggambarkan kurva dan gerak di ruang.</p>

@@ -1,0 +1,107 @@
+<p>Deret harmonik berganti tanda konvergen, tetapi deret harmonik biasa divergen. Perbedaan ini ternyata penting: ada dua "tingkat" kekonvergenan. Subbab ini merumuskannya dan memberi dua uji yang sangat kuat untuk deret dengan faktorial atau pangkat: <strong>uji rasio</strong> dan <strong>uji akar</strong>.</p>
+
+<h2>1. Kekonvergenan mutlak dan bersyarat</h2>
+<div class="box def"><span class="t">Definisi</span>
+<ul>
+<li>\(\sum a_n\) <strong>konvergen mutlak</strong> (<em>absolutely convergent</em>) jika deret nilai mutlaknya \(\sum|a_n|\) konvergen.</li>
+<li>\(\sum a_n\) <strong>konvergen bersyarat</strong> (<em>conditionally convergent</em>) jika \(\sum a_n\) konvergen tetapi \(\sum|a_n|\) divergen.</li>
+</ul></div>
+<p>Untuk deret dengan suku positif, kedua gagasan itu sama. Contoh:</p>
+<ul>
+<li>\(\sum\frac{(-1)^{n-1}}{n^2}\) konvergen mutlak (karena \(\sum\frac1{n^2}\) konvergen).</li>
+<li>\(\sum\frac{(-1)^{n-1}}{n}\) konvergen bersyarat (konvergen menurut uji Leibniz, tetapi \(\sum\frac1n\) divergen).</li>
+</ul>
+<div class="box def"><span class="t">Teorema</span>
+<p>Jika \(\sum|a_n|\) konvergen, maka \(\sum a_n\) konvergen. (Kekonvergenan mutlak \(\Rightarrow\) kekonvergenan.)</p></div>
+<p><strong>Bukti.</strong> Karena \(-|a_n|\le a_n\le|a_n|\), maka \(0\le a_n+|a_n|\le2|a_n|\). Deret \(\sum2|a_n|\) konvergen, jadi \(\sum(a_n+|a_n|)\) konvergen menurut uji perbandingan. Lalu \(\sum a_n=\sum(a_n+|a_n|)-\sum|a_n|\) adalah selisih dua deret konvergen. \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 1 — \(\sum\frac{\cos n}{n^2}\)</span>
+<p>Suku berganti tanda secara tak beraturan, sehingga uji Leibniz tidak berlaku. Tetapi \(|\cos n|\le1\), jadi \(\left|\dfrac{\cos n}{n^2}\right|\le\dfrac1{n^2}\), dan \(\sum\frac1{n^2}\) konvergen. Maka \(\sum|\cos n/n^2|\) konvergen (uji perbandingan), dan deret asal konvergen mutlak, jadi konvergen. (Jumlahnya \(\approx0{,}3241\).)</p></div>
+
+<h2>2. Uji rasio</h2>
+<p>Ide dasarnya dari deret geometri: bila rasio suku berurutan mendekati bilangan \(L\lt1\), deretnya "hampir geometri" dengan rasio \(L\), jadi konvergen.</p>
+<figure><img src="assets/img/b11-6-rasio.png" alt="Rasio suku berurutan"><figcaption>Rasio \(|a_{n+1}/a_n|\) untuk tiga deret: menuju \(\frac12\), \(\frac1e\), dan 1 (tak tentu).</figcaption></figure>
+<div class="box def"><span class="t">Teorema (Uji Rasio)</span>
+<ol>
+<li>Jika \(\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L\lt1\), maka \(\sum a_n\) konvergen mutlak (jadi konvergen).</li>
+<li>Jika \(\displaystyle\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L\gt1\) atau \(=\infty\), maka \(\sum a_n\) divergen.</li>
+<li>Jika \(L=1\), uji <strong>tidak menyimpulkan apa-apa</strong>.</li>
+</ol></div>
+<h3>Bukti (kasus 1 dan 2)</h3>
+<p>(1) Pilih \(r\) dengan \(L\lt r\lt1\). Ada \(N\) sehingga \(|a_{n+1}|\lt r|a_n|\) untuk \(n\ge N\). Maka \(|a_{N+k}|\lt r^k|a_N|\), dan \(\sum_k r^k|a_N|\) geometri konvergen. Uji perbandingan memberi \(\sum|a_n|\) konvergen.<br>
+(2) Bila \(L\gt1\), untuk \(n\) besar \(|a_{n+1}|\gt|a_n|\), jadi \(|a_n|\) membesar dan \(a_n\not\to0\). Deret divergen menurut uji divergensi. \(\blacksquare\)</p>
+<p><strong>Mengapa \(L=1\) tidak menyimpulkan.</strong> Untuk \(\sum\frac1n\) (divergen) dan \(\sum\frac1{n^2}\) (konvergen), rasio \(\to1\) pada keduanya. Jadi uji rasio tidak dapat membedakan; gunakan uji lain.</p>
+
+<h3>Contoh uji rasio</h3>
+<div class="box ex"><span class="t">Contoh 2 — \(\sum(-1)^n\dfrac{n^3}{3^n}\)</span>
+<p>\(\left|\dfrac{a_{n+1}}{a_n}\right|=\dfrac{(n+1)^3}{3^{n+1}}\cdot\dfrac{3^n}{n^3}=\dfrac13\Bigl(1+\dfrac1n\Bigr)^3\to\dfrac13\lt1\). Konvergen mutlak. (Jumlahnya \(\approx0{,}0234\).)</p></div>
+<div class="box ex"><span class="t">Contoh 3 — \(\sum\dfrac{n^n}{n!}\)</span>
+<p>\(\dfrac{a_{n+1}}{a_n}=\dfrac{(n+1)^{n+1}}{(n+1)!}\cdot\dfrac{n!}{n^n}=\dfrac{(n+1)^{n}}{n^n}=\Bigl(1+\dfrac1n\Bigr)^n\to e\gt1\). Divergen. (Rasio \(2{,}59\) di \(n=10\), \(2{,}70\) di \(n=100\), menuju \(e\).)</p></div>
+<div class="box ex"><span class="t">Contoh 4 — \(\sum\dfrac{2^nn!}{n^n}\)</span>
+<p>\(\dfrac{a_{n+1}}{a_n}=\dfrac{2^{n+1}(n+1)!}{(n+1)^{n+1}}\cdot\dfrac{n^n}{2^nn!}=2\cdot\dfrac{n^n}{(n+1)^n}=\dfrac2{(1+1/n)^n}\to\dfrac2e\approx0{,}736\lt1\). Konvergen.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — \(\sum\dfrac{(2n)!}{(n!)^2}\)</span>
+<p>\(\dfrac{a_{n+1}}{a_n}=\dfrac{(2n+2)(2n+1)}{(n+1)^2}=\dfrac{2(2n+1)}{n+1}\to4\gt1\). Divergen.</p></div>
+<div class="box ex"><span class="t">Contoh 6 — \(\sum\dfrac{n^2}{2^n}\) dan jumlahnya</span>
+<p>Rasio \(=\dfrac12\Bigl(1+\dfrac1n\Bigr)^2\to\dfrac12\), jadi konvergen. Jumlahnya tepat \(6\) (dapat diturunkan dengan deret pangkat; lihat 11.9).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — uji rasio gagal</span>
+<p>\(\sum\dfrac1{n^2+1}\): rasio \(=\dfrac{n^2+1}{(n+1)^2+1}\to1\). Tak ada kesimpulan; gunakan perbandingan dengan \(\sum\frac1{n^2}\).</p></div>
+<div class="box note"><span class="t">Kapan memakai uji rasio</span>
+<p>Cocok untuk suku yang memuat <strong>faktorial</strong>, <strong>pangkat \(c^n\)</strong>, atau hasil kali, karena faktor-faktornya saling membatalkan pada \(a_{n+1}/a_n\). Tidak berguna untuk suku rasional murni (\(L=1\) selalu).</p></div>
+
+<h2>3. Uji akar</h2>
+<div class="box def"><span class="t">Teorema (Uji Akar)</span>
+<ol>
+<li>Jika \(\displaystyle\lim_{n\to\infty}\sqrt[n]{|a_n|}=L\lt1\), maka \(\sum a_n\) konvergen mutlak.</li>
+<li>Jika \(\displaystyle\lim\sqrt[n]{|a_n|}=L\gt1\) atau \(=\infty\), maka \(\sum a_n\) divergen.</li>
+<li>Jika \(L=1\), uji tidak menyimpulkan.</li>
+</ol></div>
+<p><strong>Bukti (kasus 1).</strong> Pilih \(r\) dengan \(L\lt r\lt1\). Untuk \(n\ge N\), \(\sqrt[n]{|a_n|}\lt r\), yaitu \(|a_n|\lt r^n\). Bandingkan dengan geometri \(\sum r^n\). Kasus 2: \(|a_n|\gt1\) tak terhingga sering, jadi \(a_n\not\to0\). \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 8 — \(\sum\Bigl(\dfrac n{2n+1}\Bigr)^n\)</span>
+<p>\(\sqrt[n]{|a_n|}=\dfrac n{2n+1}\to\dfrac12\lt1\). Konvergen mutlak.</p></div>
+<div class="box ex"><span class="t">Contoh 9 — \(\sum\Bigl(1+\dfrac1n\Bigr)^{n^2}\)</span>
+<p>\(\sqrt[n]{a_n}=\bigl(1+\tfrac1n\bigr)^{n}\to e\gt1\). Divergen.</p></div>
+<div class="box ex"><span class="t">Contoh 10 — \(\sum\Bigl(\dfrac{2n+3}{3n+2}\Bigr)^n\)</span>
+<p>\(\sqrt[n]{a_n}=\dfrac{2n+3}{3n+2}\to\dfrac23\lt1\). Konvergen.</p></div>
+<div class="box note"><span class="t">Hubungan rasio dan akar</span>
+<p>Bila \(\lim|a_{n+1}/a_n|\) ada, maka \(\lim\sqrt[n]{|a_n|}\) ada dan sama. Uji akar sedikit lebih kuat, tetapi uji rasio biasanya lebih mudah dihitung. Untuk suku berbentuk \((\cdots)^n\), uji akar lebih cocok.</p></div>
+
+<h2>4. Penyusunan ulang suku (rearrangement)</h2>
+<p>Pada jumlah berhingga, urutan penjumlahan tidak berpengaruh. Pada deret tak hingga, bergantung pada jenis kekonvergenan:</p>
+<ul>
+<li><strong>Konvergen mutlak:</strong> penyusunan ulang suku <em>tidak</em> mengubah jumlah (Dirichlet).</li>
+<li><strong>Konvergen bersyarat:</strong> penyusunan ulang dapat menghasilkan jumlah berbeda, bahkan sembarang bilangan real atau divergen (Teorema Riemann).</li>
+</ul>
+<div class="box ex"><span class="t">Contoh 11 — menyusun ulang harmonik berganti tanda</span>
+<p>Jumlah aslinya \(1-\frac12+\frac13-\frac14+\cdots=\ln2\). Susun ulang dengan pola "dua suku positif, satu suku negatif":
+\[ 1+\frac13-\frac12+\frac15+\frac17-\frac14+\frac19+\frac1{11}-\frac16+\cdots \]
+Hitungan numerik dengan dua juta kelompok memberi \(\approx1{,}03972\), yaitu \(\frac32\ln2\). Jadi suku-suku yang sama, urutan berbeda, jumlah berbeda: \(\frac32\ln2\ne\ln2\).</p></div>
+<p>Alasan: \(\sum_{\text{positif}}=\infty\) dan \(\sum_{\text{negatif}}=-\infty\). Kita dapat "memborong" suku positif sampai melewati target, lalu suku negatif sampai di bawahnya, berulang, sehingga jumlah parsial menuju target mana saja.</p>
+
+<h2>5. Peta uji sejauh ini</h2>
+<table class="t">
+<tr><th>Ciri deret</th><th>Uji</th></tr>
+<tr><td>Suku tidak menuju 0</td><td>Uji divergensi</td></tr>
+<tr><td>Geometri / deret-\(p\)</td><td>Rumus langsung</td></tr>
+<tr><td>Teleskop</td><td>Jumlah parsial</td></tr>
+<tr><td>\(f(n)\) mudah diintegralkan</td><td>Uji integral</td></tr>
+<tr><td>Rasional, akar, pangkat</td><td>Perbandingan / perbandingan limit</td></tr>
+<tr><td>Berganti tanda</td><td>Leibniz; periksa kemutlakan</td></tr>
+<tr><td>Faktorial, \(c^n\), hasil kali</td><td>Uji rasio</td></tr>
+<tr><td>Berbentuk \((\ldots)^n\)</td><td>Uji akar</td></tr>
+</table>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Menyimpulkan konvergen dari \(L=1\) pada uji rasio atau akar.</li>
+<li>Menganggap kekonvergenan bersyarat sama baiknya dengan mutlak: hanya yang mutlak boleh disusun ulang bebas.</li>
+<li>Lupa nilai mutlak pada rasio untuk deret berganti tanda.</li>
+<li>Salah menghitung \(a_{n+1}\): ganti <em>setiap</em> \(n\) dengan \(n+1\), termasuk faktorial dan pangkat.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>Mutlak \(\Rightarrow\) konvergen; sebaliknya tidak berlaku (harmonik berganti tanda).</li>
+<li>Uji rasio: \(L=\lim|a_{n+1}/a_n|\); \(\lt1\) konvergen mutlak, \(\gt1\) divergen, \(=1\) tak tentu.</li>
+<li>Uji akar: \(L=\lim\sqrt[n]{|a_n|}\), aturan sama.</li>
+<li>Penyusunan ulang aman hanya untuk deret konvergen mutlak.</li>
+</ul>
+<p>Subbab berikutnya, <a href="b11-7.html">11.7</a>, merangkum semua uji menjadi strategi memilih.</p>

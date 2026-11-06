@@ -1,0 +1,115 @@
+<p>Pada 11.9 kita memperoleh deret pangkat sebuah fungsi dengan trik aljabar yang hanya berhasil untuk fungsi tertentu. Sekarang kita berangkat dari pertanyaan umum: <em>jika \(f\) dapat dinyatakan sebagai deret pangkat, bagaimana koefisiennya ditentukan?</em> Jawabannya sangat rapi: koefisien ditentukan oleh turunan \(f\) di pusat.</p>
+
+<h2>1. Koefisien dari turunan</h2>
+<p>Misalkan \(f(x)=\sum_{n=0}^\infty c_n(x-a)^n\) untuk \(|x-a|\lt R\). Substitusi \(x=a\): \(f(a)=c_0\). Turunkan suku demi suku (11.8):
+\[ f'(x)=c_1+2c_2(x-a)+3c_3(x-a)^2+\cdots\Rightarrow f'(a)=c_1, \]
+\[ f''(x)=2c_2+3\cdot2\,c_3(x-a)+\cdots\Rightarrow f''(a)=2c_2, \]
+\[ f'''(a)=3\cdot2\cdot1\,c_3,\quad\ldots,\quad f^{(n)}(a)=n!\,c_n. \]
+<div class="box def"><span class="t">Teorema</span>
+<p>Jika \(f\) mempunyai representasi deret pangkat di sekitar \(a\), yaitu \(f(x)=\sum c_n(x-a)^n\) untuk \(|x-a|\lt R\), maka
+\[ c_n=\frac{f^{(n)}(a)}{n!}. \]
+Representasi seperti itu, bila ada, <strong>tunggal</strong>.</p></div>
+
+<h2>2. Deret Taylor dan Maclaurin</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Untuk fungsi \(f\) yang mempunyai turunan semua orde di \(a\), <strong>deret Taylor</strong> \(f\) di \(a\) adalah
+\[ \sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f'''(a)}{3!}(x-a)^3+\cdots \]
+Untuk \(a=0\), disebut <strong>deret Maclaurin</strong>:
+\[ \sum_{n=0}^\infty\frac{f^{(n)}(0)}{n!}x^n=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\cdots \]</p></div>
+<div class="box note"><span class="t">Dua hal yang harus dibedakan</span>
+<ul>
+<li>Deret Taylor dapat <em>dibentuk</em> dari fungsi apa pun yang cukup mulus. Pertanyaannya adalah apakah deret itu <em>konvergen ke \(f\)</em>.</li>
+<li>Ada fungsi mulus yang deret Taylornya konvergen tetapi ke fungsi lain. Contoh klasik: \(f(x)=e^{-1/x^2}\) (\(f(0)=0\)) yang semua turunannya di 0 bernilai 0, sehingga deret Maclaurinnya adalah deret nol, padahal \(f(x)\ne0\) untuk \(x\ne0\).</li>
+</ul></div>
+
+<h2>3. Kapan deret Taylor sama dengan fungsi?</h2>
+<p>Misalkan \(T_n(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k\) adalah <strong>polinomial Taylor</strong> derajat \(n\) dan \(R_n(x)=f(x)-T_n(x)\) adalah <strong>sisa</strong>. Maka deret Taylor konvergen ke \(f(x)\) tepat bila \(\lim_{n\to\infty}R_n(x)=0\).</p>
+<div class="box def"><span class="t">Ketaksamaan Taylor</span>
+<p>Jika \(|f^{(n+1)}(t)|\le M\) untuk semua \(t\) antara \(a\) dan \(x\), maka
+\[ |R_n(x)|\le\frac{M}{(n+1)!}\,|x-a|^{n+1}. \]</p></div>
+<p>Teorema ini dibahas lebih rinci di <a href="b11-11.html">11.11</a>. Dengan \(\lim_{n\to\infty}\dfrac{|x|^n}{n!}=0\) untuk semua \(x\) (suku umum deret konvergen \(\sum\frac{x^n}{n!}\), jadi menuju nol), kita pakai untuk fungsi \(e^x\), \(\sin x\), \(\cos x\).</p>
+
+<h2>4. Deret Maclaurin yang harus dikuasai</h2>
+<div class="box ex"><span class="t">Contoh 1 — \(e^x\)</span>
+<p>\(f^{(n)}(x)=e^x\), jadi \(f^{(n)}(0)=1\). Maka \(c_n=\frac1{n!}\):
+\[ e^x=\sum_{n=0}^\infty\frac{x^n}{n!}=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots\qquad(\text{semua }x). \]
+Untuk sembarang \(x\), pada interval antara 0 dan \(x\) berlaku \(e^t\le e^{|x|}=:M\), maka \(|R_n(x)|\le\dfrac{e^{|x|}|x|^{n+1}}{(n+1)!}\to0\). Jadi deret konvergen ke \(e^x\) di mana-mana. Khususnya \(e=\sum\frac1{n!}=2{,}71828\ldots\)</p></div>
+<figure><img src="assets/img/b11-10-taylor-exp.png" alt="Polinomial Taylor e^x"><figcaption>Polinomial Taylor \(T_1,\dots,T_4\) menghampiri \(e^x\) makin baik di sekitar 0.</figcaption></figure>
+
+<div class="box ex"><span class="t">Contoh 2 — \(\sin x\) dan \(\cos x\)</span>
+<p>Turunan \(\sin x\) berulang dengan periode 4: \(\sin,\cos,-\sin,-\cos\); di 0 nilainya \(0,1,0,-1,0,1,\ldots\). Jadi hanya pangkat ganjil yang muncul:
+\[ \sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots=\sum_{n=0}^\infty\frac{(-1)^nx^{2n+1}}{(2n+1)!}. \]
+Karena semua turunan dibatasi oleh \(M=1\), \(|R_n|\le\frac{|x|^{n+1}}{(n+1)!}\to0\); berlaku untuk semua \(x\). Dengan menurunkan suku demi suku:
+\[ \cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\cdots=\sum_{n=0}^\infty\frac{(-1)^nx^{2n}}{(2n)!}. \]</p></div>
+<figure><img src="assets/img/b11-10-taylor-sin.png" alt="Polinomial Taylor sin x"><figcaption>\(T_1,T_3,T_5,T_7,T_9\) dari \(\sin x\); makin tinggi derajat, makin lebar selang yang cocok.</figcaption></figure>
+
+<div class="box ex"><span class="t">Contoh 3 — \(\ln(1+x)\) dan \(\arctan x\)</span>
+<p>Dari 11.9: \(\ln(1+x)=\sum_{n=1}^\infty\dfrac{(-1)^{n-1}x^n}n\) (\(-1\lt x\le1\)) dan \(\arctan x=\sum_{n=0}^\infty\dfrac{(-1)^nx^{2n+1}}{2n+1}\) (\(-1\le x\le1\)). Ini sekaligus deret Maclaurinnya (keunikan). Di \(x=1\): \(\ln2=1-\frac12+\frac13-\cdots\) dan \(\frac\pi4=1-\frac13+\frac15-\cdots\).</p></div>
+
+<h2>5. Deret binomial</h2>
+<p>Untuk bilangan real \(k\) sembarang, \(f(x)=(1+x)^k\). Turunannya: \(f^{(n)}(0)=k(k-1)\cdots(k-n+1)\). Jadi
+\[ (1+x)^k=\sum_{n=0}^\infty\binom kn x^n=1+kx+\frac{k(k-1)}{2!}x^2+\frac{k(k-1)(k-2)}{3!}x^3+\cdots,\qquad|x|\lt1, \]
+dengan \(\binom kn=\dfrac{k(k-1)\cdots(k-n+1)}{n!}\). Radius kekonvergenan 1 (uji rasio: \(\left|\frac{k-n}{n+1}\right||x|\to|x|\)). Bila \(k\) bilangan bulat tak negatif, deret berhenti dan menjadi teorema binomial biasa.</p>
+<div class="box ex"><span class="t">Contoh 4 — \(\sqrt{1+x}\)</span>
+<p>\(k=\frac12\): koefisien \(1,\ \tfrac12,\ -\tfrac18,\ \tfrac1{16},\ -\tfrac5{128},\ldots\)
+\[ \sqrt{1+x}=1+\frac x2-\frac{x^2}8+\frac{x^3}{16}-\frac{5x^4}{128}+\cdots \]
+Cek: \(x=0{,}1\): \(\sqrt{1{,}1}=1{,}04881\); empat suku memberi \(1+0{,}05-0{,}00125+0{,}0000625=1{,}0488125\) ✓.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — \(\dfrac1{(1+x)^2}\) dan \(\dfrac1{\sqrt{1-x^2}}\)</span>
+<p>(a) \(k=-2\): koefisien \(1,-2,3,-4,5,\dots\), jadi \(\dfrac1{(1+x)^2}=\sum(-1)^n(n+1)x^n\) (sesuai 11.9).<br>
+(b) \(k=-\frac12\) dengan \(x\) diganti \(-x^2\): \((1-x^2)^{-1/2}=1+\tfrac12x^2+\tfrac38x^4+\tfrac5{16}x^6+\tfrac{35}{128}x^8+\cdots\), \(|x|\lt1\). Integralkan: \(\arcsin x=x+\dfrac{x^3}{6}+\dfrac{3x^5}{40}+\dfrac{5x^7}{112}+\dfrac{35x^9}{1152}+\cdots\)</p></div>
+
+<h2>6. Membuat deret baru dari deret yang diketahui</h2>
+<div class="box ex"><span class="t">Contoh 6 — substitusi: \(e^{-x^2}\)</span>
+<p>Ganti \(x\) dengan \(-x^2\) pada deret \(e^x\): \(e^{-x^2}=\sum\dfrac{(-1)^nx^{2n}}{n!}=1-x^2+\dfrac{x^4}2-\dfrac{x^6}6+\cdots\) (semua \(x\)). Integralkan untuk fungsi galat:
+\[ \int_0^1e^{-x^2}dx=\sum_{n=0}^\infty\frac{(-1)^n}{n!(2n+1)}=1-\frac13+\frac1{10}-\frac1{42}+\frac1{216}-\cdots \]
+Empat suku pertama sampai \(\frac1{216}\) memberi \(0{,}74749\); galat \(\le\frac1{5!\cdot11}\approx7{,}6\times10^{-4}\). Hasil sebenarnya \(0{,}746824\); selisih \(6{,}7\times10^{-4}\) ✓.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — perkalian: \(e^x\sin x\)</span>
+<p>Kalikan deret dan kumpulkan pangkat yang sama:
+\[ \Bigl(1+x+\tfrac{x^2}2+\tfrac{x^3}6+\tfrac{x^4}{24}+\cdots\Bigr)\Bigl(x-\tfrac{x^3}6+\tfrac{x^5}{120}-\cdots\Bigr)=x+x^2+\tfrac{x^3}3+0\cdot x^4-\tfrac{x^5}{30}-\tfrac{x^6}{90}-\cdots \]
+Koefisien \(x^3\): \(\tfrac12\cdot1\) (dari \(\tfrac{x^2}2\cdot x\)) \(+\ 1\cdot(-\tfrac16)=\tfrac13\) ✓. Koefisien \(x^4\): \(\tfrac16\cdot1\) (dari \(\tfrac{x^3}6\cdot x\)) \(+\ 1\cdot(-\tfrac16)\) (dari \(x\cdot(-\tfrac{x^3}6)\)) \(=0\) ✓.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — pembagian: \(\tan x\)</span>
+<p>Tulis \(\tan x=\sin x/\cos x=c_1x+c_3x^3+\cdots\), lalu selesaikan \((c_1x+c_3x^3+c_5x^5+\cdots)(1-\frac{x^2}2+\frac{x^4}{24}-\cdots)=x-\frac{x^3}6+\frac{x^5}{120}-\cdots\). Samakan koefisien: \(c_1=1\); \(c_3-\frac{c_1}2=-\frac16\Rightarrow c_3=\frac13\); \(c_5-\frac{c_3}2+\frac{c_1}{24}=\frac1{120}\Rightarrow c_5=\frac2{15}\). Maka
+\[ \tan x=x+\frac{x^3}3+\frac{2x^5}{15}+\frac{17x^7}{315}+\cdots\qquad(|x|\lt\tfrac\pi2). \]
+Radiusnya \(\frac\pi2\) karena \(\tan x\) tak terdefinisi di \(\pm\frac\pi2\).</p></div>
+
+<h2>7. Menghitung limit dengan deret</h2>
+<div class="box ex"><span class="t">Contoh 9 — \(\displaystyle\lim_{x\to0}\frac{x-\sin x}{x^3}\)</span>
+<p>\(x-\sin x=\dfrac{x^3}6-\dfrac{x^5}{120}+\cdots\). Bagi \(x^3\): \(\dfrac16-\dfrac{x^2}{120}+\cdots\to\dfrac16\). (Dengan l'Hôpital perlu tiga kali; deret lebih cepat.)</p></div>
+<div class="box ex"><span class="t">Contoh 10 — \(\displaystyle\lim_{x\to0}\frac{e^x-1-x}{x^2}\)</span>
+<p>\(e^x-1-x=\dfrac{x^2}2+\dfrac{x^3}6+\cdots\), sehingga limitnya \(\dfrac12\).</p></div>
+<div class="box ex"><span class="t">Contoh 11 — \(\displaystyle\lim_{x\to0}\frac{\sin x-x+x^3/6}{x^5}\)</span>
+<p>Pembilang \(=\dfrac{x^5}{120}-\dfrac{x^7}{5040}+\cdots\). Limit \(=\dfrac1{120}\). Numerik: pada \(x=0{,}01\) hasilnya \(0{,}0083333\approx\frac1{120}\) ✓.</p></div>
+
+<h2>8. Menjumlahkan deret bilangan</h2>
+<div class="box ex"><span class="t">Contoh 12</span>
+<p>(a) \(\sum_{n=0}^\infty\dfrac{(-1)^n\pi^{2n+1}}{4^{2n+1}(2n+1)!}\): bentuk \(\sin x\) dengan \(x=\frac\pi4\) (karena \(\frac{\pi^{2n+1}}{4^{2n+1}}=(\frac\pi4)^{2n+1}\)). Jumlah \(=\sin\frac\pi4=\frac{\sqrt2}2\).<br>
+(b) \(\sum_{n=1}^\infty\dfrac{2^n}{n!}=e^2-1\approx6{,}389\).<br>
+(c) \(\sum_{n=0}^\infty\dfrac{(-1)^n}{n!}=e^{-1}\) (lihat taksiran galat di 11.5).</p></div>
+
+<h2>9. Tabel deret Maclaurin</h2>
+<table class="t">
+<tr><th>Fungsi</th><th>Deret</th><th>Selang</th></tr>
+<tr><td>\(\dfrac1{1-x}\)</td><td>\(\sum x^n\)</td><td>\((-1,1)\)</td></tr>
+<tr><td>\(e^x\)</td><td>\(\sum\frac{x^n}{n!}\)</td><td>\(\mathbb R\)</td></tr>
+<tr><td>\(\sin x\)</td><td>\(\sum\frac{(-1)^nx^{2n+1}}{(2n+1)!}\)</td><td>\(\mathbb R\)</td></tr>
+<tr><td>\(\cos x\)</td><td>\(\sum\frac{(-1)^nx^{2n}}{(2n)!}\)</td><td>\(\mathbb R\)</td></tr>
+<tr><td>\(\arctan x\)</td><td>\(\sum\frac{(-1)^nx^{2n+1}}{2n+1}\)</td><td>\([-1,1]\)</td></tr>
+<tr><td>\(\ln(1+x)\)</td><td>\(\sum\frac{(-1)^{n-1}x^n}n\)</td><td>\((-1,1]\)</td></tr>
+<tr><td>\((1+x)^k\)</td><td>\(\sum\binom knx^n\)</td><td>\((-1,1)\)</td></tr>
+</table>
+
+<h2>10. Kesalahan umum</h2>
+<ul>
+<li>Mengira deret Taylor selalu menyamai fungsinya (periksa \(R_n\to0\) atau gunakan keunikan).</li>
+<li>Lupa faktor \(n!\) pada penyebut koefisien.</li>
+<li>Menggunakan deret binomial untuk \(|x|\ge1\).</li>
+<li>Salah menggeser indeks saat substitusi (mis. \(x^2\) untuk \(x\) pada \(e^x\)).</li>
+</ul>
+
+<h2>11. Ringkasan</h2>
+<ul>
+<li>Koefisien Taylor: \(c_n=f^{(n)}(a)/n!\); representasi pangkat bila ada adalah tunggal.</li>
+<li>Deret Maclaurin standar: \(e^x,\sin x,\cos x,\arctan x,\ln(1+x),(1+x)^k\); hafalkan.</li>
+<li>Substitusi, perkalian, pembagian, turunan, dan integral menghasilkan deret baru; deret juga memudahkan limit.</li>
+</ul>
+<p>Berikutnya <a href="b11-11.html">11.11</a>: berapa dekat polinomial Taylor ke fungsi, dan penerapannya.</p>

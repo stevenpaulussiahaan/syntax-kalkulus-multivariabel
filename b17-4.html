@@ -1,0 +1,53 @@
+<p>Banyak persamaan diferensial penting, misalnya persamaan Airy dan persamaan Hermite, tidak berkoefisien konstan dan tidak punya penyelesaian dalam fungsi elementer. Gagasan: cari penyelesaian dalam bentuk <strong>deret pangkat</strong> \(y=\sum_{n=0}^\infty c_nx^n\) dan tentukan koefisien \(c_n\) dengan memasukkannya ke persamaan.</p>
+
+<h2>1. Metode dasar</h2>
+<p>Deret pangkat dapat diturunkan suku demi suku dalam interval kekonvergenannya (11.9):
+\[ y=\sum_{n=0}^\infty c_nx^n,\quad y'=\sum_{n=1}^\infty nc_nx^{n-1},\quad y''=\sum_{n=2}^\infty n(n-1)c_nx^{n-2}. \]
+Langkah-langkah:</p>
+<ol>
+<li>Substitusi \(y,y',y''\) ke persamaan.</li>
+<li>Geser indeks agar semua deret memuat \(x^n\) (atau pangkat yang sama).</li>
+<li>Samakan koefisien \(x^n\) pada kedua ruas sama dengan nol; ini memberi <strong>relasi rekurensi</strong> untuk \(c_n\).</li>
+<li>Gunakan syarat awal bila ada: \(c_0=y(0)\), \(c_1=y'(0)\).</li>
+</ol>
+
+<h2>2. Contoh</h2>
+<div class="box ex"><span class="t">Contoh 1 — pemanasan: \(y'=y\)</span>
+<p>\(\sum_{n=1}^\infty nc_nx^{n-1}=\sum_{n=0}^\infty c_nx^n\). Geser ruas kiri: \(\sum_{n=0}^\infty(n+1)c_{n+1}x^n\). Koefisien \(x^n\): \((n+1)c_{n+1}=c_n\Rightarrow c_{n+1}=\frac{c_n}{n+1}\), jadi \(c_n=\frac{c_0}{n!}\) dan \(y=c_0\sum\frac{x^n}{n!}=c_0e^x\). Metode mengungkap kembali penyelesaian yang kita kenal.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — \(y''+y=0\)</span>
+<p>\(\sum_{n=2}^\infty n(n-1)c_nx^{n-2}+\sum_{n=0}^\infty c_nx^n=0\). Geser: \(\sum_{n=0}^\infty\bigl[(n+2)(n+1)c_{n+2}+c_n\bigr]x^n=0\). Rekurensi: \(c_{n+2}=-\dfrac{c_n}{(n+2)(n+1)}\). Dari \(c_0\): \(c_2=-\frac{c_0}2\), \(c_4=\frac{c_0}{24}\), \(c_{2k}=\frac{(-1)^kc_0}{(2k)!}\). Dari \(c_1\): \(c_3=-\frac{c_1}6\), \(c_5=\frac{c_1}{120}\), \(c_{2k+1}=\frac{(-1)^kc_1}{(2k+1)!}\). Jadi
+\[ y=c_0\sum_{k=0}^\infty\frac{(-1)^kx^{2k}}{(2k)!}+c_1\sum_{k=0}^\infty\frac{(-1)^kx^{2k+1}}{(2k+1)!}=c_0\cos x+c_1\sin x. \]</p></div>
+<figure><img src="assets/img/b17-4-deret.png" alt="Hampiran deret cosinus"><figcaption>Jumlah parsial deret \(\cos x\) berderajat 2, 4, dan 8: makin banyak suku, makin lebar selang yang dihampiri.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 3 — persamaan Airy \(y''=xy\)</span>
+<p>\(\sum_{n=2}^\infty n(n-1)c_nx^{n-2}=\sum_{n=0}^\infty c_nx^{n+1}\). Ruas kiri dengan indeks \(n\to n+2\): \(\sum_{n=0}^\infty(n+2)(n+1)c_{n+2}x^n\); ruas kanan dengan \(n\to n-1\): \(\sum_{n=1}^\infty c_{n-1}x^n\). Suku \(x^0\): \(2c_2=0\Rightarrow c_2=0\). Untuk \(n\ge1\): \((n+2)(n+1)c_{n+2}=c_{n-1}\), yaitu
+\[ c_{n+2}=\frac{c_{n-1}}{(n+2)(n+1)}. \]
+Maka \(c_3=\frac{c_0}{6}\), \(c_6=\frac{c_3}{30}=\frac{c_0}{180}\), \(c_4=\frac{c_1}{12}\), \(c_7=\frac{c_4}{42}=\frac{c_1}{504}\), \(c_5=\frac{c_2}{20}=0\), seluruh \(c_{3k+2}=0\). Penyelesaian umum
+\[ y=c_0\Bigl(1+\frac{x^3}6+\frac{x^6}{180}+\cdots\Bigr)+c_1\Bigl(x+\frac{x^4}{12}+\frac{x^7}{504}+\cdots\Bigr). \]
+Cek numerik di \(x=1\): untuk \(y(0)=1\), \(y'(0)=0\) deret memberi \(1+\frac16+\frac1{180}+\frac1{12960}\approx1{,}1723\), sama dengan penyelesaian numerik persamaan (Runge–Kutta) \(1{,}1723\). Untuk \(y(0)=0\), \(y'(0)=1\): \(y(1)=1+\frac1{12}+\frac1{504}+\frac1{45360}\approx1{,}0853\) (suku \(x\) pertama sudah termasuk), cocok dengan penyelesaian numerik \(1{,}0853\). Fungsi ini adalah fungsi Airy, dipakai dalam optika dan mekanika kuantum.</p></div>
+<div class="box ex"><span class="t">Contoh 4 — \(y''+xy'+y=0\)</span>
+<p>Dengan \(y(0)=1\), \(y'(0)=0\). Substitusi: \(\sum n(n-1)c_nx^{n-2}+\sum nc_nx^n+\sum c_nx^n=0\). Koefisien \(x^n\): \((n+2)(n+1)c_{n+2}+nc_n+c_n=0\), sehingga \(c_{n+2}=-\dfrac{c_n}{n+2}\). \(c_1=0\Rightarrow\) semua suku ganjil nol. \(c_0=1\): \(c_2=-\frac12\), \(c_4=\frac18\), \(c_6=-\frac1{48}\), umum \(c_{2k}=\dfrac{(-1)^k}{2^kk!}\). Maka \(y=\sum\dfrac{(-x^2/2)^k}{k!}=e^{-x^2/2}\). Periksa: \(y'=-xy\), \(y''=-y+x^2y\); \(y''+xy'+y=-y+x^2y-x^2y+y=0\). (Kurva lonceng distribusi normal.)</p></div>
+<div class="box ex"><span class="t">Contoh 5 — persamaan Hermite, penyelesaian polinomial</span>
+<p>\(y''-2xy'+2\lambda y=0\). Rekurensi: \((n+2)(n+1)c_{n+2}=2(n-\lambda)c_n\). Untuk \(\lambda=2\): \(c_2=\frac{2(0-2)}{2}c_0=-2c_0\); \(c_4=\frac{2(2-2)}{12}c_2=0\), dan semua suku genap berikutnya nol. Dengan \(c_1=0\) diperoleh polinomial \(y=c_0(1-2x^2)\) (sebanding dengan polinomial Hermite \(H_2=4x^2-2\)). Pemeriksaan: \(y=1-2x^2\): \(y''=-4\), \(-2xy'=-2x(-4x)=8x^2\), \(4y=4-8x^2\); jumlah \(-4+8x^2+4-8x^2=0\). Bila \(\lambda\) bilangan bulat tak negatif, rekurensi terputus dan menghasilkan polinomial.</p></div>
+<div class="box ex"><span class="t">Contoh 6 — masalah nilai awal dengan \(x\ne0\)</span>
+<p>\((1-x^2)y''-2xy'+2y=0\). Rekurensi dari koefisien \(x^n\): \((n+2)(n+1)c_{n+2}-n(n-1)c_n-2nc_n+2c_n=0\), yaitu \((n+2)(n+1)c_{n+2}=(n^2+n-2)c_n=(n+2)(n-1)c_n\). Maka \(c_{n+2}=\dfrac{n-1}{n+1}c_n\). Untuk \(c_1=1\): \(c_3=0\), semua suku ganjil berikutnya nol, jadi \(y=x\) (memang \(y=x\) memenuhi persamaan: \(0-2x+2x=0\)). Untuk \(c_0=1\): \(c_2=-1\), \(c_4=\frac13c_2=-\frac13\), \(c_6=\frac35c_4=-\frac15\), umum \(c_{2k}=-\frac1{2k-1}\): \(y=1-x^2-\frac{x^4}3-\frac{x^6}5-\cdots\).</p></div>
+
+<h2>3. Selang kekonvergenan dan titik biasa</h2>
+<p>Untuk persamaan \(P(x)y''+Q(x)y'+R(x)y=0\), titik \(x_0\) adalah <strong>titik biasa</strong> bila \(Q/P\) dan \(R/P\) analitik di sana. Maka terdapat dua penyelesaian deret pangkat di sekitar \(x_0\) dengan jari-jari kekonvergenan minimal sejauh jarak ke titik singular (akar \(P\)) terdekat, termasuk titik kompleks. Pada Contoh 6, \(P=1-x^2\) mempunyai akar \(\pm1\), jadi deret konvergen untuk \(|x|\lt1\). Pada persamaan Airy tidak ada titik singular: konvergen untuk semua \(x\).</p>
+<div class="box note"><span class="t">Titik singular (gambaran)</span>
+<p>Bila \(x_0\) titik singular namun "reguler" (mis. \(x^2y''+xy'+(x^2-\nu^2)y=0\), persamaan Bessel), penyelesaian berbentuk \(y=x^r\sum c_nx^n\) (metode Frobenius) dengan \(r\) ditentukan dari persamaan indeks. Ini di luar cakupan bab ini, tetapi memberi fungsi Bessel yang muncul pada getaran membran melingkar dan konduksi panas pada silinder.</p></div>
+
+<h2>4. Kesalahan umum</h2>
+<ul>
+<li>Lupa menggeser indeks sehingga pangkat \(x\) tidak sama sebelum menyamakan koefisien.</li>
+<li>Melewatkan suku awal ketika batas bawah jumlah berbeda (mis. \(c_2=0\) pada persamaan Airy).</li>
+<li>Menganggap \(c_0\) dan \(c_1\) harus ditentukan: keduanya konstanta bebas sampai syarat awal diberikan.</li>
+<li>Memakai deret di luar jari-jari kekonvergenannya.</li>
+</ul>
+
+<h2>5. Ringkasan</h2>
+<ul>
+<li>Pakai \(y=\sum c_nx^n\); samakan koefisien \(x^n\) untuk memperoleh rekurensi.</li>
+<li>\(c_0=y(0)\), \(c_1=y'(0)\); dua konstanta bebas = dua penyelesaian.</li>
+<li>Hasil dapat dikenali sebagai fungsi elementer (\(e^x,\cos x,e^{-x^2/2}\)) atau fungsi khusus (Airy, Hermite, Bessel).</li>
+</ul>
+<p>Subbab ini menutup Bab 17.</p>

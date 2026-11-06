@@ -1,0 +1,123 @@
+<p>Pada <a href="b11-1.html">subbab sebelumnya</a> kita mempelajari barisan: daftar bilangan yang tak berujung. Sekarang kita bertanya sesuatu yang lebih berani: apa artinya <em>menjumlahkan</em> semua anggota daftar itu? Menjumlahkan tak hingga banyak bilangan terdengar mustahil, tetapi justru dari pertanyaan inilah lahir deret pangkat, deret Taylor, dan banyak sekali metode hampiran dalam sains. Kuncinya sederhana: kita tidak pernah benar-benar menjumlahkan tak hingga suku; kita menjumlahkan sebanyak-banyaknya suku pertama, lalu melihat <em>ke mana jumlah itu menuju</em>.</p>
+
+<h2>1. Deret dan jumlah parsial</h2>
+<p>Diberikan barisan \(\{a_n\}\). Ekspresi formal
+\[ a_1+a_2+a_3+\cdots=\sum_{n=1}^{\infty}a_n \]
+disebut <strong>deret tak hingga</strong> (singkatnya deret). Bilangan \(a_n\) disebut suku ke-\(n\). Karena tak mungkin menjumlahkan semuanya sekaligus, kita membentuk barisan baru dari jumlah suku-suku awal:
+\[ s_1=a_1,\quad s_2=a_1+a_2,\quad s_3=a_1+a_2+a_3,\ \ \ldots,\quad s_n=\sum_{i=1}^{n}a_i. \]
+Bilangan \(s_n\) disebut <strong>jumlah parsial ke-\(n\)</strong>.</p>
+<div class="box def"><span class="t">Definisi — kekonvergenan deret</span>
+<p>Deret \(\sum a_n\) disebut <strong>konvergen</strong> bila barisan jumlah parsial \(\{s_n\}\) konvergen, yaitu \(\lim_{n\to\infty}s_n=s\) ada sebagai bilangan real. Bilangan \(s\) disebut <strong>jumlah</strong> deret dan kita tulis \(\sum_{n=1}^\infty a_n=s\). Bila \(\{s_n\}\) divergen, deretnya <strong>divergen</strong> dan tidak punya jumlah.</p></div>
+<p>Jadi "jumlah tak hingga" adalah <em>limit</em> dari jumlah hingga. Seluruh teori deret pada dasarnya adalah teori barisan \(\{s_n\}\). Perhatikan perbedaan peran: \(\{a_n\}\) adalah barisan suku, \(\{s_n\}\) adalah barisan jumlah parsial; keduanya sering dikacaukan.</p>
+<p>Indeks awal tidak harus 1. Deret \(\sum_{n=0}^\infty a_n\) atau \(\sum_{n=3}^\infty a_n\) diperlakukan sama. Mengubah (atau membuang) sejumlah <em>berhingga</em> suku di awal tidak mengubah apakah deret konvergen atau tidak (hanya mengubah nilai jumlahnya); ini sangat berguna pada uji-uji di subbab berikutnya.</p>
+
+<figure><img src="assets/img/b11-2-sumparsial.png" alt="Jumlah parsial deret geometri dan harmonik"><figcaption>Kiri: jumlah parsial deret \(1+\tfrac12+\tfrac14+\cdots\) mendekati 2 dan tidak pernah melampauinya. Kanan: jumlah parsial deret harmonik terus naik, mengikuti \(\ln(n+1)\), sehingga tidak terbatas.</figcaption></figure>
+
+<h2>2. Deret geometri</h2>
+<p>Deret yang setiap suku diperoleh dari suku sebelumnya dengan mengalikan konstanta \(r\) (rasio) disebut deret geometri:
+\[ a+ar+ar^2+\cdots=\sum_{n=1}^\infty ar^{\,n-1}\qquad(a\ne0). \]
+<strong>Penurunan jumlah.</strong> Untuk \(r\ne1\), kalikan \(s_n=a+ar+\cdots+ar^{n-1}\) dengan \(r\):
+\[ rs_n=ar+ar^2+\cdots+ar^{n}. \]
+Kurangkan kedua persamaan: semua suku tengah saling meniadakan, tersisa \(s_n-rs_n=a-ar^{n}\), sehingga
+\[ s_n=\frac{a(1-r^{n})}{1-r}. \]
+Bila \(|r|\lt1\), maka \(r^n\to0\) dan \(s_n\to \dfrac{a}{1-r}\). Bila \(|r|\gt1\), \(r^n\) tak terbatas sehingga \(s_n\) divergen. Bila \(r=1\), \(s_n=na\to\pm\infty\); bila \(r=-1\), \(s_n\) berayun antara \(a\) dan \(0\): divergen.</p>
+<div class="box def"><span class="t">Teorema — deret geometri</span>
+<p>Deret geometri \(\sum_{n=1}^\infty ar^{n-1}\) <strong>konvergen jika \(|r|\lt1\)</strong> dengan jumlah
+\[ \sum_{n=1}^\infty ar^{\,n-1}=\frac{a}{1-r}=\frac{\text{suku pertama}}{1-\text{rasio}}, \]
+dan <strong>divergen jika \(|r|\ge1\)</strong>.</p></div>
+<p>Rumus "suku pertama dibagi satu kurang rasio" adalah salah satu rumus yang paling sering dipakai dalam seluruh bab ini. Perhatikan bahwa "suku pertama" harus benar-benar suku yang pertama kali muncul pada indeks awal yang digunakan.</p>
+
+<div class="box ex"><span class="t">Contoh 1 — geometri dengan rasio negatif</span>
+<p>Hitung \(\displaystyle\sum_{n=1}^\infty 3\left(-\tfrac25\right)^{n-1}\).</p>
+<p>Suku pertama \(a=3\), rasio \(r=-\tfrac25\) dengan \(|r|=\tfrac25\lt1\), jadi konvergen:
+\[ \sum=\frac{3}{1-(-2/5)}=\frac{3}{7/5}=\frac{15}{7}\approx2{,}1429. \]
+Jumlah parsial berayun di sekitar \(15/7\): \(s_1=3,\ s_2=1{,}8,\ s_3=2{,}28,\ s_4=2{,}088,\dots\)</p></div>
+
+<div class="box ex"><span class="t">Contoh 2 — mengubah desimal berulang menjadi pecahan</span>
+<p>Nyatakan \(0{,}4272727\ldots=0{,}4\overline{27}\) sebagai pecahan.</p>
+<p>Pisahkan bagian yang tidak berulang: \(0{,}4+0{,}027+0{,}00027+0{,}0000027+\cdots\). Mulai dari suku kedua, ini deret geometri dengan \(a=0{,}027\) dan \(r=0{,}01\):
+\[ 0{,}027+0{,}00027+\cdots=\frac{0{,}027}{1-0{,}01}=\frac{0{,}027}{0{,}99}=\frac{27}{990}=\frac{3}{110}. \]
+Maka \(0{,}4\overline{27}=\dfrac{4}{10}+\dfrac{3}{110}=\dfrac{44+3}{110}=\dfrac{47}{110}\). Cek: \(47/110=0{,}427272\ldots\)</p></div>
+
+<div class="box ex"><span class="t">Contoh 3 — bola memantul</span>
+<p>Bola dijatuhkan dari ketinggian 10 m. Setiap kali menumbuk lantai, bola memantul setinggi \(\tfrac34\) dari ketinggian sebelumnya. Berapa total jarak yang ditempuh bola sampai berhenti (secara idealisasi)?</p>
+<p>Jarak awal turun: 10 m. Setelah itu, setiap pantulan ke-\(k\) mencapai tinggi \(10(3/4)^k\) dan jarak naik-turunnya adalah dua kalinya. Jadi
+\[ D=10+2\sum_{k=1}^\infty10\left(\tfrac34\right)^k=10+2\cdot\frac{10\cdot\frac34}{1-\frac34}=10+2\cdot30=70\text{ m}. \]
+Suku pertama deret di dalam adalah \(10\cdot\tfrac34=7{,}5\), bukan 10: itu sebabnya kita harus teliti menetapkan "suku pertama".</p></div>
+
+<div class="box ex"><span class="t">Contoh 4 — geometri bergantung \(x\)</span>
+<p>Untuk \(x\) apa saja deret \(\displaystyle\sum_{n=0}^\infty\frac{(x-2)^n}{3^n}\) konvergen, dan berapa jumlahnya?</p>
+<p>Deretnya \(\sum_{n=0}^\infty\left(\dfrac{x-2}{3}\right)^n\): geometri dengan \(a=1\), \(r=\dfrac{x-2}{3}\). Konvergen bila \(\left|\dfrac{x-2}{3}\right|\lt1\), yaitu \(|x-2|\lt3\) atau \(-1\lt x\lt5\), dengan jumlah
+\[ \frac{1}{1-\frac{x-2}{3}}=\frac{3}{5-x}. \]
+Untuk \(x\) di luar selang itu (termasuk ujung \(x=-1\) dan \(x=5\) karena \(|r|=1\)), deret divergen. Ini cuplikan pertama dari <em>deret pangkat</em> yang kita pelajari di <a href="b11-8.html">subbab 11.8</a>.</p></div>
+
+<h2>3. Deret teleskop</h2>
+<p>Tidak semua deret konvergen bersifat geometri. Kadang suku-suku jumlah parsial saling menghapus secara beruntun ("melipat" seperti teleskop). Triknya biasanya pecahan parsial.</p>
+<div class="box ex"><span class="t">Contoh 5 — teleskop dengan pecahan parsial</span>
+<p>Tentukan \(\displaystyle\sum_{n=1}^\infty\frac1{n(n+1)}\).</p>
+<p>Uraikan \(\dfrac1{n(n+1)}=\dfrac1n-\dfrac1{n+1}\). Maka
+\[ s_n=\Bigl(1-\tfrac12\Bigr)+\Bigl(\tfrac12-\tfrac13\Bigr)+\cdots+\Bigl(\tfrac1n-\tfrac1{n+1}\Bigr)=1-\frac1{n+1}. \]
+Karena \(s_n\to1\), deretnya konvergen dengan jumlah \(1\).</p></div>
+<figure><img src="assets/img/b11-2-teleskop.png" alt="Deret teleskop"><figcaption>Batang: suku \(a_n=1/(n(n+1))\). Titik: jumlah parsial \(1-1/(n+1)\) yang mendekati 1.</figcaption></figure>
+
+<div class="box ex"><span class="t">Contoh 6 — teleskop dengan selisih dua langkah</span>
+<p>Hitung \(\displaystyle\sum_{n=2}^\infty\frac1{n^2-1}\).</p>
+<p>Faktorkan \(n^2-1=(n-1)(n+1)\) dan uraikan \(\dfrac1{n^2-1}=\dfrac12\Bigl(\dfrac1{n-1}-\dfrac1{n+1}\Bigr)\). Sekarang suku yang saling hapus berjarak dua langkah:
+\[ s_N=\frac12\Bigl[\bigl(1-\tfrac13\bigr)+\bigl(\tfrac12-\tfrac14\bigr)+\bigl(\tfrac13-\tfrac15\bigr)+\cdots+\bigl(\tfrac1{N-1}-\tfrac1{N+1}\bigr)\Bigr]. \]
+Yang bertahan hanyalah \(1\) dan \(\tfrac12\) di depan, serta \(-\tfrac1N\) dan \(-\tfrac1{N+1}\) di belakang:
+\[ s_N=\frac12\Bigl(1+\frac12-\frac1N-\frac1{N+1}\Bigr)\ \longrightarrow\ \frac12\cdot\frac32=\frac34. \]</p></div>
+
+<div class="box ex"><span class="t">Contoh 7 — teleskop yang divergen</span>
+<p>Selidiki \(\displaystyle\sum_{n=1}^\infty\ln\Bigl(1+\frac1n\Bigr)\).</p>
+<p>Tulis \(\ln\bigl(1+\tfrac1n\bigr)=\ln\dfrac{n+1}{n}=\ln(n+1)-\ln n\). Maka \(s_n=\ln(n+1)-\ln1=\ln(n+1)\to\infty\). Deretnya <em>divergen</em>, meskipun sukunya \(\ln(1+1/n)\to0\). Contoh ini akan kita pakai untuk menunjukkan bahwa suku menuju nol tidak cukup untuk kekonvergenan.</p></div>
+
+<h2>4. Deret harmonik: suku menuju nol, tetapi deret divergen</h2>
+<p>Deret harmonik \(\displaystyle\sum_{n=1}^\infty\frac1n=1+\frac12+\frac13+\cdots\) adalah contoh paling terkenal. Sukunya mengecil menuju nol, tetapi jumlahnya tidak terbatas.</p>
+<div class="box def"><span class="t">Teorema — deret harmonik divergen</span>
+<p>\(\displaystyle\sum_{n=1}^\infty\frac1n\) divergen.</p></div>
+<p><strong>Bukti (pengelompokan ala Oresme).</strong> Perhatikan jumlah parsial dengan banyak suku pangkat dua:
+\[ s_{2}=1+\tfrac12,\qquad s_4=1+\tfrac12+\bigl(\tfrac13+\tfrac14\bigr)\gt1+\tfrac12+\bigl(\tfrac14+\tfrac14\bigr)=1+\tfrac22,\]
+\[ s_8=s_4+\bigl(\tfrac15+\tfrac16+\tfrac17+\tfrac18\bigr)\gt s_4+4\cdot\tfrac18\gt1+\tfrac32. \]
+Secara umum, kelompok \(\tfrac1{2^{k-1}+1}+\cdots+\tfrac1{2^k}\) memiliki \(2^{k-1}\) suku, masing-masing paling sedikit \(\tfrac1{2^k}\), sehingga jumlah kelompok itu \(\ge\tfrac12\). Dengan induksi, \(s_{2^k}\ge1+\dfrac k2\). Barisan \(\{s_{2^k}\}\) tak terbatas, maka \(\{s_n\}\) (yang naik) tak terbatas dan divergen. \(\blacksquare\)</p>
+<p>Divergensinya sangat lambat: untuk melampaui 100 dibutuhkan lebih dari \(e^{100}\approx2{,}7\times10^{43}\) suku. Inilah alasan mengapa pengamatan numerik saja tidak boleh dipercaya untuk memutuskan kekonvergenan.</p>
+
+<h2>5. Uji divergensi (uji suku ke-\(n\))</h2>
+<p>Bila deret \(\sum a_n\) konvergen, jumlah parsialnya mendekati \(s\), sehingga \(s_n\) dan \(s_{n-1}\) keduanya mendekati \(s\). Suku \(a_n=s_n-s_{n-1}\) pun harus mendekati \(s-s=0\).</p>
+<div class="box def"><span class="t">Teorema</span>
+<p>Jika \(\sum a_n\) konvergen, maka \(\displaystyle\lim_{n\to\infty}a_n=0\).</p></div>
+<p>Kontraposisinya adalah alat praktis:</p>
+<div class="box def"><span class="t">Uji Divergensi</span>
+<p>Jika \(\lim_{n\to\infty}a_n\) tidak ada atau tidak sama dengan 0, maka \(\sum a_n\) <strong>divergen</strong>.</p></div>
+<div class="box note"><span class="t">Jebakan yang paling sering</span>
+<p>Kebalikannya <strong>salah</strong>: \(a_n\to0\) <em>tidak</em> menjamin \(\sum a_n\) konvergen. Deret harmonik \(\sum1/n\) dan deret \(\sum\ln(1+1/n)\) pada Contoh 7 adalah dua contoh tandingnya. Uji divergensi hanya bisa membuktikan divergen; bila \(a_n\to0\), ia tidak berkata apa-apa dan kita harus memakai uji lain.</p></div>
+
+<div class="box ex"><span class="t">Contoh 8 — memakai uji divergensi</span>
+<p>(a) \(\displaystyle\sum_{n=1}^\infty\frac{n}{2n+1}\): \(a_n\to\tfrac12\ne0\), divergen.</p>
+<p>(b) \(\displaystyle\sum_{n=1}^\infty\Bigl(1+\frac1n\Bigr)^n\): \(a_n\to e\ne0\), divergen.</p>
+<p>(c) \(\displaystyle\sum_{n=1}^\infty(-1)^n\): \(a_n\) berayun antara \(-1\) dan \(1\), limitnya tidak ada, divergen.</p>
+<p>(d) \(\displaystyle\sum_{n=1}^\infty\frac{n^2+1}{n^2-3n+7}\): \(a_n\to1\ne0\), divergen.</p></div>
+
+<h2>6. Sifat aljabar deret</h2>
+<div class="box def"><span class="t">Teorema — kelinearan</span>
+<p>Bila \(\sum a_n=A\) dan \(\sum b_n=B\) konvergen dan \(c\) konstanta, maka \(\sum ca_n=cA\), \(\sum(a_n\pm b_n)=A\pm B\).</p></div>
+<p>Buktinya langsung: jumlah parsial deret gabungan adalah gabungan jumlah parsial, lalu gunakan sifat limit barisan. Dua konsekuensi yang perlu diingat: (i) konvergen \(\pm\) konvergen adalah konvergen; (ii) konvergen \(\pm\) divergen adalah <em>divergen</em> (bila tidak, selisihnya akan konvergen, kontradiksi). Namun divergen \(\pm\) divergen tidak dapat ditebak: \(\sum\tfrac1n-\sum\tfrac1n=\sum0\) konvergen.</p>
+
+<div class="box ex"><span class="t">Contoh 9 — memecah menjadi dua geometri</span>
+<p>Hitung \(\displaystyle\sum_{n=1}^\infty\frac{2^n+3^n}{6^n}\).</p>
+<p>Pisahkan menjadi \(\sum\bigl(\tfrac13\bigr)^n+\sum\bigl(\tfrac12\bigr)^n\). Mulai dari \(n=1\):
+\[ \frac{1/3}{1-1/3}+\frac{1/2}{1-1/2}=\frac12+1=\frac32. \]</p></div>
+
+<div class="box ex"><span class="t">Contoh 10 — bila satu bagian divergen</span>
+<p>Apakah \(\displaystyle\sum_{n=1}^\infty\Bigl(\frac1{2^n}+\frac1n\Bigr)\) konvergen?</p>
+<p>Bagian pertama konvergen (geometri, jumlah 1), bagian kedua divergen (harmonik). Jumlah konvergen dan divergen adalah divergen, jadi deret itu divergen.</p></div>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\sum a_n\) konvergen \(\iff\) barisan jumlah parsial \(s_n\) konvergen; jumlah deret adalah \(\lim s_n\).</li>
+<li>Geometri \(\sum ar^{n-1}\): konvergen untuk \(|r|\lt1\) dengan jumlah \(\dfrac{a}{1-r}\); divergen untuk \(|r|\ge1\).</li>
+<li>Teleskop: uraikan suku menjadi selisih, tuliskan \(s_n\), lihat apa yang bertahan.</li>
+<li>Harmonik \(\sum1/n\) divergen walaupun \(a_n\to0\).</li>
+<li>Uji divergensi: \(a_n\not\to0\Rightarrow\) divergen. Tidak dapat dipakai untuk membuktikan kekonvergenan.</li>
+<li>Kelinearan hanya berlaku bila kedua deret konvergen.</li>
+</ul>
+<p>Pada subbab berikutnya kita mulai memutuskan kekonvergenan deret yang jumlah parsialnya tidak punya rumus tertutup, dimulai dengan <a href="b11-3.html">Uji Integral</a>.</p>

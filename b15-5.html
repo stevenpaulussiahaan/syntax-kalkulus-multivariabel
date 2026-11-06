@@ -1,0 +1,58 @@
+<p>Integral ganda dua mengukur lebih dari volume. Dengan memilih integran yang tepat kita menghitung massa lamina, pusat massa, momen inersia, probabilitas, dan nilai harapan.</p>
+
+<h2>1. Kerapatan dan massa</h2>
+<p>Lamina (keping tipis) menempati daerah \(D\) di bidang dengan <strong>rapat massa</strong> (massa per satuan luas) \(\rho(x,y)\) kontinu. Massa potongan kecil \(\Delta A\) di \((x,y)\) adalah \(\approx\rho\,\Delta A\); menjumlahkan:
+\[ m=\iint_D\rho(x,y)\,dA. \]
+Hal yang sama berlaku untuk muatan listrik (kerapatan muatan \(\sigma\)): \(Q=\iint_D\sigma\,dA\).</p>
+
+<h2>2. Momen dan pusat massa</h2>
+<div class="box def"><span class="t">Momen dan pusat massa</span>
+<p>Momen terhadap sumbu \(x\) dan \(y\):
+\[ M_x=\iint_Dy\,\rho\,dA,\qquad M_y=\iint_Dx\,\rho\,dA. \]
+Pusat massa \((\bar x,\bar y)\):
+\[ \bar x=\frac{M_y}m,\qquad\bar y=\frac{M_x}m. \]
+Bila \(\rho\) konstan, pusat massa disebut <strong>sentroid</strong> dan hanya bergantung pada bentuk \(D\).</p></div>
+<div class="box ex"><span class="t">Contoh 1 — segitiga dengan kerapatan \(x+y\)</span>
+<p>Lamina segitiga \(D:\ 0\le x\le1,\ 0\le y\le1-x\), \(\rho=x+y\). \(m=\int_0^1\int_0^{1-x}(x+y)\,dy\,dx=\int_0^1\bigl[x(1-x)+\tfrac{(1-x)^2}2\bigr]dx=\tfrac12-\tfrac16=\tfrac13\). \(M_y=\iint x(x+y)\,dA=\tfrac18\), \(M_x=\tfrac18\) (simetri antara \(x\) dan \(y\)). Pusat massa: \(\bar x=\bar y=\dfrac{1/8}{1/3}=\dfrac38\). Bandingkan sentroid segitiga \((\frac13,\frac13)\): massa lebih terkonsentrasi menjauhi asal karena \(\rho\) naik ke arah itu.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — setengah cakram</span>
+<p>Sentroid setengah cakram \(D:\ x^2+y^2\le a^2,\ y\ge0\) (\(\rho=1\)): \(A=\frac{\pi a^2}2\); \(\bar x=0\) (simetri). \(M_x=\iint y\,dA=\int_0^\pi\int_0^ar\sin\theta\cdot r\,dr\,d\theta=\tfrac{a^3}3\cdot2=\tfrac{2a^3}3\). \(\bar y=\dfrac{2a^3/3}{\pi a^2/2}=\dfrac{4a}{3\pi}\approx0{,}424a\).</p></div>
+
+<h2>3. Momen inersia</h2>
+<p>Momen inersia mengukur kesulitan memutar benda. Partikel bermassa \(m\) pada jarak \(d\) dari sumbu mempunyai momen inersia \(md^2\). Untuk lamina:
+\[ I_x=\iint_Dy^2\rho\,dA,\qquad I_y=\iint_Dx^2\rho\,dA,\qquad I_0=\iint_D(x^2+y^2)\rho\,dA=I_x+I_y. \]
+\(I_0\) adalah <em>momen inersia polar</em> terhadap titik asal. <strong>Jari-jari girasi</strong> \(R\) terhadap sumbu: \(mR^2=I\), jadi \(R=\sqrt{I/m}\).</p>
+<div class="box ex"><span class="t">Contoh 3 — cakram homogen</span>
+<p>Cakram \(x^2+y^2\le a^2\), \(\rho\) konstan, massa \(m=\rho\pi a^2\). \(I_0=\rho\int_0^{2\pi}\int_0^ar^2\cdot r\,dr\,d\theta=\rho\cdot2\pi\cdot\tfrac{a^4}4=\tfrac12m a^2\). Karena simetri, \(I_x=I_y=\tfrac14ma^2\). Jari-jari girasi terhadap sumbu \(x\): \(R=\tfrac a2\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — momen inersia segitiga Contoh 1</span>
+<p>Untuk lamina Contoh 1: \(I_x=\iint y^2(x+y)\,dA=\tfrac1{15}\), \(I_y=\tfrac1{15}\) (simetri), \(I_0=\tfrac2{15}\). Jari-jari girasi \(R_x=\sqrt{I_x/m}=\sqrt{\tfrac{1/15}{1/3}}=\sqrt{\tfrac15}\approx0{,}447\).</p></div>
+
+<h2>4. Probabilitas</h2>
+<p>Dua peubah acak kontinu \(X,Y\) mempunyai <strong>fungsi kerapatan gabungan</strong> \(f(x,y)\ge0\) dengan \(\iint_{\mathbb R^2}f\,dA=1\). Peluang titik \((X,Y)\) jatuh di \(D\):
+\[ P\bigl((X,Y)\in D\bigr)=\iint_Df(x,y)\,dA. \]
+Nilai harapan: \(\mu_1=E[X]=\iint x f\,dA\), \(\mu_2=E[Y]=\iint yf\,dA\).</p>
+<div class="box ex"><span class="t">Contoh 5 — kerapatan polinomial</span>
+<p>\(f(x,y)=x+y\) pada \([0,1]^2\) (nol di tempat lain). Cek: \(\int_0^1\int_0^1(x+y)\,dy\,dx=\int_0^1(x+\tfrac12)dx=1\). \(P(X+Y\le1)=\int_0^1\int_0^{1-x}(x+y)\,dy\,dx=\tfrac13\). \(E[X]=\iint x(x+y)\,dA=\tfrac13+\tfrac14=\tfrac7{12}\approx0{,}583\) (sama untuk \(Y\)).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — kerapatan eksponensial</span>
+<p>\(f(x,y)=2e^{-x-2y}\) untuk \(x,y\ge0\). Cek: \(\int_0^\infty e^{-x}dx\cdot\int_0^\infty2e^{-2y}dy=1\cdot1\). Karena \(f\) terpisah, \(X\) dan \(Y\) bebas. \(P(X\gt Y)=\int_0^\infty\int_y^\infty2e^{-x-2y}dx\,dy=\int_0^\infty2e^{-3y}dy=\tfrac23\). \(E[X]=1\), \(E[Y]=\tfrac12\).</p></div>
+
+<h2>5. Muatan dan nilai rata-rata</h2>
+<div class="box ex"><span class="t">Contoh 7 — muatan total</span>
+<p>Muatan terdistribusi pada cakram \(x^2+y^2\le1\) dengan kerapatan \(\sigma=\sqrt{x^2+y^2}\) C/m². \(Q=\int_0^{2\pi}\int_0^1r\cdot r\,dr\,d\theta=2\pi\cdot\tfrac13=\tfrac{2\pi}3\approx2{,}094\) C.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — suhu rata-rata</span>
+<p>Suhu \(T=100-x^2-y^2\) pada cakram \(x^2+y^2\le4\). \(\iint T\,dA=\int_0^{2\pi}\int_0^2(100-r^2)r\,dr\,d\theta=2\pi(200-4)=392\pi\). Luas \(4\pi\). Suhu rata-rata \(=\dfrac{392\pi}{4\pi}=98\).</p></div>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Lupa membagi momen dengan massa saat mencari \(\bar x,\bar y\).</li>
+<li>Menyamakan sentroid dan pusat massa saat \(\rho\) tidak konstan.</li>
+<li>Menulis \(I_x=\iint x^2\rho\,dA\): momen terhadap sumbu \(x\) memakai \(y^2\).</li>
+<li>Kerapatan peluang yang tidak berintegral 1.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(m=\iint\rho\,dA\); \(\bar x=M_y/m\), \(\bar y=M_x/m\).</li>
+<li>\(I_x=\iint y^2\rho\), \(I_y=\iint x^2\rho\), \(I_0=I_x+I_y\).</li>
+<li>Peluang \(=\iint_Df\,dA\); \(E[X]=\iint xf\,dA\).</li>
+</ul>
+<p>Berikutnya <a href="b15-6.html">15.6 Luas Permukaan</a>.</p>

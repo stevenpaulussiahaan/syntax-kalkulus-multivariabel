@@ -1,0 +1,63 @@
+<p>Limit fungsi dua peubah mirip limit satu peubah, tetapi ada perbedaan penting: titik \((x,y)\) dapat mendekati \((a,b)\) dari <em>tak hingga banyak arah dan lintasan</em>, bukan hanya dari kiri dan kanan.</p>
+
+<h2>1. Definisi limit</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>\(\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)=L\) bila untuk setiap \(\varepsilon\gt0\) terdapat \(\delta\gt0\) sehingga
+\[ 0\lt\sqrt{(x-a)^2+(y-b)^2}\lt\delta\ \Longrightarrow\ |f(x,y)-L|\lt\varepsilon. \]
+Dengan kata lain, \(f(x,y)\) dibuat sedekat mungkin ke \(L\) dengan mengambil \((x,y)\) cukup dekat (tetapi tidak sama dengan) \((a,b)\), dalam cakram berjari-jari \(\delta\).</p></div>
+<p>Sifat limit (jumlah, selisih, hasil kali, hasil bagi dengan penyebut tak nol, kombinasi dengan fungsi kontinu) berlaku seperti pada satu peubah. Untuk polinomial dan fungsi rasional (di titik daerah asalnya), limit sama dengan substitusi.</p>
+<div class="box ex"><span class="t">Contoh 1 — substitusi langsung</span>
+<p>\(\displaystyle\lim_{(x,y)\to(1,2)}\frac{x^2y+3y}{x+y^2}=\frac{2+6}{1+4}=\frac85\).</p></div>
+
+<h2>2. Uji dua lintasan (untuk menunjukkan limit tidak ada)</h2>
+<div class="box note"><span class="t">Akibat langsung dari definisi</span>
+<p>Jika \(f(x,y)\to L_1\) sepanjang lintasan \(C_1\) menuju \((a,b)\) dan \(f(x,y)\to L_2\) sepanjang lintasan \(C_2\) dengan \(L_1\ne L_2\), maka \(\lim_{(x,y)\to(a,b)}f(x,y)\) <strong>tidak ada</strong>.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — \(\dfrac{x^2-y^2}{x^2+y^2}\)</span>
+<p>Di \((0,0)\): sepanjang sumbu \(x\) (\(y=0\)): \(f=\frac{x^2}{x^2}=1\to1\). Sepanjang sumbu \(y\) (\(x=0\)): \(f=-1\to-1\). Limit tidak ada.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — \(\dfrac{xy}{x^2+y^2}\)</span>
+<p>Sepanjang \(y=mx\): \(f=\dfrac{mx^2}{x^2(1+m^2)}=\dfrac m{1+m^2}\), bergantung pada \(m\): \(0\) untuk \(m=0\), \(\frac12\) untuk \(m=1\). Limit di \((0,0)\) tidak ada. Pada grafik (gambar), permukaan "terpelintir" di sekitar asal sehingga tidak punya satu tinggi tunggal di sana.</p></div>
+<figure><img src="assets/img/b14-2-xy.png" alt="Grafik xy/(x^2+y^2)"><figcaption>Grafik \(xy/(x^2+y^2)\): nilai berubah menurut arah mendekati asal.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 4 — lintasan lengkung</span>
+<p>\(f(x,y)=\dfrac{xy^2}{x^2+y^4}\). Sepanjang setiap garis \(y=mx\): \(f=\dfrac{m^2x^3}{x^2+m^4x^4}=\dfrac{m^2x}{1+m^4x^2}\to0\); sepanjang sumbu juga 0. Tetapi sepanjang parabola \(x=y^2\): \(f=\dfrac{y^4}{y^4+y^4}=\tfrac12\). Limit tidak ada. <em>Pelajaran:</em> memeriksa semua garis lurus belum cukup untuk membuktikan limit ada.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — satu lintasan cukup menolak</span>
+<p>\(f(x,y)=\dfrac{x^2y}{x^4+y^2}\) di asal. Sepanjang \(y=mx\): \(\frac{mx^3}{x^4+m^2x^2}=\frac{mx}{x^2+m^2}\to0\). Sepanjang \(y=x^2\): \(\frac{x^4}{2x^4}=\tfrac12\). Tidak ada limit.</p></div>
+
+<h2>3. Menunjukkan limit ada</h2>
+<h3>Teorema apit</h3>
+<p>Bila \(|f(x,y)-L|\le g(x,y)\) dan \(g\to0\), maka \(f\to L\).</p>
+<div class="box ex"><span class="t">Contoh 6 — memakai pengapit</span>
+<p>\(\displaystyle\lim_{(x,y)\to(0,0)}\frac{3x^2y}{x^2+y^2}\). Karena \(x^2\le x^2+y^2\), \(\bigl|\frac{3x^2y}{x^2+y^2}\bigr|\le3|y|\to0\). Limitnya 0.</p></div>
+<h3>Koordinat kutub (untuk limit di titik asal)</h3>
+<p>Dengan \(x=r\cos\theta\), \(y=r\sin\theta\), \((x,y)\to(0,0)\) setara dengan \(r\to0^+\). Jika \(f\) dapat ditulis \(r\cdot\)(fungsi terbatas dalam \(\theta\)), limitnya 0.</p>
+<div class="box ex"><span class="t">Contoh 7 — kutub</span>
+<p>\(\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^3+y^3}{x^2+y^2}=\lim_{r\to0}\frac{r^3(\cos^3\theta+\sin^3\theta)}{r^2}=\lim_{r\to0}r(\cos^3\theta+\sin^3\theta)=0\), karena faktor trigonometri terbatas \(|\cdot|\le2\).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — limit terkenal</span>
+<p>\(\displaystyle\lim_{(x,y)\to(0,0)}\frac{\sin(x^2+y^2)}{x^2+y^2}\): dengan \(u=x^2+y^2\to0^+\), \(\frac{\sin u}u\to1\). Limit \(=1\). Begitu pula \(\displaystyle\lim\frac{1-\cos(x^2+y^2)}{x^2+y^2}=0\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — kutub gagal bila tak terbatas</span>
+<p>\(\displaystyle\frac{x^2}{x^2+y^2}=\cos^2\theta\): bergantung pada \(\theta\) dan tidak menuju satu nilai tunggal; limit tidak ada (0 sepanjang sumbu \(y\), 1 sepanjang sumbu \(x\)).</p></div>
+
+<h2>4. Kekontinuan</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>\(f\) <strong>kontinu di \((a,b)\)</strong> bila \(\displaystyle\lim_{(x,y)\to(a,b)}f(x,y)=f(a,b)\). \(f\) kontinu pada \(D\) bila kontinu di setiap titik \(D\).</p></div>
+<p>Polinomial kontinu di \(\mathbb R^2\); fungsi rasional kontinu di semua titik di mana penyebut tak nol; komposisi fungsi kontinu kontinu.</p>
+<div class="box ex"><span class="t">Contoh 10 — fungsi bagian demi bagian</span>
+<p>\(f(x,y)=\begin{cases}\dfrac{3x^2y}{x^2+y^2}&(x,y)\ne(0,0)\\0&(x,y)=(0,0)\end{cases}\) kontinu di mana-mana: untuk titik selain asal, ia fungsi rasional dengan penyebut tak nol; di asal limitnya 0 (Contoh 6) sama dengan \(f(0,0)\). Sebaliknya, \(g=\frac{xy}{x^2+y^2}\) dengan \(g(0,0)=0\) <em>tidak</em> kontinu di asal (Contoh 3).</p></div>
+<div class="box ex"><span class="t">Contoh 11 — di mana kontinu?</span>
+<p>\(f(x,y)=\ln(x^2+y^2-1)\) kontinu pada \(x^2+y^2\gt1\) (di luar lingkaran satuan). \(h(x,y)=\dfrac{e^{xy}}{x^2-y}\) kontinu di mana pun kecuali parabola \(y=x^2\).</p></div>
+<h3>Tiga peubah</h3>
+<p>Definisi sama: bola kecil di \(\mathbb R^3\) menggantikan cakram. Misalnya \(\displaystyle\lim_{(x,y,z)\to(1,0,2)}\frac{xz+e^y}{x+z}=\frac{2+1}3=1\).</p>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Memeriksa hanya sumbu atau garis lalu menyimpulkan limit ada (Contoh 4 dan 5 membantahnya).</li>
+<li>Memakai kutub untuk limit di titik selain asal tanpa menggeser dulu.</li>
+<li>Mengira jika \(f\) kontinu terhadap tiap peubah secara terpisah maka kontinu secara gabungan. Itu tidak benar (Contoh 3 memberi kasus kontinu per peubah di semua titik tapi tidak kontinu di asal: \(g(x,0)=0\) dan \(g(0,y)=0\)).</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>Limit ada hanya bila semua lintasan menuju nilai yang sama.</li>
+<li>Menolak: dua lintasan dengan nilai berbeda. Menerima: pengapit atau kutub.</li>
+<li>Kontinu: limit \(=\) nilai fungsi; polinomial dan fungsi rasional kontinu di daerah asalnya.</li>
+</ul>
+<p>Berikutnya <a href="b14-3.html">14.3 Turunan Parsial</a>.</p>

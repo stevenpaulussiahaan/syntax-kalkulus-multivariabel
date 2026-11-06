@@ -1,0 +1,5 @@
+dist/_print/
+scratch/
+__pycache__/
+*.pyc
+.DS_Store

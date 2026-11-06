@@ -1,0 +1,66 @@
+<p>Pada 11.8 kita mulai dari deret pangkat dan bertanya fungsi apa yang diwakilinya. Sekarang kita membalik arah: <em>diberikan sebuah fungsi, nyatakan sebagai deret pangkat.</em> Alasan praktisnya kuat: deret pangkat dapat diintegralkan, diturunkan, dan dihitung nilainya dengan hanya penjumlahan dan perkalian. Pada subbab ini kita memakai satu "bahan dasar" saja: <strong>deret geometri</strong>, ditambah turunan dan integral suku demi suku.</p>
+
+<h2>1. Bahan dasar: deret geometri</h2>
+\[ \frac1{1-x}=\sum_{n=0}^\infty x^n=1+x+x^2+x^3+\cdots,\qquad|x|\lt1. \]
+<figure><img src="assets/img/b11-9-parsial.png" alt="Jumlah parsial deret geometri"><figcaption>Jumlah parsial mendekati \(\frac1{1-x}\) di dalam \((-1,1)\) dan menyimpang di luarnya.</figcaption></figure>
+<p>Ide umum: ubah fungsi menjadi bentuk \(\dfrac{\text{sesuatu}}{1-(\text{rasio})}\), lalu ganti dengan \(\sum(\text{rasio})^n\). Kekonvergenan terjadi bila \(|\text{rasio}|\lt1\).</p>
+
+<h2>2. Substitusi dan perkalian</h2>
+<div class="box ex"><span class="t">Contoh 1 — \(\dfrac1{1+x^2}\)</span>
+<p>Ganti \(x\) dengan \(-x^2\):
+\[ \frac1{1+x^2}=\sum_{n=0}^\infty(-x^2)^n=\sum_{n=0}^\infty(-1)^nx^{2n}=1-x^2+x^4-x^6+\cdots,\qquad|x|\lt1. \]
+Radius \(R=1\) (karena \(|-x^2|\lt1\iff|x|\lt1\)).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — \(\dfrac1{2+x}\)</span>
+<p>Keluarkan faktor agar menjadi bentuk \(\frac1{1-r}\): \(\dfrac1{2+x}=\dfrac12\cdot\dfrac1{1+x/2}=\dfrac12\sum_{n=0}^\infty\Bigl(-\dfrac x2\Bigr)^n=\sum_{n=0}^\infty\dfrac{(-1)^n}{2^{n+1}}x^n\). Konvergen bila \(\left|\frac x2\right|\lt1\iff|x|\lt2\), jadi \(R=2\). Nilai \(R=2\) wajar: pembagi \(2+x\) nol di \(x=-2\), jarak 2 dari pusat 0.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — \(\dfrac{x^3}{x+2}\)</span>
+<p>Dari Contoh 2: \(\dfrac{x^3}{x+2}=x^3\sum\dfrac{(-1)^nx^n}{2^{n+1}}=\sum_{n=0}^\infty\dfrac{(-1)^n}{2^{n+1}}x^{n+3}\). Radius tetap 2 (perkalian dengan \(x^3\) tidak mengubah \(R\)). Tulisan beberapa suku: \(\frac{x^3}2-\frac{x^4}4+\frac{x^5}8-\cdots\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — pecahan parsial: \(\dfrac{3}{(1-x)(2+x)}\)</span>
+<p>Uraikan: \(\dfrac3{(1-x)(2+x)}=\dfrac1{1-x}+\dfrac1{2+x}\) (cek: \(\frac{(2+x)+(1-x)}{(1-x)(2+x)}=\frac3{\ldots}\) ✓). Deret: \(\sum x^n+\sum\dfrac{(-1)^nx^n}{2^{n+1}}=\sum\Bigl(1+\dfrac{(-1)^n}{2^{n+1}}\Bigr)x^n\), berlaku untuk \(|x|\lt1\) (irisan \(|x|\lt1\) dan \(|x|\lt2\)).</p></div>
+
+<h2>3. Turunan dan integral suku demi suku</h2>
+<p>Berdasarkan 11.8, bila \(f=\sum c_nx^n\) (radius \(R\)), maka \(f'\) dan \(\int f\) diperoleh dengan menurunkan/mengintegralkan tiap suku, dengan radius yang sama.</p>
+<div class="box ex"><span class="t">Contoh 5 — \(\dfrac1{(1-x)^2}\)</span>
+<p>Turunkan \(\frac1{1-x}=\sum x^n\): \(\dfrac1{(1-x)^2}=\sum_{n=1}^\infty nx^{n-1}=\sum_{n=0}^\infty(n+1)x^n\), \(|x|\lt1\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — \(\ln(1+x)\)</span>
+<p>\(\dfrac1{1+x}=\sum_{n=0}^\infty(-1)^nx^n\) (\(|x|\lt1\)). Integralkan dari 0 ke \(x\):
+\[ \ln(1+x)=\sum_{n=0}^\infty(-1)^n\frac{x^{n+1}}{n+1}=x-\frac{x^2}2+\frac{x^3}3-\cdots=\sum_{n=1}^\infty(-1)^{n-1}\frac{x^n}n. \]
+Konstanta integrasi nol karena \(\ln1=0\) di \(x=0\). Radius 1. Di \(x=1\) deret menjadi harmonik berganti tanda yang konvergen; sehingga \(\ln2=1-\frac12+\frac13-\cdots\) (hasil ini dibuktikan di 11.10).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — \(\arctan x\)</span>
+<p>Integralkan Contoh 1: \(\arctan x=\int_0^x\dfrac{dt}{1+t^2}=\sum_{n=0}^\infty(-1)^n\dfrac{x^{2n+1}}{2n+1}=x-\dfrac{x^3}3+\dfrac{x^5}5-\cdots\), \(|x|\lt1\). Di \(x=1\) deret konvergen (Leibniz). Hasilnya, \(\arctan1=\frac\pi4\):
+\[ \frac\pi4=1-\frac13+\frac15-\frac17+\cdots\quad\text{(deret Gregory–Leibniz).} \]
+Konvergensinya sangat lambat: 1000 suku hanya memberi akurasi sekitar \(10^{-3}\). Pendekatan lebih cepat: \(\frac\pi4=\arctan\frac12+\arctan\frac13\), dan deret \(\arctan x\) di \(x=\frac12\), \(\frac13\) konvergen cepat.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — \(\ln\!\left(\dfrac{1+x}{1-x}\right)\)</span>
+<p>\(\dfrac{d}{dx}\ln\dfrac{1+x}{1-x}=\dfrac1{1+x}+\dfrac1{1-x}=\dfrac2{1-x^2}=2\sum x^{2n}\). Integralkan: \(\ln\dfrac{1+x}{1-x}=2\sum_{n=0}^\infty\dfrac{x^{2n+1}}{2n+1}\), \(|x|\lt1\). Berguna untuk menghitung logaritma: bila \(x=\frac13\) maka \(\frac{1+x}{1-x}=2\), sehingga \(\ln2=2\bigl(\frac13+\frac1{3\cdot27}+\frac1{5\cdot243}+\cdots\bigr)\approx0{,}6931\) dengan beberapa suku saja.</p></div>
+
+<h2>4. Menjumlahkan deret bilangan</h2>
+<p>Bila kita tahu fungsi untuk sebuah deret pangkat, kita dapat memperoleh jumlah deret bilangan dengan mensubstitusi \(x\).</p>
+<div class="box ex"><span class="t">Contoh 9 — \(\sum\dfrac n{2^n}\)</span>
+<p>Dari Contoh 5: \(\sum_{n=1}^\infty nx^n=x\cdot\dfrac1{(1-x)^2}=\dfrac x{(1-x)^2}\). Pada \(x=\frac12\) (di dalam \(|x|\lt1\)): \(\sum\dfrac n{2^n}=\dfrac{1/2}{(1/2)^2}=2\).</p></div>
+<div class="box ex"><span class="t">Contoh 10 — \(\sum\dfrac{n^2}{2^n}\)</span>
+<p>Kalikan \(\sum nx^n=\dfrac x{(1-x)^2}\) dengan \(x\) setelah menurunkan: \(\sum n^2x^n=x\dfrac d{dx}\dfrac{x}{(1-x)^2}=x\cdot\dfrac{(1-x)^2+2x(1-x)}{(1-x)^4}=\dfrac{x(1+x)}{(1-x)^3}\). Pada \(x=\frac12\): \(\dfrac{\frac12\cdot\frac32}{\frac18}=6\). Jadi \(\sum\dfrac{n^2}{2^n}=6\) (ini yang kita pakai di <a href="b11-6.html">11.6</a>).</p></div>
+<div class="box ex"><span class="t">Contoh 11 — \(\sum\dfrac{(-1)^n}{n\,2^n}\)</span>
+<p>Dari deret \(\ln(1+x)\): \(\sum_{n=1}^\infty\dfrac{(-1)^{n-1}x^n}n=\ln(1+x)\). Pada \(x=\frac12\): \(\sum\dfrac{(-1)^{n-1}}{n2^n}=\ln\frac32\). Maka \(\sum\dfrac{(-1)^n}{n2^n}=-\ln\frac32\approx-0{,}4055\).</p></div>
+
+<h2>5. Mengintegralkan fungsi tanpa antiturunan elementer</h2>
+<div class="box ex"><span class="t">Contoh 12 — \(\displaystyle\int_0^{1/2}\frac{dx}{1+x^4}\)</span>
+<p>Ganti \(x\) dengan \(x^4\) pada \(\frac1{1+u}=\sum(-u)^n\): \(\frac1{1+x^4}=\sum(-1)^nx^{4n}\). Integralkan suku demi suku:
+\[ \int_0^{1/2}\frac{dx}{1+x^4}=\sum_{n=0}^\infty\frac{(-1)^n(1/2)^{4n+1}}{4n+1}=\frac12-\frac{1}{5\cdot2^5}+\frac1{9\cdot2^9}-\cdots \]
+Deretnya berganti tanda dengan suku menurun, jadi galat \(\le\) suku pertama yang dibuang. Dengan tiga suku: \(0{,}5-0{,}00625+0{,}000217\approx0{,}49397\); galat \(\lt\frac1{13\cdot2^{13}}\approx9{,}4\times10^{-6}\). (Hasil numerik \(0{,}493958\).)</p></div>
+<div class="box ex"><span class="t">Contoh 13 — arctan di titik tertentu</span>
+<p>\(\arctan\frac12=\frac12-\frac1{3\cdot8}+\frac1{5\cdot32}-\cdots\approx0{,}4636\) (delapan suku memberi \(0{,}463647\)); dengan \(\arctan\frac13\approx0{,}3217\), jumlah keduanya \(0{,}7854=\frac\pi4\) ✓.</p></div>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Lupa konstanta integrasi: tentukan dengan mensubstitusi titik di mana nilainya diketahui.</li>
+<li>Mengubah indeks saat menurunkan: \(\sum_{n=0}\) menjadi \(\sum_{n=1}\) (suku konstan hilang).</li>
+<li>Menyatakan radius tanpa memeriksa persyaratan \(|{\rm rasio}|\lt1\) pada bentuk yang sudah disubstitusi.</li>
+<li>Memakai deret di luar selang kekonvergenannya.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\dfrac1{1-x}=\sum x^n\) adalah dasar; substitusi dan manipulasi aljabar menghasilkan banyak deret lain.</li>
+<li>Turunan/integral suku demi suku menghasilkan \(\ln(1+x)\), \(\arctan x\), \(\frac1{(1-x)^2}\) dan lainnya.</li>
+<li>Deret pangkat memudahkan menghitung jumlah deret bilangan dan integral tanpa antiturunan elementer.</li>
+</ul>
+<p>Pada <a href="b11-10.html">11.10</a> kita menemukan cara <em>langsung</em> menghitung koefisien deret dari turunan fungsi: deret Taylor.</p>

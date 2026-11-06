@@ -1,0 +1,83 @@
+<p>Sampai di sini semua deret yang diuji memiliki suku positif. Deret yang sukunya bergantian positif dan negatif berperilaku jauh lebih baik: pembatalan antar suku membantu kekonvergenan. Contoh terkenalnya adalah <strong>deret harmonik berganti tanda</strong>
+\[ 1-\frac12+\frac13-\frac14+\frac15-\cdots=\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n}, \]
+yang konvergen walaupun deret harmonik biasa divergen.</p>
+
+<h2>1. Deret berganti tanda</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Deret berganti tanda (<em>alternating series</em>) adalah deret yang suku-sukunya berganti positif dan negatif, yaitu berbentuk
+\[ \sum_{n=1}^\infty(-1)^{n-1}b_n=b_1-b_2+b_3-b_4+\cdots\qquad\text{atau}\qquad\sum_{n=1}^\infty(-1)^nb_n,\quad b_n\gt0. \]</p></div>
+
+<h2>2. Uji deret berganti tanda (Leibniz)</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Jika deret berganti tanda \(\sum_{n=1}^\infty(-1)^{n-1}b_n\) (\(b_n\gt0\)) memenuhi
+</p>
+<ol>
+<li>\(b_{n+1}\le b_n\) untuk semua \(n\) (barisan \(b_n\) menurun), dan</li>
+<li>\(\displaystyle\lim_{n\to\infty}b_n=0\),</li>
+</ol>
+<p>maka deret itu konvergen.</p></div>
+<figure><img src="assets/img/b11-5-zigzag.png" alt="Jumlah parsial deret harmonik berganti"><figcaption>Jumlah parsial \(s_n\) berayun naik-turun dan mengapit \(\ln2\approx0{,}6931\).</figcaption></figure>
+
+<h3>Mengapa ini benar</h3>
+<p>Perhatikan jumlah parsial:</p>
+<ul>
+<li>Jumlah parsial genap: \(s_{2n}=(b_1-b_2)+(b_3-b_4)+\cdots+(b_{2n-1}-b_{2n})\). Tiap kurung \(\ge0\), jadi \(s_{2n}\) <strong>naik</strong>. Sekaligus \(s_{2n}=b_1-(b_2-b_3)-\cdots-b_{2n}\le b_1\), jadi \(s_{2n}\) <strong>terbatas</strong> oleh \(b_1\). Maka \(s_{2n}\to s\) (Teorema Barisan Monoton).</li>
+<li>Jumlah parsial ganjil: \(s_{2n+1}=s_{2n}+b_{2n+1}\), dan \(b_{2n+1}\to0\), maka \(s_{2n+1}\to s+0=s\).</li>
+</ul>
+<p>Kedua subbarisan (genap dan ganjil) menuju \(s\) yang sama, sehingga \(s_n\to s\). \(\blacksquare\)</p>
+<p>Secara geometris, \(s_1\gt s_3\gt s_5\gt\cdots\) turun dari atas, \(s_2\lt s_4\lt\cdots\) naik dari bawah, dan jumlah deret \(s\) selalu <em>terjepit</em> di antara dua jumlah parsial berurutan.</p>
+
+<div class="box note"><span class="t">Peringatan</span>
+<ul>
+<li>Kedua syarat harus dipenuhi. Bila \(b_n\not\to0\), deret divergen menurut uji divergensi.</li>
+<li>Syarat menurun cukup berlaku untuk \(n\ge N\) (suatu \(N\)).</li>
+<li>Uji ini hanya menyatakan <strong>konvergen</strong>; bila syaratnya gagal, uji ini <em>tidak</em> menyimpulkan divergen.</li>
+</ul></div>
+
+<h2>3. Contoh</h2>
+<div class="box ex"><span class="t">Contoh 1 — harmonik berganti tanda</span>
+<p>\(b_n=\frac1n\): menurun dan \(\to0\). Konvergen. (Nilainya \(\ln2\approx0{,}6931\); lihat nanti di <a href="b11-10.html">11.10</a>.)</p></div>
+<div class="box ex"><span class="t">Contoh 2 — syarat \(b_n\to0\) gagal</span>
+<p>\(\sum_{n=1}^\infty(-1)^n\dfrac{3n}{4n-1}\). Di sini \(b_n=\dfrac{3n}{4n-1}\to\dfrac34\ne0\). Maka \(\lim a_n\) tidak ada (\(a_n\) berayun mendekati \(\pm\frac34\)), dan deret divergen menurut uji divergensi.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — memeriksa menurun dengan turunan</span>
+<p>\(\sum_{n=1}^\infty(-1)^{n-1}\dfrac{n^2}{n^3+1}\). Misalkan \(f(x)=\dfrac{x^2}{x^3+1}\). Maka \(f'(x)=\dfrac{2x(x^3+1)-3x^4}{(x^3+1)^2}=\dfrac{x(2-x^3)}{(x^3+1)^2}\lt0\) bila \(x^3\gt2\), yaitu \(x\gt1{,}26\). Jadi \(b_n\) menurun untuk \(n\ge2\). Juga \(b_n\to0\) (derajat penyebut lebih besar). Konvergen. (Jumlah \(\approx0{,}2396\).)</p></div>
+<div class="box ex"><span class="t">Contoh 4 — memeriksa menurun secara langsung</span>
+<p>\(\sum_{n=1}^\infty(-1)^n\dfrac{\ln n}{n}\) (mulai dari \(n=3\)). \(f(x)=\dfrac{\ln x}x\), \(f'(x)=\dfrac{1-\ln x}{x^2}\lt0\) untuk \(x\gt e\approx2{,}72\); jadi menurun untuk \(n\ge3\). Dan \(\lim\dfrac{\ln n}n=0\) (l'Hôpital). Konvergen.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — suku mengandung faktorial</span>
+<p>\(\sum_{n=0}^\infty\dfrac{(-1)^n}{n!}\): \(b_n=\dfrac1{n!}\) menurun dan \(\to0\). Konvergen. (Jumlahnya \(e^{-1}\approx0{,}3679\); ini adalah \(e^x\) di \(x=-1\), lihat 11.10.)</p></div>
+<div class="box ex"><span class="t">Contoh 6 — memeriksa \(b_n\) menurun lewat selisih</span>
+<p>\(\sum(-1)^{n}\dfrac{1}{\sqrt{n}+n}\). \(b_n=\frac1{\sqrt n+n}\), penyebut \(\sqrt n+n\) bertambah besar bila \(n\) naik, sehingga \(b_n\) menurun; \(b_n\to0\). Konvergen.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — deret yang tampak berganti tanda tetapi syarat menurun gagal</span>
+<p>Misalkan \(\sum(-1)^n b_n\) dengan \(b_n=\dfrac1n\) untuk \(n\) genap dan \(b_n=\dfrac1{n^2}\) untuk \(n\) ganjil. Maka \(b_n\to0\), tetapi \(b_n\) <em>tidak menurun</em>: misalnya \(b_3=\frac19\lt b_4=\frac14\). Jadi uji Leibniz tidak berlaku. Dan deret ini memang <strong>divergen</strong>: bagian positifnya \(\sum\frac1{2k}\) divergen, sedangkan bagian negatifnya \(\sum\frac1{(2k+1)^2}\) konvergen, sehingga jumlah parsialnya tak terbatas. Moral: syarat menurun bukan formalitas.</p></div>
+
+<h2>4. Taksiran jumlah deret berganti tanda</h2>
+<p>Karena jumlah \(s\) terjepit di antara \(s_n\) dan \(s_{n+1}\), jarak \(|s-s_n|\) paling besar sama dengan jarak antara keduanya, yaitu \(b_{n+1}\).</p>
+<div class="box def"><span class="t">Teorema (Taksiran Deret Berganti Tanda)</span>
+<p>Bila \(s=\sum(-1)^{n-1}b_n\) memenuhi \(b_{n+1}\le b_n\) dan \(b_n\to0\), maka
+\[ |R_n|=|s-s_n|\le b_{n+1}. \]
+Yakni galat jumlah parsial tidak melebihi <strong>suku pertama yang dibuang</strong>.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — jumlah \(\sum\frac{(-1)^n}{n!}\) dengan galat \(\lt0{,}01\)</span>
+<p>Cari \(n\) sehingga \(b_{n+1}=\dfrac1{(n+1)!}\lt0{,}01\iff(n+1)!\gt100\). Karena \(4!=24\) dan \(5!=120\), cukup \(n+1=5\), yaitu \(n=4\). Maka
+\[ s_4=1-1+\tfrac12-\tfrac16+\tfrac1{24}=0{,}375. \]
+Galat \(\le\frac1{120}\approx0{,}0083\lt0{,}01\). Memang nilai sebenarnya \(0{,}3679\) berjarak \(0{,}0071\) dari \(0{,}375\). ✓</p></div>
+<div class="box ex"><span class="t">Contoh 9 — \(\sum\frac{(-1)^{n+1}}{n^2}\) hingga tiga desimal</span>
+<p>Perlu \(b_{n+1}=\dfrac1{(n+1)^2}\lt0{,}001\iff(n+1)^2\gt1000\iff n+1\ge32\), jadi \(n=31\). \(s_{31}\approx0{,}82297\); nilai sebenarnya \(\pi^2/12\approx0{,}82247\), selisih \(5\times10^{-4}\lt\frac1{32^2}\approx9{,}8\times10^{-4}\) ✓.</p></div>
+<div class="box ex"><span class="t">Contoh 10 — harmonik berganti tanda konvergen lambat</span>
+<p>Bahkan 1000 suku hanya memberi \(s_{1000}\approx0{,}69265\) vs \(\ln2=0{,}69315\); galat \(\approx5\times10^{-4}\approx b_{1001}\approx10^{-3}\). Deret berganti tanda dengan \(b_n\sim1/n\) memerlukan banyak suku.</p></div>
+<div class="box note"><span class="t">Trik</span>
+<p>Tebakan lebih baik: nilai tengah \(\frac{s_n+s_{n+1}}2\) biasanya jauh lebih dekat ke jumlah sebenarnya daripada \(s_n\).</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Menganggap deret berganti tanda otomatis konvergen. Contoh 2 menunjukkan sebaliknya.</li>
+<li>Lupa memeriksa bahwa \(b_n\) benar-benar <em>menurun</em> (bukan hanya menuju 0).</li>
+<li>Memakai taksiran \(b_{n+1}\) untuk deret yang bukan berganti tanda.</li>
+<li>Menyimpulkan divergen dari kegagalan syarat menurun (uji ini hanya cukup, bukan perlu).</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>Leibniz: \(b_n\) menurun dan \(\to0\) \(\Rightarrow\) \(\sum(-1)^{n-1}b_n\) konvergen.</li>
+<li>Galat \(\le\) suku pertama yang dibuang \(b_{n+1}\).</li>
+<li>Harmonik berganti tanda konvergen (ke \(\ln2\)), sedangkan harmonik biasa divergen; ini mengantar pada konsep kekonvergenan bersyarat di <a href="b11-6.html">11.6</a>.</li>
+</ul>

@@ -1,0 +1,104 @@
+<p>Setelah kita bisa menyatakan kurva secara parametrik, pertanyaan alaminya: bagaimana menghitung garis singgung, luas, panjang kurva, dan luas permukaan putar tanpa terlebih dahulu menghilangkan parameter?
+Jawabannya adalah menurunkan semua rumus yang sudah kita kenal ke dalam bahasa parameter \(t\).</p>
+
+<h2>1. Garis singgung</h2>
+<p>Misalkan \(x=f(t)\) dan \(y=g(t)\) keduanya terdiferensialkan, dan \(y\) juga terdiferensialkan sebagai fungsi \(x\). Aturan rantai memberi
+\[ \frac{dy}{dt}=\frac{dy}{dx}\cdot\frac{dx}{dt}. \]
+Jika \(dx/dt\neq 0\), kita selesaikan untuk \(dy/dx\):</p>
+<div class="box def"><span class="t">Rumus (1)</span>
+\[ \frac{dy}{dx}=\frac{dy/dt}{dx/dt}\qquad\text{bila } \frac{dx}{dt}\ne0. \]</div>
+<p>Interpretasi fisis: \(dx/dt\) dan \(dy/dt\) adalah kecepatan horizontal dan vertikal partikel. Kemiringan garis singgung adalah rasio keduanya. Dari sini:</p>
+<ul>
+<li><strong>Tangen horizontal</strong> terjadi bila \(dy/dt=0\) <em>dan</em> \(dx/dt\ne 0\).</li>
+<li><strong>Tangen vertikal</strong> terjadi bila \(dx/dt=0\) <em>dan</em> \(dy/dt\ne 0\).</li>
+<li>Bila keduanya nol, belum bisa disimpulkan apa-apa; gunakan limit (misalnya aturan l'Hôpital) seperti pada sikloid di bawah.</li>
+</ul>
+
+<h3>Turunan kedua</h3>
+<p>Kecekungan ditentukan oleh \(d^2y/dx^2\). Terapkan Rumus (1) pada fungsi \(dy/dx\) (bukan pada \(y\)):
+\[ \frac{d^2y}{dx^2}=\frac{d}{dx}\!\left(\frac{dy}{dx}\right)=\frac{\dfrac{d}{dt}\!\left(\dfrac{dy}{dx}\right)}{\dfrac{dx}{dt}}. \]</p>
+<div class="box note"><span class="t">Jebakan yang sangat sering terjadi</span>
+<p>\[ \frac{d^2y}{dx^2}\ne\frac{d^2y/dt^2}{d^2x/dt^2}. \]
+Anda harus mendiferensialkan <em>hasil bagi</em> \(\dfrac{dy/dt}{dx/dt}\) terhadap \(t\), baru dibagi lagi dengan \(dx/dt\).</p></div>
+
+<div class="box ex"><span class="t">Contoh 1 — kurva yang memotong dirinya sendiri</span>
+<p>Kurva \(C\): \(x=t^2,\ y=t^3-3t\).</p>
+<p><strong>(a) Dua garis singgung di (3, 0).</strong> \(y=t(t^2-3)=0\) bila \(t=0\) atau \(t=\pm\sqrt3\). Titik \((3,0)\) memenuhi \(x=t^2=3\), yaitu \(t=\pm\sqrt3\): kurva melewati titik ini dua kali (memotong dirinya). Hitung
+\[ \frac{dy}{dx}=\frac{3t^2-3}{2t}. \]
+Untuk \(t=\sqrt3\): kemiringan \(=\dfrac{9-3}{2\sqrt3}=\sqrt3\); untuk \(t=-\sqrt3\): kemiringan \(=-\sqrt3\). Maka garis singgungnya
+\(y=\sqrt3\,(x-3)\) dan \(y=-\sqrt3\,(x-3)\).</p>
+<p><strong>(b) Tangen horizontal/vertikal.</strong> Horizontal: \(dy/dt=3t^2-3=0\Rightarrow t=\pm1\) (di sini \(dx/dt=2t\ne0\)), titik \((1,-2)\) dan \((1,2)\). Vertikal: \(dx/dt=2t=0\Rightarrow t=0\) (di sini \(dy/dt=-3\ne0\)), titik \((0,0)\).</p>
+<p><strong>(c) Kecekungan.</strong> Pertama \(\dfrac{d}{dt}\!\left(\dfrac{3t^2-3}{2t}\right)=\dfrac{d}{dt}\!\left(\dfrac32 t-\dfrac{3}{2t}\right)=\dfrac32+\dfrac{3}{2t^2}=\dfrac{3(t^2+1)}{2t^2}\). Dibagi \(dx/dt=2t\):
+\[ \frac{d^2y}{dx^2}=\frac{3(t^2+1)}{4t^3}. \]
+Positif (cekung ke atas) untuk \(t>0\); negatif (cekung ke bawah) untuk \(t\lt 0\).</p></div>
+<figure><img src="assets/img/b10-2-simpul.png" alt="Kurva dengan simpul"><figcaption>Simpul di \((3,0)\) dengan dua garis singgungnya (putus-putus), tangen horizontal di \((1,\pm2)\), tangen vertikal di titik asal.</figcaption></figure>
+
+<div class="box ex"><span class="t">Contoh 2 — garis singgung sikloid</span>
+<p>Sikloid \(x=r(\theta-\sin\theta),\ y=r(1-\cos\theta)\):
+\[ \frac{dy}{dx}=\frac{r\sin\theta}{r(1-\cos\theta)}=\frac{\sin\theta}{1-\cos\theta}. \]
+<strong>Di \(\theta=\pi/3\):</strong> \(\sin=\tfrac{\sqrt3}{2}\), \(1-\cos=\tfrac12\), kemiringan \(=\sqrt3\). Titiknya \(\bigl(r(\tfrac\pi3-\tfrac{\sqrt3}2),\ \tfrac r2\bigr)\), sehingga
+\[ y-\tfrac r2=\sqrt3\Bigl(x-\tfrac{\pi r}{3}+\tfrac{\sqrt3\,r}{2}\Bigr)\ \Longrightarrow\ y=\sqrt3\,x-\tfrac{\pi r}{\sqrt3}+\tfrac{3r}{2}+\tfrac r2, \]
+yaitu \(\sqrt3\,x-y=r\Bigl(\dfrac{\pi}{\sqrt3}-2\Bigr)\).</p>
+<p><strong>Tangen horizontal:</strong> \(\sin\theta=0\) dan \(1-\cos\theta\neq0\), yaitu \(\theta=(2n+1)\pi\) — titik puncak \(((2n+1)\pi r,\,2r)\).</p>
+<p><strong>Di \(\theta=2n\pi\)</strong> kedua turunan nol (ujung runcing di permukaan tanah). Dengan l'Hôpital,
+\[ \lim_{\theta\to2n\pi^+}\frac{\sin\theta}{1-\cos\theta}=\lim\frac{\cos\theta}{\sin\theta}=+\infty,\qquad \lim_{\theta\to2n\pi^-}\frac{\sin\theta}{1-\cos\theta}=-\infty, \]
+jadi garis singgungnya vertikal pada titik-titik runcing itu.</p></div>
+
+<h2>2. Luas di bawah kurva parametrik</h2>
+<p>Luas di bawah \(y=F(x)\ (\ge0)\) dari \(x=a\) sampai \(x=b\) adalah \(\int_a^b F(x)\,dx=\int_a^b y\,dx\). Bila kurva ditelusuri sekali oleh \(x=f(t),\ y=g(t)\), \(\alpha\le t\le\beta\), maka substitusi \(x=f(t),\ dx=f'(t)\,dt\) memberi</p>
+<div class="box def"><span class="t">Rumus (2)</span>
+\[ A=\int_a^b y\,dx=\int_\alpha^\beta g(t)\,f'(t)\,dt\quad\text{(atau } \int_\beta^\alpha\text{ bila } f \text{ menurun)}. \]</div>
+<p>Batas \(t\) diambil dari kondisi: \(x=a\) terjadi di salah satu ujung interval, \(x=b\) di ujung lainnya. Bila kurva berjalan dari kanan ke kiri, urutan batasnya terbalik, sehingga hasil integral mungkin negatif; luas yang sebenarnya adalah nilai mutlaknya.</p>
+
+<div class="box ex"><span class="t">Contoh 3 — luas satu busur sikloid</span>
+<p>Satu busur: \(0\le\theta\le2\pi\), \(y=r(1-\cos\theta)\), \(dx=r(1-\cos\theta)\,d\theta\).
+\[ A=\int_0^{2\pi}r(1-\cos\theta)\,r(1-\cos\theta)\,d\theta=r^2\!\int_0^{2\pi}(1-2\cos\theta+\cos^2\theta)\,d\theta. \]
+Gunakan \(\cos^2\theta=\tfrac12(1+\cos2\theta)\):
+\[ A=r^2\!\int_0^{2\pi}\!\Bigl(\tfrac32-2\cos\theta+\tfrac12\cos2\theta\Bigr)d\theta=r^2\Bigl[\tfrac32\theta-2\sin\theta+\tfrac14\sin2\theta\Bigr]_0^{2\pi}=3\pi r^2. \]
+Luas ini <strong>tiga kali luas lingkaran pembangkit</strong> (\(\pi r^2\)). Galileo menebaknya; pembuktian pertama diberikan Roberval dan Torricelli.</p></div>
+<figure><img src="assets/img/b10-2-luas-sikloid.png" alt="Luas sikloid"></figure>
+
+<div class="box ex"><span class="t">Contoh 4 — luas elips</span>
+<p>Elips \(x=a\cos t,\ y=b\sin t\). Separuh atas: \(0\le t\le \pi\), tetapi saat \(t\) naik \(x\) <em>menurun</em> dari \(a\) ke \(-a\). Jadi luas separuh atas \(=\int_{x=-a}^{a}y\,dx=\int_{t=\pi}^{0}b\sin t\,(-a\sin t)\,dt=ab\int_0^\pi\sin^2t\,dt=ab\cdot\tfrac\pi2\).
+Dua kali itu memberi luas elips \(=\pi ab\).</p></div>
+
+<h2>3. Panjang busur</h2>
+<p>Untuk kurva \(y=F(x)\) dengan \(F'\) kontinu, \(L=\int_a^b\sqrt{1+(dy/dx)^2}\,dx\). Bila kurva ditelusuri sekali oleh \((f(t),g(t))\) dengan \(f'(t)>0\) (sehingga dari kiri ke kanan), maka dengan Rumus (1) dan substitusi \(dx=f'(t)dt\):
+\[ L=\int\sqrt{1+\Bigl(\frac{g'}{f'}\Bigr)^2}\,f'\,dt=\int\sqrt{(f')^2+(g')^2}\,dt. \]</p>
+<div class="box def"><span class="t">Teorema (3)</span>
+<p>Jika \(C\) diberikan oleh \(x=f(t),\ y=g(t),\ \alpha\le t\le\beta\), dengan \(f',g'\) kontinu dan \(C\) ditelusuri <strong>tepat satu kali</strong>, maka
+\[ L=\int_\alpha^\beta\sqrt{\Bigl(\frac{dx}{dt}\Bigr)^2+\Bigl(\frac{dy}{dt}\Bigr)^2}\;dt. \]
+</p></div>
+<h3>Mengapa rumus ini masuk akal</h3>
+<p>Bagi \([\alpha,\beta]\) menjadi \(n\) bagian sama panjang, hubungkan titik-titik \(P_i=(f(t_i),g(t_i))\) dengan poligon. Panjang tiap sisi \(|P_{i-1}P_i|=\sqrt{\Delta x_i^2+\Delta y_i^2}\). Dengan Teorema Nilai Rata-rata,
+\(\Delta x_i=f'(t_i^*)\Delta t\) dan \(\Delta y_i=g'(t_i^{**})\Delta t\) untuk titik-titik \(t_i^*,t_i^{**}\) dalam subinterval yang sama. Jadi panjang poligon \(=\sum\sqrt{f'(t_i^*)^2+g'(t_i^{**})^2}\,\Delta t\), yang menyerupai jumlah Riemann dan menuju integral di atas
+bila \(n\to\infty\) (kekontinuan \(f',g'\) menjamin \(t_i^*\) dan \(t_i^{**}\) boleh dianggap sama pada limitnya). Secara simbolik \(ds=\sqrt{dx^2+dy^2}=\sqrt{(dx/dt)^2+(dy/dt)^2}\,dt\).</p>
+<div class="box note"><span class="t">Awas: telusuri sekali saja</span>
+<p>Untuk \(x=\cos t,\ y=\sin t,\ 0\le t\le 2\pi\), integral memberi \(\int_0^{2\pi}1\,dt=2\pi\) (benar). Untuk \(x=\sin2t,\ y=\cos2t\) pada interval yang sama integralnya \(\int_0^{2\pi}2\,dt=4\pi\) — dua kali keliling, karena lingkaran dilalui dua kali.
+Integral selalu mengukur <em>jarak tempuh</em> partikel, bukan panjang himpunan titik.</p></div>
+
+<div class="box ex"><span class="t">Contoh 5 — panjang satu busur sikloid</span>
+<p>\(\dfrac{dx}{d\theta}=r(1-\cos\theta),\ \dfrac{dy}{d\theta}=r\sin\theta\). Maka
+\[ \sqrt{r^2(1-\cos\theta)^2+r^2\sin^2\theta}=r\sqrt{2-2\cos\theta}. \]
+Karena \(1-\cos\theta=2\sin^2(\theta/2)\), kita peroleh \(\sqrt{2-2\cos\theta}=\sqrt{4\sin^2(\theta/2)}=2\bigl|\sin\tfrac\theta2\bigr|=2\sin\tfrac\theta2\) untuk \(0\le\theta\le2\pi\). Jadi
+\[ L=2r\int_0^{2\pi}\sin\tfrac\theta2\,d\theta=2r\Bigl[-2\cos\tfrac\theta2\Bigr]_0^{2\pi}=2r(2+2)=8r. \]
+Panjang satu busur sikloid adalah <strong>delapan kali jari-jari</strong> lingkaran pembangkit (dibuktikan Christopher Wren tahun 1658).</p></div>
+
+<h2>4. Luas permukaan benda putar</h2>
+<p>Jika kurva \(x=f(t),\ y=g(t)\), \(\alpha\le t\le\beta\), diputar mengelilingi sumbu \(x\), dengan \(f',g'\) kontinu dan \(g(t)\ge0\), maka luas permukaannya
+\[ S=\int_\alpha^\beta 2\pi y\sqrt{\Bigl(\frac{dx}{dt}\Bigr)^2+\Bigl(\frac{dy}{dt}\Bigr)^2}\,dt=\int 2\pi y\,ds. \]
+Jika diputar mengelilingi sumbu \(y\) (dengan \(x\ge0\)), ganti \(y\) dengan \(x\): \(S=\int2\pi x\,ds\). Idenya: setiap potongan busur \(ds\) menyapu pita sempit dengan keliling \(2\pi y\) dan lebar \(ds\).</p>
+<div class="box ex"><span class="t">Contoh 6 — luas permukaan bola</span>
+<p>Bola jari-jari \(r\) dihasilkan oleh pemutaran setengah lingkaran \(x=r\cos t,\ y=r\sin t,\ 0\le t\le\pi\) mengelilingi sumbu \(x\). Karena \(ds=r\,dt\),
+\[ S=\int_0^\pi2\pi(r\sin t)\,r\,dt=2\pi r^2\bigl[-\cos t\bigr]_0^\pi=4\pi r^2. \]</p></div>
+
+<h2>5. Ringkasan rumus</h2>
+<table class="t">
+<tr><th>Besaran</th><th>Rumus parametrik</th></tr>
+<tr><td>Kemiringan</td><td>\(\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}\)</td></tr>
+<tr><td>Turunan kedua</td><td>\(\dfrac{d^2y}{dx^2}=\dfrac{\frac{d}{dt}(dy/dx)}{dx/dt}\)</td></tr>
+<tr><td>Luas</td><td>\(\displaystyle\int y\,dx=\int g(t)f'(t)\,dt\)</td></tr>
+<tr><td>Panjang</td><td>\(\displaystyle\int\sqrt{x'^2+y'^2}\,dt\)</td></tr>
+<tr><td>Luas permukaan (sumbu \(x\))</td><td>\(\displaystyle\int2\pi y\sqrt{x'^2+y'^2}\,dt\)</td></tr>
+</table>
+<p>Anda dapat memeriksa Contoh 3 dan 5 secara numerik dengan <a href="kalkulator.php">kalkulator Python</a>: pilih "Luas di bawah kurva parametrik" dengan \(x(t)=t-\sin(t),\ y(t)=1-\cos(t)\), batas \(0\) sampai \(2*pi\) (hasil \(3\pi\approx9.4248\)).</p>

@@ -1,0 +1,57 @@
+<p>Teorema Dasar Kalkulus mengubah integral pada selang menjadi nilai pada <em>batas</em> selang. <strong>Teorema Green</strong> melakukan hal serupa pada bidang: ia menghubungkan integral garis sepanjang <em>kurva tertutup</em> dengan integral ganda dua pada <em>daerah</em> yang dikurungnya.</p>
+
+<h2>1. Orientasi</h2>
+<p>Kurva tertutup sederhana \(C\) (tidak memotong dirinya sendiri) mempunyai dua arah. <strong>Orientasi positif</strong> adalah arah berlawanan jarum jam, yaitu arah dengan daerah \(D\) yang dikurung selalu berada di <em>sebelah kiri</em> penelusur.</p>
+<figure><img src="assets/img/b16-4-green.png" alt="Orientasi positif"><figcaption>Orientasi positif: berlawanan arah jarum jam, daerah di kiri.</figcaption></figure>
+
+<h2>2. Teorema Green</h2>
+<div class="box def"><span class="t">Teorema Green</span>
+<p>Misalkan \(C\) kurva tertutup sederhana, mulus sebagian-sebagian, berorientasi positif, yang membatasi daerah \(D\). Jika \(P\) dan \(Q\) mempunyai turunan parsial kontinu pada daerah terbuka yang memuat \(D\), maka
+\[ \oint_CP\,dx+Q\,dy=\iint_D\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)dA. \]</p></div>
+<p>Notasi lain untuk ruas kiri: \(\oint_C\mathbf F\cdot d\mathbf r\) dengan \(\mathbf F=\langle P,Q\rangle\), dan \(\partial D\) untuk batas \(D\).</p>
+<p><strong>Bukti (untuk daerah yang sekaligus tipe I dan tipe II).</strong> Tunjukkan \(\oint_CP\,dx=-\iint_D\frac{\partial P}{\partial y}dA\). Tulis \(D=\{a\le x\le b,\ g_1(x)\le y\le g_2(x)\}\). Maka \(\iint_D\frac{\partial P}{\partial y}dA=\int_a^b\bigl[P(x,g_2(x))-P(x,g_1(x))\bigr]dx\). Di sisi lain, \(C=C_1\cup C_2\cup\)(dua ruas vertikal, tempat \(dx=0\)), dengan \(C_1\) (bawah, dari kiri ke kanan): \(\int_{C_1}P\,dx=\int_a^bP(x,g_1(x))\,dx\), dan \(C_2\) (atas, dari kanan ke kiri): \(\int_{C_2}P\,dx=-\int_a^bP(x,g_2(x))\,dx\). Jumlahnya \(\oint_CP\,dx=-\int_a^b\bigl[P(x,g_2)-P(x,g_1)\bigr]dx=-\iint_D\frac{\partial P}{\partial y}dA\). Dengan memandang \(D\) sebagai tipe II diperoleh \(\oint_CQ\,dy=\iint_D\frac{\partial Q}{\partial x}dA\). Jumlahkan. Daerah umum dipotong menjadi potongan sederhana; integral garis pada potongan pembatas dalam saling menghapus karena dilalui dua arah. \(\blacksquare\)</p>
+
+<h2>3. Contoh</h2>
+<div class="box ex"><span class="t">Contoh 1 — segitiga</span>
+<p>\(\oint_Cx^4\,dx+xy\,dy\), \(C\) segitiga \((0,0),(1,0),(0,1)\) berlawanan arah jarum jam. \(P=x^4\), \(Q=xy\): \(Q_x-P_y=y-0=y\). \(\iint_Dy\,dA=\int_0^1\int_0^{1-y}y\,dx\,dy=\int_0^1y(1-y)\,dy=\tfrac16\). Cek langsung: ruas \((0,0)\to(1,0)\): \(\int_0^1x^4dx=\tfrac15\); ruas \((1,0)\to(0,1)\): \(x=1-s,y=s\): \(\int_0^1\bigl[-(1-s)^4+(1-s)s\bigr]ds=-\tfrac15+\tfrac16\); ruas \((0,1)\to(0,0)\): \(x=0\), integral 0. Jumlah \(\tfrac15-\tfrac15+\tfrac16=\tfrac16\). Cocok.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — lingkaran</span>
+<p>\(\oint_C-y^3\,dx+x^3\,dy\), \(C\): lingkaran \(x^2+y^2=a^2\). \(Q_x-P_y=3x^2+3y^2\). \(\iint_D3(x^2+y^2)\,dA=3\int_0^{2\pi}\int_0^ar^2\cdot r\,dr\,d\theta=\tfrac{3\pi a^4}2\). Langsung dengan parametrisasi akan melibatkan \(\cos^4+\sin^4\), lebih panjang.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — kasus ketika \(Q_x-P_y\) konstan</span>
+<p>\(\oint_C(y+e^{x^2})\,dx+(2x+\cos y)\,dy\), \(C\) elips \(\frac{x^2}9+\frac{y^2}4=1\). \(Q_x-P_y=2-1=1\), jadi integral \(=\) luas elips \(=\pi\cdot3\cdot2=6\pi\). Suku-suku sulit \(e^{x^2}\) dan \(\cos y\) tidak berperan.</p></div>
+<div class="box ex"><span class="t">Contoh 4 — menjelaskan 16.2 Contoh 4</span>
+<p>\(\mathbf F=\langle-y,x\rangle\): usaha dari \((0,0)\) ke \((1,1)\) lewat parabola \(y=x^2\) adalah \(\frac13\), lewat garis \(y=x\) adalah 0. Kurva tertutup \(C=C_1\cup(-C_2)\) (naik di parabola, turun di garis) berorientasi positif: \(\oint_C=\frac13-0\). Teorema Green: \(Q_x-P_y=1-(-1)=2\), luas antara \(y=x^2\) dan \(y=x\) adalah \(\int_0^1(x-x^2)dx=\tfrac16\). \(\iint_D2\,dA=\tfrac13\). Cocok.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — daerah dengan lubang</span>
+<p>Misalkan \(D\) adalah cincin \(1\le x^2+y^2\le4\), dengan batas luar \(C_2\) (berlawanan arah jarum jam) dan batas dalam \(C_1\) (<em>searah</em> jarum jam, agar \(D\) tetap di kiri). Green berlaku dengan \(\partial D=C_2\cup(-C_1)\): \(\oint_{C_2}-\oint_{C_1}=\iint_D(Q_x-P_y)\,dA\) dengan kedua lingkaran berlawanan arah jarum jam. Bila \(Q_x=P_y\) di seluruh \(D\) (mis. medan Contoh 4 di 16.3 \(\langle-y,x\rangle/(x^2+y^2)\)), maka \(\oint_{C_2}=\oint_{C_1}=2\pi\): kurva tertutup mana pun yang mengelilingi titik asal memberi sirkulasi yang sama, \(2\pi\).</p></div>
+
+<h2>4. Menghitung luas dengan integral garis</h2>
+<p>Pilih \(P,Q\) dengan \(Q_x-P_y=1\), mis. \(P=0,Q=x\) atau \(P=-y,Q=0\) atau \(P=-\frac y2,Q=\frac x2\). Maka
+\[ A(D)=\oint_Cx\,dy=-\oint_Cy\,dx=\frac12\oint_Cx\,dy-y\,dx. \]</p>
+<div class="box ex"><span class="t">Contoh 6 — luas elips</span>
+<p>\(x=a\cos t,\ y=b\sin t\), \(0\le t\le2\pi\): \(A=\frac12\int_0^{2\pi}\bigl[a\cos t\cdot b\cos t-b\sin t(-a\sin t)\bigr]dt=\frac12\int_0^{2\pi}ab\,dt=\pi ab\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — astroid</span>
+<p>\(x=\cos^3t,\ y=\sin^3t\). \(x\,y'-y\,x'=\cos^3t\cdot3\sin^2t\cos t+\sin^3t\cdot3\cos^2t\sin t=3\sin^2t\cos^2t\). \(A=\frac12\int_0^{2\pi}3\sin^2t\cos^2t\,dt=\frac32\cdot\frac\pi4=\frac{3\pi}8\approx1{,}178\).</p></div>
+
+<h2>5. Bentuk vektor: sirkulasi dan fluks</h2>
+<div class="box def"><span class="t">Dua bentuk vektor teorema Green</span>
+<p>Untuk \(\mathbf F=\langle P,Q\rangle\):
+\[ \oint_C\mathbf F\cdot d\mathbf r=\iint_D\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)dA\quad\text{(sirkulasi, "bentuk tangensial")}, \]
+\[ \oint_C\mathbf F\cdot\mathbf n\,ds=\iint_D\Bigl(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}\Bigr)dA\quad\text{(fluks, "bentuk normal")}, \]
+dengan \(\mathbf n\) normal satuan keluar. Bentuk kedua diperoleh dari yang pertama dengan memakai medan \(\langle-Q,P\rangle\) (karena \(\mathbf n\,ds=\langle dy,-dx\rangle\)).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — fluks</span>
+<p>\(\mathbf F=\langle x^3,y^3\rangle\), fluks keluar melalui lingkaran jari-jari \(a\): \(\text{div}=3x^2+3y^2\), hasil \(\iint3r^2\,dA=\tfrac{3\pi a^4}2\). Untuk \(\mathbf F=\langle x,y\rangle\): div \(=2\), fluks \(=2\cdot\pi a^2\), cocok dengan 16.2 Contoh 8 (\(2\pi R^2\)).</p></div>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Memakai arah searah jarum jam tanpa mengganti tanda hasil.</li>
+<li>Menukar \(Q_x\) dan \(P_y\) (rumus: \(Q_x-P_y\)).</li>
+<li>Menerapkan Green pada medan yang tidak halus di dalam \(D\) (mis. singularitas di titik asal).</li>
+<li>Lupa membalik arah batas dalam pada daerah berlubang.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\oint_CP\,dx+Q\,dy=\iint_D(Q_x-P_y)\,dA\), \(C\) berorientasi positif.</li>
+<li>Luas: \(A=\frac12\oint x\,dy-y\,dx\).</li>
+<li>Bentuk normal: \(\oint\mathbf F\cdot\mathbf n\,ds=\iint\operatorname{div}\mathbf F\,dA\).</li>
+</ul>
+<p>Berikutnya <a href="b16-5.html">16.5 Curl dan Divergensi</a>.</p>

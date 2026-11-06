@@ -1,0 +1,66 @@
+<p>Daerah yang kita integrasikan jarang berupa persegi panjang. Di sini kita memperluas integral ganda ke daerah terbatas \(D\) berbentuk umum dengan menggunakan batas yang bergantung pada peubah lain.</p>
+
+<h2>1. Integral atas daerah umum</h2>
+<p>Untuk daerah terbatas \(D\), kurung \(D\) dalam persegi panjang \(R\) dan definisikan \(F(x,y)=f(x,y)\) bila \((x,y)\in D\) dan \(F=0\) di luar \(D\). Maka \(\iint_Df\,dA:=\iint_RF\,dA\). Dalam praktik kita memakai dua jenis daerah.</p>
+<div class="box def"><span class="t">Daerah tipe I (batas atas dan bawah berupa fungsi \(x\))</span>
+<p>\(D=\{(x,y):a\le x\le b,\ g_1(x)\le y\le g_2(x)\}\) dengan \(g_1,g_2\) kontinu. Maka
+\[ \iint_Df\,dA=\int_a^b\int_{g_1(x)}^{g_2(x)}f(x,y)\,dy\,dx. \]</p></div>
+<div class="box def"><span class="t">Daerah tipe II (batas kiri dan kanan berupa fungsi \(y\))</span>
+<p>\(D=\{(x,y):c\le y\le d,\ h_1(y)\le x\le h_2(y)\}\). Maka
+\[ \iint_Df\,dA=\int_c^d\int_{h_1(y)}^{h_2(y)}f(x,y)\,dx\,dy. \]</p></div>
+<figure><img src="assets/img/b15-3-tipe.png" alt="Daerah tipe I dan II"><figcaption>Kiri: tipe I, dibatasi parabola \(y=2x^2\) dan \(y=1+x^2\). Kanan: tipe II, daerah di antara \(y=x^2\) dan \(y=2x\).</figcaption></figure>
+<div class="box note"><span class="t">Cara menyusun batas</span>
+<ol>
+<li>Gambar daerah \(D\).</li>
+<li>Untuk tipe I: gambar anak panah vertikal melalui \(D\) dari batas bawah ke batas atas; itulah batas \(y\). Batas \(x\) adalah ujung kiri dan kanan seluruh daerah.</li>
+<li>Untuk tipe II: anak panah horizontal; batas \(x\) dari kiri ke kanan, batas \(y\) adalah ujung bawah dan atas.</li>
+</ol>
+<p>Batas integral dalam boleh memuat peubah luar; batas integral luar harus konstanta.</p></div>
+
+<h2>2. Contoh</h2>
+<div class="box ex"><span class="t">Contoh 1 — tipe I</span>
+<p>\(\iint_D(x+2y)\,dA\), \(D\) antara parabola \(y=2x^2\) dan \(y=1+x^2\). Perpotongan: \(2x^2=1+x^2\Rightarrow x=\pm1\). Untuk \(-1\le x\le1\), \(2x^2\le y\le1+x^2\).
+\[ \int_{-1}^1\int_{2x^2}^{1+x^2}(x+2y)\,dy\,dx=\int_{-1}^1\Bigl[xy+y^2\Bigr]_{2x^2}^{1+x^2}dx=\int_{-1}^1\bigl(1+x-x^3+2x^2-3x^4\bigr)\,dx. \]
+Suku ganjil \(x\) dan \(-x^3\) saling menghapus pada selang simetris: \(2\bigl(1+\tfrac23-\tfrac35\bigr)=\dfrac{32}{15}\approx2{,}133\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — tipe II</span>
+<p>\(\iint_D(x+y)\,dA\), \(D\) antara \(y=x^2\) dan \(y=2x\) (titik potong \((0,0)\) dan \((2,4)\)). Sebagai tipe II: \(0\le y\le4\), \(\frac y2\le x\le\sqrt y\). Sebagai tipe I: \(0\le x\le2\), \(x^2\le y\le2x\): \(\int_0^2\Bigl[xy+\tfrac{y^2}2\Bigr]_{x^2}^{2x}dx\). Di \(y=2x\) suku dalam kurung bernilai \(2x^2+2x^2=4x^2\); di \(y=x^2\) bernilai \(x^3+\tfrac{x^4}2\). Jadi integralnya \(\int_0^2\bigl(4x^2-x^3-\tfrac{x^4}2\bigr)dx\) dan hasilnya \(\tfrac{32}3-4-\tfrac{16}5=\tfrac{160-60-48}{15}=\tfrac{52}{15}\approx3{,}467\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — daerah di antara \(y=x\) dan \(y=x^2\)</span>
+<p>\(D\): \(0\le x\le1\), \(x^2\le y\le x\). \(\displaystyle\iint_D(x+y)\,dA=\int_0^1\Bigl[xy+\tfrac{y^2}2\Bigr]_{x^2}^{x}dx=\int_0^1\Bigl(\tfrac32x^2-x^3-\tfrac12x^4\Bigr)dx=\tfrac12-\tfrac14-\tfrac1{10}=\tfrac3{20}\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — volume tetrahedron</span>
+<p>Padatan dibatasi bidang \(x+2y+z=2\) dan bidang-bidang koordinat (oktan pertama). Alas: segitiga di bidang \(xy\) dengan \(z=0\): \(x+2y=2\), jadi \(0\le x\le2\), \(0\le y\le1-\frac x2\). Tinggi \(z=2-x-2y\).
+\[ V=\int_0^2\int_0^{1-x/2}(2-x-2y)\,dy\,dx=\int_0^2\Bigl(1-\frac x2\Bigr)^2dx=\Bigl[-\tfrac23\bigl(1-\tfrac x2\bigr)^3\Bigr]_0^2=\tfrac23. \]
+Cek geometris: \(V=\frac16\cdot2\cdot1\cdot2=\frac23\) (tetrahedron dengan rusuk saling tegak lurus 2, 1, 2).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — luas dari integral ganda</span>
+<p>\(A(D)=\iint_D1\,dA\). Untuk daerah Contoh 1: \(\int_{-1}^1\bigl[(1+x^2)-2x^2\bigr]dx=\int_{-1}^1(1-x^2)dx=\frac43\). Untuk daerah Contoh 2: \(\int_0^2(2x-x^2)dx=\frac43\). Kebetulan sama.</p></div>
+
+<h2>3. Membalik urutan integrasi</h2>
+<p>Kadang integral berulang hanya dapat dihitung bila urutannya dibalik: gambar daerah dari batas yang diberikan, lalu tulis ulang sebagai tipe lain.</p>
+<div class="box ex"><span class="t">Contoh 6 — antiturunan tidak elementer</span>
+<p>\(\displaystyle\int_0^1\int_x^1e^{y^2}\,dy\,dx\). \(\int e^{y^2}dy\) tidak punya antiturunan elementer. Daerahnya \(0\le x\le1\), \(x\le y\le1\): segitiga dengan titik \((0,0),(0,1),(1,1)\). Sebagai tipe II: \(0\le y\le1\), \(0\le x\le y\). \(\displaystyle\int_0^1\int_0^ye^{y^2}\,dx\,dy=\int_0^1ye^{y^2}\,dy=\Bigl[\tfrac12e^{y^2}\Bigr]_0^1=\dfrac{e-1}2\approx0{,}859\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — pembalikan dengan cosinus</span>
+<p>\(\displaystyle\int_0^2\int_{y^2}^4y\cos(x^2)\,dx\,dy\). Daerah: \(0\le y\le2\), \(y^2\le x\le4\), yaitu \(0\le x\le4\), \(0\le y\le\sqrt x\). Balik: \(\int_0^4\int_0^{\sqrt x}y\cos(x^2)\,dy\,dx=\int_0^4\tfrac x2\cos(x^2)\,dx=\tfrac14\sin(x^2)\Big|_0^4=\tfrac{\sin16}4\approx-0{,}072\).</p></div>
+
+<h2>4. Sifat tambahan</h2>
+<ul>
+<li>Jika \(D=D_1\cup D_2\) dan \(D_1,D_2\) tidak tumpang tindih kecuali di batas: \(\iint_D=\iint_{D_1}+\iint_{D_2}\).</li>
+<li>\(m\,A(D)\le\iint_Df\,dA\le M\,A(D)\) bila \(m\le f\le M\).</li>
+<li>Nilai rata-rata: \(f_{\text{rata}}=\frac1{A(D)}\iint_Df\,dA\).</li>
+</ul>
+<div class="box ex"><span class="t">Contoh 8 — taksiran</span>
+<p>\(\iint_D\sin(x^2+y^2)\,dA\) untuk \(D\) cakram \(x^2+y^2\le\frac14\) (luas \(\frac\pi4\)). Pada \(D\): \(0\le\sin(x^2+y^2)\le\sin\frac14\approx0{,}247\). Maka \(0\le\iint\le0{,}247\cdot\frac\pi4\approx0{,}194\).</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Batas luar yang memuat peubah. Batas luar harus konstanta.</li>
+<li>Tidak menggambar daerah, sehingga batas tertukar.</li>
+<li>Pada pembalikan urutan, lupa bahwa batas lama menjadi batas yang berbeda: gambar dulu.</li>
+<li>Salah tanda ketika kurva atas dan bawah tertukar (hasil luas negatif).</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>Tipe I: \(a\le x\le b\), \(g_1\le y\le g_2\). Tipe II: \(c\le y\le d\), \(h_1\le x\le h_2\).</li>
+<li>Gambar daerah, tulis batas, hitung dari dalam ke luar.</li>
+<li>Membalik urutan dapat menghindari antiturunan yang tak elementer.</li>
+</ul>
+<p>Berikutnya <a href="b15-4.html">15.4</a>: koordinat kutub.</p>

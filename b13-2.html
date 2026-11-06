@@ -1,0 +1,72 @@
+<p>Kalkulus fungsi vektor berjalan komponen demi komponen, tetapi tafsir geometrisnya penting: turunan \(\mathbf r'(t)\) adalah vektor singgung pada kurva.</p>
+
+<h2>1. Turunan</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Turunan fungsi vektor \(\mathbf r\):
+\[ \mathbf r'(t)=\lim_{h\to0}\frac{\mathbf r(t+h)-\mathbf r(t)}h \]
+bila limitnya ada. Bila \(\mathbf r(t)=\langle f(t),g(t),h(t)\rangle\) dengan \(f,g,h\) terturunkan, maka
+\[ \mathbf r'(t)=\langle f'(t),\ g'(t),\ h'(t)\rangle. \]</p></div>
+<p><strong>Tafsir geometris.</strong> \(\mathbf r(t+h)-\mathbf r(t)\) adalah vektor sekan dari titik \(P=\mathbf r(t)\) ke \(Q=\mathbf r(t+h)\). Dibagi \(h\), ia searah sekan; ketika \(h\to0\) arahnya menuju garis singgung. Jadi bila \(\mathbf r'(t)\ne\mathbf0\), vektor \(\mathbf r'(t)\) <strong>menyinggung kurva di \(P\)</strong>, menunjuk ke arah \(t\) membesar.</p>
+<div class="box def"><span class="t">Vektor singgung satuan dan garis singgung</span>
+<p>\[ \mathbf T(t)=\frac{\mathbf r'(t)}{|\mathbf r'(t)|}. \]
+Garis singgung di \(\mathbf r(t_0)\) adalah garis melalui titik itu dengan arah \(\mathbf r'(t_0)\): \(\mathbf L(s)=\mathbf r(t_0)+s\,\mathbf r'(t_0)\).</p></div>
+<div class="box ex"><span class="t">Contoh 1 — turunan dan singgung heliks</span>
+<p>\(\mathbf r(t)=\langle\cos t,\sin t,t\rangle\): \(\mathbf r'(t)=\langle-\sin t,\cos t,1\rangle\), \(|\mathbf r'|=\sqrt{\sin^2t+\cos^2t+1}=\sqrt2\), \(\mathbf T=\frac1{\sqrt2}\langle-\sin t,\cos t,1\rangle\). Di \(t=\pi/4\): titik \(\bigl(\frac{\sqrt2}2,\frac{\sqrt2}2,\frac\pi4\bigr)\), arah \(\bigl\langle-\frac{\sqrt2}2,\frac{\sqrt2}2,1\bigr\rangle\). Garis singgung: \(\bigl\langle\frac{\sqrt2}2(1-s),\ \frac{\sqrt2}2(1+s),\ \frac\pi4+s\bigr\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — singgung kubik terpilin</span>
+<p>\(\mathbf r(t)=\langle t,t^2,t^3\rangle\), \(\mathbf r'(t)=\langle1,2t,3t^2\rangle\). Di \(t=1\): titik \((1,1,1)\), arah \(\langle1,2,3\rangle\), garis singgung \(\langle1+s,1+2s,1+3s\rangle\); \(\mathbf T(1)=\frac1{\sqrt{14}}\langle1,2,3\rangle\).</p></div>
+<figure><img src="assets/img/b13-2-tangen.png" alt="Singgung kubik"><figcaption>Vektor singgung \(\mathbf r'(1)=\langle1,2,3\rangle\) pada kubik terpilin di \((1,1,1)\).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 3 — sudut perpotongan dua kurva</span>
+<p>Kurva \(\mathbf r_1(t)=\langle t,t^2,t^3\rangle\) memotong garis \(\mathbf r_2(s)=\langle1+s,1+3s,1+7s\rangle\) di \((1,1,1)\) (\(t=1\), \(s=0\)). Arah singgung: \(\mathbf r_1'(1)=\langle1,2,3\rangle\), \(\mathbf r_2'=\langle1,3,7\rangle\). \(\cos\theta=\dfrac{1+6+21}{\sqrt{14}\sqrt{59}}=\dfrac{28}{28{,}74}\approx0{,}974\), \(\theta\approx13{,}0^\circ\). Sudut antara dua kurva didefinisikan sebagai sudut antara garis singgungnya.</p></div>
+
+<h2>2. Aturan turunan</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Misalkan \(\mathbf u,\mathbf v\) fungsi vektor terturunkan, \(c\) skalar, \(f\) fungsi bernilai real. Maka:</p>
+<ol>
+<li>\(\dfrac d{dt}[\mathbf u+\mathbf v]=\mathbf u'+\mathbf v'\)</li>
+<li>\(\dfrac d{dt}[c\mathbf u]=c\mathbf u'\)</li>
+<li>\(\dfrac d{dt}[f\mathbf u]=f'\mathbf u+f\mathbf u'\)</li>
+<li>\(\dfrac d{dt}[\mathbf u\cdot\mathbf v]=\mathbf u'\cdot\mathbf v+\mathbf u\cdot\mathbf v'\)</li>
+<li>\(\dfrac d{dt}[\mathbf u\times\mathbf v]=\mathbf u'\times\mathbf v+\mathbf u\times\mathbf v'\) (urutan pada hasil kali silang harus dijaga)</li>
+<li>\(\dfrac d{dt}[\mathbf u(f(t))]=f'(t)\,\mathbf u'(f(t))\) (aturan rantai)</li>
+</ol></div>
+<p><strong>Bukti aturan 4.</strong> Dengan \(\mathbf u=\langle u_1,u_2,u_3\rangle\), \(\mathbf v=\langle v_1,v_2,v_3\rangle\): \(\frac d{dt}\sum u_iv_i=\sum(u_i'v_i+u_iv_i')=\mathbf u'\cdot\mathbf v+\mathbf u\cdot\mathbf v'\). Aturan 5 dibuktikan serupa dengan menjabarkan komponen hasil kali silang. \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 4 — hasil kali titik dan silang</span>
+<p>\(\mathbf u=\langle t,t^2,1\rangle\), \(\mathbf v=\langle1,t,t^3\rangle\). Maka \(\mathbf u\cdot\mathbf v=t+t^3+t^3=t+2t^3\) dengan turunan \(1+6t^2\). Dengan aturan 4: \(\mathbf u'\cdot\mathbf v+\mathbf u\cdot\mathbf v'=\langle1,2t,0\rangle\cdot\langle1,t,t^3\rangle+\langle t,t^2,1\rangle\cdot\langle0,1,3t^2\rangle=(1+2t^2)+(t^2+3t^2)=1+6t^2\). Cocok.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — panjang konstan berarti tegak lurus</span>
+<p>Jika \(|\mathbf r(t)|=c\) konstan, maka \(\mathbf r\cdot\mathbf r=c^2\). Turunkan: \(2\,\mathbf r\cdot\mathbf r'=0\), jadi \(\mathbf r'(t)\perp\mathbf r(t)\). Geometrisnya: kurva pada bola berpusat di asal mempunyai singgung yang tegak lurus jari-jari. Hal yang sama berlaku untuk \(\mathbf T\): karena \(|\mathbf T|=1\), maka \(\mathbf T'\perp\mathbf T\) (dipakai di 13.3 untuk vektor normal).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — turunan dengan aturan rantai</span>
+<p>\(\mathbf u(t)=\langle t^2,\,e^t,\,\sin t\rangle\) dan \(f(t)=\ln t\): \(\frac d{dt}\mathbf u(\ln t)=\frac1t\langle2\ln t,\ e^{\ln t},\ \cos(\ln t)\rangle=\bigl\langle\frac{2\ln t}t,\ 1,\ \frac{\cos\ln t}t\bigr\rangle\).</p></div>
+
+<h3>Turunan orde tinggi</h3>
+<p>\(\mathbf r''(t)=\langle f'',g'',h''\rangle\) adalah turunan dari \(\mathbf r'\). Untuk kubik terpilin \(\mathbf r''=\langle0,2,6t\rangle\). Vektor \(\mathbf r''\) akan menjadi percepatan.</p>
+<p>Kurva disebut <strong>mulus</strong> bila \(\mathbf r'\) kontinu dan \(\mathbf r'(t)\ne\mathbf0\) (kecuali mungkin di ujung). Kurva mulus tidak punya sudut tajam atau titik balik tiba-tiba; \(\mathbf T\) berubah kontinu.</p>
+
+<h2>3. Integral</h2>
+<div class="box def"><span class="t">Integral fungsi vektor</span>
+<p>\[ \int_a^b\mathbf r(t)\,dt=\Bigl\langle\int_a^bf\,dt,\ \int_a^bg\,dt,\ \int_a^bh\,dt\Bigr\rangle. \]
+Teorema Dasar Kalkulus berlaku: bila \(\mathbf R'=\mathbf r\), maka \(\int_a^b\mathbf r\,dt=\mathbf R(b)-\mathbf R(a)\). Integral tak tentu menghasilkan \(\mathbf R(t)+\mathbf C\), dengan \(\mathbf C\) vektor konstanta.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — integral tentu</span>
+<p>\(\displaystyle\int_0^{\pi/2}\langle\cos t,\ \sin t,\ t\rangle\,dt=\bigl\langle1,\ 1,\ \tfrac{\pi^2}8\bigr\rangle\). Sedangkan \(\displaystyle\int_0^1\langle2t,\ 3t^2,\ e^t\rangle\,dt=\langle1,\ 1,\ e-1\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — masalah nilai awal</span>
+<p>Cari \(\mathbf r(t)\) bila \(\mathbf r'(t)=\langle2t,\ e^t,\ 1\rangle\) dan \(\mathbf r(0)=\langle1,0,2\rangle\). Integrasi: \(\mathbf r(t)=\langle t^2,\ e^t,\ t\rangle+\mathbf C\). Di \(t=0\): \(\langle0,1,0\rangle+\mathbf C=\langle1,0,2\rangle\Rightarrow\mathbf C=\langle1,-1,2\rangle\). Jadi \(\mathbf r(t)=\langle t^2+1,\ e^t-1,\ t+2\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — dua kali integrasi</span>
+<p>Percepatan \(\mathbf r''(t)=\langle0,2,6t\rangle\), kecepatan awal \(\mathbf r'(0)=\langle1,0,0\rangle\), posisi awal \(\mathbf r(0)=\langle0,1,2\rangle\). Integrasi pertama: \(\mathbf r'=\langle0,2t,3t^2\rangle+\langle1,0,0\rangle=\langle1,2t,3t^2\rangle\). Integrasi kedua: \(\mathbf r=\langle t,t^2,t^3\rangle+\langle0,1,2\rangle=\langle t,\ t^2+1,\ t^3+2\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 10 — ketegakan lurus dan integral</span>
+<p>Jika \(\mathbf r'(t)=\langle-\sin t,\cos t\rangle\cdot3\) (gerak melingkar jari-jari 3), maka \(\mathbf r\cdot\mathbf r'=0\) untuk semua \(t\), konsisten dengan Contoh 5. Integrasi \(\mathbf r'\) dari \(0\) ke \(2\pi\) memberi \(\langle0,0\rangle\): perpindahan total nol karena kembali ke titik awal, tetapi jarak tempuh \(\int|\mathbf r'|=6\pi\) (13.3).</p></div>
+
+<h2>4. Kesalahan umum</h2>
+<ul>
+<li>Memakai aturan hasil kali silang dengan urutan terbalik: \(\mathbf u\times\mathbf v'\) bukan \(\mathbf v'\times\mathbf u\).</li>
+<li>Menulis \(|\mathbf r|'=|\mathbf r'|\): umumnya tidak benar. Panjang vektor posisi tidak sama dengan laju.</li>
+<li>Lupa konstanta vektor \(\mathbf C\) pada integral tak tentu, atau memperlakukannya sebagai skalar.</li>
+<li>Menyatakan \(\mathbf r'(t)\) singgung padahal \(\mathbf r'(t)=\mathbf0\) (kurva tidak mulus di titik itu).</li>
+</ul>
+
+<h2>5. Ringkasan</h2>
+<ul>
+<li>\(\mathbf r'=\langle f',g',h'\rangle\) adalah vektor singgung; \(\mathbf T=\mathbf r'/|\mathbf r'|\).</li>
+<li>Aturan: jumlah, hasil kali dengan skalar, titik, silang, rantai.</li>
+<li>\(|\mathbf r|\) konstan \(\Rightarrow\mathbf r\perp\mathbf r'\).</li>
+<li>Integral per komponen; masalah nilai awal memakai konstanta vektor.</li>
+</ul>
+<p>Berikutnya <a href="b13-3.html">13.3 Panjang Busur dan Kelengkungan</a>.</p>

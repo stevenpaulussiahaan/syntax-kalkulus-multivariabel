@@ -1,0 +1,96 @@
+<p>Pada <a href="b11-2.html">11.2</a> kita hanya bisa memutuskan kekonvergenan deret bila jumlah parsial \(s_n\) punya rumus tertutup (deret geometri, teleskop). Sebagian besar deret tidak sebaik itu. Misalnya, tidak ada rumus sederhana untuk \(s_n=\sum_{k=1}^n \frac1{k^2}\), padahal kita ingin tahu apakah deretnya konvergen. Subbab ini memakai <strong>integral</strong> sebagai alat bantu: bila suku deret berasal dari fungsi positif yang menurun, luas di bawah kurva "terjepit" oleh jumlah deret.</p>
+
+<h2>1. Gagasan: membandingkan deret dengan luas</h2>
+<p>Tinjau deret \(\sum_{n=1}^\infty \frac1{n^2}\) dan fungsi \(f(x)=\frac1{x^2}\), sehingga \(f(n)=\frac{1}{n^2}\). Gambarkan persegi panjang dengan alas 1 dan tinggi \(f(n)\), mulai dari \(x=n\) ke kanan. Karena \(f\) menurun, tiap persegi panjang berada di atas kurva, sehingga jumlah luasnya (yaitu \(s_n\)) lebih besar dari luas di bawah kurva:</p>
+\[ s_n=\sum_{k=1}^{n} f(k)\ \ge\ \int_1^{n+1} f(x)\,dx. \]
+<p>Sebaliknya, bila persegi panjang digeser agar mulai dari \(x=k-1\) (ujung kanannya menyentuh kurva), mereka berada di bawah kurva:</p>
+\[ s_n-f(1)=\sum_{k=2}^{n} f(k)\ \le\ \int_1^{n} f(x)\,dx. \]
+<figure><img src="assets/img/b11-3-integral.png" alt="Persegi panjang di atas dan di bawah kurva"><figcaption>Kiri: persegi panjang di atas kurva, \(s_n\ge\int_1^{n+1}f\). Kanan: persegi panjang di bawah kurva, \(s_n-a_1\le\int_1^nf\).</figcaption></figure>
+<p>Jadi jika integral \(\int_1^\infty f\) berhingga, jumlah parsial terbatas di atas dan deret konvergen; bila integralnya tak hingga, \(s_n\to\infty\) dan deret divergen. Itu isi uji berikut.</p>
+
+<h2>2. Uji integral</h2>
+<div class="box def"><span class="t">Teorema (Uji Integral)</span>
+<p>Misalkan \(f\) kontinu, positif, dan menurun pada \([1,\infty)\), dan \(a_n=f(n)\). Maka
+\[ \sum_{n=1}^\infty a_n\ \text{konvergen}\iff\int_1^\infty f(x)\,dx\ \text{konvergen}. \]
+Dengan kata lain, deret dan integral tak wajar itu <em>sama-sama konvergen atau sama-sama divergen</em>.</p></div>
+
+<h3>Bukti</h3>
+<p><strong>(Integral konvergen \(\Rightarrow\) deret konvergen).</strong> Dari ketaksamaan kedua di atas, \(s_n\le a_1+\int_1^nf\le a_1+\int_1^\infty f=:M\). Karena \(a_n\gt0\), barisan \(\{s_n\}\) naik dan terbatas di atas oleh \(M\), jadi konvergen menurut Teorema Barisan Monoton (<a href="b11-1.html">11.1</a>).</p>
+<p><strong>(Integral divergen \(\Rightarrow\) deret divergen).</strong> Dari ketaksamaan pertama, \(s_n\ge\int_1^{n+1}f\to\infty\), maka \(s_n\to\infty\). \(\blacksquare\)</p>
+
+<div class="box note"><span class="t">Catatan penting</span>
+<ul>
+<li>Fungsi tidak perlu menurun mulai dari \(x=1\); cukup menurun pada \([N,\infty)\) untuk suatu \(N\), sebab membuang berhingga banyak suku tidak mengubah kekonvergenan.</li>
+<li>Uji ini hanya menyatakan <strong>kekonvergenan</strong>, <em>bukan nilai</em> jumlah deret. \(\int_1^\infty f\) umumnya berbeda dari \(\sum a_n\).</li>
+<li>Batas bawah integral boleh disesuaikan dengan indeks awal deret.</li>
+<li>Syarat "positif" dan "menurun" harus diperiksa, misalnya dengan \(f'(x)\lt0\).</li>
+</ul></div>
+
+<h2>3. Deret-\(p\)</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Deret-\(p\) \(\displaystyle\sum_{n=1}^\infty\frac1{n^p}\) konvergen jika \(p\gt1\) dan divergen jika \(p\le1\).</p></div>
+<p><strong>Bukti.</strong> Bila \(p\le0\), suku \(\frac1{n^p}\not\to0\), jadi divergen menurut uji divergensi. Bila \(p\gt0\), \(f(x)=x^{-p}\) positif, kontinu, dan menurun pada \([1,\infty)\). Untuk \(p\ne1\),
+\[ \int_1^\infty x^{-p}\,dx=\lim_{t\to\infty}\frac{t^{1-p}-1}{1-p}=\begin{cases}\dfrac1{p-1}&p\gt1\\\infty&p\lt1,\end{cases} \]
+dan untuk \(p=1\), \(\int_1^\infty\frac{dx}{x}=\lim\ln t=\infty\). Uji integral menyelesaikan bukti. \(\blacksquare\)</p>
+<p>Kasus khusus yang perlu dihafal: \(p=1\) (harmonik, divergen), \(p=2\) (\(\sum 1/n^2\), konvergen), \(p=\tfrac12\) (\(\sum1/\sqrt n\), divergen), \(p=1{,}001\) (konvergen, walaupun sangat lambat).</p>
+
+<h2>4. Contoh uji integral</h2>
+<div class="box ex"><span class="t">Contoh 1 — \(\sum\frac1{n^2+1}\)</span>
+<p>\(f(x)=\frac1{x^2+1}\) positif, kontinu, menurun (\(f'(x)=-\frac{2x}{(x^2+1)^2}\lt0\)). Maka
+\[ \int_1^\infty\frac{dx}{x^2+1}=\lim_{t\to\infty}\arctan t-\arctan1=\frac\pi2-\frac\pi4=\frac\pi4. \]
+Integral konvergen, sehingga deret konvergen. (Nilai integral \(\pi/4\approx0{,}785\) berbeda dari jumlah deret \(\approx1{,}0767\), sesuai catatan di atas.)</p></div>
+
+<div class="box ex"><span class="t">Contoh 2 — \(\sum\frac{\ln n}{n^2}\)</span>
+<p>\(f(x)=\frac{\ln x}{x^2}\). Turunannya \(f'(x)=\dfrac{x^2\cdot\frac1x-2x\ln x}{x^4}=\dfrac{1-2\ln x}{x^3}\), negatif bila \(\ln x\gt\tfrac12\), yaitu \(x\gt\sqrt e\approx1{,}65\). Jadi \(f\) menurun untuk \(x\ge2\); gunakan batas bawah 2 (atau 1, hasilnya sama konvergen). Dengan integral parsial (\(u=\ln x,\ dv=x^{-2}dx\)):
+\[ \int_1^t\frac{\ln x}{x^2}dx=\Bigl[-\frac{\ln x}{x}-\frac1x\Bigr]_1^t=1-\frac{\ln t+1}{t}\ \xrightarrow[t\to\infty]{}\ 1. \]
+Integral konvergen, maka deret konvergen.</p></div>
+
+<div class="box ex"><span class="t">Contoh 3 — \(\sum_{n=2}^\infty\frac1{n\ln n}\) (divergen sangat lambat)</span>
+<p>\(f(x)=\frac1{x\ln x}\) positif dan menurun pada \([2,\infty)\). Dengan substitusi \(u=\ln x\):
+\[ \int_2^t\frac{dx}{x\ln x}=\ln(\ln t)-\ln(\ln2)\ \to\ \infty. \]
+Deret divergen. Walaupun suku-sukunya menuju nol lebih cepat dari \(1/n\), \(\ln(\ln n)\) tumbuh sangat lambat: karena \(\sum_{n=2}^N\frac1{n\ln n}\approx\ln(\ln N)+0{,}79\), untuk mencapai jumlah 10 dibutuhkan \(N\) sekitar \(10^{4300}\) suku.</p></div>
+
+<div class="box ex"><span class="t">Contoh 4 — \(\sum ne^{-n^2}\)</span>
+<p>\(f(x)=xe^{-x^2}\), \(f'(x)=(1-2x^2)e^{-x^2}\lt0\) untuk \(x\ge1\). \(\int_1^\infty xe^{-x^2}dx=\Bigl[-\tfrac12e^{-x^2}\Bigr]_1^\infty=\dfrac1{2e}\), konvergen. Maka deret konvergen. Lebih jauh, \(\sum\le a_1+\int_1^\infty f=\frac1e+\frac1{2e}\approx0{,}552\); nilai sebenarnya \(\approx0{,}4049\).</p></div>
+
+<div class="box ex"><span class="t">Contoh 5 — kapan uji integral tidak cocok</span>
+<p>Untuk \(\sum\dfrac{\cos^2n}{1+n^2}\), fungsi \(\frac{\cos^2x}{1+x^2}\) tidak menurun (ia berosilasi), jadi uji integral tidak berlaku. Deret ini ditangani dengan uji perbandingan: \(0\le\frac{\cos^2n}{1+n^2}\le\frac1{1+n^2}\), dan deret terakhir konvergen (Contoh 1). Lihat <a href="b11-4.html">11.4</a>.</p></div>
+
+<h2>5. Menaksir jumlah deret</h2>
+<p>Seandainya kita tahu sebuah deret konvergen ke \(s\), berapa jauh jumlah parsial \(s_n\) dari \(s\)? Galat (sisa) adalah
+\[ R_n=s-s_n=\sum_{k=n+1}^\infty a_k. \]
+Dengan gambar persegi panjang yang sama, tetapi mulai dari \(x=n\) (bukan dari 1), kita peroleh jepitan untuk sisa:</p>
+<div class="box def"><span class="t">Taksiran sisa (uji integral)</span>
+<p>Jika \(f\) kontinu, positif, menurun pada \([n,\infty)\), dan \(\sum a_k\) konvergen, maka
+\[ \int_{n+1}^\infty f(x)\,dx\ \le\ R_n\ \le\ \int_n^\infty f(x)\,dx. \]
+Akibatnya, menambahkan batas-batas ini ke \(s_n\) menjepit jumlah sebenarnya:
+\[ s_n+\int_{n+1}^\infty f(x)\,dx\ \le\ s\ \le\ s_n+\int_n^\infty f(x)\,dx. \]</p></div>
+<figure><img src="assets/img/b11-3-taksiran.png" alt="Menjepit jumlah 1/n^3"><figcaption>Batas bawah dan atas yang menjepit jumlah \(\sum1/n^3\) makin rapat ketika \(n\) bertambah.</figcaption></figure>
+
+<div class="box ex"><span class="t">Contoh 6 — menaksir \(\sum\frac1{n^3}\) dengan \(n=10\)</span>
+<p>Jumlah parsial: \(s_{10}=1+\frac18+\frac1{27}+\cdots+\frac1{1000}\approx1{,}197532\). Karena \(\int_n^\infty x^{-3}dx=\dfrac1{2n^2}\):
+\[ \text{batas atas: }\ \frac1{2\cdot10^2}=0{,}005,\qquad\text{batas bawah: }\ \frac1{2\cdot11^2}\approx0{,}004132. \]
+Jadi \(1{,}197532+0{,}004132\le s\le1{,}197532+0{,}005\), yaitu \(1{,}201664\le s\le1{,}202532\). Kita bisa memakai titik tengah \(s\approx1{,}2021\) dengan galat maksimum \(\lt0{,}0005\). (Nilai sebenarnya \(1{,}2020569\ldots\))</p></div>
+
+<div class="box ex"><span class="t">Contoh 7 — berapa suku yang dibutuhkan?</span>
+<p>Berapa suku \(\sum\frac1{n^4}\) perlu dijumlahkan agar galat \(\lt10^{-5}\)? Dari \(R_n\le\int_n^\infty x^{-4}dx=\dfrac1{3n^3}\), kita perlu \(\dfrac1{3n^3}\lt10^{-5}\iff n^3\gt33\,333{,}3\iff n\ge33\) (karena \(32^3=32\,768\lt33\,333\) dan \(33^3=35\,937\)). Dengan \(n=33\): \(s_{33}\approx1{,}082314\), sedangkan nilai eksak \(\pi^4/90\approx1{,}082323\); selisihnya \(\approx9\times10^{-6}\lt10^{-5}\). ✓</p></div>
+
+<div class="box ex"><span class="t">Contoh 8 — taksiran untuk \(\sum\frac1{n^2}\) dan harmonik</span>
+<p>(a) \(\sum\frac1{n^2}\) dengan \(n=10\): \(s_{10}\approx1{,}549768\), \(\int_{11}^\infty\frac{dx}{x^2}=\frac1{11}\), \(\int_{10}^\infty=\frac1{10}\). Maka \(1{,}6407\le s\le1{,}6498\); nilai eksak \(\pi^2/6\approx1{,}6449\) ✓. Konvergensinya lambat: galat \(R_n\approx1/n\), sehingga butuh seribu suku untuk tiga desimal.</p>
+<p>(b) Harmonik: untuk deret divergen, ketaksamaan yang sama memberi \(\ln(n+1)\le H_n\le1+\ln n\). Jadi \(H_{1000}\) ada di antara \(6{,}91\) dan \(7{,}91\) (nilai sebenarnya \(\approx7{,}485\)). Deret harmonik tumbuh seperti \(\ln n\).</p></div>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Menganggap \(\sum a_n=\int_1^\infty f\). Hanya <em>sifat</em> konvergen/divergennya yang sama.</li>
+<li>Memakai uji integral pada fungsi yang tidak menurun atau bernilai negatif.</li>
+<li>Menyimpulkan konvergen dari \(a_n\to0\). Harmonik menuju 0 tetapi divergen.</li>
+<li>Mengira \(\sum\frac1{n^p}\) konvergen untuk \(p=1\); batasnya <em>tegas</em> \(p\gt1\).</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>Uji integral: \(f\) positif, kontinu, menurun \(\Rightarrow\) \(\sum f(n)\) dan \(\int^\infty f\) sama-sama konvergen/divergen.</li>
+<li>Deret-\(p\): konvergen \(\iff p\gt1\).</li>
+<li>Sisa: \(\int_{n+1}^\infty f\le R_n\le\int_n^\infty f\); gunakan untuk menaksir jumlah dan menentukan banyak suku.</li>
+</ul>
+<p>Lanjut ke <a href="b11-4.html">11.4 Uji Perbandingan</a>, yang memanfaatkan deret-\(p\) dan geometri sebagai pembanding.</p>

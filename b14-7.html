@@ -1,0 +1,71 @@
+<p>Salah satu penerapan terpenting turunan: mencari nilai terbesar dan terkecil. Pada dua peubah gagasan dasarnya sama dengan satu peubah, tetapi ada satu jenis titik baru: titik pelana.</p>
+
+<h2>1. Definisi</h2>
+<div class="box def"><span class="t">Maksimum dan minimum</span>
+<p>\(f\) mempunyai <strong>maksimum lokal</strong> di \((a,b)\) bila \(f(x,y)\le f(a,b)\) untuk semua \((x,y)\) dalam suatu cakram di sekitar \((a,b)\); \(f(a,b)\) disebut nilai maksimum lokal. <strong>Minimum lokal</strong> didefinisikan dengan \(\ge\). Bila ketaksamaan berlaku untuk semua \((x,y)\) di daerah asal, nilainya <strong>mutlak</strong> (global).</p></div>
+<div class="box def"><span class="t">Teorema Fermat (dua peubah)</span>
+<p>Jika \(f\) mempunyai maksimum atau minimum lokal di \((a,b)\) dan turunan parsial pertamanya ada di sana, maka \(f_x(a,b)=0\) dan \(f_y(a,b)=0\).</p></div>
+<p>Alasannya: fungsi satu peubah \(g(x)=f(x,b)\) mempunyai ekstrem lokal di \(x=a\), jadi \(g'(a)=f_x(a,b)=0\); serupa untuk \(f_y\). Titik dengan \(f_x=f_y=0\) (atau salah satu turunan tidak ada) disebut <strong>titik kritis</strong>. Titik kritis hanyalah <em>kandidat</em>: tidak semuanya ekstrem.</p>
+<p>Titik kritis yang bukan maksimum maupun minimum lokal disebut <strong>titik pelana</strong>: di sekitarnya \(f\) naik ke beberapa arah dan turun ke arah lain (seperti \(f=x^2-y^2\) di asal).</p>
+
+<h2>2. Uji turunan kedua</h2>
+<div class="box def"><span class="t">Uji turunan kedua</span>
+<p>Misalkan turunan parsial kedua \(f\) kontinu di sekitar \((a,b)\), dengan \(f_x(a,b)=f_y(a,b)=0\). Definisikan
+\[ D=f_{xx}f_{yy}-(f_{xy})^2=\begin{vmatrix}f_{xx}&f_{xy}\\f_{xy}&f_{yy}\end{vmatrix}\ \text{di }(a,b). \]
+<ul>
+<li>\(D\gt0\) dan \(f_{xx}\gt0\): <strong>minimum lokal</strong>.</li>
+<li>\(D\gt0\) dan \(f_{xx}\lt0\): <strong>maksimum lokal</strong>.</li>
+<li>\(D\lt0\): <strong>titik pelana</strong>.</li>
+<li>\(D=0\): uji tidak memberi kesimpulan.</li>
+</ul></p></div>
+<p><strong>Gagasan.</strong> Di dekat titik kritis, \(f\) menyerupai bentuk kuadrat \(\tfrac12(f_{xx}h^2+2f_{xy}hk+f_{yy}k^2)\). Bentuk ini positif untuk semua \((h,k)\ne\mathbf0\) tepat bila \(f_{xx}\gt0\) dan \(D\gt0\) (kriteria matriks definit positif); negatif bila \(f_{xx}\lt0\), \(D\gt0\); berganda tanda bila \(D\lt0\).</p>
+<div class="box ex"><span class="t">Contoh 1 — tiga titik kritis</span>
+<p>\(f=x^4+y^4-4xy\). \(f_x=4x^3-4y\), \(f_y=4y^3-4x\). Dari \(f_x=0\): \(y=x^3\); masukkan: \(4x^9-4x=0\Rightarrow x(x^8-1)=0\Rightarrow x=0,\pm1\). Titik kritis: \((0,0)\), \((1,1)\), \((-1,-1)\). \(f_{xx}=12x^2\), \(f_{yy}=12y^2\), \(f_{xy}=-4\), \(D=144x^2y^2-16\).
+<ul>
+<li>\((0,0)\): \(D=-16\lt0\): pelana.</li>
+<li>\((1,1)\): \(D=128\gt0\), \(f_{xx}=12\gt0\): minimum lokal, \(f=1+1-4=-2\).</li>
+<li>\((-1,-1)\): \(D=128\), \(f_{xx}=12\): minimum lokal, \(f=-2\).</li>
+</ul></p></div>
+<div class="box ex"><span class="t">Contoh 2 — \(f=x^3+y^3-3xy\)</span>
+<p>\(f_x=3x^2-3y=0\Rightarrow y=x^2\); \(f_y=3y^2-3x=0\Rightarrow x^4=x\Rightarrow x=0,1\). Titik: \((0,0)\), \((1,1)\). \(f_{xx}=6x\), \(f_{yy}=6y\), \(f_{xy}=-3\), \(D=36xy-9\). Di \((0,0)\): \(D=-9\): pelana. Di \((1,1)\): \(D=27\gt0\), \(f_{xx}=6\gt0\): minimum lokal \(f=-1\).</p></div>
+<figure><img src="assets/img/b14-7-kritis.png" alt="Kontur f=x^3+y^3-3xy"><figcaption>Kontur \(f=x^3+y^3-3xy\): pelana di \((0,0)\), minimum lokal di \((1,1)\).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 3 — \(D=0\)</span>
+<p>Untuk \(f=x^4+y^4\) di \((0,0)\): \(f_{xx}=f_{yy}=f_{xy}=0\), \(D=0\): uji gagal, tetapi jelas \((0,0)\) minimum (nilai \(\ge0\)). Untuk \(g=x^2+y^3\): titik kritis \((0,0)\), \(D=0\); sepanjang sumbu \(y\) negatif \(g\lt0\), sepanjang sumbu \(x\) \(g\gt0\): bukan ekstrem (pelana). Kesimpulannya, saat \(D=0\) perlu analisis langsung.</p></div>
+<div class="box ex"><span class="t">Contoh 4 — jarak titik ke bidang</span>
+<p>Cari titik pada bidang \(x+2y+z=4\) yang terdekat dengan \((1,0,-2)\). Substitusi \(z=4-x-2y\): \(d^2=(x-1)^2+y^2+(6-x-2y)^2\). \(\partial_x=2(x-1)-2(6-x-2y)=4x+4y-14\); \(\partial_y=2y-4(6-x-2y)=4x+10y-24\). Selesaikan: \(x+y=\frac72\), \(4x+10y=24\Rightarrow6y=10\), \(y=\frac53\), \(x=\frac{11}6\), \(z=-\frac76\). \(d^2=\frac{25}{36}+\frac{100}{36}+\frac{25}{36}=\frac{150}{36}\), \(d=\frac{5\sqrt6}6\approx2{,}041\), sama dengan \(\frac{|1+0-2-4|}{\sqrt6}\) (12.5). Bentuk \(d^2\) merupakan paraboloid terbuka ke atas, jadi titik kritis adalah minimum global.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — kotak tanpa tutup</span>
+<p>Kotak persegi panjang tanpa tutup bervolume \(32\) m³: minimalkan luas bahan \(A=xy+2xz+2yz\) dengan \(z=\frac{32}{xy}\): \(A=xy+\frac{64}y+\frac{64}x\). \(A_x=y-\frac{64}{x^2}=0\), \(A_y=x-\frac{64}{y^2}=0\Rightarrow x=y=4\), \(z=2\), \(A=16+16+16=48\) m². \(A_{xx}=\frac{128}{x^3}=2\gt0\), \(A_{xy}=1\), \(D=2\cdot2-1=3\gt0\): minimum. Alas persegi, tinggi setengah sisi alas.</p></div>
+
+<h2>3. Nilai ekstrem mutlak pada daerah tertutup</h2>
+<div class="box def"><span class="t">Teorema nilai ekstrem</span>
+<p>Jika \(f\) kontinu pada himpunan \(D\subset\mathbb R^2\) yang tertutup dan terbatas, maka \(f\) mencapai nilai maksimum mutlak dan minimum mutlak di \(D\).</p></div>
+<p><strong>Metode (tiga langkah).</strong></p>
+<ol>
+<li>Cari nilai \(f\) di titik kritis di bagian dalam \(D\).</li>
+<li>Cari nilai ekstrem \(f\) pada batas \(D\) (kurangi ke fungsi satu peubah, atau pakai Lagrange, 14.8).</li>
+<li>Nilai terbesar dan terkecil di antara semuanya adalah maksimum dan minimum mutlak.</li>
+</ol>
+<div class="box ex"><span class="t">Contoh 6 — persegi panjang</span>
+<p>\(f=x^3-3x+y^2\) pada \(D=[-2,2]\times[-1,1]\).
+<br>Dalam: \(f_x=3x^2-3=0\Rightarrow x=\pm1\), \(f_y=2y=0\): \(f(1,0)=-2\), \(f(-1,0)=2\).
+<br>Sisi \(y=\pm1\): \(g(x)=x^3-3x+1\), \(g'=0\) di \(x=\pm1\): \(g(1)=-1\), \(g(-1)=3\); ujung \(g(2)=3\), \(g(-2)=-1\).
+<br>Sisi \(x=2\): \(2+y^2\in[2,3]\); sisi \(x=-2\): \(-2+y^2\in[-2,-1]\).
+<br>Nilai-nilai kandidat: \(-2,\ 2,\ -1,\ 3,\ -2,\ -1\). Maksimum mutlak \(3\) (di \((-1,\pm1)\) dan \((2,\pm1)\)); minimum mutlak \(-2\) (di \((1,0)\) dan \((-2,0)\)).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — segitiga</span>
+<p>\(f=x^2+y^2-2x\) pada segitiga \((0,0),(2,0),(0,2)\). Dalam: \(f_x=2x-2=0\), \(f_y=2y=0\Rightarrow(1,0)\), yang berada di batas (sisi bawah). Sisi \(y=0\), \(0\le x\le2\): \(x^2-2x\in[-1,0]\), min \(-1\) di \(x=1\). Sisi \(x=0\), \(0\le y\le2\): \(y^2\in[0,4]\). Sisi miring \(y=2-x\): \(x^2+(2-x)^2-2x=2x^2-6x+4\), minimum di \(x=\frac32\): \(2\cdot\frac94-9+4=-\frac12\); ujung: \(x=0\): 4; \(x=2\): 0. Maksimum mutlak 4 di \((0,2)\); minimum mutlak \(-1\) di \((1,0)\).</p></div>
+
+<h2>4. Kesalahan umum</h2>
+<ul>
+<li>Menganggap setiap titik kritis adalah ekstrem; pelana adalah kemungkinan ketiga.</li>
+<li>Lupa memeriksa batas pada daerah tertutup.</li>
+<li>Memakai uji turunan kedua saat \(D=0\).</li>
+<li>Salah tanda: \(D=f_{xx}f_{yy}-f_{xy}^2\), bukan \(f_{xx}f_{yy}+f_{xy}^2\).</li>
+</ul>
+
+<h2>5. Ringkasan</h2>
+<ul>
+<li>Ekstrem lokal \(\Rightarrow f_x=f_y=0\) (titik kritis).</li>
+<li>\(D\gt0\), \(f_{xx}\gt0\): min; \(D\gt0\), \(f_{xx}\lt0\): maks; \(D\lt0\): pelana.</li>
+<li>Pada daerah tertutup terbatas: bandingkan titik kritis dan nilai pada batas.</li>
+</ul>
+<p>Berikutnya <a href="b14-8.html">14.8 Pengali Lagrange</a>.</p>

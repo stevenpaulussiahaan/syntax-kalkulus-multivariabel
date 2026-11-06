@@ -1,0 +1,74 @@
+<p>Teorema Dasar Kalkulus berkata \(\int_a^bF'(x)\,dx=F(b)-F(a)\): integral turunan hanya bergantung pada nilai di <em>ujung-ujung</em>. Untuk integral garis ada analog yang sama indahnya, berlaku untuk medan gradien.</p>
+
+<h2>1. Teorema dasar untuk integral garis</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Misalkan \(C\) kurva mulus yang diberikan oleh \(\mathbf r(t)\), \(a\le t\le b\), dan \(f\) fungsi terdiferensialkan dengan \(\nabla f\) kontinu pada \(C\). Maka
+\[ \int_C\nabla f\cdot d\mathbf r=f\bigl(\mathbf r(b)\bigr)-f\bigl(\mathbf r(a)\bigr). \]</p></div>
+<p><strong>Bukti.</strong> Dengan aturan rantai (14.5), \(\dfrac d{dt}f(\mathbf r(t))=\nabla f(\mathbf r(t))\cdot\mathbf r'(t)\). Maka \(\int_C\nabla f\cdot d\mathbf r=\int_a^b\dfrac d{dt}f(\mathbf r(t))\,dt=f(\mathbf r(b))-f(\mathbf r(a))\) oleh Teorema Dasar Kalkulus satu peubah. \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 1 — hitung tanpa parametrisasi</span>
+<p>\(\mathbf F=\langle2xy+\cos y,\ x^2-x\sin y\rangle=\nabla f\) dengan \(f=x^2y+x\cos y\). Untuk kurva \(C\) apa pun dari \((0,0)\) ke \((1,\pi)\): \(\int_C\mathbf F\cdot d\mathbf r=f(1,\pi)-f(0,0)=\pi+\cos\pi-0=\pi-1\approx2{,}142\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — gravitasi</span>
+<p>Medan gravitasi \(\mathbf F=-\dfrac k{|\mathbf r|^3}\mathbf r=\nabla\dfrac k{|\mathbf r|}\). Usaha yang dilakukan gravitasi untuk memindahkan benda dari jarak 2 ke jarak 1 dari pusat, lewat lintasan apa pun yang tidak melewati pusat: \(\dfrac k1-\dfrac k2=\dfrac k2\). Hanya jarak awal dan akhir yang berpengaruh.</p></div>
+
+<h2>2. Bebas lintasan dan medan konservatif</h2>
+<div class="box def"><span class="t">Bebas lintasan</span>
+<p>\(\int_C\mathbf F\cdot d\mathbf r\) <strong>bebas lintasan</strong> di \(D\) bila untuk dua titik \(A,B\) di \(D\), integralnya sama untuk semua lintasan \(C\) dari \(A\) ke \(B\) di \(D\).</p></div>
+<div class="box def"><span class="t">Teorema (kesetaraan)</span>
+<p>Misalkan \(\mathbf F\) kontinu pada daerah terbuka dan terhubung \(D\). Tiga pernyataan berikut setara:</p>
+<ol>
+<li>\(\mathbf F\) konservatif: \(\mathbf F=\nabla f\) untuk suatu \(f\).</li>
+<li>\(\int_C\mathbf F\cdot d\mathbf r\) bebas lintasan di \(D\).</li>
+<li>\(\oint_C\mathbf F\cdot d\mathbf r=0\) untuk setiap kurva tertutup \(C\) di \(D\).</li>
+</ol></div>
+<p><strong>Gagasan bukti.</strong> (1)\(\Rightarrow\)(2): teorema dasar di atas. (2)\(\Leftrightarrow\)(3): kurva tertutup \(C\) adalah lintasan \(C_1\) dari \(A\) ke \(B\) diikuti kebalikan lintasan \(C_2\) dari \(A\) ke \(B\); \(\oint_C=\int_{C_1}-\int_{C_2}\), jadi nol tepat bila \(\int_{C_1}=\int_{C_2}\). (2)\(\Rightarrow\)(1): tetapkan titik \(A\) dan definisikan \(f(x,y)=\int_A^{(x,y)}\mathbf F\cdot d\mathbf r\) (terdefinisi karena bebas lintasan); menghitung \(f_x\) dengan lintasan horizontal terakhir menghasilkan \(f_x=P\), serupa \(f_y=Q\).</p>
+<div class="box note"><span class="t">Contoh yang menunjukkan perbedaan</span>
+<p>\(\mathbf F=\langle-y,x\rangle\) (16.2, Contoh 4 dan 6): sirkulasi di lingkaran satuan \(=2\pi\ne0\), jadi tidak bebas lintasan dan bukan konservatif.</p></div>
+
+<h2>3. Menguji apakah medan konservatif</h2>
+<div class="box def"><span class="t">Syarat perlu</span>
+<p>Jika \(\mathbf F=\langle P,Q\rangle\) konservatif dan \(P,Q\) mempunyai turunan parsial pertama kontinu pada \(D\), maka
+\[ \frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}\quad\text{di seluruh }D. \]
+Di ruang, \(\mathbf F=\langle P,Q,R\rangle\): \(P_y=Q_x\), \(P_z=R_x\), \(Q_z=R_y\) (yaitu \(\operatorname{curl}\mathbf F=\mathbf0\), 16.5).</p></div>
+<p>Bukti: bila \(P=f_x\), \(Q=f_y\), maka \(P_y=f_{xy}\), \(Q_x=f_{yx}\), sama oleh Clairaut.</p>
+<div class="box def"><span class="t">Syarat cukup</span>
+<p>Jika \(P_y=Q_x\) pada daerah \(D\) yang <strong>terbuka dan sederhana terhubung</strong> (terhubung dan tanpa "lubang"; setiap kurva tertutup dapat dikecilkan menjadi satu titik di dalam \(D\)), maka \(\mathbf F=\langle P,Q\rangle\) konservatif. Hal serupa berlaku di ruang.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — uji sederhana</span>
+<ul>
+<li>\(\mathbf F=\langle xy,x^2\rangle\): \(P_y=x\), \(Q_x=2x\): tidak sama, <em>tidak konservatif</em>.</li>
+<li>\(\mathbf F=\langle3+2xy,\ x^2-3y^2\rangle\): \(P_y=2x=Q_x\) di seluruh \(\mathbb R^2\) (sederhana terhubung): konservatif.</li>
+<li>\(\mathbf F=\langle ye^x+\sin y,\ e^x+x\cos y\rangle\): \(P_y=e^x+\cos y=Q_x\): konservatif.</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 4 — jebakan daerah berlubang</span>
+<p>\(\mathbf F=\Bigl\langle\dfrac{-y}{x^2+y^2},\dfrac x{x^2+y^2}\Bigr\rangle\) pada \(D=\mathbb R^2\setminus\{(0,0)\}\). \(P_y=\dfrac{y^2-x^2}{(x^2+y^2)^2}=Q_x\), tetapi sirkulasi di lingkaran satuan: \(\mathbf F\cdot\mathbf r'=\sin^2t+\cos^2t=1\), \(\oint=2\pi\ne0\). \(D\) tidak sederhana terhubung (lubang di titik asal), maka syarat cukup tidak berlaku: \(\mathbf F\) tidak konservatif pada \(D\). (Ia adalah \(\nabla\theta\), gradien sudut kutub, yang bukan fungsi bernilai tunggal di \(D\).)</p></div>
+
+<h2>4. Mencari fungsi potensial</h2>
+<div class="box ex"><span class="t">Contoh 5 — dua dimensi</span>
+<p>\(\mathbf F=\langle3+2xy,\ x^2-3y^2\rangle\). Telah diuji konservatif. Cari \(f\) dengan \(f_x=3+2xy\), \(f_y=x^2-3y^2\). Integrasikan \(f_x\) terhadap \(x\): \(f=3x+x^2y+g(y)\). Turunkan terhadap \(y\): \(f_y=x^2+g'(y)\), samakan dengan \(x^2-3y^2\): \(g'=-3y^2\), \(g=-y^3\). \(f=3x+x^2y-y^3+C\). Usaha dari \((1,2)\) ke \((3,1)\): \(f(3,1)-f(1,2)=(9+9-1)-(3+2-8)=17-(-3)=20\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — tiga dimensi</span>
+<p>\(\mathbf F=\langle y^2,\ 2xy+e^{3z},\ 3ye^{3z}\rangle\). Uji: \(P_y=2y=Q_x\), \(P_z=0=R_x\), \(Q_z=3e^{3z}=R_y\): konservatif. \(f_x=y^2\Rightarrow f=xy^2+g(y,z)\). \(f_y=2xy+g_y=2xy+e^{3z}\Rightarrow g_y=e^{3z}\Rightarrow g=ye^{3z}+h(z)\). \(f_z=3ye^{3z}+h'(z)=3ye^{3z}\Rightarrow h'=0\). \(f=xy^2+ye^{3z}\). Usaha dari \((0,0,0)\) ke \((1,2,0)\): \(f(1,2,0)-f(0,0,0)=(4+2)-0=6\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — usaha melewati lintasan rumit</span>
+<p>\(\mathbf F=\langle2xy,x^2\rangle=\nabla(x^2y)\). Usaha sepanjang lintasan apa pun dari \((1,1)\) ke \((2,3)\): \(x^2y\big|=12-1=11\), tanpa parametrisasi. Bila \(C\) adalah kurva tertutup, usahanya 0.</p></div>
+
+<h2>5. Kekekalan energi</h2>
+<p>Misalkan medan gaya \(\mathbf F=\nabla f\) menggerakkan partikel bermassa \(m\) sepanjang \(\mathbf r(t)\). Hukum Newton \(\mathbf F=m\mathbf r''\), kecepatan \(\mathbf v=\mathbf r'\). Usaha
+\[ W=\int_a^b\mathbf F\cdot\mathbf r'\,dt=m\int_a^b\mathbf r''\cdot\mathbf r'\,dt=\frac m2\bigl[|\mathbf v(b)|^2-|\mathbf v(a)|^2\bigr]=K(B)-K(A), \]
+dengan \(K=\frac12m|\mathbf v|^2\) energi kinetik (karena \(\frac d{dt}|\mathbf v|^2=2\mathbf v\cdot\mathbf v'\)). Teorema dasar memberi \(W=f(B)-f(A)\). Definisikan energi potensial \(U=-f\); maka \(K(A)+U(A)=K(B)+U(B)\): <strong>energi mekanik kekal</strong>. Inilah mengapa medan konservatif memakai nama itu.</p>
+<div class="box ex"><span class="t">Contoh 8 — benda jatuh</span>
+<p>Gravitasi dekat permukaan: \(\mathbf F=\langle0,0,-mg\rangle=\nabla(-mgz)\), \(U=mgz\). Benda dilepas dari \(z=h\) (kecepatan nol): di \(z=0\), \(\frac12mv^2=mgh\Rightarrow v=\sqrt{2gh}\). Dengan \(h=5\) m, \(g=9{,}8\): \(v=\sqrt{98}\approx9{,}9\) m/s, tanpa memperhatikan lintasan (jatuh bebas, atau meluncur pada bidang licin).</p></div>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Memakai \(f(B)-f(A)\) pada medan yang tidak konservatif.</li>
+<li>Menyimpulkan konservatif hanya dari \(P_y=Q_x\) tanpa memeriksa daerahnya sederhana terhubung (Contoh 4).</li>
+<li>Menghilangkan fungsi \(g(y)\) pada langkah mencari potensial.</li>
+<li>Menyamakan \(\oint\mathbf F\cdot d\mathbf r=0\) untuk satu kurva dengan konservatif; syaratnya berlaku untuk <em>semua</em> kurva tertutup.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\int_C\nabla f\cdot d\mathbf r=f(B)-f(A)\).</li>
+<li>Konservatif \(\Leftrightarrow\) bebas lintasan \(\Leftrightarrow\) sirkulasi nol pada kurva tertutup.</li>
+<li>Uji: \(P_y=Q_x\) (dan seterusnya); cukup bila daerahnya sederhana terhubung.</li>
+<li>Potensial dicari dengan integrasi berurutan; energi mekanik kekal.</li>
+</ul>
+<p>Berikutnya <a href="b16-4.html">16.4 Teorema Green</a>.</p>

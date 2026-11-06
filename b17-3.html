@@ -1,0 +1,79 @@
+<p>Persamaan diferensial linear orde dua dengan koefisien konstan menggambarkan banyak sistem osilasi: pegas dan peredam, bandul kecil, rangkaian listrik RLC. Matematikanya sama; hanya tafsir peubahnya berbeda.</p>
+
+<h2>1. Getaran pegas</h2>
+<p>Sebuah benda bermassa \(m\) digantung pada pegas. Misalkan \(x(t)\) adalah simpangan dari posisi seimbang (arah ke bawah positif). Gaya yang bekerja:</p>
+<ul>
+<li>gaya pemulih pegas (hukum Hooke): \(-kx\), dengan \(k\gt0\) konstanta pegas;</li>
+<li>gaya redaman (kekentalan): \(-c\,x'\), dengan \(c\ge0\) koefisien redaman;</li>
+<li>gaya luar \(F(t)\) (bila ada).</li>
+</ul>
+<p>Hukum II Newton \(mx''=-kx-cx'+F(t)\) memberikan
+\[ mx''+cx'+kx=F(t). \tag{1} \]</p>
+
+<h3>Getaran bebas tanpa redaman</h3>
+<p>\(c=0\), \(F=0\): \(mx''+kx=0\), karakteristik \(mr^2+k=0\), \(r=\pm i\omega_0\) dengan \(\omega_0=\sqrt{k/m}\).
+\[ x(t)=c_1\cos\omega_0t+c_2\sin\omega_0t=A\cos(\omega_0t-\delta),\quad A=\sqrt{c_1^2+c_2^2}. \]
+Gerak harmonik sederhana dengan frekuensi sudut \(\omega_0\), periode \(T=\frac{2\pi}{\omega_0}\), amplitudo \(A\) tetap.</p>
+<div class="box ex"><span class="t">Contoh 1 — pegas tanpa redaman</span>
+<p>Benda 2 kg pada pegas dengan \(k=18\) N/m, ditarik 0,5 m ke bawah lalu dilepas. \(\omega_0=\sqrt{18/2}=3\) rad/s, \(T=\frac{2\pi}3\approx2{,}09\) s. \(x(0)=0{,}5\), \(x'(0)=0\): \(x=0{,}5\cos3t\). Laju maksimum \(A\omega_0=1{,}5\) m/s (terjadi di posisi seimbang).</p></div>
+
+<h3>Getaran bebas teredam</h3>
+<p>\(mx''+cx'+kx=0\). Karakteristik \(mr^2+cr+k=0\), diskriminan \(c^2-4mk\):</p>
+<div class="box def"><span class="t">Tiga jenis redaman</span>
+<ul>
+<li><strong>Lewat teredam</strong> (\(c^2\gt4mk\)): dua akar real negatif \(r_1,r_2\); \(x=c_1e^{r_1t}+c_2e^{r_2t}\). Tidak berosilasi; kembali ke keseimbangan perlahan (pegas dalam oli kental).</li>
+<li><strong>Teredam kritis</strong> (\(c^2=4mk\)): \(x=(c_1+c_2t)e^{rt}\), \(r=-\frac c{2m}\). Kembali ke keseimbangan tercepat tanpa berosilasi (peredam pintu, suspensi ideal).</li>
+<li><strong>Kurang teredam</strong> (\(c^2\lt4mk\)): \(r=-\frac c{2m}\pm i\omega\), \(\omega=\frac{\sqrt{4mk-c^2}}{2m}\); \(x=e^{-ct/2m}(c_1\cos\omega t+c_2\sin\omega t)\). Berosilasi dengan amplitudo meluruh eksponensial.</li>
+</ul></div>
+<figure><img src="assets/img/b17-3-redaman.png" alt="Tiga jenis redaman"><figcaption>Simpangan untuk tiga jenis redaman (\(m=1\)).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 2 — kurang teredam</span>
+<p>\(x''+2x'+5x=0\) (\(m=1,c=2,k=5\)): \(c^2-4mk=4-20\lt0\). \(r=-1\pm2i\). \(x(0)=1\), \(x'(0)=0\): \(c_1=1\), \(x'(0)=-c_1+2c_2=0\Rightarrow c_2=\frac12\). \(x=e^{-t}\bigl(\cos2t+\tfrac12\sin2t\bigr)\). Nilai pada \(t=1\): \(\approx0{,}0142\) (meluruh cepat). Frekuensi sudut teredam 2, lebih kecil dari frekuensi alami \(\sqrt5\approx2{,}236\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — teredam kritis dan lewat teredam</span>
+<ul>
+<li>\(x''+4x'+4x=0\), \(x(0)=1\), \(x'(0)=0\): \(r=-2\) ganda, \(x=(c_1+c_2t)e^{-2t}\), \(c_1=1\), \(c_2-2=0\Rightarrow c_2=2\). \(x=(1+2t)e^{-2t}\), selalu positif; tidak melewati keseimbangan.</li>
+<li>\(x''+5x'+4x=0\), \(x(0)=1\), \(x'(0)=0\): \(r=-1,-4\); \(c_1+c_2=1\), \(-c_1-4c_2=0\Rightarrow c_2=-\frac13\), \(c_1=\frac43\). \(x=\frac43e^{-t}-\frac13e^{-4t}\).</li>
+</ul></div>
+
+<h2>2. Getaran paksa dan resonansi</h2>
+<p>Bila gaya luar periodik \(F(t)=F_0\cos\omega t\):</p>
+<h3>Tanpa redaman</h3>
+<p>\(mx''+kx=F_0\cos\omega t\), penyelesaian \(x=c_1\cos\omega_0t+c_2\sin\omega_0t+x_p\). Untuk \(\omega\ne\omega_0\): \(x_p=\dfrac{F_0}{m(\omega_0^2-\omega^2)}\cos\omega t\). Bila \(\omega=\omega_0\) terjadi <strong>resonansi</strong>: \(x_p=\dfrac{F_0}{2m\omega_0}\,t\sin\omega_0t\), amplitudo tumbuh linear tanpa batas.</p>
+<div class="box ex"><span class="t">Contoh 4 — resonansi</span>
+<p>\(x''+9x=\cos3t\) (\(m=1\), \(\omega_0=3\), \(F_0=1\)). Tebakan \(x_p=t(A\cos3t+B\sin3t)\); hasilnya \(x_p=\frac t6\sin3t\). Dengan \(x(0)=x'(0)=0\): \(x=\frac t6\sin3t\). Amplitudo \(\frac t6\) tumbuh tanpa batas (pada \(t=30\) s sudah 5 m). Pada sistem nyata, redaman atau kegagalan struktural membatasinya (jembatan, gelas yang pecah oleh nada).</p></div>
+<h3>Dengan redaman</h3>
+<p>Untuk \(mx''+cx'+kx=F_0\cos\omega t\), bagian komplementer meluruh (<em>transien</em>) dan yang bertahan adalah <em>keadaan tunak</em> \(x_p=A\cos(\omega t-\alpha)\) dengan amplitudo
+\[ A(\omega)=\frac{F_0}{\sqrt{(k-m\omega^2)^2+c^2\omega^2}}. \]
+Amplitudo maksimum terjadi di \(\omega=\sqrt{\frac km-\frac{c^2}{2m^2}}\) (bila \(c^2\lt2mk\)): <em>resonansi praktis</em>. Makin kecil \(c\), makin tinggi puncak.</p>
+<div class="box ex"><span class="t">Contoh 5 — amplitudo keadaan tunak</span>
+<p>\(m=1\), \(c=0{,}5\), \(k=4\), \(F_0=2\). \(A(\omega)=\dfrac2{\sqrt{(4-\omega^2)^2+0{,}25\omega^2}}\). \(A(1)\approx0{,}658\); \(A(2)=\dfrac2{\sqrt{0+1}}=2\); puncak di \(\omega=\sqrt{4-0{,}125}\approx1{,}969\) dengan \(A\approx2{,}016\). Puncak sedikit di bawah frekuensi alami \(\omega_0=2\).</p></div>
+<figure><img src="assets/img/b17-3-resonansi.png" alt="Resonansi"><figcaption>Kiri: resonansi tanpa redaman. Kanan: kurva amplitudo keadaan tunak.</figcaption></figure>
+
+<h2>3. Rangkaian listrik RLC</h2>
+<p>Rangkaian seri dengan induktor \(L\) (henry), resistor \(R\) (ohm), kapasitor \(C\) (farad), dan sumber tegangan \(E(t)\) (volt). Muatan \(Q(t)\) pada kapasitor, arus \(I=Q'\). Hukum tegangan Kirchhoff: \(LI'+RI+\frac QC=E\), yaitu
+\[ LQ''+RQ'+\frac1CQ=E(t). \tag{2} \]
+Ini sama dengan (1) dengan \(m\leftrightarrow L\), \(c\leftrightarrow R\), \(k\leftrightarrow1/C\), \(x\leftrightarrow Q\), \(F\leftrightarrow E\): induktor \(\leftrightarrow\) massa, resistor \(\leftrightarrow\) redaman, kapasitor \(\leftrightarrow\) pegas.</p>
+<div class="box ex"><span class="t">Contoh 6 — pengisian kapasitor</span>
+<p>\(L=1\) H, \(R=6\) \(\Omega\), \(C=\frac1{13}\) F, \(E=12\) V (konstan), \(Q(0)=0\), \(I(0)=0\). \(Q''+6Q'+13Q=12\). Karakteristik \(r=-3\pm2i\). \(Q_p=\frac{12}{13}\). \(Q=\frac{12}{13}+e^{-3t}(c_1\cos2t+c_2\sin2t)\). \(Q(0)=0\Rightarrow c_1=-\frac{12}{13}\). \(Q'(0)=-3c_1+2c_2=0\Rightarrow c_2=-\frac{18}{13}\). \(Q(t)=\frac{12}{13}-\frac{e^{-3t}}{13}(12\cos2t+18\sin2t)\). Muatan mendekati \(\frac{12}{13}\approx0{,}923\) C (\(=CE\)) setelah osilasi teredam; \(Q(1)\approx0{,}880\) C. Arus \(I=Q'\to0\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — frekuensi resonansi rangkaian</span>
+<p>Rangkaian dengan \(L=0{,}5\) H dan \(C=2\) \(\mu\)F beresonansi pada \(\omega_0=\frac1{\sqrt{LC}}=\frac1{\sqrt{10^{-6}}}=1000\) rad/s, yaitu \(f=\frac{\omega_0}{2\pi}\approx159\) Hz. Prinsip ini dipakai untuk menala radio.</p></div>
+
+<h2>4. Bandul sederhana</h2>
+<div class="box ex"><span class="t">Contoh 8 — hampiran sudut kecil</span>
+<p>Bandul panjang \(L\) dengan sudut simpangan \(\theta\): \(\theta''+\frac gL\sin\theta=0\). Untuk sudut kecil \(\sin\theta\approx\theta\): \(\theta''+\frac gL\theta=0\), \(\omega_0=\sqrt{g/L}\), periode \(T=2\pi\sqrt{L/g}\). Untuk \(L=1\) m: \(T=2\pi/\sqrt{9{,}8}\approx2{,}007\) s. Galat hampiran kecil bila amplitudo di bawah sekitar \(15^\circ\).</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Menganggap redaman selalu menyebabkan osilasi: hanya bila \(c^2\lt4mk\).</li>
+<li>Menyamakan frekuensi teredam dengan frekuensi alami.</li>
+<li>Menerapkan syarat awal pada \(x_p\) saja, bukan pada penyelesaian lengkap.</li>
+<li>Satuan yang tidak konsisten (mis. \(C\) dalam \(\mu\)F tanpa mengubah ke F).</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(mx''+cx'+kx=F(t)\); \(\omega_0=\sqrt{k/m}\).</li>
+<li>Redaman: lewat, kritis, kurang; hanya kurang yang berosilasi.</li>
+<li>Resonansi saat \(\omega=\omega_0\) (tanpa redaman: amplitudo tak terbatas).</li>
+<li>RLC: \(LQ''+RQ'+Q/C=E\), analog sistem pegas.</li>
+</ul>
+<p>Subbab terakhir, <a href="b17-4.html">17.4</a>, memberi metode deret pangkat.</p>

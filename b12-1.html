@@ -1,0 +1,75 @@
+<p>Sampai Bab 11 kita bekerja di bidang (dua dimensi). Dunia nyata tiga dimensi: posisi satelit, aliran udara, permukaan gunung. Untuk membahas kalkulus di ruang kita perlu <strong>sistem koordinat tiga dimensi</strong>, yaitu satu sumbu tambahan, serta rumus jarak dan persamaan permukaan sederhana.</p>
+
+<h2>1. Sumbu dan bidang koordinat</h2>
+<p>Untuk menentukan posisi titik di bidang diperlukan dua bilangan \((x,y)\). Di ruang kita perlu tiga bilangan. Pilih titik asal \(O\) dan tiga garis berarah saling tegak lurus yang melalui \(O\): <strong>sumbu \(x\)</strong>, <strong>sumbu \(y\)</strong>, dan <strong>sumbu \(z\)</strong>. Dengan konvensi <strong>kaidah tangan kanan</strong>: bila jari-jari tangan kanan melengkung dari sumbu \(x\) positif ke sumbu \(y\) positif, ibu jari menunjuk ke arah sumbu \(z\) positif.</p>
+<p>Setiap pasang sumbu menentukan sebuah <strong>bidang koordinat</strong>:</p>
+<ul>
+<li>bidang \(xy\) (persamaan \(z=0\)),</li>
+<li>bidang \(yz\) (persamaan \(x=0\)),</li>
+<li>bidang \(xz\) (persamaan \(y=0\)).</li>
+</ul>
+<p>Ketiga bidang ini membagi ruang menjadi <strong>delapan oktan</strong>. Oktan pertama adalah oktan dengan \(x,y,z\gt0\).</p>
+<p>Titik \(P\) memiliki koordinat \((a,b,c)\): \(a\) adalah jarak berarah dari bidang \(yz\), \(b\) dari bidang \(xz\), dan \(c\) dari bidang \(xy\). Kita menggambar \(P\) sebagai sudut dari balok persegi panjang dengan satu sudut di \(O\).</p>
+<figure><img src="assets/img/b12-1-titik.png" alt="Titik P(2,3,4)"><figcaption>Titik \(P(2,3,4)\): balok yang sudut-sudutnya \(O\) dan \(P\), dengan proyeksi pada sumbu dan bidang koordinat.</figcaption></figure>
+<div class="box note"><span class="t">Proyeksi sebuah titik</span>
+<p>Untuk \(P(a,b,c)\): proyeksi pada bidang \(xy\) adalah \((a,b,0)\), pada bidang \(yz\) adalah \((0,b,c)\), pada bidang \(xz\) adalah \((a,0,c)\), dan pada sumbu \(x\) adalah \((a,0,0)\). Cerminan terhadap bidang \(xy\): \((a,b,-c)\); terhadap sumbu \(z\): \((-a,-b,c)\); terhadap titik asal: \((-a,-b,-c)\).</p></div>
+
+<h2>2. Persamaan sederhana di ruang</h2>
+<p>Di bidang, persamaan \(x=2\) adalah garis. Di ruang, \(x=2\) adalah himpunan semua titik \((2,y,z)\): sebuah <strong>bidang</strong> yang sejajar bidang \(yz\), berjarak 2 darinya. Jadi arti persamaan bergantung pada dimensi ruangnya.</p>
+<figure><img src="assets/img/b12-1-bidang.png" alt="Bidang x=2, y=2, z=2"><figcaption>Bidang \(x=2\), \(y=2\), dan \(z=2\) di ruang.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 1 — arti persamaan di \(\mathbb R^2\) dan \(\mathbb R^3\)</span>
+<ul>
+<li>\(x=5\): di \(\mathbb R^2\) adalah garis vertikal; di \(\mathbb R^3\) adalah bidang sejajar bidang \(yz\).</li>
+<li>\(y=x\): di \(\mathbb R^2\) adalah garis; di \(\mathbb R^3\) adalah bidang yang memuat sumbu \(z\) (semua \((x,x,z)\)).</li>
+<li>\(z=0\): bidang \(xy\).</li>
+<li>\(\{x=2,\ y=3\}\): irisan dua bidang, yaitu garis sejajar sumbu \(z\) yang melalui \((2,3,0)\).</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 2 — himpunan titik dari pertidaksamaan</span>
+<p>Himpunan \(\{(x,y,z):\ 0\le z\le1\}\) adalah daerah di antara bidang \(z=0\) dan \(z=1\) (lapisan tak hingga). Himpunan \(\{(x,y,z): x\ge0,\ y\ge0,\ z\ge0\}\) adalah oktan pertama. Himpunan \(\{(x,y,z):\ x^2+y^2\le1,\ z=0\}\) adalah cakram satuan di bidang \(xy\).</p></div>
+
+<h2>3. Jarak antara dua titik</h2>
+<p>Di bidang, \(|P_1P_2|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\) dari Teorema Pythagoras. Di ruang, kita memakai Pythagoras dua kali.</p>
+<div class="box def"><span class="t">Rumus jarak</span>
+<p>Jarak antara \(P_1(x_1,y_1,z_1)\) dan \(P_2(x_2,y_2,z_2)\) adalah
+\[ |P_1P_2|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}. \]</p></div>
+<p><strong>Penurunan.</strong> Bangun balok dengan \(P_1\) dan \(P_2\) sebagai sudut berseberangan dan rusuk-rusuk sejajar sumbu. Misalkan \(B(x_2,y_2,z_1)\), yaitu titik pada balok yang satu bidang datar dengan \(P_1\) dan tepat di bawah (atau di atas) \(P_2\). Segitiga \(P_1BP_2\) siku-siku di \(B\) dengan \(|P_1B|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\) (diagonal alas, Pythagoras pertama) dan \(|BP_2|=|z_2-z_1|\). Pythagoras memberi \(|P_1P_2|^2=|P_1B|^2+|BP_2|^2\), yaitu rumus di atas. \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 3 — jarak dua titik</span>
+<p>Jarak antara \(P_1(2,-1,7)\) dan \(P_2(1,-3,5)\): \(\sqrt{(1-2)^2+(-3+1)^2+(5-7)^2}=\sqrt{1+4+4}=3\). Titik tengahnya \(\bigl(\frac{2+1}2,\frac{-1-3}2,\frac{7+5}2\bigr)=\bigl(\tfrac32,-2,6\bigr)\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — jenis segitiga</span>
+<p>Titik \(P(3,-2,-3)\), \(Q(7,0,1)\), \(R(1,2,1)\): \(|PQ|=\sqrt{16+4+16}=6\), \(|PR|=\sqrt{4+16+16}=6\), \(|QR|=\sqrt{36+4+0}=\sqrt{40}\). Dua sisi sama panjang, jadi segitiga sama kaki. Sudut siku-siku? \(6^2+6^2=72\ne40\), jadi bukan segitiga siku-siku.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — apakah tiga titik segaris?</span>
+<p>Titik \(A(1,2,3)\), \(B(3,6,7)\), \(C(2,4,5)\): \(|AB|=\sqrt{4+16+16}=6\), \(|AC|=\sqrt{1+4+4}=3\), \(|BC|=\sqrt{1+4+4}=3\). Karena \(|AC|+|CB|=|AB|\), ketiganya segaris dengan \(C\) di antara \(A\) dan \(B\) (dan memang \(C\) adalah titik tengah \(AB\)).</p></div>
+
+<h2>4. Persamaan bola</h2>
+<div class="box def"><span class="t">Definisi dan persamaan</span>
+<p><strong>Bola</strong> dengan pusat \(C(h,k,l)\) dan jari-jari \(r\) adalah himpunan semua titik \(P(x,y,z)\) dengan \(|PC|=r\). Mengkuadratkan rumus jarak,
+\[ (x-h)^2+(y-k)^2+(z-l)^2=r^2. \]
+Khususnya bola berpusat di titik asal: \(x^2+y^2+z^2=r^2\).</p></div>
+<figure><img src="assets/img/b12-1-bola.png" alt="Bola"><figcaption>Bola berpusat di \(C\) dengan jari-jari \(r\); kurva merah adalah lingkaran besar pada bidang yang melalui pusat.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 6 — dari persamaan umum ke pusat dan jari-jari</span>
+<p>Tunjukkan \(x^2+y^2+z^2-6x+4y-2z=11\) adalah bola. Lengkapkan kuadrat: \((x^2-6x+9)+(y^2+4y+4)+(z^2-2z+1)=11+9+4+1\), yaitu
+\[ (x-3)^2+(y+2)^2+(z-1)^2=25. \]
+Pusat \((3,-2,1)\), jari-jari 5.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — bola dengan diameter diberikan</span>
+<p>Bola dengan diameter dari \(A(1,2,3)\) ke \(B(5,2,-1)\): pusat adalah titik tengah \((3,2,1)\); jari-jari \(=\frac12|AB|=\frac12\sqrt{16+0+16}=2\sqrt2\). Persamaan \((x-3)^2+(y-2)^2+(z-1)^2=8\).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — irisan bola dengan bidang koordinat</span>
+<p>Bola \((x-3)^2+(y+2)^2+(z-1)^2=25\) dipotong bidang \(z=0\): \((x-3)^2+(y+2)^2+1=25\), yaitu \((x-3)^2+(y+2)^2=24\), lingkaran berjari-jari \(2\sqrt6\) pusat \((3,-2)\). Dipotong bidang \(y=3\): \((x-3)^2+25+(z-1)^2=25\Rightarrow(x-3)^2+(z-1)^2=0\), satu titik saja \((3,3,1)\); bidang \(y=3\) menyinggung bola (jarak \(5\) dari pusat sama dengan jari-jari).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — daerah di antara dua bola</span>
+<p>\(1\le x^2+y^2+z^2\le4\) adalah kulit bola tebal: semua titik yang berjarak antara 1 dan 2 dari titik asal. \(x^2+y^2+z^2\lt0{,}25\) adalah bagian dalam bola berjari-jari \(\frac12\) (tanpa permukaannya). Himpunan \(\{x^2+y^2+z^2\le4,\ z\ge0\}\) adalah belahan atas bola padat berjari-jari 2.</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Mengira \(x=2\) selalu garis. Di ruang 3D ia bidang.</li>
+<li>Lupa suku \((z_2-z_1)^2\) pada rumus jarak.</li>
+<li>Pada persamaan bola, lupa melengkapkan kuadrat untuk semua tiga peubah, atau salah tanda pusat: \((x+2)^2\) berarti pusat di \(x=-2\).</li>
+<li>Menggambar sumbu \(z\) ke bawah (melanggar kaidah tangan kanan).</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>Titik di ruang: \((x,y,z)\); tiga bidang koordinat, delapan oktan; kaidah tangan kanan.</li>
+<li>Jarak: \(\sqrt{(\Delta x)^2+(\Delta y)^2+(\Delta z)^2}\); titik tengah: rata-rata koordinat.</li>
+<li>Bola: \((x-h)^2+(y-k)^2+(z-l)^2=r^2\).</li>
+<li>Persamaan satu peubah (mis. \(x=c\)) berupa bidang di ruang.</li>
+</ul>
+<p>Subbab berikutnya, <a href="b12-2.html">12.2</a>, memperkenalkan vektor.</p>

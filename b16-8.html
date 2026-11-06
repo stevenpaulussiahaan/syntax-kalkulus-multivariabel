@@ -1,0 +1,52 @@
+<p>Teorema Green mengubah integral garis pada kurva tertutup di bidang menjadi integral ganda pada daerah di dalamnya. <strong>Teorema Stokes</strong> melakukan hal yang sama di ruang: sirkulasi medan vektor sepanjang kurva tertutup sama dengan fluks <em>curl</em> medan itu melalui permukaan yang dibatasi kurva.</p>
+
+<h2>1. Pernyataan</h2>
+<p>Misalkan \(S\) permukaan berorientasi mulus sebagian-sebagian, dibatasi oleh kurva tertutup sederhana \(C\). Orientasi \(C\) harus <strong>sesuai</strong> dengan orientasi \(S\): bila berjalan sepanjang \(C\) dengan kepala searah normal \(\mathbf n\), permukaan berada di sebelah kiri (aturan tangan kanan: jari melengkung searah \(C\), ibu jari searah \(\mathbf n\)).</p>
+<figure><img src="assets/img/b16-8-stokes.png" alt="Orientasi Stokes"><figcaption>Paraboloid \(z=1-x^2-y^2\) dengan normal ke atas (hijau) dan batas lingkaran \(C\) berlawanan arah jarum jam (merah).</figcaption></figure>
+<div class="box def"><span class="t">Teorema Stokes</span>
+<p>Jika \(\mathbf F\) mempunyai turunan parsial pertama kontinu pada daerah terbuka di \(\mathbb R^3\) yang memuat \(S\), maka
+\[ \oint_C\mathbf F\cdot d\mathbf r=\iint_S\operatorname{curl}\mathbf F\cdot d\mathbf S=\iint_S(\nabla\times\mathbf F)\cdot\mathbf n\,dS. \]</p></div>
+<p>Bila \(S\) rata di bidang \(xy\) dengan \(\mathbf n=\mathbf k\), \((\nabla\times\mathbf F)\cdot\mathbf k=Q_x-P_y\) dan Stokes menjadi teorema Green. Jadi Green adalah kasus khusus Stokes.</p>
+<p><strong>Gagasan bukti (grafik \(z=g(x,y)\)).</strong> Untuk \(\mathbf F=\langle P,Q,R\rangle\) pada grafik ke atas, ruas kanan menjadi \(\iint_D\bigl[-(R_y-Q_z)g_x-(P_z-R_x)g_y+(Q_x-P_y)\bigr]dA\). Ruas kiri: substitusi \(z=g(x,y)\), \(dz=g_xdx+g_ydy\), integral garis berubah menjadi integral garis pada \(\partial D\) di bidang \(xy\) dengan komponen \(\bigl(P+Rg_x\bigr)\) dan \(\bigl(Q+Rg_y\bigr)\); teorema Green dan aturan rantai pada \(R(x,y,g(x,y))\) menyamakan keduanya. Permukaan umum dipecah menjadi potongan grafik; integral garis pada batas dalam saling menghapus.</p>
+
+<h2>2. Contoh</h2>
+<div class="box ex"><span class="t">Contoh 1 — paraboloid, dua cara</span>
+<p>\(\mathbf F=\langle y,z,x\rangle\), \(S\): \(z=1-x^2-y^2\), \(z\ge0\), normal ke atas; \(C\): lingkaran satuan di bidang \(xy\), berlawanan arah jarum jam.
+<br><em>Garis:</em> \(\mathbf r=\langle\cos t,\sin t,0\rangle\), \(\mathbf r'=\langle-\sin t,\cos t,0\rangle\), \(\mathbf F=\langle\sin t,0,\cos t\rangle\). \(\mathbf F\cdot\mathbf r'=-\sin^2t\). \(\oint=\int_0^{2\pi}-\sin^2t\,dt=-\pi\).
+<br><em>Permukaan:</em> \(\operatorname{curl}\mathbf F=\langle R_y-Q_z,P_z-R_x,Q_x-P_y\rangle=\langle-1,-1,-1\rangle\). Untuk grafik: \(\operatorname{curl}\mathbf F\cdot\langle-g_x,-g_y,1\rangle=\langle-1,-1,-1\rangle\cdot\langle2x,2y,1\rangle=-2x-2y-1\). \(\iint_D(-2x-2y-1)\,dA=-\pi\) (suku ganjil lenyap). Kedua cara memberi \(-\pi\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — mengganti permukaan</span>
+<p>Untuk soal yang sama, ganti \(S\) dengan cakram datar \(x^2+y^2\le1\), \(z=0\), \(\mathbf n=\mathbf k\). \(\operatorname{curl}\mathbf F\cdot\mathbf k=-1\), \(\iint=-1\cdot\pi=-\pi\). Hasilnya sama, karena batas \(C\) sama. <em>Inilah kegunaan Stokes:</em> pilih permukaan terdekat yang paling mudah.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — elips hasil irisan silinder dan bidang</span>
+<p>\(\mathbf F=\langle z,x,y\rangle\), \(C\): perpotongan silinder \(x^2+y^2=1\) dan bidang \(y+z=2\) (13.1 Contoh 5), dilihat dari atas berlawanan arah jarum jam. \(\operatorname{curl}\mathbf F=\langle1,1,1\rangle\). Pilih \(S\) potongan bidang \(z=2-y\) di dalam silinder: \(g_x=0\), \(g_y=-1\), normal ke atas \(\langle0,1,1\rangle\). \(\operatorname{curl}\mathbf F\cdot\langle0,1,1\rangle=2\). \(\iint_D2\,dA=2\pi\). Cek langsung: \(\mathbf r=\langle\cos t,\sin t,2-\sin t\rangle\), \(\mathbf r'=\langle-\sin t,\cos t,-\cos t\rangle\), \(\mathbf F=\langle2-\sin t,\cos t,\sin t\rangle\); \(\mathbf F\cdot\mathbf r'=-2\sin t+\sin^2t+\cos^2t-\sin t\cos t\). \(\int_0^{2\pi}=0+\pi+\pi-0=2\pi\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — belahan bola</span>
+<p>\(\mathbf F=\langle-y,x,z^2\rangle\), \(S\): belahan atas bola jari-jari \(a\), normal keluar; \(C\): lingkaran \(x^2+y^2=a^2\), \(z=0\), berlawanan arah jarum jam. \(\operatorname{curl}\mathbf F=\langle0,0,2\rangle\). \(\iint_S2\,n_z\,dS=2\times\)(luas proyeksi pada bidang \(xy\))\(=2\pi a^2\) (karena \(n_z\,dS=dA\) proyeksi). Langsung: pada \(C\), \(z=0\), \(\mathbf F\cdot d\mathbf r=-y\,dx+x\,dy\), \(\oint=2\cdot\) luas cakram \(=2\pi a^2\). Cocok.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — permukaan tertutup</span>
+<p>Jika \(S\) permukaan <em>tertutup</em> (tanpa batas), maka \(C=\emptyset\) dan \(\iint_S\operatorname{curl}\mathbf F\cdot d\mathbf S=0\). Misalnya fluks curl apa pun melalui seluruh bola \(=0\). Ini konsisten dengan \(\operatorname{div}(\operatorname{curl}\mathbf F)=0\) dan teorema divergensi (16.9): \(\iint_S\operatorname{curl}\mathbf F\cdot d\mathbf S=\iiint\operatorname{div}\operatorname{curl}\mathbf F\,dV=0\).</p></div>
+
+<h2>3. Penafsiran curl</h2>
+<p>Ambil titik \(P\) dan cakram kecil \(S_a\) berjari-jari \(a\) yang tegak lurus arah \(\mathbf n\), berpusat di \(P\), dengan batas \(C_a\). Karena \(\operatorname{curl}\mathbf F\) hampir konstan pada \(S_a\), Stokes memberi
+\[ \oint_{C_a}\mathbf F\cdot d\mathbf r\approx\operatorname{curl}\mathbf F(P)\cdot\mathbf n\;\pi a^2\ \Rightarrow\ \operatorname{curl}\mathbf F(P)\cdot\mathbf n=\lim_{a\to0}\frac1{\pi a^2}\oint_{C_a}\mathbf F\cdot d\mathbf r. \]
+Jadi komponen curl pada arah \(\mathbf n\) adalah <strong>sirkulasi per satuan luas</strong> pada bidang yang tegak lurus \(\mathbf n\). Sirkulasi paling besar bila \(\mathbf n\) searah \(\operatorname{curl}\mathbf F\), dan nilai maksimum itu adalah \(|\operatorname{curl}\mathbf F|\). Ini membenarkan tafsir roda dayung di 16.5.</p>
+<div class="box ex"><span class="t">Contoh 6 — pusaran</span>
+<p>Fluida dengan kecepatan \(\mathbf v=\langle-3y,3x,0\rangle\) (rotasi dengan \(\omega=3\)). \(\operatorname{curl}\mathbf v=\langle0,0,6\rangle\). Sirkulasi di sekeliling lingkaran jari-jari \(a\) (berlawanan arah jarum jam): \(6\cdot\pi a^2\). Langsung: di lingkaran, kecepatan \(\mathbf v\) searah singgung dengan besar \(3a\), dan keliling lingkaran \(2\pi a\), jadi sirkulasi \(=3a\cdot2\pi a=6\pi a^2\). Cocok.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — hukum Faraday</span>
+<p>Bila \(\mathbf E\) medan listrik dan \(\mathbf B\) medan magnet, Faraday: \(\oint_C\mathbf E\cdot d\mathbf r=-\dfrac d{dt}\iint_S\mathbf B\cdot d\mathbf S\). Menerapkan Stokes ke ruas kiri memberi \(\iint_S\operatorname{curl}\mathbf E\cdot d\mathbf S=-\iint_S\dfrac{\partial\mathbf B}{\partial t}\cdot d\mathbf S\) untuk semua \(S\), jadi bentuk diferensial: \(\operatorname{curl}\mathbf E=-\dfrac{\partial\mathbf B}{\partial t}\), salah satu persamaan Maxwell.</p></div>
+
+<h2>4. Konservatif dan Stokes</h2>
+<p>Stokes menjelaskan syarat 16.3 secara lengkap. Bila \(\operatorname{curl}\mathbf F=\mathbf0\) pada daerah sederhana terhubung \(D\), maka untuk setiap kurva tertutup \(C\) di \(D\), \(C=\partial S\) untuk suatu permukaan \(S\subset D\), sehingga \(\oint_C\mathbf F\cdot d\mathbf r=\iint_S\mathbf0\cdot d\mathbf S=0\). Jadi \(\mathbf F\) konservatif. (Pada daerah berlubang seperti 16.3 Contoh 4, \(S\) yang dimaksud mungkin harus melewati lubang, di tempat \(\mathbf F\) tidak terdefinisi, sehingga bukti gagal.)</p>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Tidak mencocokkan orientasi \(C\) dengan \(\mathbf n\) (tangan kanan), sehingga tanda salah.</li>
+<li>Memakai curl yang salah, atau lupa mengambil produk titik dengan normal.</li>
+<li>Memakai Stokes pada \(\mathbf F\) yang tidak halus di dalam \(S\).</li>
+<li>Mengira nilai bergantung pada \(S\): hanya batas \(C\) yang penting.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(\oint_C\mathbf F\cdot d\mathbf r=\iint_S\operatorname{curl}\mathbf F\cdot d\mathbf S\); orientasi \(C\) dan \(S\) dengan aturan tangan kanan.</li>
+<li>Green adalah kasus khusus; pilih permukaan termudah dengan batas \(C\).</li>
+<li>Curl \(=\) sirkulasi per satuan luas; \(\operatorname{curl}\mathbf F=\mathbf0\Rightarrow\) konservatif (daerah sederhana terhubung).</li>
+</ul>
+<p>Berikutnya <a href="b16-9.html">16.9 Teorema Divergensi</a>.</p>

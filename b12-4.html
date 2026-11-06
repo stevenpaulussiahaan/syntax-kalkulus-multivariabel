@@ -1,0 +1,87 @@
+<p>Hasil kali titik menghasilkan skalar. Banyak masalah geometri dan fisika di ruang membutuhkan vektor yang <em>tegak lurus terhadap dua vektor lain</em>: normal sebuah bidang, sumbu putar, arah gaya magnet. Operasi yang menghasilkannya adalah <strong>hasil kali silang</strong>, yang hanya ada di ruang tiga dimensi.</p>
+
+<h2>1. Determinan sebagai alat bantu</h2>
+<p>Determinan \(2\times2\): \(\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc\). Determinan \(3\times3\) dihitung dengan ekspansi kofaktor sepanjang baris pertama:
+\[ \begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}=a_1\begin{vmatrix}b_2&b_3\\c_2&c_3\end{vmatrix}-a_2\begin{vmatrix}b_1&b_3\\c_1&c_3\end{vmatrix}+a_3\begin{vmatrix}b_1&b_2\\c_1&c_2\end{vmatrix}. \]
+(Perhatikan tanda berganti \(+,-,+\).)</p>
+
+<h2>2. Definisi</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Untuk \(\mathbf a=\langle a_1,a_2,a_3\rangle\) dan \(\mathbf b=\langle b_1,b_2,b_3\rangle\), <strong>hasil kali silang</strong> (<em>cross product</em>) adalah vektor
+\[ \mathbf a\times\mathbf b=\langle a_2b_3-a_3b_2,\ a_3b_1-a_1b_3,\ a_1b_2-a_2b_1\rangle. \]
+Bentuk yang mudah diingat memakai determinan simbolik:
+\[ \mathbf a\times\mathbf b=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix}. \]</p></div>
+<div class="box ex"><span class="t">Contoh 1</span>
+<p>\(\mathbf a=\langle1,3,4\rangle\), \(\mathbf b=\langle2,7,-5\rangle\).
+\[ \mathbf a\times\mathbf b=\mathbf i\,(3\cdot(-5)-4\cdot7)-\mathbf j\,(1\cdot(-5)-4\cdot2)+\mathbf k\,(1\cdot7-3\cdot2)=-43\mathbf i+13\mathbf j+\mathbf k. \]
+Cek tegak lurus: \(\langle-43,13,1\rangle\cdot\langle1,3,4\rangle=-43+39+4=0\) dan \(\cdot\langle2,7,-5\rangle=-86+91-5=0\) ✓.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — perkalian basis standar</span>
+<p>\(\mathbf i\times\mathbf j=\mathbf k\), \(\mathbf j\times\mathbf k=\mathbf i\), \(\mathbf k\times\mathbf i=\mathbf j\), sedangkan \(\mathbf j\times\mathbf i=-\mathbf k\), dan \(\mathbf i\times\mathbf i=\mathbf0\). Pola siklus \(\mathbf i\to\mathbf j\to\mathbf k\to\mathbf i\) menghasilkan tanda positif.</p></div>
+
+<h2>3. Arah dan besar</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>\(\mathbf a\times\mathbf b\) <strong>tegak lurus</strong> terhadap \(\mathbf a\) maupun \(\mathbf b\).</p></div>
+<p><strong>Bukti.</strong> \((\mathbf a\times\mathbf b)\cdot\mathbf a=a_1(a_2b_3-a_3b_2)+a_2(a_3b_1-a_1b_3)+a_3(a_1b_2-a_2b_1)=0\) (semua suku saling menghapus). Serupa untuk \(\mathbf b\). \(\blacksquare\)</p>
+<p><strong>Arah</strong> ditentukan oleh <em>kaidah tangan kanan</em>: bila jari tangan kanan melengkung dari \(\mathbf a\) ke \(\mathbf b\) (melalui sudut \(\theta\lt\pi\)), ibu jari menunjuk arah \(\mathbf a\times\mathbf b\).</p>
+<figure><img src="assets/img/b12-4-silang.png" alt="Hasil kali silang"><figcaption>\(\mathbf a\times\mathbf b\) tegak lurus bidang yang memuat \(\mathbf a\) dan \(\mathbf b\); panjangnya sama dengan luas jajargenjang.</figcaption></figure>
+<div class="box def"><span class="t">Teorema (besar)</span>
+<p>\[ |\mathbf a\times\mathbf b|=|\mathbf a||\mathbf b|\sin\theta,\qquad0\le\theta\le\pi, \]
+dengan \(\theta\) sudut antara \(\mathbf a\) dan \(\mathbf b\).</p></div>
+<p><strong>Bukti.</strong> Identitas Lagrange (periksa dengan menjabarkan komponen): \(|\mathbf a\times\mathbf b|^2=|\mathbf a|^2|\mathbf b|^2-(\mathbf a\cdot\mathbf b)^2\). Karena \(\mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos\theta\): \(|\mathbf a\times\mathbf b|^2=|\mathbf a|^2|\mathbf b|^2(1-\cos^2\theta)=|\mathbf a|^2|\mathbf b|^2\sin^2\theta\). Karena \(\sin\theta\ge0\) pada \([0,\pi]\), akarnya \(|\mathbf a||\mathbf b|\sin\theta\). \(\blacksquare\)</p>
+<div class="box def"><span class="t">Akibat</span>
+<p>Dua vektor tak nol \(\mathbf a,\mathbf b\) <strong>sejajar</strong> bila dan hanya bila \(\mathbf a\times\mathbf b=\mathbf0\).</p></div>
+
+<h2>4. Luas dan volume</h2>
+<p>Jajargenjang dengan sisi \(\mathbf a\) dan \(\mathbf b\) memiliki alas \(|\mathbf a|\) dan tinggi \(|\mathbf b|\sin\theta\). Jadi
+\[ \text{Luas jajargenjang}=|\mathbf a\times\mathbf b|,\qquad\text{Luas segitiga}=\tfrac12|\mathbf a\times\mathbf b|. \]
+<figure><img src="assets/img/b12-4-jajar.png" alt="Luas jajargenjang dan volume paralelepipedum"><figcaption>Kiri: luas \(=|\mathbf a||\mathbf b|\sin\theta\). Kanan: volume \(=|\mathbf a\cdot(\mathbf b\times\mathbf c)|\).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 3 — luas segitiga di ruang</span>
+<p>\(P(1,4,6)\), \(Q(-2,5,-1)\), \(R(1,-1,1)\). \(\overrightarrow{PQ}=\langle-3,1,-7\rangle\), \(\overrightarrow{PR}=\langle0,-5,-5\rangle\).
+\[ \overrightarrow{PQ}\times\overrightarrow{PR}=\langle1\cdot(-5)-(-7)(-5),\ (-7)\cdot0-(-3)(-5),\ (-3)(-5)-1\cdot0\rangle=\langle-40,-15,15\rangle. \]
+\(|\cdot|=\sqrt{1600+225+225}=\sqrt{2050}\approx45{,}28\). Luas segitiga \(=\frac12\sqrt{2050}\approx22{,}64\). Vektor \(\langle-40,-15,15\rangle\), atau \(\langle8,3,-3\rangle\) (dibagi \(-5\)), adalah normal bidang \(PQR\).</p></div>
+
+<h3>Hasil kali tripel skalar</h3>
+<p>\(\mathbf a\cdot(\mathbf b\times\mathbf c)\) disebut <strong>hasil kali tripel skalar</strong>, dihitung sebagai determinan:
+\[ \mathbf a\cdot(\mathbf b\times\mathbf c)=\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}. \]
+Paralelepipedum (balok miring) dengan rusuk \(\mathbf a,\mathbf b,\mathbf c\) mempunyai alas jajargenjang \(\mathbf b,\mathbf c\) dengan luas \(|\mathbf b\times\mathbf c|\) dan tinggi \(|\mathrm{comp}_{\mathbf b\times\mathbf c}\mathbf a|\); jadi
+\[ V=|\mathbf a\cdot(\mathbf b\times\mathbf c)|. \]
+<figure><img src="assets/img/b12-4-paralelepipedum.png" alt="Paralelepipedum"></figure>
+<div class="box ex"><span class="t">Contoh 4 — volume</span>
+<p>\(\mathbf a=\langle1,2,3\rangle\), \(\mathbf b=\langle-1,1,2\rangle\), \(\mathbf c=\langle2,-1,1\rangle\). \(\mathbf b\times\mathbf c=\langle1\cdot1-2\cdot(-1),\ 2\cdot2-(-1)\cdot1,\ (-1)(-1)-1\cdot2\rangle=\langle3,5,-1\rangle\). \(\mathbf a\cdot(\mathbf b\times\mathbf c)=3+10-3=10\). Volume \(=10\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — uji sebidang (koplanar)</span>
+<p>Tiga vektor sebidang bila volume paralelepipedumnya nol. \(\mathbf a=\langle1,4,-7\rangle\), \(\mathbf b=\langle2,-1,4\rangle\), \(\mathbf c=\langle0,-9,18\rangle\): \(\mathbf b\times\mathbf c=\langle-1\cdot18-4\cdot(-9),\ 4\cdot0-2\cdot18,\ 2\cdot(-9)-0\rangle=\langle18,-36,-18\rangle\), dan \(\mathbf a\cdot\)itu \(=18-144+126=0\). Jadi sebidang.</p></div>
+
+<h2>5. Sifat-sifat aljabar</h2>
+<p>Untuk vektor \(\mathbf a,\mathbf b,\mathbf c\) dan skalar \(c\):</p>
+<ol>
+<li>\(\mathbf a\times\mathbf b=-(\mathbf b\times\mathbf a)\) (anti-komutatif)</li>
+<li>\((c\mathbf a)\times\mathbf b=c(\mathbf a\times\mathbf b)=\mathbf a\times(c\mathbf b)\)</li>
+<li>\(\mathbf a\times(\mathbf b+\mathbf c)=\mathbf a\times\mathbf b+\mathbf a\times\mathbf c\) (distributif)</li>
+<li>\((\mathbf a+\mathbf b)\times\mathbf c=\mathbf a\times\mathbf c+\mathbf b\times\mathbf c\)</li>
+<li>\(\mathbf a\cdot(\mathbf b\times\mathbf c)=(\mathbf a\times\mathbf b)\cdot\mathbf c\)</li>
+<li>\(\mathbf a\times(\mathbf b\times\mathbf c)=(\mathbf a\cdot\mathbf c)\mathbf b-(\mathbf a\cdot\mathbf b)\mathbf c\) (hasil kali tripel vektor)</li>
+</ol>
+<div class="box note"><span class="t">Peringatan</span>
+<p>Hasil kali silang <strong>tidak komutatif</strong> dan <strong>tidak asosiatif</strong>: \(\mathbf i\times(\mathbf i\times\mathbf j)=\mathbf i\times\mathbf k=-\mathbf j\), sedangkan \((\mathbf i\times\mathbf i)\times\mathbf j=\mathbf0\).</p></div>
+
+<h2>6. Torsi (momen gaya)</h2>
+<p>Bila gaya \(\mathbf F\) bekerja di titik dengan vektor posisi \(\mathbf r\) relatif terhadap sumbu putar, <strong>torsi</strong> adalah \(\boldsymbol\tau=\mathbf r\times\mathbf F\), dengan besar \(|\mathbf r||\mathbf F|\sin\theta\): gaya yang tegak lurus lengan memberi torsi terbesar.</p>
+<div class="box ex"><span class="t">Contoh 6 — mengencangkan baut</span>
+<p>Kunci pas sepanjang 0,4 m searah sumbu \(x\) mengencangkan baut di titik asal; gaya 60 N diberikan ke bawah (arah \(-z\)). \(\mathbf r=\langle0{,}4,0,0\rangle\), \(\mathbf F=\langle0,0,-60\rangle\). \(\boldsymbol\tau=\langle0\cdot(-60)-0,\ 0-0{,}4\cdot(-60),\ 0\rangle=\langle0,24,0\rangle\) N·m. Besarnya 24 N·m, searah sumbu \(y\) (sumbu putar). Bila gaya miring \(30^\circ\) dari arah tegak lurus, torsinya turun menjadi \(24\cos30^\circ\approx20{,}8\) N·m.</p></div>
+
+<h2>7. Kesalahan umum</h2>
+<ul>
+<li>Menukar urutan: \(\mathbf a\times\mathbf b\) dan \(\mathbf b\times\mathbf a\) berlawanan arah.</li>
+<li>Kesalahan tanda pada komponen \(\mathbf j\) saat ekspansi determinan.</li>
+<li>Memakai hasil kali silang di \(\mathbb R^2\) (tidak ada; embed ke \(\mathbb R^3\) dengan \(z=0\)).</li>
+<li>Mengira \(\mathbf a\times\mathbf b=\mathbf0\) berarti salah satunya nol (bisa saja sejajar).</li>
+</ul>
+
+<h2>8. Ringkasan</h2>
+<ul>
+<li>\(\mathbf a\times\mathbf b\): vektor tegak lurus keduanya, arah kaidah tangan kanan, \(|\mathbf a\times\mathbf b|=|\mathbf a||\mathbf b|\sin\theta\).</li>
+<li>Luas jajargenjang \(=|\mathbf a\times\mathbf b|\); volume paralelepipedum \(=|\mathbf a\cdot(\mathbf b\times\mathbf c)|\).</li>
+<li>Sejajar \(\iff\mathbf a\times\mathbf b=\mathbf0\); sebidang \(\iff\) tripel skalar nol.</li>
+<li>Torsi \(\mathbf r\times\mathbf F\).</li>
+</ul>
+<p>Dengan dua operasi ini kita bisa menuliskan garis dan bidang di <a href="b12-5.html">12.5</a>.</p>

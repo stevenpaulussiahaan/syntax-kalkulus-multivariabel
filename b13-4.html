@@ -1,0 +1,67 @@
+<p>Inilah tujuan fungsi vektor: menggambarkan gerak. Bila \(\mathbf r(t)\) adalah posisi partikel pada waktu \(t\), maka turunan pertama dan kedua adalah kecepatan dan percepatan.</p>
+
+<h2>1. Kecepatan, laju, percepatan</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Untuk partikel dengan vektor posisi \(\mathbf r(t)\):
+\[ \mathbf v(t)=\mathbf r'(t)\ \ (\text{kecepatan}),\qquad|\mathbf v(t)|=\frac{ds}{dt}\ \ (\text{laju}),\qquad\mathbf a(t)=\mathbf v'(t)=\mathbf r''(t)\ \ (\text{percepatan}). \]</p></div>
+<p>Kecepatan adalah vektor singgung ke lintasan, searah gerak; laju adalah skalar \(\ge0\). Hukum II Newton: gaya \(\mathbf F=m\mathbf a\).</p>
+<div class="box ex"><span class="t">Contoh 1 — kubik terpilin sebagai gerak</span>
+<p>\(\mathbf r(t)=\langle t,t^2,t^3\rangle\): \(\mathbf v=\langle1,2t,3t^2\rangle\), \(\mathbf a=\langle0,2,6t\rangle\), laju \(|\mathbf v|=\sqrt{1+4t^2+9t^4}\). Di \(t=1\): \(\mathbf v=\langle1,2,3\rangle\), laju \(\sqrt{14}\approx3{,}742\); \(\mathbf a=\langle0,2,6\rangle\), \(|\mathbf a|=\sqrt{40}\approx6{,}325\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — gerak melingkar beraturan</span>
+<p>\(\mathbf r(t)=\langle R\cos\omega t,\ R\sin\omega t\rangle\). \(\mathbf v=\omega R\langle-\sin\omega t,\cos\omega t\rangle\), laju \(\omega R\) konstan. \(\mathbf a=-\omega^2\mathbf r\): percepatan menuju pusat (sentripetal) dengan besar \(\omega^2R=v^2/R\). Mobil melaju \(20\) m/s pada tikungan berjari-jari \(50\) m: \(a=400/50=8\) m/s². Meskipun lajunya konstan, percepatan tidak nol karena arah kecepatan berubah.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — dari percepatan ke posisi</span>
+<p>Percepatan \(\mathbf a(t)=\langle0,2,6t\rangle\), \(\mathbf v(0)=\langle1,0,0\rangle\), \(\mathbf r(0)=\langle0,1,2\rangle\) (13.2, Contoh 9) memberi \(\mathbf v=\langle1,2t,3t^2\rangle\) dan \(\mathbf r=\langle t,\ t^2+1,\ t^3+2\rangle\). Setelah \(t=2\): posisi \((2,5,10)\), kecepatan \(\langle1,4,12\rangle\), laju \(\sqrt{161}\approx12{,}69\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — kapan laju minimum?</span>
+<p>\(\mathbf r(t)=\langle t^2,\ t^2-4t,\ 0\rangle\), \(\mathbf v=\langle2t,\ 2t-4,\ 0\rangle\). \(|\mathbf v|^2=4t^2+(2t-4)^2=8t^2-16t+16\). Minimum di \(t=1\): \(|\mathbf v|^2=8\), laju \(2\sqrt2\). Pada saat itu \(\mathbf v=\langle2,-2,0\rangle\).</p></div>
+
+<h2>2. Gerak proyektil</h2>
+<p>Benda dilempar dari titik asal dengan laju awal \(v_0\) dan sudut elevasi \(\alpha\). Satu-satunya percepatan adalah gravitasi: \(\mathbf a=\langle0,-g\rangle\) (\(g\approx9{,}8\) m/s²). Integrasi dua kali:
+\[ \mathbf v(t)=\langle v_0\cos\alpha,\ v_0\sin\alpha-gt\rangle,\qquad \mathbf r(t)=\bigl\langle(v_0\cos\alpha)\,t,\ (v_0\sin\alpha)\,t-\tfrac12gt^2\bigr\rangle. \]
+Gerak horizontal beraturan, gerak vertikal berubah beraturan: keduanya bebas satu sama lain.</p>
+<div class="box def"><span class="t">Rumus proyektil (tanah datar)</span>
+<ul>
+<li>Waktu terbang: \(T=\dfrac{2v_0\sin\alpha}g\).</li>
+<li>Jangkauan: \(R=\dfrac{v_0^2\sin2\alpha}g\) (maksimum di \(\alpha=45^\circ\)).</li>
+<li>Tinggi maksimum: \(H=\dfrac{(v_0\sin\alpha)^2}{2g}\).</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 5 — bola dilempar</span>
+<p>\(v_0=30\) m/s, \(\alpha=40^\circ\). Komponen awal: \(v_0\cos\alpha\approx22{,}98\), \(v_0\sin\alpha\approx19{,}28\). Waktu terbang \(T=2(19{,}28)/9{,}8\approx3{,}94\) s; jangkauan \(R=900\sin80^\circ/9{,}8\approx90{,}4\) m; tinggi maksimum \(H=19{,}28^2/19{,}6\approx18{,}97\) m. Laju saat mendarat sama dengan laju awal (30 m/s) karena energi kekal.</p></div>
+<figure><img src="assets/img/b13-4-proyektil.png" alt="Lintasan proyektil"><figcaption>Lintasan bola \(v_0=30\) m/s, \(\alpha=40^\circ\); titik merah menandai \(t=0,1,2,3\) s.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 6 — dua sudut, satu jangkauan</span>
+<p>Dengan \(v_0=30\) m/s, sudut \(\alpha\) dan \(90^\circ-\alpha\) memberi jangkauan yang sama (\(\sin2\alpha=\sin(180^\circ-2\alpha)\)). Misalnya \(\alpha=20^\circ\) dan \(70^\circ\) keduanya memberi \(900\sin40^\circ/9{,}8\approx59{,}0\) m, tetapi lintasan \(70^\circ\) jauh lebih tinggi dan lebih lama.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — peluncuran dari ketinggian</span>
+<p>Benda dilempar horizontal dari tebing tinggi \(45\) m dengan laju \(12\) m/s. Posisi: \(\mathbf r=\langle12t,\ 45-4{,}9t^2\rangle\). Menyentuh tanah ketika \(45=4{,}9t^2\Rightarrow t=3{,}03\) s, jatuh di \(x\approx36{,}4\) m. Kecepatan saat mendarat: \(\langle12,-29{,}7\rangle\), laju \(\approx32{,}0\) m/s.</p></div>
+
+<h2>3. Komponen tangensial dan normal percepatan</h2>
+<p>Dari \(\mathbf v=v\mathbf T\) (dengan \(v=|\mathbf v|\)), turunkan: \(\mathbf a=v'\mathbf T+v\mathbf T'\). Karena \(\mathbf T'=\kappa v\mathbf N\) (dari definisi \(\kappa=|\mathbf T'|/v\)),
+\[ \boxed{\ \mathbf a=a_T\,\mathbf T+a_N\,\mathbf N,\qquad a_T=v'=\frac{\mathbf r'\cdot\mathbf r''}{|\mathbf r'|},\quad a_N=\kappa v^2=\frac{|\mathbf r'\times\mathbf r''|}{|\mathbf r'|}\ } \]
+\(a_T\) mengubah <em>laju</em> (searah gerak); \(a_N\) membelokkan <em>arah</em> (menuju sisi cekung). Selalu \(a_T^2+a_N^2=|\mathbf a|^2\). Percepatan berada di bidang oskulasi, tidak punya komponen \(\mathbf B\).</p>
+<div class="box ex"><span class="t">Contoh 8 — heliks</span>
+<p>Untuk \(\langle\cos t,\sin t,t\rangle\): \(\mathbf r'\cdot\mathbf r''=\sin t\cos t-\cos t\sin t+0=0\), jadi \(a_T=0\) (laju konstan \(\sqrt2\)). \(a_N=\sqrt2/\sqrt2=1=\kappa v^2=\tfrac12\cdot2\). Percepatan \(=\langle-\cos t,-\sin t,0\rangle=\mathbf N\), menuju sumbu silinder.</p></div>
+<div class="box ex"><span class="t">Contoh 9 — kubik terpilin di \(t=1\)</span>
+<p>\(\mathbf r'=\langle1,2,3\rangle\), \(\mathbf r''=\langle0,2,6\rangle\): \(\mathbf r'\cdot\mathbf r''=0+4+18=22\); \(a_T=22/\sqrt{14}\approx5{,}880\). \(|\mathbf r'\times\mathbf r''|=\sqrt{76}\), \(a_N=\sqrt{76}/\sqrt{14}\approx2{,}330\). Pemeriksaan: \(a_T^2+a_N^2\approx34{,}57+5{,}43=40=|\mathbf a|^2\).</p></div>
+<div class="box ex"><span class="t">Contoh 10 — proyektil di titik tertinggi</span>
+<p>Di puncak lintasan, \(\mathbf v=\langle v_0\cos\alpha,0\rangle\) horizontal dan \(\mathbf a=\langle0,-g\rangle\) vertikal, sehingga \(a_T=0\) dan \(a_N=g\). Kelengkungan di puncak: \(\kappa=a_N/v^2=g/(v_0\cos\alpha)^2\). Untuk Contoh 5: \(9{,}8/22{,}98^2\approx0{,}01856\ \text{m}^{-1}\); jari-jari kelengkungan \(\approx53{,}9\) m.</p></div>
+
+<h2>4. Hukum-hukum Kepler (gambaran)</h2>
+<p>Kepler merumuskan tiga hukum gerak planet; Newton menurunkannya dari hukum gravitasi \(\mathbf F=-\dfrac{GMm}{r^3}\mathbf r\). Intinya: (1) planet bergerak pada elips dengan Matahari di salah satu fokus; (2) vektor posisi dari Matahari menyapu luas sama dalam waktu sama; (3) kuadrat periode sebanding pangkat tiga setengah sumbu panjang.</p>
+<p>Hukum kedua adalah akibat langsung kalkulus vektor. Gaya sentral \(\mathbf F\parallel\mathbf r\) memberi \(\mathbf r\times\mathbf a=\mathbf 0\). Karena \(\frac d{dt}(\mathbf r\times\mathbf v)=\mathbf v\times\mathbf v+\mathbf r\times\mathbf a=\mathbf0\), vektor momentum sudut per massa, \(\mathbf h=\mathbf r\times\mathbf v\), konstan. Maka \(\mathbf r\) dan \(\mathbf v\) selalu terletak pada satu bidang tetap (gerak planar), dan luas yang disapu per waktu, \(\frac12|\mathbf r\times\mathbf v|=\frac12|\mathbf h|\), konstan.</p>
+<div class="box ex"><span class="t">Contoh 11 — hukum ketiga Kepler pada satelit</span>
+<p>Bila periode \(T\) dan setengah sumbu panjang \(a\) maka \(T^2/a^3\) sama untuk semua benda yang mengorbit pusat yang sama. Satelit yang jari-jari orbitnya dua kali orbit satelit lain mempunyai periode \(2^{3/2}\approx2{,}83\) kali lebih besar.</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Mengira laju konstan berarti percepatan nol. Pada gerak melingkar \(a_N\ne0\).</li>
+<li>Menyamakan \(|\mathbf a|\) dengan \(dv/dt\): \(dv/dt=a_T\), bukan \(|\mathbf a|\).</li>
+<li>Pada proyektil, menaruh \(g\) di komponen \(x\) atau lupa tanda negatif pada \(\tfrac12gt^2\).</li>
+<li>Memakai sudut dalam derajat pada kalkulator berbasis radian, atau sebaliknya.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(\mathbf v=\mathbf r'\), laju \(=|\mathbf v|\), \(\mathbf a=\mathbf r''\); integrasi dari percepatan memakai kondisi awal.</li>
+<li>Proyektil: \(\mathbf r=\langle v_0\cos\alpha\,t,\ v_0\sin\alpha\,t-\tfrac12gt^2\rangle\); \(T,R,H\) seperti di atas.</li>
+<li>\(\mathbf a=a_T\mathbf T+a_N\mathbf N\) dengan \(a_T=v'\), \(a_N=\kappa v^2\).</li>
+<li>Gaya sentral \(\Rightarrow\mathbf r\times\mathbf v\) konstan (hukum luas Kepler).</li>
+</ul>
+<p>Bab 13 selesai. Bab berikutnya, <a href="b14-1.html">14.1</a>, memperluas kalkulus ke fungsi dua peubah atau lebih.</p>

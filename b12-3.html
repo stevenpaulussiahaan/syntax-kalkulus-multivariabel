@@ -1,0 +1,92 @@
+<p>Sampai di sini kita sudah bisa menjumlahkan vektor dan mengalikannya dengan skalar. Bagaimana dengan <em>mengalikan dua vektor</em>? Ada dua cara yang bermakna: hasil kali titik (hasilnya skalar), dibahas di sini, dan hasil kali silang (hasilnya vektor), dibahas di <a href="b12-4.html">12.4</a>.</p>
+
+<h2>1. Definisi</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Untuk \(\mathbf a=\langle a_1,a_2,a_3\rangle\) dan \(\mathbf b=\langle b_1,b_2,b_3\rangle\), <strong>hasil kali titik</strong> (<em>dot product</em>, atau hasil kali skalar) adalah bilangan
+\[ \mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3. \]
+(Di dua dimensi: \(a_1b_1+a_2b_2\).)</p></div>
+<div class="box ex"><span class="t">Contoh 1</span>
+<p>\(\langle2,4\rangle\cdot\langle3,-1\rangle=6-4=2\). \(\langle-1,7,4\rangle\cdot\langle6,2,-\tfrac12\rangle=-6+14-2=6\). \((\mathbf i+2\mathbf j-3\mathbf k)\cdot(2\mathbf j-\mathbf k)=0+4+3=7\).</p></div>
+<h3>Sifat-sifat</h3>
+<p>Untuk vektor \(\mathbf a,\mathbf b,\mathbf c\) dan skalar \(c\):</p>
+<ol>
+<li>\(\mathbf a\cdot\mathbf a=|\mathbf a|^2\)</li>
+<li>\(\mathbf a\cdot\mathbf b=\mathbf b\cdot\mathbf a\)</li>
+<li>\(\mathbf a\cdot(\mathbf b+\mathbf c)=\mathbf a\cdot\mathbf b+\mathbf a\cdot\mathbf c\)</li>
+<li>\((c\mathbf a)\cdot\mathbf b=c(\mathbf a\cdot\mathbf b)=\mathbf a\cdot(c\mathbf b)\)</li>
+<li>\(\mathbf0\cdot\mathbf a=0\)</li>
+</ol>
+<p>Semuanya terbukti dengan menjabarkan menjadi komponen.</p>
+
+<h2>2. Sudut antara dua vektor</h2>
+<p>Hasil kali titik sangat berguna karena memiliki tafsiran geometris. <strong>Sudut antara</strong> dua vektor tak nol \(\mathbf a\) dan \(\mathbf b\) adalah sudut \(\theta\) (\(0\le\theta\le\pi\)) di antara keduanya bila titik awalnya berimpit.</p>
+<div class="box def"><span class="t">Teorema</span>
+<p>\[ \mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos\theta. \]
+Akibatnya \(\displaystyle\cos\theta=\frac{\mathbf a\cdot\mathbf b}{|\mathbf a||\mathbf b|}\).</p></div>
+<h3>Bukti</h3>
+<p>Bentuk segitiga dengan sisi \(\mathbf a\), \(\mathbf b\), dan \(\mathbf a-\mathbf b\). Hukum kosinus: \(|\mathbf a-\mathbf b|^2=|\mathbf a|^2+|\mathbf b|^2-2|\mathbf a||\mathbf b|\cos\theta\). Di sisi lain, dengan sifat 1 sampai 3,
+\[ |\mathbf a-\mathbf b|^2=(\mathbf a-\mathbf b)\cdot(\mathbf a-\mathbf b)=|\mathbf a|^2-2\,\mathbf a\cdot\mathbf b+|\mathbf b|^2. \]
+Samakan kedua ungkapan: \(-2\,\mathbf a\cdot\mathbf b=-2|\mathbf a||\mathbf b|\cos\theta\). \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 2 — sudut antara dua vektor</span>
+<p>\(\mathbf a=\langle2,2,-1\rangle\), \(\mathbf b=\langle5,-3,2\rangle\). \(\mathbf a\cdot\mathbf b=10-6-2=2\), \(|\mathbf a|=3\), \(|\mathbf b|=\sqrt{38}\). \(\cos\theta=\dfrac2{3\sqrt{38}}\approx0{,}108\), \(\theta\approx83{,}8^\circ\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — sudut dalam segitiga</span>
+<p>Titik \(A(1,0,0)\), \(B(0,1,0)\), \(C(0,0,1)\). Sudut di \(A\): \(\overrightarrow{AB}=\langle-1,1,0\rangle\), \(\overrightarrow{AC}=\langle-1,0,1\rangle\), dot \(=1\), panjang masing-masing \(\sqrt2\): \(\cos A=\frac12\), \(A=60^\circ\). Segitiga sama sisi, jadi semua sudutnya \(60^\circ\).</p></div>
+<h3>Tegak lurus dan sejajar</h3>
+<p>Karena \(\cos\theta=0\iff\theta=\frac\pi2\):</p>
+<div class="box def"><span class="t">Akibat</span>
+<p>Dua vektor \(\mathbf a,\mathbf b\) <strong>ortogonal</strong> (tegak lurus) bila dan hanya bila \(\mathbf a\cdot\mathbf b=0\). (Vektor nol dianggap ortogonal ke semua vektor.) Sejajar searah: \(\cos\theta=1\); berlawanan arah: \(\cos\theta=-1\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — uji ortogonal</span>
+<p>\(\langle2,2,-1\rangle\cdot\langle5,-4,2\rangle=10-8-2=0\): tegak lurus. Cari \(t\) supaya \(\langle t,2,-1\rangle\perp\langle3,t,4\rangle\): \(3t+2t-4=0\Rightarrow t=\frac45\).</p></div>
+<div class="box note"><span class="t">Tanda dot product memberi jenis sudut</span>
+<p>\(\mathbf a\cdot\mathbf b\gt0\): sudut lancip; \(=0\): siku-siku; \(\lt0\): sudut tumpul.</p></div>
+
+<h2>3. Sudut dan kosinus arah</h2>
+<p>Sudut yang dibentuk \(\mathbf a\) dengan sumbu \(x,y,z\) positif adalah <strong>sudut arah</strong> \(\alpha,\beta,\gamma\). Dari \(\mathbf a\cdot\mathbf i=a_1\) diperoleh
+\[ \cos\alpha=\frac{a_1}{|\mathbf a|},\quad\cos\beta=\frac{a_2}{|\mathbf a|},\quad\cos\gamma=\frac{a_3}{|\mathbf a|},\qquad\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1. \]
+Vektor satuan searah \(\mathbf a\) adalah \(\langle\cos\alpha,\cos\beta,\cos\gamma\rangle\).</p>
+<div class="box ex"><span class="t">Contoh 5</span>
+<p>\(\mathbf a=\langle1,2,3\rangle\), \(|\mathbf a|=\sqrt{14}\): \(\cos\alpha=\frac1{\sqrt{14}}\Rightarrow\alpha\approx74{,}5^\circ\), \(\beta\approx57{,}7^\circ\), \(\gamma\approx36{,}7^\circ\). Cek: \(\frac{1+4+9}{14}=1\) ✓.</p></div>
+
+<h2>4. Proyeksi</h2>
+<figure><img src="assets/img/b12-3-proyeksi.png" alt="Proyeksi a pada b"><figcaption>Proyeksi skalar dan vektor \(\mathbf a\) pada \(\mathbf b\); \(\mathbf a-\mathrm{proj}_{\mathbf b}\mathbf a\) tegak lurus \(\mathbf b\).</figcaption></figure>
+<p>Jatuhkan garis tegak lurus dari ujung \(\mathbf a\) ke garis yang memuat \(\mathbf b\). Panjang bayangan \(\mathbf a\) pada arah \(\mathbf b\) adalah \(|\mathbf a|\cos\theta\).</p>
+<div class="box def"><span class="t">Definisi</span>
+<p>Untuk \(\mathbf b\ne\mathbf0\):
+\[ \text{proyeksi skalar (komponen) }\ \mathrm{comp}_{\mathbf b}\mathbf a=\frac{\mathbf a\cdot\mathbf b}{|\mathbf b|}, \qquad \text{proyeksi vektor }\ \mathrm{proj}_{\mathbf b}\mathbf a=\frac{\mathbf a\cdot\mathbf b}{|\mathbf b|^2}\,\mathbf b. \]
+Vektor \(\mathbf a-\mathrm{proj}_{\mathbf b}\mathbf a\) tegak lurus \(\mathbf b\).</p></div>
+<p>Pemeriksaan ortogonalitas: \((\mathbf a-\frac{\mathbf a\cdot\mathbf b}{|\mathbf b|^2}\mathbf b)\cdot\mathbf b=\mathbf a\cdot\mathbf b-\mathbf a\cdot\mathbf b=0\). \(\checkmark\)</p>
+<div class="box ex"><span class="t">Contoh 6 — proyeksi</span>
+<p>\(\mathbf a=\langle2,3,4\rangle\), \(\mathbf b=\langle5,-1,2\rangle\): \(\mathbf a\cdot\mathbf b=15\), \(|\mathbf b|^2=30\). \(\mathrm{comp}_{\mathbf b}\mathbf a=\frac{15}{\sqrt{30}}\approx2{,}739\). \(\mathrm{proj}_{\mathbf b}\mathbf a=\frac{15}{30}\mathbf b=\langle2{,}5,-0{,}5,1\rangle\). Komponen tegak lurus: \(\mathbf a-\mathrm{proj}=\langle-0{,}5,3{,}5,3\rangle\), dan dot dengan \(\mathbf b\): \(-2{,}5-3{,}5+6=0\) ✓.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — jarak titik ke garis (di bidang)</span>
+<p>Jarak titik \(P(x_1,y_1)\) ke garis \(ax+by+c=0\) adalah \(\dfrac{|ax_1+by_1+c|}{\sqrt{a^2+b^2}}\). Turunan: vektor \(\mathbf n=\langle a,b\rangle\) tegak lurus garis. Ambil sembarang titik \(P_0(x_0,y_0)\) pada garis; jaraknya \(=|\mathrm{comp}_{\mathbf n}\overrightarrow{P_0P}|=\dfrac{|a(x_1-x_0)+b(y_1-y_0)|}{\sqrt{a^2+b^2}}\), dan \(ax_0+by_0=-c\). Contoh: titik \((3,4)\) ke garis \(3x-4y+5=0\): \(\frac{|9-16+5|}{5}=\frac25\).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — ketaksamaan Cauchy–Schwarz</span>
+<p>Karena \(|\cos\theta|\le1\), selalu berlaku \(|\mathbf a\cdot\mathbf b|\le|\mathbf a||\mathbf b|\). Akibatnya ketaksamaan segitiga \(|\mathbf a+\mathbf b|\le|\mathbf a|+|\mathbf b|\): \(|\mathbf a+\mathbf b|^2=|\mathbf a|^2+2\mathbf a\cdot\mathbf b+|\mathbf b|^2\le|\mathbf a|^2+2|\mathbf a||\mathbf b|+|\mathbf b|^2=(|\mathbf a|+|\mathbf b|)^2\).</p></div>
+
+<h2>5. Kerja (usaha) oleh gaya</h2>
+<p>Bila gaya konstan \(\mathbf F\) memindahkan benda sepanjang perpindahan \(\mathbf D\), kerja yang dilakukan adalah komponen gaya sepanjang perpindahan dikali jarak:
+\[ W=\mathbf F\cdot\mathbf D=|\mathbf F||\mathbf D|\cos\theta. \]</p>
+<div class="box ex"><span class="t">Contoh 9 — menarik kereta</span>
+<p>Gaya 200 N pada tali yang membentuk \(30^\circ\) dengan horizontal menarik kereta sejauh 100 m. \(W=200\cdot100\cos30^\circ\approx17\,321\) J.</p></div>
+<div class="box ex"><span class="t">Contoh 10 — balok pada bidang miring</span>
+<p>Balok berbobot 50 N pada bidang miring \(25^\circ\). Uraikan berat \(\mathbf W\) menjadi komponen sejajar bidang (menggeser balok) dan tegak lurus bidang (menekan bidang):
+\[ W_\parallel=50\sin25^\circ\approx21{,}1\ \text{N},\qquad W_\perp=50\cos25^\circ\approx45{,}3\ \text{N}. \]
+Keduanya dari proyeksi \(\mathbf W\) pada vektor sejajar dan tegak lurus bidang.</p></div>
+<figure><img src="assets/img/b12-3-bidangmiring.png" alt="Bidang miring 25 derajat"></figure>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Hasil dot adalah <em>skalar</em>, bukan vektor.</li>
+<li>\(\mathbf a\cdot\mathbf b\cdot\mathbf c\) tidak bermakna (skalar dot vektor tak terdefinisi).</li>
+<li>Hasil dot nol tidak berarti salah satu vektor nol; bisa saja tegak lurus.</li>
+<li>Memakai derajat/radian yang tidak cocok saat menghitung \(\theta=\arccos(\cdot)\).</li>
+<li>Mengira \(\mathrm{proj}_{\mathbf b}\mathbf a=\mathrm{proj}_{\mathbf a}\mathbf b\): proyeksi tidak simetris.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\mathbf a\cdot\mathbf b=\sum a_ib_i=|\mathbf a||\mathbf b|\cos\theta\).</li>
+<li>\(\mathbf a\perp\mathbf b\iff\mathbf a\cdot\mathbf b=0\); tanda dot menentukan lancip/tumpul.</li>
+<li>\(\mathrm{proj}_{\mathbf b}\mathbf a=\frac{\mathbf a\cdot\mathbf b}{|\mathbf b|^2}\mathbf b\), \(\mathrm{comp}_{\mathbf b}\mathbf a=\frac{\mathbf a\cdot\mathbf b}{|\mathbf b|}\).</li>
+<li>Kerja \(W=\mathbf F\cdot\mathbf D\).</li>
+</ul>
+<p>Berikutnya <a href="b12-4.html">12.4 Hasil Kali Silang</a>.</p>

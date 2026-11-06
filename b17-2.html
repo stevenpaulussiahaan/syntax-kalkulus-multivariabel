@@ -1,0 +1,72 @@
+<p>Sekarang kita menyelesaikan persamaan yang ruas kanannya tidak nol:
+\[ ay''+by'+cy=G(x). \tag{1} \]
+Ruas kanan \(G\) mewakili gaya luar atau masukan. Ada dua metode utama: <strong>koefisien tak tentu</strong> dan <strong>variasi parameter</strong>.</p>
+
+<h2>1. Struktur penyelesaian</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Penyelesaian umum (1) adalah
+\[ y(x)=y_p(x)+y_c(x), \]
+dengan \(y_p\) satu penyelesaian khusus (partikular) (1) dan \(y_c\) penyelesaian umum persamaan homogen terkait \(ay''+by'+cy=0\) (disebut <em>penyelesaian komplementer</em>, 17.1).</p></div>
+<p><strong>Bukti.</strong> Misalkan \(y\) penyelesaian apa saja dan \(y_p\) satu penyelesaian khusus. Maka \(a(y-y_p)''+b(y-y_p)'+c(y-y_p)=G-G=0\), sehingga \(y-y_p\) memenuhi persamaan homogen, yaitu \(y-y_p=y_c\) untuk suatu pilihan \(c_1,c_2\). \(\blacksquare\)</p>
+
+<h2>2. Koefisien tak tentu</h2>
+<p>Bila \(G\) berupa polinomial, eksponensial, sinus/cosinus, atau hasil kali/jumlah keduanya, kita menebak bentuk \(y_p\) dengan koefisien yang dicari.</p>
+<div class="box def"><span class="t">Tebakan \(y_p\)</span>
+<table class="t">
+<tr><th>\(G(x)\)</th><th>Tebakan \(y_p\)</th></tr>
+<tr><td>\(P_n(x)\) (polinomial derajat \(n\))</td><td>\(A_nx^n+\cdots+A_1x+A_0\)</td></tr>
+<tr><td>\(e^{sx}\)</td><td>\(Ae^{sx}\)</td></tr>
+<tr><td>\(\cos\omega x\) atau \(\sin\omega x\)</td><td>\(A\cos\omega x+B\sin\omega x\)</td></tr>
+<tr><td>\(P_n(x)e^{sx}\)</td><td>\(Q_n(x)e^{sx}\) (polinomial umum derajat \(n\))</td></tr>
+<tr><td>\(e^{sx}\cos\omega x\) atau \(e^{sx}\sin\omega x\)</td><td>\(e^{sx}(A\cos\omega x+B\sin\omega x)\)</td></tr>
+</table>
+<p><strong>Aturan modifikasi:</strong> bila ada suku tebakan yang juga merupakan penyelesaian homogen (muncul dalam \(y_c\)), kalikan seluruh tebakan dengan \(x\) (atau \(x^2\) bila akar ganda) sampai tidak ada suku yang sama dengan suku \(y_c\).</p></div>
+<div class="box ex"><span class="t">Contoh 1 — polinomial</span>
+<p>\(y''+3y'+2y=x^2\). Homogen: \(r^2+3r+2=(r+1)(r+2)\), \(y_c=c_1e^{-x}+c_2e^{-2x}\). Tebakan \(y_p=Ax^2+Bx+C\): \(2A+3(2Ax+B)+2(Ax^2+Bx+C)=x^2\). Samakan koefisien: \(x^2\): \(2A=1\Rightarrow A=\frac12\); \(x\): \(6A+2B=0\Rightarrow B=-\frac32\); konstanta: \(2A+3B+2C=0\Rightarrow C=\frac74\). \(y_p=\frac12x^2-\frac32x+\frac74\). Dengan \(y(0)=1\), \(y'(0)=0\): \(c_1+c_2=-\frac34\), \(-c_1-2c_2=\frac32\Rightarrow c_2=-\frac34\), \(c_1=0\). \(y=\tfrac12x^2-\tfrac32x+\tfrac74-\tfrac34e^{-2x}\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — eksponensial</span>
+<p>\(y''+4y=e^{3x}\). \(y_c=c_1\cos2x+c_2\sin2x\). Tebakan \(y_p=Ae^{3x}\): \(9A+4A=1\Rightarrow A=\frac1{13}\). \(y=\frac1{13}e^{3x}+c_1\cos2x+c_2\sin2x\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — sinus</span>
+<p>\(y''-3y'+2y=\sin x\). \(y_c=c_1e^x+c_2e^{2x}\). Tebakan \(y_p=A\cos x+B\sin x\) (kedua suku walau ruas kanan hanya sinus, karena \(y'\) membawa cosinus). \(y_p'=-A\sin x+B\cos x\), \(y_p''=-A\cos x-B\sin x\). Substitusi: \(\cos x\): \(-A-3B+2A=A-3B=0\); \(\sin x\): \(-B+3A+2B=3A+B=1\). Jadi \(A=3B\), \(10B=1\): \(y_p=\dfrac{3\cos x+\sin x}{10}\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — resonansi (aturan modifikasi)</span>
+<p>\(y''+y=\cos x\). \(y_c=c_1\cos x+c_2\sin x\). Tebakan \(A\cos x+B\sin x\) sama dengan \(y_c\) dan menghasilkan 0. Kalikan dengan \(x\): \(y_p=x(A\cos x+B\sin x)\). \(y_p''=2(-A\sin x+B\cos x)+x(-A\cos x-B\sin x)\), jadi \(y_p''+y_p=-2A\sin x+2B\cos x=\cos x\Rightarrow A=0\), \(B=\frac12\). \(y_p=\tfrac12x\sin x\). Amplitudo tumbuh tanpa batas: gejala <em>resonansi</em> (17.3).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — akar ganda dan eksponensial yang sama</span>
+<p>\(y''-2y'+y=e^x\). \(y_c=(c_1+c_2x)e^x\). \(e^x\) dan \(xe^x\) sudah ada di \(y_c\), jadi tebakan \(y_p=Ax^2e^x\). \(y_p'=(2Ax+Ax^2)e^x\), \(y_p''=(2A+4Ax+Ax^2)e^x\). \(y_p''-2y_p'+y_p=2Ae^x=e^x\Rightarrow A=\frac12\). \(y=(c_1+c_2x+\tfrac12x^2)e^x\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — jumlah beberapa suku</span>
+<p>\(y''+y'-2y=x+e^{-x}\). Pakai superposisi: selesaikan terpisah untuk \(G_1=x\) dan \(G_2=e^{-x}\), lalu jumlahkan. Homogen: \(r^2+r-2=(r+2)(r-1)\), akar \(-2,1\), jadi tidak ada tabrakan. Untuk \(G_1=x\): \(y_{p1}=Ax+B\), \(y_{p1}'=A\), sehingga \(A-2(Ax+B)=x\): \(-2A=1\Rightarrow A=-\frac12\), dan \(A-2B=0\Rightarrow B=-\frac14\). Untuk \(G_2=e^{-x}\): \(y_{p2}=Ce^{-x}\), \((1-1-2)Ce^{-x}=e^{-x}\Rightarrow C=-\frac12\). Jadi \(y_p=-\tfrac12x-\tfrac14-\tfrac12e^{-x}\) dan \(y=c_1e^{-2x}+c_2e^x+y_p\).</p></div>
+
+<h2>3. Variasi parameter</h2>
+<p>Metode ini berlaku untuk sembarang \(G\) (dan bahkan koefisien tidak konstan), asalkan penyelesaian homogen diketahui.</p>
+<div class="box def"><span class="t">Variasi parameter</span>
+<p>Untuk \(y''+p(x)y'+q(x)y=g(x)\) (koefisien utama 1), misalkan \(y_1,y_2\) dua penyelesaian homogen yang bebas linear dengan Wronskian \(W=y_1y_2'-y_1'y_2\). Maka
+\[ y_p=-y_1\int\frac{y_2\,g}{W}\,dx+y_2\int\frac{y_1\,g}{W}\,dx. \]</p></div>
+<p><strong>Gagasan.</strong> Cari \(y_p=u_1y_1+u_2y_2\) ("mengubah" konstanta menjadi fungsi). Pilih syarat \(u_1'y_1+u_2'y_2=0\) agar \(y_p'=u_1y_1'+u_2y_2'\). Substitusi ke persamaan memberi \(u_1'y_1'+u_2'y_2'=g\). Dua persamaan linear untuk \(u_1',u_2'\) dengan determinan \(W\) menghasilkan \(u_1'=-\frac{y_2g}W\), \(u_2'=\frac{y_1g}W\) (aturan Cramer).</p>
+<div class="box ex"><span class="t">Contoh 7 — \(y''+y=\tan x\)</span>
+<p>\(y_1=\cos x\), \(y_2=\sin x\), \(W=1\). \(u_1'=-\sin x\tan x=-\dfrac{\sin^2x}{\cos x}=\cos x-\sec x\), \(u_1=\sin x-\ln|\sec x+\tan x|\). \(u_2'=\cos x\tan x=\sin x\), \(u_2=-\cos x\). \(y_p=u_1\cos x+u_2\sin x=\sin x\cos x-\cos x\ln|\sec x+\tan x|-\sin x\cos x=-\cos x\ln|\sec x+\tan x|\). Penyelesaian umum: \(y=c_1\cos x+c_2\sin x-\cos x\ln|\sec x+\tan x|\). (Koefisien tak tentu tidak dapat dipakai untuk \(\tan x\).)</p></div>
+<div class="box ex"><span class="t">Contoh 8 — akar ganda dengan \(g=e^{-2x}/x\)</span>
+<p>\(y''+4y'+4y=\dfrac{e^{-2x}}x\), \(x\gt0\). \(y_1=e^{-2x}\), \(y_2=xe^{-2x}\), \(W=e^{-4x}\). \(u_1'=-\dfrac{xe^{-2x}\cdot e^{-2x}/x}{e^{-4x}}=-1\Rightarrow u_1=-x\). \(u_2'=\dfrac{e^{-2x}\cdot e^{-2x}/x}{e^{-4x}}=\dfrac1x\Rightarrow u_2=\ln x\). \(y_p=-xe^{-2x}+xe^{-2x}\ln x\). Suku \(-xe^{-2x}\) dapat digabung ke \(c_2xe^{-2x}\), jadi \(y=(c_1+c_2x)e^{-2x}+xe^{-2x}\ln x\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — memeriksa penyelesaian</span>
+<p>Periksa \(y_p=-\cos x\ln(\sec x+\tan x)\) pada Contoh 7: \(y_p'=\sin x\ln(\sec x+\tan x)-\cos x\cdot\sec x=\sin x\ln(\cdot)-1\), \(y_p''=\cos x\ln(\cdot)+\sin x\sec x=\cos x\ln(\cdot)+\tan x\). \(y_p''+y_p=\tan x\). Cocok.</p></div>
+
+<h2>4. Memilih metode</h2>
+<table class="t">
+<tr><th>Situasi</th><th>Metode</th></tr>
+<tr><td>Koefisien konstan, \(G\) polinomial/eksponensial/trigonometri</td><td>Koefisien tak tentu (lebih cepat)</td></tr>
+<tr><td>\(G\) sembarang (\(\tan x\), \(1/x\), \(\ln x\), \(\sec x\))</td><td>Variasi parameter</td></tr>
+<tr><td>Koefisien tidak konstan, \(y_1,y_2\) diketahui</td><td>Variasi parameter</td></tr>
+</table>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Lupa bahwa syarat awal diterapkan pada \(y=y_p+y_c\), bukan pada \(y_c\) saja.</li>
+<li>Tebakan \(\cos\) hanya untuk ruas kanan \(\cos\): selalu sertakan \(\sin\) juga.</li>
+<li>Tidak memodifikasi tebakan yang bertabrakan dengan \(y_c\).</li>
+<li>Memakai variasi parameter tanpa membagi persamaan sehingga koefisien \(y''\) sama dengan 1.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(y=y_p+y_c\).</li>
+<li>Koefisien tak tentu: tebak bentuk \(y_p\), modifikasi bila bertabrakan dengan \(y_c\).</li>
+<li>Variasi parameter: \(y_p=-y_1\int\frac{y_2g}W+y_2\int\frac{y_1g}W\).</li>
+</ul>
+<p>Berikutnya <a href="b17-3.html">17.3 Penerapan</a>.</p>

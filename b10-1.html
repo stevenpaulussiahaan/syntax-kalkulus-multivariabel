@@ -1,0 +1,122 @@
+<h2>1. Mengapa perlu persamaan parametrik?</h2>
+<p>Selama ini kurva di bidang kita nyatakan sebagai grafik fungsi \(y=f(x)\), atau sebagai himpunan titik yang memenuhi relasi \(F(x,y)=0\).
+Cara ini punya dua keterbatasan. Pertama, banyak kurva yang gagal uji garis vertikal (misalnya lingkaran), sehingga tidak bisa ditulis sebagai satu fungsi \(y=f(x)\).
+Kedua, persamaan \(F(x,y)=0\) hanya memberi tahu <em>titik mana saja</em> yang berada pada kurva, bukan <em>urutan</em> dan <em>arah</em> titik-titik itu dilalui.</p>
+<p>Bayangkan sebuah partikel yang bergerak di bidang. Posisi horizontal dan vertikalnya masing-masing bergantung pada waktu \(t\). Jika kita tuliskan
+\(x=f(t)\) dan \(y=g(t)\), kita mendapat deskripsi gerak yang lengkap: di mana partikel berada, kapan ia di sana, dan ke arah mana ia bergerak.</p>
+
+<div class="box def"><span class="t">Definisi</span>
+<p>Misalkan \(x\) dan \(y\) keduanya diberikan sebagai fungsi dari peubah ketiga \(t\) (disebut <strong>parameter</strong>):
+\[ x=f(t),\qquad y=g(t),\qquad t\in I. \]
+Setiap nilai \(t\) menentukan satu titik \((x,y)\). Ketika \(t\) berubah, titik itu menggambar sebuah kurva \(C\) yang disebut <strong>kurva parametrik</strong>.
+Pasangan persamaan di atas disebut <strong>persamaan parametrik</strong>.</p></div>
+
+<p>Parameter tidak harus berarti waktu, dan tidak harus bernama \(t\). Dalam banyak soal geometri parameternya adalah sudut (sering \(\theta\)).
+Namun dalam fisika dan teknik, \(t\) hampir selalu waktu, sehingga \((f(t),g(t))\) dibaca sebagai posisi partikel pada saat \(t\).</p>
+
+<h2>2. Menggambar kurva parametrik dengan menandai titik</h2>
+<p>Cara paling dasar: buat tabel nilai \(t\), hitung \((x,y)\), tandai titik-titiknya, lalu hubungkan <em>menurut urutan \(t\) yang naik</em>. Jangan lupa memberi tanda panah arah.</p>
+
+<div class="box ex"><span class="t">Contoh 1 — parabola yang dilalui dengan kecepatan berubah</span>
+<p>Gambarlah kurva \(x=t^2-2t,\; y=t+1\).</p>
+<table class="t"><tr><th>\(t\)</th><th>−2</th><th>−1</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+<tr><th>\(x\)</th><td>8</td><td>3</td><td>0</td><td>−1</td><td>0</td><td>3</td><td>8</td></tr>
+<tr><th>\(y\)</th><td>−1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr></table>
+<p>Perhatikan bahwa \(t=0\) dan \(t=2\) memberi nilai \(x\) yang sama (0), tetapi \(y\) berbeda (1 dan 3). Titik-titiknya terlihat membentuk parabola yang terbuka ke kanan.
+Untuk membuktikannya, <strong>hilangkan parameter</strong>: dari \(y=t+1\) diperoleh \(t=y-1\). Substitusi ke persamaan pertama:
+\[ x=(y-1)^2-2(y-1)=y^2-2y+1-2y+2=y^2-4y+3. \]
+Jadi kurvanya adalah parabola \(x=y^2-4y+3\) dengan sumbu simetri horizontal.</p>
+<p>Informasi tambahan yang tidak diberikan persamaan \(x=y^2-4y+3\): partikel bergerak ke arah \(t\) membesar, yaitu dari kanan-bawah, melewati titik puncak \((-1,2)\) saat \(t=1\), lalu menuju kanan-atas.
+Titik-titik bernomor \(t\) yang berjarak waktu sama tidak berjarak sama pada kurva, karena partikel melambat mendekati puncak lalu mempercepat lagi.</p></div>
+<figure><img src="assets/img/b10-1-parabola.png" alt="Parabola parametrik"><figcaption>Titik-titik pada \(t=-2,\dots,4\) dan arah penelusuran.</figcaption></figure>
+
+<h3>Membatasi interval parameter</h3>
+<p>Bila parameter dibatasi pada interval tertutup \(a\le t\le b\), kurva memiliki <strong>titik awal</strong> \((f(a),g(a))\) dan <strong>titik akhir</strong> \((f(b),g(b))\).
+Contoh: kurva di atas dengan \(0\le t\le 4\) hanya mencakup bagian parabola dari \((0,1)\) sampai \((8,5)\).</p>
+
+<h2>3. Kurva yang sama, parametrisasi berbeda</h2>
+<div class="box ex"><span class="t">Contoh 2 — lingkaran satuan, satu kali putaran</span>
+<p>\(x=\cos t,\; y=\sin t,\; 0\le t\le 2\pi\). Karena \(\cos^2 t+\sin^2 t=1\), kita peroleh \(x^2+y^2=1\), yaitu lingkaran satuan.
+Di sini \(t\) adalah sudut (dalam radian) antara sumbu \(x\) positif dan ruas garis dari pusat ke titik. Saat \(t\) naik dari 0 ke \(2\pi\), titik bergerak <em>sekali</em> mengelilingi lingkaran
+<em>berlawanan arah jarum jam</em>, mulai dan berakhir di \((1,0)\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — lingkaran yang sama, dua kali putaran dan arah berlawanan</span>
+<p>\(x=\sin 2t,\; y=\cos 2t,\; 0\le t\le 2\pi\). Kembali \(x^2+y^2=1\), tetapi sekarang titik awalnya \((0,1)\), arahnya searah jarum jam
+(karena \(x\) bertambah ketika \(y\) masih positif), dan karena argumen sudutnya \(2t\), lingkaran dikelilingi <em>dua kali</em> selama \(t\) menempuh \(0\) sampai \(2\pi\).</p></div>
+<figure><img src="assets/img/b10-1-lingkaran.png" alt="Dua parametrisasi lingkaran"><figcaption>Dua parametrisasi untuk himpunan titik yang sama.</figcaption></figure>
+<div class="box note"><span class="t">Catatan penting</span>
+<p>Kurva sebagai <em>himpunan titik</em> tidak sama dengan <em>kurva parametrik</em>, yaitu himpunan titik beserta cara melaluinya. Contoh 2 dan 3 adalah dua kurva parametrik berbeda dengan himpunan titik yang sama.
+Perbedaan ini sangat berpengaruh nanti pada panjang kurva (Bagian 10.2): bila lingkaran dilalui dua kali, integral panjang akan memberi dua kali keliling.</p></div>
+
+<div class="box ex"><span class="t">Contoh 4 — lingkaran umum</span>
+<p>Untuk lingkaran berpusat \((h,k)\) berjari-jari \(r\): mula-mula kalikan parametrisasi lingkaran satuan dengan \(r\) sehingga diperoleh lingkaran berjari-jari \(r\) berpusat di titik asal, kemudian geser \(h\) satuan ke kanan dan \(k\) satuan ke atas:
+\[ x=h+r\cos t,\qquad y=k+r\sin t,\qquad 0\le t\le 2\pi. \]
+Elips \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\) diparametrisasi dengan cara serupa: \(x=a\cos t,\ y=b\sin t\), sebab \(\cos^2 t+\sin^2 t=1\) langsung memberi persamaan elips.</p></div>
+
+<div class="box ex"><span class="t">Contoh 5 — parametrisasi yang hanya mencakup sebagian grafik</span>
+<p>\(x=\sin t,\; y=\sin^2 t\). Karena \(y=x^2\), titik-titiknya berada pada parabola \(y=x^2\). Namun \(-1\le \sin t\le 1\), sehingga hanya bagian \(-1\le x\le 1\) yang tercapai. Selain itu
+\(\sin t\) periodik, maka titik bergerak bolak-balik tak hingga kali di antara \((-1,1)\) dan \((1,1)\).
+Pelajaran: setelah menghilangkan parameter, <strong>selalu periksa daerah nilai \(x\) dan \(y\)</strong> yang benar-benar dicapai oleh parametrisasi.</p></div>
+
+<h2>4. Menghilangkan parameter: kiat praktis</h2>
+<ul>
+<li><strong>Persamaan linear dalam \(t\)</strong>: selesaikan salah satu persamaan untuk \(t\), substitusikan ke yang lain (hasilnya garis atau parabola, bergantung pangkatnya).</li>
+<li><strong>Memuat \(\cos t,\sin t\)</strong>: gunakan \(\cos^2 t+\sin^2 t=1\) (lingkaran/elips). Bila memuat \(\sec t,\tan t\), gunakan \(\sec^2 t-\tan^2 t=1\) (hiperbola).</li>
+<li><strong>Memuat \(e^{t}\)</strong>: ingat \(e^{2t}=(e^t)^2\) dan \(e^{-t}=1/e^t\); sering menghasilkan kurva rasional seperti \(y=1/x\).</li>
+<li><strong>Memuat \(\cosh t,\sinh t\)</strong>: gunakan \(\cosh^2 t-\sinh^2 t=1\), cabang hiperbola.</li>
+</ul>
+<p>Tidak semua parametrisasi bisa dihilangkan parameternya secara bersih. Sikloid (Bagian 5) adalah contohnya: persamaan Cartesiusnya sangat rumit, sedangkan bentuk parametriknya sederhana.</p>
+
+<h2>5. Menggambar dengan alat bantu grafik</h2>
+<p>Kalkulator grafik dan perangkat lunak (termasuk Python/matplotlib yang dipakai untuk gambar di situs ini) menggambar kurva parametrik dengan menghitung banyak titik dan menyambungnya secara berurutan.
+Parametrik juga memudahkan penggambaran relasi yang sulit diselesaikan untuk \(y\). Misalnya \(x=y^4-3y^2\): cukup tetapkan \(y=t\) lalu \(x=t^4-3t^2\); kita tidak perlu memecahkan \(y\) sebagai empat fungsi terpisah.
+Secara umum, kurva \(x=h(y)\) dapat ditulis \(x=h(t),\ y=t\), dan grafik \(y=f(x)\) dapat ditulis \(x=t,\ y=f(t)\).</p>
+<figure><img src="assets/img/b10-1-lissajous.png" alt="Lissajous"><figcaption>Kurva Lissajous \(x=\cos t,\ y=\sin 2t\): hasil dua gerak harmonik dengan frekuensi berbeda.</figcaption></figure>
+<p>Kurva yang rumit seperti Lissajous \(x=a\sin nt,\ y=b\cos t\) praktis mustahil digambar tangan; di sinilah komputer berguna. Kegunaan penting lain: <em>computer-aided design</em> (CAD) memakai kurva parametrik khusus, yaitu kurva Bézier,
+untuk mendefinisikan bentuk bodi mobil dan huruf pada printer laser.</p>
+
+<h2>6. Sikloid</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p><strong>Sikloid</strong> adalah lintasan sebuah titik \(P\) pada keliling lingkaran yang menggelinding tanpa selip sepanjang garis lurus.</p></div>
+<h3>Menurunkan persamaannya</h3>
+<p>Misalkan lingkaran berjari-jari \(r\) menggelinding di sepanjang sumbu \(x\), dan \(P\) awalnya di titik asal. Pilih parameter \(\theta\) = sudut putar lingkaran (dalam radian) setelah menggelinding.</p>
+<ol>
+<li>Karena tidak selip, panjang busur yang sudah menyentuh garis sama dengan jarak yang ditempuh: titik singgung berada di \(x=r\theta\).</li>
+<li>Maka pusat lingkaran ada di \(C=(r\theta,\ r)\).</li>
+<li>Posisi \(P\) relatif terhadap pusat: \(P\) telah berputar sebesar \(\theta\) dari posisi terendahnya, sehingga selisih koordinatnya adalah \((-r\sin\theta,\ -r\cos\theta)\).</li>
+</ol>
+<p>Dengan menjumlahkan,
+\[ \boxed{\,x=r(\theta-\sin\theta),\qquad y=r(1-\cos\theta)\,} \]
+Satu busur sikloid dihasilkan oleh satu putaran penuh, yaitu \(0\le\theta\le 2\pi\). Rumus ini juga berlaku untuk \(\theta\) di luar interval itu (Latihan di buku meminta pembuktian untuk \(\pi/2\lt \theta\lt \pi\)).</p>
+<figure><img src="assets/img/b10-1-sikloid.png" alt="Sikloid"><figcaption>Sikloid dan posisi lingkaran pada \(\theta=2.2\).</figcaption></figure>
+<h3>Sejarah dan sifat menarik</h3>
+<ul>
+<li><strong>Brakistokron</strong>: dari semua kurva yang menghubungkan titik \(A\) ke titik \(B\) yang lebih rendah (tidak tepat di bawah \(A\)), kurva yang membuat partikel meluncur paling cepat di bawah gravitasi adalah busur sikloid terbalik (soal yang diajukan Johann Bernoulli tahun 1696).</li>
+<li><strong>Tautokron</strong>: pada sikloid terbalik, waktu meluncur ke dasar tidak bergantung dari titik awal. Huygens memakai ini untuk merancang bandul jam yang periodenya tidak bergantung amplitudo.</li>
+<li>Galileo sudah mempelajarinya dan menyarankan bentuk sikloid untuk lengkung jembatan.</li>
+</ul>
+
+<h2>7. Keluarga kurva parametrik</h2>
+<p>Dengan mengubah konstanta dalam persamaan, kita mendapat <em>keluarga</em> kurva. Mengamati bagaimana bentuk berubah terhadap konstanta adalah latihan penting untuk intuisi.</p>
+<div class="box ex"><span class="t">Contoh 6 — konkoid Nicomedes</span>
+<p>Keluarga \(x=a+\cos t,\ y=a\tan t+\sin t\). Hasil pengamatan dari grafik:</p>
+<ul>
+<li>Semua anggota (kecuali \(a=0\)) memiliki dua cabang yang mendekati asimtot vertikal \(x=a\).</li>
+<li>Untuk \(|a|>1\) kedua cabang mulus; makin besar \(|a|\), makin kurang melengkung.</li>
+<li>Untuk \(|a|=1\), salah satu cabang punya <em>ujung runcing</em> (cusp).</li>
+<li>Untuk \(0\lt |a|\lt 1\), muncul <em>simpul</em> (loop) yang mengecil menjadi cusp saat \(|a|\to 1\), dan membesar saat \(a\to 0\).</li>
+<li>Untuk \(a=0\) kedua cabang menyatu menjadi lingkaran satuan (Contoh 2).</li>
+<li>Kurva dengan \(a>0\) adalah pencerminan terhadap sumbu \(y\) dari kurva dengan \(-a\). Buktinya: ganti \(a\) dengan \(-a\) dan \(t\) dengan \(\pi-t\); karena \(\cos(\pi-t)=-\cos t\), \(\tan(\pi-t)=-\tan t\), dan \(\sin(\pi-t)=\sin t\), titik \((x,y)\) berubah menjadi \((-x,y)\).</li>
+</ul></div>
+<figure><img src="assets/img/b10-1-konkoid.png" alt="Konkoid"><figcaption>Delapan anggota keluarga konkoid pada jendela \([-4,4]\times[-4,4]\).</figcaption></figure>
+<p>Nama "konkoid" berasal dari kemiripan cabang luar dengan cangkang kerang (<em>concha</em>).</p>
+
+<h2>8. Ringkasan teknik</h2>
+<table class="t">
+<tr><th>Tujuan</th><th>Alat</th></tr>
+<tr><td>Parametrisasi lingkaran/elips</td><td>\(x=h+a\cos t,\ y=k+b\sin t\)</td></tr>
+<tr><td>Ruas garis dari \((x_1,y_1)\) ke \((x_2,y_2)\)</td><td>\(x=x_1+(x_2-x_1)t,\ y=y_1+(y_2-y_1)t,\ 0\le t\le1\)</td></tr>
+<tr><td>Grafik \(y=f(x)\)</td><td>\(x=t,\ y=f(t)\)</td></tr>
+<tr><td>Sikloid jari-jari \(r\)</td><td>\(x=r(\theta-\sin\theta),\ y=r(1-\cos\theta)\)</td></tr>
+<tr><td>Trokoid (titik pada jarak \(d\) dari pusat)</td><td>\(x=r\theta-d\sin\theta,\ y=r-d\cos\theta\)</td></tr>
+</table>
+<p>Coba kalkulator Python pada menu atas untuk menghitung panjang dan luas kurva parametrik setelah Anda memahami bagian ini.</p>

@@ -1,0 +1,75 @@
+<p>Sebagian besar besaran fisika dapat diterangkan dengan satu bilangan: suhu, massa, panjang. Besaran seperti ini disebut <strong>skalar</strong>. Namun ada besaran yang memerlukan juga <em>arah</em>: perpindahan, kecepatan, gaya. Besaran itu dimodelkan oleh <strong>vektor</strong>.</p>
+
+<h2>1. Vektor secara geometris</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p><strong>Vektor</strong> adalah besaran yang mempunyai <em>besar</em> (panjang) dan <em>arah</em>. Secara geometris vektor digambarkan sebagai ruas garis berarah (panah) dari <strong>titik awal</strong> \(A\) ke <strong>titik akhir</strong> \(B\), ditulis \(\overrightarrow{AB}\). Dua vektor <strong>sama</strong> bila besar dan arahnya sama, walaupun posisinya berbeda. Vektor nol \(\mathbf0\) mempunyai panjang 0 dan tidak mempunyai arah tertentu.</p></div>
+<p>Huruf tebal (\(\mathbf a\)) atau tanda panah (\(\vec a\)) dipakai untuk vektor; panjangnya ditulis \(|\mathbf a|\).</p>
+
+<h3>Penjumlahan: aturan segitiga dan jajargenjang</h3>
+<p>Untuk menjumlahkan \(\mathbf a\) dan \(\mathbf b\): letakkan titik awal \(\mathbf b\) di titik akhir \(\mathbf a\); vektor dari titik awal \(\mathbf a\) ke titik akhir \(\mathbf b\) adalah \(\mathbf a+\mathbf b\). Hasil yang sama diperoleh dengan membuat jajargenjang dari \(\mathbf a\) dan \(\mathbf b\) yang titik awalnya berimpit: diagonalnya adalah \(\mathbf a+\mathbf b\). Jadi \(\mathbf a+\mathbf b=\mathbf b+\mathbf a\).</p>
+<figure><img src="assets/img/b12-2-jumlah.png" alt="Jumlah vektor"><figcaption>\(\mathbf a+\mathbf b\) sebagai diagonal jajargenjang.</figcaption></figure>
+<h3>Perkalian dengan skalar</h3>
+<p>Untuk skalar \(c\) dan vektor \(\mathbf a\): \(c\mathbf a\) mempunyai panjang \(|c||\mathbf a|\) dan searah \(\mathbf a\) bila \(c\gt0\), berlawanan arah bila \(c\lt0\). Dua vektor tak nol <strong>sejajar</strong> bila yang satu kelipatan skalar yang lain. Pengurangan: \(\mathbf a-\mathbf b=\mathbf a+(-\mathbf b)\).</p>
+
+<h2>2. Vektor dalam komponen</h2>
+<p>Letakkan titik awal vektor di titik asal. Titik akhirnya \((a_1,a_2,a_3)\) menentukan vektor itu, yang ditulis
+\[ \mathbf a=\langle a_1,a_2,a_3\rangle. \]
+Bilangan \(a_1,a_2,a_3\) adalah <strong>komponen</strong> \(\mathbf a\). Vektor ini disebut <strong>vektor posisi</strong> titik \((a_1,a_2,a_3)\).</p>
+<div class="box def"><span class="t">Vektor antara dua titik</span>
+<p>Untuk \(A(x_1,y_1,z_1)\) dan \(B(x_2,y_2,z_2)\):
+\[ \overrightarrow{AB}=\langle x_2-x_1,\ y_2-y_1,\ z_2-z_1\rangle. \]
+(Titik akhir dikurangi titik awal.) Jika \(\mathbf a,\mathbf b\) vektor posisi \(A,B\), maka \(\overrightarrow{AB}=\mathbf b-\mathbf a\).</p></div>
+<figure><img src="assets/img/b12-2-posisi.png" alt="Vektor AB = b - a"><figcaption>\(\overrightarrow{AB}=\mathbf b-\mathbf a\).</figcaption></figure>
+<h3>Aljabar vektor</h3>
+<p>Dengan \(\mathbf a=\langle a_1,a_2,a_3\rangle\), \(\mathbf b=\langle b_1,b_2,b_3\rangle\), \(c\) skalar:
+\[ \mathbf a+\mathbf b=\langle a_1+b_1,a_2+b_2,a_3+b_3\rangle,\qquad c\mathbf a=\langle ca_1,ca_2,ca_3\rangle. \]
+Panjang (besar) vektor, dari rumus jarak:
+\[ |\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2}. \]
+Sifat-sifat: \(\mathbf a+\mathbf b=\mathbf b+\mathbf a\), \((\mathbf a+\mathbf b)+\mathbf c=\mathbf a+(\mathbf b+\mathbf c)\), \(\mathbf a+\mathbf0=\mathbf a\), \(\mathbf a+(-\mathbf a)=\mathbf0\), \(c(\mathbf a+\mathbf b)=c\mathbf a+c\mathbf b\), \((c+d)\mathbf a=c\mathbf a+d\mathbf a\), \((cd)\mathbf a=c(d\mathbf a)\), \(1\mathbf a=\mathbf a\). Semuanya mengikuti dari sifat bilangan real pada tiap komponen.</p>
+
+<h3>Vektor basis standar</h3>
+<p>Tiga vektor satuan sepanjang sumbu:
+\[ \mathbf i=\langle1,0,0\rangle,\quad\mathbf j=\langle0,1,0\rangle,\quad\mathbf k=\langle0,0,1\rangle. \]
+Setiap vektor ditulis tunggal sebagai kombinasi linear: \(\langle a_1,a_2,a_3\rangle=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k\).</p>
+<figure><img src="assets/img/b12-2-komponen.png" alt="Komponen vektor"><figcaption>\(\mathbf a=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k\): jumlah tiga vektor sepanjang sumbu.</figcaption></figure>
+
+<h3>Vektor satuan</h3>
+<p>Vektor satuan adalah vektor dengan panjang 1. Untuk \(\mathbf a\ne\mathbf0\), vektor satuan searah \(\mathbf a\) adalah \(\dfrac{\mathbf a}{|\mathbf a|}\) (mengalikan dengan \(\frac1{|\mathbf a|}\) mengubah panjang menjadi 1 tanpa mengubah arah).</p>
+
+<h2>3. Contoh</h2>
+<div class="box ex"><span class="t">Contoh 1 — operasi dasar</span>
+<p>\(\mathbf a=\langle3,-1,2\rangle\), \(\mathbf b=\langle1,4,-2\rangle\). Maka \(\mathbf a+\mathbf b=\langle4,3,0\rangle\); \(2\mathbf a-3\mathbf b=\langle6-3,\,-2-12,\,4+6\rangle=\langle3,-14,10\rangle\); \(|\mathbf a|=\sqrt{9+1+4}=\sqrt{14}\); \(|\mathbf b|=\sqrt{21}\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — vektor satuan</span>
+<p>Vektor satuan searah \(\mathbf a=\langle3,-1,2\rangle\): \(\dfrac1{\sqrt{14}}\langle3,-1,2\rangle\approx\langle0{,}802,-0{,}267,0{,}535\rangle\). Vektor dengan panjang 6 searah \(\mathbf a\): \(\dfrac6{\sqrt{14}}\langle3,-1,2\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — vektor dari dua titik</span>
+<p>\(A(1,2,-1)\), \(B(4,0,3)\): \(\overrightarrow{AB}=\langle3,-2,4\rangle\), \(|AB|=\sqrt{29}\). Titik yang membagi \(AB\) dengan perbandingan \(1:2\) dari \(A\): \(A+\frac13\overrightarrow{AB}=\bigl(2,\ \tfrac43,\ \tfrac13\bigr)\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — apakah sejajar?</span>
+<p>\(\langle2,-4,6\rangle\) dan \(\langle-1,2,-3\rangle\): yang pertama \(=-2\cdot\)yang kedua, jadi sejajar (berlawanan arah). \(\langle1,2,3\rangle\) dan \(\langle2,4,7\rangle\): perbandingan komponen \(2,2,\frac73\) tidak sama, tidak sejajar.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — pusat segitiga (titik berat)</span>
+<p>Titik berat segitiga \(ABC\) dengan vektor posisi \(\mathbf a,\mathbf b,\mathbf c\) adalah \(\mathbf g=\tfrac13(\mathbf a+\mathbf b+\mathbf c)\). Untuk \(A(1,0,0)\), \(B(0,2,0)\), \(C(0,0,3)\): \(\mathbf g=\langle\tfrac13,\tfrac23,1\rangle\).</p></div>
+
+<h2>4. Penerapan: gaya dalam keseimbangan</h2>
+<p>Gaya adalah vektor; gaya total pada benda adalah jumlah vektor semua gaya. Benda dalam keseimbangan bila jumlah gayanya nol.</p>
+<div class="box ex"><span class="t">Contoh 6 — dua kabel menahan beban</span>
+<p>Beban 100 N digantung pada dua kabel yang membentuk sudut \(50^\circ\) dan \(32^\circ\) terhadap garis datar (kabel pertama ke kiri, kedua ke kanan). Misalkan tegangan \(T_1\) dan \(T_2\). Keseimbangan komponen:
+\[ \text{horizontal: }-T_1\cos50^\circ+T_2\cos32^\circ=0,\qquad\text{vertikal: }T_1\sin50^\circ+T_2\sin32^\circ=100. \]
+Dari persamaan pertama \(T_2=T_1\dfrac{\cos50^\circ}{\cos32^\circ}\). Substitusi: \(T_1\bigl(\sin50^\circ+\cos50^\circ\tan32^\circ\bigr)=100\), sehingga \(T_1\approx85{,}6\) N dan \(T_2\approx64{,}9\) N. Kabel yang lebih curam menanggung gaya lebih besar.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — kecepatan pesawat dan angin</span>
+<p>Pesawat terbang dengan kecepatan udara \(\langle0,200\rangle\) km/jam (ke utara) dan angin \(\langle60,0\rangle\) (ke timur). Kecepatan terhadap tanah adalah jumlahnya, \(\langle60,200\rangle\), dengan laju \(\sqrt{3600+40000}=208{,}8\) km/jam, arah menyimpang \(\arctan\frac{60}{200}\approx16{,}7^\circ\) ke timur dari utara.</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Menulis \(\overrightarrow{AB}=A-B\). Yang benar: titik akhir dikurangi titik awal.</li>
+<li>Mengira \(|\mathbf a+\mathbf b|=|\mathbf a|+|\mathbf b|\). Yang benar hanya \(\le\) (ketaksamaan segitiga), sama bila searah.</li>
+<li>Menyamakan titik \((a,b,c)\) dengan vektor \(\langle a,b,c\rangle\): berhubungan tetapi berbeda (titik vs perpindahan).</li>
+<li>Lupa mengubah arah/sudut ke komponen saat bekerja dengan gaya.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>Vektor: besar dan arah; komponen \(\langle a_1,a_2,a_3\rangle\); \(\overrightarrow{AB}=B-A\).</li>
+<li>Penjumlahan dan perkalian skalar bekerja per komponen; \(|\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2}\).</li>
+<li>\(\mathbf i,\mathbf j,\mathbf k\) basis standar; vektor satuan \(=\mathbf a/|\mathbf a|\).</li>
+<li>Keseimbangan gaya: jumlah komponen sama dengan nol.</li>
+</ul>
+<p>Berikutnya <a href="b12-3.html">12.3 Hasil Kali Titik</a>.</p>

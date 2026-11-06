@@ -1,0 +1,65 @@
+<p>\(f_x\) dan \(f_y\) mengukur laju perubahan ke arah sumbu. Bagaimana bila kita bergerak ke arah lain? Jawabannya adalah <strong>turunan berarah</strong>, dan jawabannya dihitung dengan sebuah vektor yang sangat penting: <strong>gradien</strong>.</p>
+
+<h2>1. Turunan berarah</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Turunan berarah \(f\) di \((a,b)\) pada arah vektor satuan \(\mathbf u=\langle u_1,u_2\rangle\):
+\[ D_{\mathbf u}f(a,b)=\lim_{h\to0}\frac{f(a+hu_1,\,b+hu_2)-f(a,b)}h. \]
+Ia adalah laju perubahan \(f\) per satuan jarak bila kita bergerak dari \((a,b)\) ke arah \(\mathbf u\). Dengan \(\mathbf u=\mathbf i\) diperoleh \(f_x\); dengan \(\mathbf u=\mathbf j\) diperoleh \(f_y\).</p></div>
+<div class="box def"><span class="t">Teorema</span>
+<p>Bila \(f\) terdiferensialkan, maka \(D_{\mathbf u}f(x,y)=f_x(x,y)\,u_1+f_y(x,y)\,u_2\).</p></div>
+<p><strong>Bukti.</strong> Definisikan \(g(h)=f(a+hu_1,b+hu_2)\). Maka \(D_{\mathbf u}f(a,b)=g'(0)\). Aturan rantai (14.5) memberi \(g'(h)=f_x\,u_1+f_y\,u_2\) dihitung di \((a+hu_1,b+hu_2)\); di \(h=0\) diperoleh rumus. \(\blacksquare\)</p>
+<p>Bila \(\mathbf u\) membentuk sudut \(\theta\) dengan sumbu \(x\) positif, \(\mathbf u=\langle\cos\theta,\sin\theta\rangle\) dan \(D_{\mathbf u}f=f_x\cos\theta+f_y\sin\theta\).</p>
+
+<h2>2. Vektor gradien</h2>
+<div class="box def"><span class="t">Gradien</span>
+<p>\[ \nabla f=\langle f_x,\,f_y\rangle=f_x\mathbf i+f_y\mathbf j,\qquad\nabla f=\langle f_x,f_y,f_z\rangle\ \text{(tiga peubah)}. \]
+Maka \(D_{\mathbf u}f=\nabla f\cdot\mathbf u\).</p></div>
+<div class="box ex"><span class="t">Contoh 1 — turunan berarah</span>
+<p>\(f(x,y)=x^2y^3-4y\), titik \((2,1)\), arah \(\mathbf u=\bigl\langle\frac{\sqrt3}2,\frac12\bigr\rangle\) (sudut \(30^\circ\)). \(f_x=2xy^3=4\), \(f_y=3x^2y^2-4=8\); \(\nabla f(2,1)=\langle4,8\rangle\). \(D_{\mathbf u}f=4\cdot\frac{\sqrt3}2+8\cdot\frac12=2\sqrt3+4\approx7{,}464\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — arah bukan satuan</span>
+<p>Arah yang diberikan sebagai vektor \(\mathbf v=\langle3,-4\rangle\) harus dinormalkan: \(\mathbf u=\frac15\langle3,-4\rangle\). Untuk \(f\) di Contoh 1: \(D_{\mathbf u}f=\frac15(4\cdot3+8\cdot(-4))=\frac{12-32}5=-4\). Turun 4 per satuan jarak ke arah itu.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — tiga peubah</span>
+<p>\(f(x,y,z)=x\sin(yz)\) di \((1,3,0)\) ke arah \(\mathbf v=\langle1,2,-1\rangle\). \(\nabla f=\langle\sin yz,\ xz\cos yz,\ xy\cos yz\rangle\), di titik: \(\langle0,0,3\rangle\). \(\mathbf u=\mathbf v/\sqrt6\). \(D_{\mathbf u}f=\dfrac{3(-1)}{\sqrt6}=-\dfrac3{\sqrt6}\approx-1{,}225\).</p></div>
+
+<h2>3. Arah pertumbuhan tercepat</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Misalkan \(f\) terdiferensialkan dan \(\nabla f\ne\mathbf0\). Nilai maksimum \(D_{\mathbf u}f\) adalah \(|\nabla f|\), dicapai bila \(\mathbf u\) searah \(\nabla f\). Nilai minimum \(-|\nabla f|\) dicapai pada arah \(-\nabla f\). Pada arah tegak lurus \(\nabla f\), \(D_{\mathbf u}f=0\).</p></div>
+<p><strong>Bukti.</strong> \(D_{\mathbf u}f=\nabla f\cdot\mathbf u=|\nabla f||\mathbf u|\cos\theta=|\nabla f|\cos\theta\), dengan \(\theta\) sudut antara \(\nabla f\) dan \(\mathbf u\). Nilai maksimum \(\cos\theta=1\) (\(\theta=0\)), minimum \(-1\) (\(\theta=\pi\)), nol di \(\theta=\pi/2\). \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 4 — arah tercepat</span>
+<p>Untuk \(f\) di Contoh 1 di \((2,1)\): laju kenaikan maksimum \(|\langle4,8\rangle|=\sqrt{80}\approx8{,}944\) pada arah \(\frac1{\sqrt5}\langle1,2\rangle\). Laju turun paling cepat \(-8{,}944\) ke arah \(-\frac1{\sqrt5}\langle1,2\rangle\). Perubahan nol pada arah \(\pm\frac1{\sqrt5}\langle2,-1\rangle\) (garis singgung kurva ketinggian).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — pendaki di bukit</span>
+<p>Tinggi bukit \(z=1000-0{,}005x^2-0{,}01y^2\) (meter). Di \((60,40)\): \(\nabla z=\langle-0{,}01x,-0{,}02y\rangle=\langle-0{,}6,-0{,}8\rangle\), \(|\nabla z|=1\). Tanjakan paling curam: arah \(\langle-0{,}6,-0{,}8\rangle\) dengan kemiringan 1 (sudut \(45^\circ\)). Bila pendaki berjalan ke arah \(\frac1{\sqrt2}\langle1,1\rangle\): \(D_{\mathbf u}z=\dfrac{-0{,}6-0{,}8}{\sqrt2}\approx-0{,}99\), turun hampir 1 meter per meter. Untuk berjalan mendatar ia harus mengikuti arah \(\pm\langle0{,}8,-0{,}6\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — suhu dan semut</span>
+<p>Suhu \(T=\dfrac{100}{1+x^2+2y^2}\) di \((1,1)\): \(\nabla T=\langle-12{,}5,-25\rangle\). Semut yang ingin menghangat secepat mungkin bergerak ke arah \(\nabla T\propto\langle-1,-2\rangle\) (menuju asal, tempat panas); yang ingin mendingin bergerak ke \(\langle1,2\rangle\). Laju maksimum \(|\nabla T|=\sqrt{12{,}5^2+25^2}\approx27{,}95\) derajat per satuan jarak.</p></div>
+
+<h2>4. Gradien tegak lurus kurva ketinggian</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Di setiap titik \(P\) pada kurva ketinggian \(f(x,y)=k\) (atau permukaan ketinggian \(f(x,y,z)=k\)), vektor \(\nabla f(P)\) tegak lurus garis singgung (atau bidang singgung) kurva (permukaan) tersebut di \(P\).</p></div>
+<p><strong>Bukti (kurva).</strong> Misalkan \(\mathbf r(t)\) parametrisasi kurva ketinggian. Karena \(f(\mathbf r(t))=k\), aturan rantai memberi \(\nabla f\cdot\mathbf r'(t)=0\), yaitu \(\nabla f\perp\mathbf r'\), vektor singgung. Argumen sama berlaku untuk setiap kurva pada permukaan ketinggian, jadi \(\nabla f\) tegak lurus semua singgung di \(P\). \(\blacksquare\)</p>
+<figure><img src="assets/img/b14-6-gradien.png" alt="Gradien dan kontur"><figcaption>Gradien (panah merah) tegak lurus kurva ketinggian dan menunjuk ke arah \(f\) naik.</figcaption></figure>
+<div class="box def"><span class="t">Bidang singgung dan garis normal permukaan ketinggian</span>
+<p>Untuk permukaan \(F(x,y,z)=k\) di \(P(x_0,y_0,z_0)\) dengan \(\nabla F(P)\ne\mathbf0\):
+\[ F_x(P)(x-x_0)+F_y(P)(y-y_0)+F_z(P)(z-z_0)=0, \]
+dan garis normal \(\dfrac{x-x_0}{F_x}=\dfrac{y-y_0}{F_y}=\dfrac{z-z_0}{F_z}\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — elipsoid</span>
+<p>\(F=\dfrac{x^2}4+y^2+\dfrac{z^2}9=3\) di \((-2,1,-3)\) (periksa: \(1+1+1=3\)). \(\nabla F=\langle\frac x2,2y,\frac{2z}9\rangle=\langle-1,2,-\frac23\rangle\). Bidang singgung: \(-(x+2)+2(y-1)-\frac23(z+3)=0\). Kalikan \(-3\): \(3x-6y+2z=-18\). Garis normal: \(\langle-2-s,\ 1+2s,\ -3-\frac23s\rangle\).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — grafik sebagai permukaan ketinggian</span>
+<p>Grafik \(z=f(x,y)\) adalah permukaan ketinggian \(F=f(x,y)-z=0\), dengan \(\nabla F=\langle f_x,f_y,-1\rangle\) normalnya, sesuai 14.4. Untuk \(z=x^2+y^2\) di \((1,1,2)\): \(\langle2,2,-1\rangle\), bidang \(2(x-1)+2(y-1)-(z-2)=0\), sama dengan \(z=2x+2y-2\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — singgung kontur</span>
+<p>Kontur \(x^2+2y^2=3\) di \((1,1)\): \(\nabla f=\langle2,4\rangle\). Garis singgung kontur: \(2(x-1)+4(y-1)=0\), yaitu \(x+2y=3\).</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Memakai vektor arah yang bukan satuan. Normalkan dulu.</li>
+<li>Mengira \(|\nabla f|\) adalah laju pada arah tertentu: itu laju <em>maksimum</em>.</li>
+<li>Menyamakan \(\nabla f\) dengan arah kurva ketinggian: ia <em>tegak lurus</em>.</li>
+<li>Menghitung gradien sebelum mengevaluasinya di titik yang diminta.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(D_{\mathbf u}f=\nabla f\cdot\mathbf u\), \(\mathbf u\) satuan.</li>
+<li>Maksimum \(|\nabla f|\) pada arah \(\nabla f\); minimum pada \(-\nabla f\); nol tegak lurus \(\nabla f\).</li>
+<li>\(\nabla f\) tegak lurus kurva/permukaan ketinggian; dipakai untuk bidang singgung dan garis normal.</li>
+</ul>
+<p>Berikutnya <a href="b14-7.html">14.7 Nilai Maksimum dan Minimum</a>.</p>

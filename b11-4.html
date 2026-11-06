@@ -1,0 +1,85 @@
+<p>Uji integral hanya cocok bila suku deret mudah diintegralkan. Deret seperti \(\sum\frac1{2^n+1}\) atau \(\sum\frac{n+1}{n^3-2}\) lebih mudah ditangani bila kita <em>membandingkannya</em> dengan deret yang kekonvergenannya sudah kita kenal. Pembanding utama kita: <strong>deret geometri</strong> (\(\sum r^n\)) dan <strong>deret-\(p\)</strong> (\(\sum1/n^p\)).</p>
+
+<h2>1. Uji perbandingan langsung</h2>
+<div class="box def"><span class="t">Teorema (Uji Perbandingan)</span>
+<p>Misalkan \(\sum a_n\) dan \(\sum b_n\) deret dengan suku positif.</p>
+<ol>
+<li>Jika \(\sum b_n\) konvergen dan \(a_n\le b_n\) untuk semua \(n\), maka \(\sum a_n\) konvergen.</li>
+<li>Jika \(\sum b_n\) divergen dan \(a_n\ge b_n\) untuk semua \(n\), maka \(\sum a_n\) divergen.</li>
+</ol></div>
+<p><strong>Intuisi.</strong> Deret yang "lebih kecil" dari deret berjumlah hingga pasti berjumlah hingga; deret yang "lebih besar" dari deret yang meledak pasti meledak.</p>
+<figure><img src="assets/img/b11-4-banding.png" alt="Perbandingan 1/n^2 dan 1/(n^2+n)"><figcaption>Batang biru (\(a_n\)) selalu di bawah batang oranye (\(b_n\)) dan \(\sum b_n\) konvergen, jadi \(\sum a_n\) konvergen.</figcaption></figure>
+<h3>Bukti (bagian 1)</h3>
+<p>Misalkan \(s_n=\sum_{k\le n}a_k\), \(t_n=\sum_{k\le n}b_k\) dan \(t=\sum b_k\). Karena suku positif, \(s_n\) naik, dan \(s_n\le t_n\le t\). Jadi \(\{s_n\}\) naik dan terbatas di atas, sehingga konvergen (Teorema Barisan Monoton). Bagian 2 adalah kontrapositifnya: bila \(\sum a_n\) konvergen, maka \(\sum b_n\le\sum a_n\) juga konvergen, kontradiksi dengan divergensi \(\sum b_n\). \(\blacksquare\)</p>
+<div class="box note"><span class="t">Catatan</span>
+<p>Pertidaksamaan cukup berlaku untuk \(n\ge N\) (suatu \(N\)), karena berhingga banyak suku awal tidak memengaruhi kekonvergenan. Arah pertidaksamaan harus <strong>cocok</strong> dengan sifat pembanding: "lebih kecil dari yang konvergen" atau "lebih besar dari yang divergen". Dua kombinasi lainnya tidak menghasilkan kesimpulan.</p></div>
+
+<h3>Contoh</h3>
+<div class="box ex"><span class="t">Contoh 1 — \(\sum\frac5{2n^2+4n+3}\)</span>
+<p>Untuk \(n\ge1\), \(2n^2+4n+3\gt2n^2\), sehingga \(\dfrac5{2n^2+4n+3}\lt\dfrac5{2n^2}=\dfrac52\cdot\dfrac1{n^2}\). Deret \(\frac52\sum\frac1{n^2}\) konvergen (deret-\(p\), \(p=2\)). Jadi deret asal konvergen.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — \(\sum\frac{\ln n}{n}\) (\(n\ge3\))</span>
+<p>Untuk \(n\ge3\), \(\ln n\gt1\), jadi \(\dfrac{\ln n}n\gt\dfrac1n\). Karena harmonik divergen, deret asal divergen.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — \(\sum\frac1{2^n+1}\)</span>
+<p>\(\dfrac1{2^n+1}\lt\dfrac1{2^n}\) dan \(\sum(\tfrac12)^n\) geometri konvergen (\(r=\tfrac12\)). Maka konvergen.</p></div>
+<div class="box ex"><span class="t">Contoh 4 — \(\sum\frac{\sin^2n}{n^2}\)</span>
+<p>Suku tak negatif dan \(\sin^2n\le1\), jadi \(\dfrac{\sin^2n}{n^2}\le\dfrac1{n^2}\). Konvergen.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — pembandingan yang salah arah</span>
+<p>Untuk \(\sum\dfrac1{2^n-1}\), kita punya \(\dfrac1{2^n-1}\gt\dfrac1{2^n}\), tetapi pembanding konvergen: arahnya <em>tidak cocok</em> (lebih besar dari yang konvergen tidak menyimpulkan apa-apa). Perlu uji lain, yaitu uji perbandingan limit di bawah.</p></div>
+
+<h2>2. Uji perbandingan limit</h2>
+<p>Pada Contoh 5, deret \(\sum\frac1{2^n-1}\) jelas "berperilaku seperti" \(\sum\frac1{2^n}\) untuk \(n\) besar. Uji berikut menjadikan intuisi itu tepat tanpa perlu mencari pertidaksamaan.</p>
+<div class="box def"><span class="t">Teorema (Uji Perbandingan Limit)</span>
+<p>Misalkan \(a_n,b_n\gt0\) dan
+\[ \lim_{n\to\infty}\frac{a_n}{b_n}=c,\qquad0\lt c\lt\infty. \]
+Maka \(\sum a_n\) dan \(\sum b_n\) sama-sama konvergen atau sama-sama divergen.</p></div>
+<h3>Bukti</h3>
+<p>Pilih bilangan \(m,M\) dengan \(0\lt m\lt c\lt M\). Karena \(a_n/b_n\to c\), ada \(N\) sehingga \(m\lt\frac{a_n}{b_n}\lt M\) untuk \(n\gt N\), yaitu \(mb_n\lt a_n\lt Mb_n\). Bila \(\sum b_n\) konvergen, maka \(\sum Mb_n\) konvergen, dan \(a_n\lt Mb_n\) memberi \(\sum a_n\) konvergen (uji perbandingan). Bila \(\sum b_n\) divergen, \(\sum mb_n\) divergen dan \(a_n\gt mb_n\) memberi \(\sum a_n\) divergen. \(\blacksquare\)</p>
+<div class="box note"><span class="t">Cara memilih \(b_n\)</span>
+<p>Ambil <em>suku dominan</em> pada pembilang dan penyebut (pangkat tertinggi), dan buang konstanta. Untuk \(a_n=\dfrac{3n^2+n}{5n^4-2}\), pilih \(b_n=\dfrac{n^2}{n^4}=\dfrac1{n^2}\).</p></div>
+
+<div class="box ex"><span class="t">Contoh 6 — \(\sum\frac1{2^n-1}\)</span>
+<p>Ambil \(b_n=\frac1{2^n}\). \(\dfrac{a_n}{b_n}=\dfrac{2^n}{2^n-1}=\dfrac1{1-2^{-n}}\to1\). Limit positif dan berhingga; \(\sum b_n\) konvergen, jadi \(\sum\frac1{2^n-1}\) konvergen. (Nilainya \(\approx1{,}6067\).)</p></div>
+<div class="box ex"><span class="t">Contoh 7 — \(\sum\frac{2n^2+3n}{\sqrt{5+n^5}}\)</span>
+<p>Suku dominan: \(\dfrac{2n^2}{n^{5/2}}=2n^{-1/2}\). Ambil \(b_n=\dfrac1{\sqrt n}\). Maka \(\dfrac{a_n}{b_n}=\dfrac{(2n^2+3n)\sqrt n}{\sqrt{5+n^5}}=\dfrac{2n^{5/2}+3n^{3/2}}{n^{5/2}\sqrt{1+5/n^5}}\to2\). Deret-\(p\) dengan \(p=\frac12\lt1\) divergen, maka deret asal divergen.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — \(\sum\frac{1}{n^{1+1/n}}\)</span>
+<p>Ambil \(b_n=\frac1n\). \(\dfrac{a_n}{b_n}=\dfrac1{n^{1/n}}\), dan \(n^{1/n}=e^{(\ln n)/n}\to e^0=1\). Limit \(=1\); harmonik divergen, jadi deret divergen. Perhatikan: pangkat \(1+\frac1n\) selalu \(\gt1\), tetapi menuju 1 sehingga deret-\(p\) tidak berlaku (\(p\) harus konstan).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — \(\sum\frac{n+5}{n^3-2n+1}\) untuk \(n\ge2\)</span>
+<p>Dominan: \(\dfrac{n}{n^3}=\dfrac1{n^2}\). Rasio dengan \(\frac1{n^2}\) menuju 1; \(\sum\frac1{n^2}\) konvergen. Maka konvergen.</p></div>
+
+<div class="box note"><span class="t">Kasus \(c=0\) atau \(c=\infty\)</span>
+<ul>
+<li>Jika \(c=0\) dan \(\sum b_n\) konvergen, maka \(\sum a_n\) konvergen (\(a_n\) lebih kecil kecuali untuk faktor konstan).</li>
+<li>Jika \(c=\infty\) dan \(\sum b_n\) divergen, maka \(\sum a_n\) divergen.</li>
+</ul>
+<p>Sisanya (\(c=0\) dengan \(\sum b_n\) divergen, atau \(c=\infty\) dengan \(\sum b_n\) konvergen) tidak memberi kesimpulan. Contoh: \(\sum\frac{\ln n}{n^3}\) dibanding \(\frac1{n^2}\): \(c=0\), \(\sum\frac1{n^2}\) konvergen, maka konvergen.</p></div>
+
+<h2>3. Menaksir jumlah dengan perbandingan</h2>
+<p>Bila \(a_n\le b_n\) dan kita dapat menjumlahkan \(\sum b_n\) secara eksak, maka galat pemotongan \(\sum a_n\) dapat dibatasi oleh sisa deret pembanding: \(R_n=\sum_{k\gt n}a_k\le\sum_{k\gt n}b_k\).</p>
+<div class="box ex"><span class="t">Contoh 10 — \(\sum\frac1{3^n+1}\) dengan \(n=10\)</span>
+<p>\(\dfrac1{3^k+1}\lt\dfrac1{3^k}\). Sisa pembanding geometri: \(\displaystyle\sum_{k=11}^\infty3^{-k}=\dfrac{3^{-11}}{1-\frac13}=\dfrac{3^{-10}}{2}\approx8{,}47\times10^{-6}\). Jumlah parsial \(s_{10}\approx0{,}404055\), maka jumlah sebenarnya ada di \([0{,}404055;\ 0{,}404063]\). (Nilai sebenarnya \(\approx0{,}4040633\).) Dalam hampir semua penggunaan praktis, empat desimal \(0{,}4041\) sudah pasti benar.</p></div>
+
+<h2>4. Strategi memilih pembanding</h2>
+<table class="t">
+<tr><th>Bentuk suku</th><th>Pembanding yang cocok</th></tr>
+<tr><td>Rasional dalam \(n\) (polinomial/polinomial)</td><td>\(\dfrac1{n^p}\), \(p\) = selisih derajat</td></tr>
+<tr><td>Memuat \(2^n,3^n,\dots\) di penyebut</td><td>geometri \(r^n\)</td></tr>
+<tr><td>Akar: \(\sqrt{n^k}\)</td><td>\(n^{k/2}\) pada suku dominan</td></tr>
+<tr><td>Memuat \(\sin n\), \(\cos n\), \((-1)^n\)</td><td>batas \(|\cdot|\le1\), banding langsung</td></tr>
+<tr><td>Memuat \(\ln n\)</td><td>\(\ln n\lt n^\varepsilon\) untuk \(n\) besar; bandingkan dengan deret-\(p\)</td></tr>
+</table>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Arah yang tidak cocok (Contoh 5). Selalu cek: kecil terhadap konvergen, besar terhadap divergen.</li>
+<li>Uji perbandingan limit memerlukan suku <strong>positif</strong> dan limit \(c\) <strong>positif berhingga</strong>.</li>
+<li>Lupa bahwa \(\sum\frac1{n^p}\) konvergen hanya bila \(p\gt1\): \(p=1\) divergen.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>Perbandingan langsung: kecil \(\le\) konvergen \(\Rightarrow\) konvergen; besar \(\ge\) divergen \(\Rightarrow\) divergen.</li>
+<li>Perbandingan limit: \(a_n/b_n\to c\in(0,\infty)\) \(\Rightarrow\) sifat kekonvergenan sama.</li>
+<li>Pembanding standar: geometri dan deret-\(p\).</li>
+<li>Taksiran galat dapat memakai sisa deret pembanding.</li>
+</ul>
+<p>Berikutnya <a href="b11-5.html">11.5 Deret Berganti Tanda</a>, yaitu deret yang sukunya tidak semua positif.</p>

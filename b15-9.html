@@ -1,0 +1,75 @@
+<p>Untuk padatan yang simetris terhadap sebuah titik (bola, kerucut berpusat di titik asal, bagian bola), <strong>koordinat bola</strong> adalah pilihan terbaik.</p>
+
+<h2>1. Koordinat bola</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Titik \(P\) dinyatakan oleh \((\rho,\theta,\phi)\):
+<ul>
+<li>\(\rho=|OP|\ge0\): jarak dari titik asal,</li>
+<li>\(\theta\): sudut azimut, sama seperti pada koordinat tabung (diukur dari sumbu \(x\) positif di bidang \(xy\)),</li>
+<li>\(\phi\in[0,\pi]\): sudut antara sumbu \(z\) positif dan ruas garis \(OP\).</li>
+</ul></p></div>
+<figure><img src="assets/img/b15-9-bola.png" alt="Koordinat bola"><figcaption>Koordinat bola \((\rho,\theta,\phi)\).</figcaption></figure>
+<div class="box def"><span class="t">Konversi</span>
+<p>Dari segitiga siku-siku \(OPQ\) dengan \(Q\) proyeksi \(P\) di bidang \(xy\): \(|OQ|=r=\rho\sin\phi\) dan \(z=\rho\cos\phi\). Maka
+\[ x=\rho\sin\phi\cos\theta,\quad y=\rho\sin\phi\sin\theta,\quad z=\rho\cos\phi, \]
+\[ \rho^2=x^2+y^2+z^2. \]</p></div>
+<p>Permukaan: \(\rho=c\) bola berpusat di asal; \(\theta=c\) setengah bidang vertikal; \(\phi=c\) kerucut (setengah kerucut) dengan puncak di asal; \(\phi=\frac\pi2\) bidang \(xy\).</p>
+<div class="box ex"><span class="t">Contoh 1 — konversi titik</span>
+<ul>
+<li>\((\rho,\theta,\phi)=(2,\tfrac\pi4,\tfrac\pi3)\): \(x=2\sin\frac\pi3\cos\frac\pi4=\frac{\sqrt6}2\), \(y=\frac{\sqrt6}2\), \(z=2\cos\frac\pi3=1\).</li>
+<li>Titik \((0,2,-2)\): \(\rho=\sqrt{0+4+4}=2\sqrt2\), \(\cos\phi=\frac{-2}{2\sqrt2}=-\frac1{\sqrt2}\Rightarrow\phi=\frac{3\pi}4\), \(\theta=\frac\pi2\).</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 2 — persamaan permukaan</span>
+<ul>
+<li>\(z=\sqrt{x^2+y^2}\): \(\rho\cos\phi=\rho\sin\phi\Rightarrow\phi=\frac\pi4\) (kerucut).</li>
+<li>\(x^2+y^2+z^2=2z\): \(\rho^2=2\rho\cos\phi\Rightarrow\rho=2\cos\phi\), bola \(x^2+y^2+(z-1)^2=1\).</li>
+<li>\(x^2+y^2=1\): \(\rho\sin\phi=1\), silinder (kurang cocok di koordinat bola).</li>
+</ul></div>
+
+<h2>2. Elemen volume</h2>
+<p>Potongan kecil padatan dibatasi \(\rho\) sampai \(\rho+\Delta\rho\), \(\phi\) sampai \(\phi+\Delta\phi\), \(\theta\) sampai \(\theta+\Delta\theta\). Ia hampir berupa balok dengan rusuk: \(\Delta\rho\) (arah radial), \(\rho\Delta\phi\) (busur lingkaran besar), dan \(\rho\sin\phi\,\Delta\theta\) (busur sejajar bidang \(xy\), jari-jari \(\rho\sin\phi\)). Volume \(\approx\rho^2\sin\phi\,\Delta\rho\Delta\phi\Delta\theta\).</p>
+<div class="box def"><span class="t">Integral rangkap tiga dalam koordinat bola</span>
+<p>\[ \iiint_Ef\,dV=\int_\alpha^\beta\int_c^d\int_a^bf(\rho\sin\phi\cos\theta,\rho\sin\phi\sin\theta,\rho\cos\phi)\;\rho^2\sin\phi\,d\rho\,d\phi\,d\theta \]
+untuk \(E=\{a\le\rho\le b,\ \alpha\le\theta\le\beta,\ c\le\phi\le d\}\) ("baji bola"). \(dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\).</p></div>
+
+<h2>3. Contoh</h2>
+<div class="box ex"><span class="t">Contoh 3 — volume bola</span>
+<p>\(V=\int_0^{2\pi}\int_0^\pi\int_0^a\rho^2\sin\phi\,d\rho\,d\phi\,d\theta=2\pi\cdot2\cdot\tfrac{a^3}3=\tfrac43\pi a^3\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — eksponensial</span>
+<p>\(\displaystyle\iiint_Be^{(x^2+y^2+z^2)^{3/2}}dV\), \(B\) bola satuan: \(\int_0^{2\pi}\int_0^\pi\int_0^1e^{\rho^3}\rho^2\sin\phi\,d\rho\,d\phi\,d\theta=2\pi\cdot2\cdot\tfrac13(e-1)=\tfrac{4\pi}3(e-1)\approx7{,}198\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — kerucut es krim</span>
+<p>Padatan di dalam bola \(\rho\le2\) dan di atas kerucut \(\phi=\frac\pi4\) (yaitu \(0\le\phi\le\frac\pi4\)): \(V=\int_0^{2\pi}\int_0^{\pi/4}\int_0^2\rho^2\sin\phi\,d\rho\,d\phi\,d\theta=2\pi\cdot\tfrac83\bigl(1-\cos\tfrac\pi4\bigr)=\tfrac{16\pi}3\bigl(1-\tfrac{\sqrt2}2\bigr)=\tfrac{8\pi}3(2-\sqrt2)\approx4{,}907\). Sama dengan hasil 15.8 Contoh 6, tetapi jauh lebih singkat. Rumus umum untuk bola jari-jari \(a\) dengan sudut setengah puncak \(\phi_0\): \(V=\frac{2\pi a^3}3(1-\cos\phi_0)\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — antara dua bola</span>
+<p>Padatan \(1\le\rho\le2\), \(0\le\phi\le\frac\pi3\), \(0\le\theta\le2\pi\): \(V=2\pi\bigl(1-\cos\tfrac\pi3\bigr)\cdot\tfrac{8-1}3=2\pi\cdot\tfrac12\cdot\tfrac73=\tfrac{7\pi}3\approx7{,}33\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — belahan bola</span>
+<p>\(\displaystyle\iiint_Hz\,dV\), \(H\) belahan bola atas jari-jari \(a\): \(\int_0^{2\pi}\int_0^{\pi/2}\int_0^a\rho\cos\phi\cdot\rho^2\sin\phi\,d\rho\,d\phi\,d\theta=2\pi\cdot\tfrac{a^4}4\cdot\tfrac12=\tfrac{\pi a^4}4\). Volume \(H=\frac23\pi a^3\). Maka \(\bar z=\dfrac{\pi a^4/4}{2\pi a^3/3}=\dfrac{3a}8\): pusat massa belahan bola homogen berada di \(\frac38a\) di atas pusatnya.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — momen inersia bola</span>
+<p>Bola padat homogen (kerapatan \(\rho_0\), massa \(m=\frac43\pi a^3\rho_0\)): \(I_z=\rho_0\iiint(x^2+y^2)\,dV=\rho_0\int_0^{2\pi}\int_0^\pi\int_0^a\rho^2\sin^2\phi\cdot\rho^2\sin\phi\,d\rho\,d\phi\,d\theta=\rho_0\cdot2\pi\cdot\tfrac{a^5}5\cdot\tfrac43=\tfrac{8\pi\rho_0a^5}{15}=\tfrac25ma^2\). (Gunakan \(\int_0^\pi\sin^3\phi\,d\phi=\frac43\).)</p></div>
+<div class="box ex"><span class="t">Contoh 9 — jarak rata-rata dari pusat</span>
+<p>Jarak rata-rata titik di dalam bola jari-jari \(a\) dari pusatnya: \(\dfrac{\iiint\rho\,dV}{V}=\dfrac{4\pi\cdot a^4/4}{4\pi a^3/3}=\tfrac34a\) (lebih besar dari \(\frac a2\) karena volume lebih banyak di dekat permukaan).</p></div>
+<div class="box ex"><span class="t">Contoh 10 — bola yang tidak berpusat di asal</span>
+<p>Bola \(x^2+y^2+(z-1)^2\le1\) berpersamaan \(\rho\le2\cos\phi\), \(0\le\phi\le\frac\pi2\). Volume \(=\int_0^{2\pi}\int_0^{\pi/2}\tfrac{(2\cos\phi)^3}3\sin\phi\,d\phi\,d\theta=2\pi\cdot\tfrac83\cdot\tfrac14=\tfrac{4\pi}3\). Benar untuk bola jari-jari 1.</p></div>
+
+<h2>4. Memilih koordinat</h2>
+<table class="t">
+<tr><th>Bentuk padatan / integran</th><th>Koordinat</th></tr>
+<tr><td>Persegi panjang, tetrahedron, bidang</td><td>Kartesius</td></tr>
+<tr><td>Silinder, paraboloid putar, memuat \(x^2+y^2\)</td><td>Tabung</td></tr>
+<tr><td>Bola, kerucut berpuncak di asal, memuat \(x^2+y^2+z^2\)</td><td>Bola</td></tr>
+</table>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Memakai \(\phi\) untuk sudut di bidang \(xy\) dan \(\theta\) untuk sudut dari sumbu \(z\) (tertukar dengan konvensi di sini).</li>
+<li>Lupa faktor \(\rho^2\sin\phi\) (bukan hanya \(\rho^2\)).</li>
+<li>\(\phi\) berada pada \([0,\pi]\), bukan \([0,2\pi]\).</li>
+<li>Lupa mengubah \(z=\rho\cos\phi\) pada integran.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(x=\rho\sin\phi\cos\theta\), \(y=\rho\sin\phi\sin\theta\), \(z=\rho\cos\phi\).</li>
+<li>\(dV=\rho^2\sin\phi\,d\rho\,d\phi\,d\theta\).</li>
+<li>Cocok untuk bola dan kerucut berpusat di titik asal.</li>
+</ul>
+<p>Berikutnya <a href="b15-10.html">15.10</a>: perubahan peubah secara umum.</p>

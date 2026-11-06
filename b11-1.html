@@ -1,0 +1,147 @@
+<h2>1. Apa itu barisan?</h2>
+<p>Barisan adalah daftar bilangan yang ditulis dalam urutan tertentu:
+\[ a_1,\ a_2,\ a_3,\ a_4,\ \dots,\ a_n,\ \dots \]
+\(a_1\) disebut suku pertama, \(a_2\) suku kedua, dan secara umum \(a_n\) adalah suku ke-\(n\). Kita hanya membahas barisan <em>tak hingga</em>: setiap suku \(a_n\) memiliki penerus \(a_{n+1}\).</p>
+<p>Karena untuk tiap bilangan bulat positif \(n\) ada tepat satu bilangan \(a_n\), barisan sama saja dengan <strong>fungsi</strong> dengan daerah asal bilangan bulat positif; kita menulis \(a_n\) sebagai pengganti \(f(n)\). Notasi barisan: \(\{a_n\}\) atau \(\{a_n\}_{n=1}^{\infty}\).
+Indeks tidak harus mulai dari 1; misalnya \(\{\sqrt{n-3}\}_{n=3}^\infty\).</p>
+
+<div class="box ex"><span class="t">Contoh 1 — tiga cara menyebut barisan</span>
+<table class="t">
+<tr><th>Notasi</th><th>Rumus suku ke-\(n\)</th><th>Suku-suku</th></tr>
+<tr><td>\(\left\{\dfrac n{n+1}\right\}\)</td><td>\(a_n=\dfrac n{n+1}\)</td><td>\(\tfrac12,\tfrac23,\tfrac34,\tfrac45,\dots\)</td></tr>
+<tr><td>\(\left\{\dfrac{(-1)^n(n+1)}{3^n}\right\}\)</td><td>\(a_n=\dfrac{(-1)^n(n+1)}{3^n}\)</td><td>\(-\tfrac23,\tfrac39,-\tfrac4{27},\tfrac5{81},\dots\)</td></tr>
+<tr><td>\(\{\sqrt{n-3}\}_{n=3}^\infty\)</td><td>\(a_n=\sqrt{n-3}\)</td><td>\(0,1,\sqrt2,\sqrt3,\dots\)</td></tr>
+<tr><td>\(\{\cos\tfrac{n\pi}{6}\}_{n=0}^\infty\)</td><td>\(a_n=\cos\tfrac{n\pi}6\)</td><td>\(1,\tfrac{\sqrt3}2,\tfrac12,0,\dots\)</td></tr>
+</table></div>
+
+<h3>Mencari rumus dari pola</h3>
+<div class="box ex"><span class="t">Contoh 2</span>
+<p>Cari rumus suku ke-\(n\) dari \(\dfrac35,\ -\dfrac4{25},\ \dfrac5{125},\ -\dfrac6{625},\ \dfrac7{3125},\dots\)</p>
+<ul><li>Pembilang: 3, 4, 5, 6, 7, … naik 1 mulai dari 3, jadi \(n+2\).</li>
+<li>Penyebut: pangkat 5, yaitu \(5^n\).</li>
+<li>Tanda: positif untuk \(n=1\), lalu bergantian, sehingga faktor \((-1)^{n-1}\) (atau \(-(-1)^n\)).</li></ul>
+<p>Jawab: \(a_n=(-1)^{n-1}\dfrac{n+2}{5^n}\).</p></div>
+
+<h3>Barisan yang tidak punya rumus sederhana</h3>
+<ul>
+<li>\(p_n\) = populasi dunia pada 1 Januari tahun ke-\(n\).</li>
+<li>\(a_n\) = angka desimal ke-\(n\) dari bilangan \(e=2.7182818\ldots\); barisannya terdefinisi dengan baik: \(7,1,8,2,8,1,8,2,8,4,5,\dots\)</li>
+<li><strong>Barisan Fibonacci</strong>, didefinisikan <em>rekursif</em>: \(f_1=1,\ f_2=1,\ f_n=f_{n-1}+f_{n-2}\ (n\ge3)\), menghasilkan \(1,1,2,3,5,8,13,21,\dots\). Muncul dari soal pembiakan kelinci oleh Fibonacci (abad ke-13).</li>
+</ul>
+
+<h2>2. Menggambar barisan</h2>
+<p>Barisan dapat digambar pada garis bilangan (titik-titik \(a_1,a_2,\dots\)) atau pada bidang (grafik berupa titik-titik terpisah \((n,a_n)\)). Pada gambar kanan di bawah, \(a_n=n/(n+1)\) tampak mendekati 1.</p>
+<figure><img src="assets/img/b11-1-barisan.png" alt="Grafik barisan"><figcaption>Kiri: konvergen ke 1. Tengah: berosilasi (divergen). Kanan: \(n!/n^n\to0\).</figcaption></figure>
+
+<h2>3. Limit barisan</h2>
+<div class="box def"><span class="t">Definisi (intuitif)</span>
+<p>Barisan \(\{a_n\}\) memiliki limit \(L\), ditulis \(\displaystyle\lim_{n\to\infty}a_n=L\) atau \(a_n\to L\), bila suku \(a_n\) dapat dibuat sedekat yang kita mau ke \(L\) dengan mengambil \(n\) cukup besar.
+Bila limit ada, barisan <strong>konvergen</strong>; bila tidak, barisan <strong>divergen</strong>.</p></div>
+<div class="box def"><span class="t">Definisi (presisi, \(\varepsilon\)–\(N\))</span>
+<p>\(\displaystyle\lim_{n\to\infty}a_n=L\) bila untuk setiap \(\varepsilon>0\) ada bilangan bulat \(N\) sehingga
+\[ n>N\ \Longrightarrow\ |a_n-L|\lt \varepsilon. \]
+Artinya: seberapa sempit pun interval \((L-\varepsilon,L+\varepsilon)\), semua suku mulai dari \(a_{N+1}\) berada di dalamnya. \(\varepsilon\) yang lebih kecil umumnya menuntut \(N\) yang lebih besar.</p></div>
+
+<div class="box note"><span class="t">Jembatan dengan limit fungsi</span>
+<p>Definisi ini hampir identik dengan limit fungsi di tak hingga; satu-satunya beda adalah \(n\) bilangan bulat. Karena itu:</p>
+<p><strong>Teorema 3.</strong> Jika \(\lim_{x\to\infty}f(x)=L\) dan \(f(n)=a_n\) untuk bilangan bulat \(n\), maka \(\lim_{n\to\infty}a_n=L\).</p>
+<p>Ini memungkinkan penggunaan aturan l'Hôpital untuk barisan: terapkan pada fungsi \(f(x)\) yang bersesuaian, lalu simpulkan untuk \(a_n\). (Kebalikannya tidak benar: \(\sin(n\pi)\to0\) tetapi \(\lim_{x\to\infty}\sin(\pi x)\) tidak ada.)</p></div>
+<p>Hasil dasar: \(\displaystyle\lim_{n\to\infty}\frac1{n^r}=0\) untuk \(r>0\).</p>
+<p><strong>Limit tak hingga.</strong> \(\lim a_n=\infty\) berarti untuk setiap \(M\) ada \(N\) sehingga \(n>N\Rightarrow a_n>M\). Barisan itu divergen, tetapi dengan cara khusus ("divergen ke \(\infty\)").</p>
+
+<h2>4. Hukum limit untuk barisan</h2>
+<p>Bila \(\{a_n\},\{b_n\}\) konvergen dan \(c\) konstanta:</p>
+<ul>
+<li>\(\lim(a_n\pm b_n)=\lim a_n\pm\lim b_n\)</li>
+<li>\(\lim ca_n=c\lim a_n\), \(\lim c=c\)</li>
+<li>\(\lim a_nb_n=\lim a_n\cdot\lim b_n\)</li>
+<li>\(\lim\dfrac{a_n}{b_n}=\dfrac{\lim a_n}{\lim b_n}\) bila \(\lim b_n\ne0\)</li>
+<li>\(\lim a_n^p=(\lim a_n)^p\) bila \(p>0\) dan \(a_n>0\)</li>
+</ul>
+<div class="box def"><span class="t">Teorema Apit (Squeeze)</span>
+<p>Jika \(a_n\le b_n\le c_n\) untuk \(n\ge n_0\) dan \(\lim a_n=\lim c_n=L\), maka \(\lim b_n=L\).</p></div>
+<div class="box def"><span class="t">Teorema 6 (nilai mutlak)</span>
+<p>Jika \(\lim|a_n|=0\) maka \(\lim a_n=0\). (Karena \(-|a_n|\le a_n\le|a_n|\), lalu apit.)</p></div>
+<div class="box def"><span class="t">Teorema 7 (fungsi kontinu)</span>
+<p>Jika \(\lim a_n=L\) dan \(f\) kontinu di \(L\), maka \(\lim f(a_n)=f(L)\).</p></div>
+
+<h2>5. Contoh-contoh perhitungan</h2>
+<div class="box ex"><span class="t">Contoh 3 — bagi dengan pangkat tertinggi</span>
+<p>\(\displaystyle\lim\frac{n}{n+1}=\lim\frac{1}{1+1/n}=\frac{1}{1+0}=1.\) Ini mengonfirmasi tebakan dari grafik.</p>
+<p>\(\displaystyle\lim\frac{3n^2-n}{5n^2+4}=\lim\frac{3-1/n}{5+4/n^2}=\frac35.\)</p></div>
+<div class="box ex"><span class="t">Contoh 4 — limit tak hingga</span>
+<p>\(a_n=\dfrac{n}{\sqrt{10+n}}\). Bagi dengan \(n\): \(\dfrac{1}{\sqrt{10/n^2+1/n}}\). Penyebut menuju 0 (positif), pembilang 1, jadi \(a_n\to\infty\). Barisan divergen.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — memakai l'Hôpital</span>
+<p>\(\displaystyle\lim_{n\to\infty}\frac{\ln n}{n}\). Pakai fungsi \(f(x)=\dfrac{\ln x}{x}\): \(\lim_{x\to\infty}\dfrac{1/x}{1}=0\). Maka \(\lim\dfrac{\ln n}{n}=0\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — barisan yang berosilasi</span>
+<p>\(a_n=(-1)^n\): \(-1,1,-1,1,\dots\) Suku bolak-balik antara \(-1\) dan 1 tak hingga kali, tidak mendekati satu bilangan; <strong>divergen</strong>.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — lewat nilai mutlak</span>
+<p>\(a_n=\dfrac{(-1)^n}{n}\). \(|a_n|=\dfrac1n\to0\). Dengan Teorema 6, \(a_n\to0\). Walaupun tanda berganti, magnitudonya mengecil.</p></div>
+<div class="box ex"><span class="t">Contoh 8 — Teorema 7</span>
+<p>\(\displaystyle\lim\sin\frac\pi n=\sin\Bigl(\lim\frac\pi n\Bigr)=\sin0=0\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — barisan faktorial</span>
+<p>\(a_n=\dfrac{n!}{n^n}\), dengan \(n!=1\cdot2\cdots n\). Tulis
+\[ a_n=\frac1n\cdot\frac2n\cdot\frac3n\cdots\frac nn=\frac1n\Bigl(\frac2n\cdot\frac3n\cdots\frac nn\Bigr). \]
+Tanda kurung berisi faktor-faktor \(\le1\), jadi \(0\lt a_n\le\dfrac1n\). Dari Teorema Apit (\(\tfrac1n\to0\)): \(a_n\to0\).</p></div>
+<div class="box note"><span class="t">Pelajaran penting</span>
+<p>Pada tingkat \(n\) besar, \(n^n\) tumbuh jauh lebih cepat dibanding \(n!\), dan \(n!\) lebih cepat dibanding \(a^n\) untuk semua \(a\), dan \(a^n\) lebih cepat dibanding pangkat \(n^p\), yang lebih cepat dibanding \(\ln n\).
+Hierarki: \(\ln n\ \ll\ n^p\ \ll\ a^n\ \ll\ n!\ \ll\ n^n\).</p></div>
+
+<h2>6. Barisan geometri \(r^n\)</h2>
+<div class="box ex"><span class="t">Contoh 10 — kapan \(\{r^n\}\) konvergen?</span>
+<ul>
+<li>\(r>1\): \(r^n\to\infty\) (diverge).</li>
+<li>\(r=1\): \(1,1,1,\dots\to1\).</li>
+<li>\(0\lt r\lt 1\): \(r^n\to0\) (karena \(r^n=e^{n\ln r}\) dan \(\ln r\lt 0\)).</li>
+<li>\(r=0\): barisan nol, \(\to0\).</li>
+<li>\(-1\lt r\lt 0\): \(|r|^n\to0\), jadi \(r^n\to0\) (Teorema 6).</li>
+<li>\(r=-1\): \(-1,1,-1,\dots\) divergen.</li>
+<li>\(r\lt -1\): \(|r^n|\to\infty\) dengan tanda berganti; divergen.</li>
+</ul>
+<p>Ringkasan: \(\lim_{n\to\infty}r^n=\begin{cases}0&-1\lt r\lt 1\\1&r=1\end{cases}\), dan divergen untuk semua \(r\) lain. Maka \(\{r^n\}\) konvergen <strong>jika dan hanya jika</strong> \(-1\lt r\le1\).</p></div>
+<figure><img src="assets/img/b11-1-geometri.png" alt="r^n"></figure>
+
+<h2>7. Barisan monoton dan terbatas</h2>
+<div class="box def"><span class="t">Definisi</span>
+<ul>
+<li>\(\{a_n\}\) <strong>naik</strong> jika \(a_n\lt a_{n+1}\) untuk semua \(n\ge1\); <strong>turun</strong> jika \(a_n>a_{n+1}\) untuk semua \(n\ge1\). Naik atau turun disebut <strong>monoton</strong>.</li>
+<li>\(\{a_n\}\) <strong>terbatas di atas</strong> jika ada \(M\) dengan \(a_n\le M\) untuk semua \(n\); <strong>terbatas di bawah</strong> jika ada \(m\) dengan \(m\le a_n\); <strong>terbatas</strong> jika keduanya.</li>
+</ul></div>
+<p>Contoh: \(\{n\}\) terbatas di bawah (oleh 1) tetapi tidak di atas. \(\{\tfrac n{n+1}\}\) terbatas karena \(0\lt a_n\lt 1\).</p>
+
+<h3>Membuktikan monoton</h3>
+<p>Dua cara: (i) bandingkan \(a_{n+1}\) dengan \(a_n\) lewat aljabar (selisih atau rasio); (ii) bentuk fungsi \(f(x)\) dengan \(f(n)=a_n\) lalu periksa \(f'\).</p>
+<div class="box ex"><span class="t">Contoh 11 — \(\{\tfrac{3}{n+5}\}\) turun</span>
+<p>Penyebut \(n+6>n+5\), jadi \(\dfrac3{n+6}\lt \dfrac3{n+5}\): \(a_{n+1}\lt a_n\).</p></div>
+<div class="box ex"><span class="t">Contoh 12 — \(a_n=\dfrac{n}{n^2+1}\) turun</span>
+<p><em>Cara 1.</em> Perlu \(\dfrac{n+1}{(n+1)^2+1}\lt \dfrac n{n^2+1}\). Kalikan silang (semua penyebut positif): \((n+1)(n^2+1)\lt n\bigl((n+1)^2+1\bigr)\Leftrightarrow n^3+n^2+n+1\lt n^3+2n^2+2n\Leftrightarrow0\lt n^2+n-1\), yang benar untuk \(n\ge1\).<br>
+<em>Cara 2.</em> \(f(x)=\dfrac{x}{x^2+1}\Rightarrow f'(x)=\dfrac{1-x^2}{(x^2+1)^2}\lt 0\) untuk \(x>1\); \(f\) turun pada \([1,\infty)\), jadi \(f(n+1)\lt f(n)\).</p></div>
+
+<h2>8. Teorema Barisan Monoton</h2>
+<div class="box def"><span class="t">Teorema 12</span>
+<p>Setiap barisan <strong>monoton dan terbatas</strong> adalah konvergen.</p></div>
+<h3>Bukti (untuk barisan naik)</h3>
+<p>Dasarnya adalah <strong>Aksioma Kelengkapan</strong> bilangan real: setiap himpunan tak kosong yang terbatas di atas punya <em>batas atas terkecil</em> (supremum). Aksioma ini menyatakan bahwa garis bilangan tidak berlubang.</p>
+<p>Misalkan \(\{a_n\}\) naik dan terbatas di atas. Himpunan \(S=\{a_n:n\ge1\}\) tak kosong dan terbatas di atas, jadi punya batas atas terkecil \(L\). Untuk sembarang \(\varepsilon>0\), \(L-\varepsilon\) bukan batas atas \(S\) (karena \(L\) terkecil), sehingga ada \(N\) dengan \(a_N>L-\varepsilon\).
+Karena barisan naik, untuk semua \(n>N\) berlaku \(a_n\ge a_N>L-\varepsilon\). Di sisi lain \(a_n\le L\). Jadi \(|a_n-L|\lt \varepsilon\) untuk \(n>N\), artinya \(\lim a_n=L\). Untuk barisan turun terbatas di bawah, argumen serupa dengan batas bawah terbesar. \(\blacksquare\)</p>
+<div class="box note"><span class="t">Catatan</span>
+<ul><li>Terbatas tidak cukup: \(\{(-1)^n\}\) terbatas tetapi divergen.</li><li>Monoton tidak cukup: \(\{n\}\) monoton tetapi divergen.</li><li>Teorema ini memberi <em>keberadaan</em> limit, bukan nilainya. Pada bab-bab berikut ia dipakai berulang kali untuk deret.</li></ul></div>
+
+<div class="box ex"><span class="t">Contoh 13 — barisan rekursif</span>
+<p>\(a_1=1,\ a_{n+1}=\tfrac12\bigl(a_n+\tfrac{2}{a_n}\bigr)\) (metode Newton untuk \(\sqrt2\)). Suku-sukunya: \(1,\ 1.5,\ 1.41\overline6,\ 1.414215\ldots\)</p>
+<ul>
+<li><strong>Terbatas di bawah.</strong> Untuk \(a>0\), \(\tfrac12(a+\tfrac2a)\ge\sqrt{a\cdot\tfrac2a}=\sqrt2\) (AM–GM). Jadi \(a_n\ge\sqrt2\) untuk semua \(n\ge2\).</li>
+<li><strong>Turun mulai \(n=2\).</strong> Bila \(a_n\ge\sqrt2\), maka \(\tfrac2{a_n}\le a_n\), sehingga \(a_{n+1}=\tfrac12(a_n+\tfrac2{a_n})\le a_n\).</li>
+</ul>
+<p>Menurut Teorema 12 (berlaku juga bila monoton baru mulai dari suku kedua), barisan konvergen. Bila limitnya \(L\), dari rekursi \(L=\tfrac12(L+\tfrac2L)\Rightarrow L^2=2\Rightarrow L=\sqrt2\) (positif karena \(a_n\ge\sqrt2\)).</p>
+<p>Untuk mengamati konvergensi numerik dari barisan dengan rumus eksplisit, coba mode "Suku-suku barisan" pada <a href="kalkulator.php">kalkulator Python</a>, misalnya \(a(n)=n/(n+1)\) dengan \(n\) dari 1 sampai 12.</p></div>
+
+<h2>9. Ringkasan</h2>
+<ul>
+<li>Barisan = fungsi dari bilangan bulat positif; limit berarti \(a_n\) mendekati \(L\) untuk \(n\) besar.</li>
+<li>Hukum limit, Teorema Apit, dan kekontinuan fungsi bekerja seperti pada limit fungsi.</li>
+<li>Untuk \(\lim\) yang melibatkan \(\tfrac\infty\infty\), pakai l'Hôpital pada fungsi padanannya.</li>
+<li>\(\{r^n\}\) konvergen \(\iff-1\lt r\le1\).</li>
+<li>Monoton + terbatas \(\Rightarrow\) konvergen (Teorema 12).</li>
+</ul>
+<p>Materi 11.2 dst. (deret, uji konvergensi, deret pangkat, Taylor) belum ada di berkas yang Anda unggah.</p>

@@ -1,0 +1,67 @@
+<p>Di Bab 10 kita menggambarkan kurva bidang dengan persamaan parametrik \(x=f(t),\,y=g(t)\). Di ruang, kurva memerlukan tiga fungsi. Menggabungkannya menjadi satu objek bervektor memberi alat yang kuat: <strong>fungsi vektor</strong>, yang memungkinkan kita memakai kalkulus untuk membahas gerak, kecepatan, dan percepatan (13.4).</p>
+
+<h2>1. Fungsi vektor</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p><strong>Fungsi vektor</strong> adalah fungsi yang daerah asalnya himpunan bilangan real dan daerah hasilnya himpunan vektor. Di ruang,
+\[ \mathbf r(t)=\langle f(t),\,g(t),\,h(t)\rangle=f(t)\,\mathbf i+g(t)\,\mathbf j+h(t)\,\mathbf k, \]
+dengan \(f,g,h\) fungsi bernilai real (disebut <em>fungsi komponen</em>). Daerah asal \(\mathbf r\) adalah irisan daerah asal ketiga komponennya.</p></div>
+<div class="box ex"><span class="t">Contoh 1 — daerah asal</span>
+<p>\(\mathbf r(t)=\langle\ln(4-t^2),\ \sqrt{t+1},\ \dfrac1{t-1}\rangle\). Syarat: \(4-t^2\gt0\Rightarrow-2\lt t\lt2\); \(t+1\ge0\Rightarrow t\ge-1\); \(t\ne1\). Daerah asal: \([-1,1)\cup(1,2)\).</p></div>
+
+<h2>2. Kurva ruang</h2>
+<p>Bila \(t\) berubah, ujung vektor posisi \(\mathbf r(t)\) menggambar sebuah <strong>kurva ruang</strong> \(C\). Persamaan parametriknya \(x=f(t),\,y=g(t),\,z=h(t)\), dan \(\mathbf r\) disebut <em>parametrisasi</em> \(C\). Satu kurva dapat diparametrisasi dengan banyak cara.</p>
+
+<h3>Limit dan kekontinuan</h3>
+<div class="box def"><span class="t">Limit dan kontinu</span>
+<p>\[ \lim_{t\to a}\mathbf r(t)=\Bigl\langle\lim_{t\to a}f(t),\ \lim_{t\to a}g(t),\ \lim_{t\to a}h(t)\Bigr\rangle \]
+asalkan ketiga limit komponen ada. \(\mathbf r\) kontinu di \(a\) bila \(\lim_{t\to a}\mathbf r(t)=\mathbf r(a)\); ini setara dengan kekontinuan ketiga komponen.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — limit</span>
+<p>\(\displaystyle\lim_{t\to0}\Bigl\langle\frac{\sin t}t,\ e^{2t},\ \frac{1-\cos t}{t^2}\Bigr\rangle=\langle1,1,\tfrac12\rangle\).</p></div>
+
+<h2>3. Kurva-kurva penting</h2>
+<h3>Garis lurus</h3>
+<p>Garis melalui \(\mathbf r_0\) dengan arah \(\mathbf v\): \(\mathbf r(t)=\mathbf r_0+t\mathbf v\) (12.5). Ruas dari \(\mathbf r_0\) ke \(\mathbf r_1\): \(\mathbf r(t)=(1-t)\mathbf r_0+t\mathbf r_1\), \(0\le t\le1\).</p>
+
+<h3>Heliks (spiral)</h3>
+<div class="box ex"><span class="t">Contoh 3 — heliks</span>
+<p>\(\mathbf r(t)=\langle\cos t,\sin t,t\rangle\). Karena \(x^2+y^2=1\), kurva terletak pada silinder lingkaran \(x^2+y^2=1\) (12.6). Sementara \(t\) naik, titik berputar mengelilingi silinder dan naik dengan laju tetap: \(z=t\). Satu putaran (\(t\) naik \(2\pi\)) menaikkan \(z\) sebesar \(2\pi\). Bentuk umum \(\langle a\cos t,\,a\sin t,\,bt\rangle\) berjari-jari \(a\) dan "tinggi ulir" \(2\pi b\) per putaran. Bila \(b\lt0\) heliks berputar ke arah sebaliknya.</p></div>
+<figure><img src="assets/img/b13-1-heliks.png" alt="Heliks"><figcaption>Heliks \(\langle\cos t,\sin t,t\rangle\), dengan proyeksi lingkaran di bidang \(xy\).</figcaption></figure>
+
+<h3>Kubik terpilin</h3>
+<div class="box ex"><span class="t">Contoh 4 — kubik terpilin</span>
+<p>\(\mathbf r(t)=\langle t,t^2,t^3\rangle\). Proyeksi pada bidang \(xy\): \(y=x^2\); pada bidang \(xz\): \(z=x^3\); pada bidang \(yz\): \(z^2=y^3\). Kurva terletak pada silinder parabolik \(y=x^2\) sekaligus silinder \(z=x^3\).</p></div>
+
+<h2>4. Kurva sebagai irisan permukaan</h2>
+<p>Kurva sering diberikan sebagai perpotongan dua permukaan. Untuk menparametrisasinya, pilih parametrisasi salah satu kurva proyeksi, lalu cari peubah ketiga dari persamaan kedua.</p>
+<div class="box ex"><span class="t">Contoh 5 — silinder dan bidang</span>
+<p>Cari parametrisasi perpotongan silinder \(x^2+y^2=1\) dan bidang \(y+z=2\). Proyeksi pada bidang \(xy\) adalah lingkaran satuan: \(x=\cos t\), \(y=\sin t\), \(0\le t\le2\pi\). Dari bidang, \(z=2-y=2-\sin t\). Jadi
+\[ \mathbf r(t)=\langle\cos t,\ \sin t,\ 2-\sin t\rangle. \]
+Kurva ini sebuah elips (irisan bidang miring dengan silinder), terletak pada bidang \(y+z=2\).</p></div>
+<figure><img src="assets/img/b13-1-irisan.png" alt="Silinder dan bidang"><figcaption>Elips: perpotongan silinder \(x^2+y^2=1\) dengan bidang \(y+z=2\).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 6 — paraboloid dan bidang</span>
+<p>Perpotongan \(z=x^2+y^2\) dengan \(z=4\): lingkaran \(x^2+y^2=4\) pada tinggi 4, \(\mathbf r(t)=\langle2\cos t,\,2\sin t,\,4\rangle\). Perpotongan \(z=x^2+y^2\) dengan bidang \(y=x\): \(z=2x^2\), \(\mathbf r(t)=\langle t,\,t,\,2t^2\rangle\) (parabola).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — bola dan silinder (kurva Viviani)</span>
+<p>Bola \(x^2+y^2+z^2=4\) dan silinder \((x-1)^2+y^2=1\), yaitu \(x^2+y^2=2x\). Parametrisasi silinder: \(x=1+\cos t\), \(y=\sin t\). Maka \(z^2=4-2x=2-2\cos t=4\sin^2\!\frac t2\), jadi \(z=\pm2\sin\frac t2\). Kurva (dua cabang untuk \(0\le t\le2\pi\)): \(\langle1+\cos t,\ \sin t,\ 2\sin\frac t2\rangle\) dan cerminannya di \(z\to-z\).</p></div>
+
+<h2>5. Perpotongan versus tabrakan</h2>
+<p>Dua kurva yang berpotongan di suatu titik belum tentu "bertabrakan". Misalkan dua partikel bergerak sepanjang kurva \(\mathbf r_1(t)\) dan \(\mathbf r_2(s)\). Kurva berpotongan bila ada \(t,s\) dengan \(\mathbf r_1(t)=\mathbf r_2(s)\). Partikel <em>bertabrakan</em> bila \(\mathbf r_1(t)=\mathbf r_2(t)\): titik yang sama pada waktu yang sama.</p>
+<div class="box ex"><span class="t">Contoh 8 — titik potong dan tabrakan</span>
+<p>\(\mathbf r_1(t)=\langle t,t^2,t^3\rangle\) dan garis sekan \(\mathbf r_2(s)=\langle1+s,\,1+3s,\,1+7s\rangle\). Samakan: \(t=1+s\), \(t^2=1+3s\), \(t^3=1+7s\). Dari yang pertama dan kedua: \((1+s)^2=1+3s\Rightarrow s^2-s=0\Rightarrow s=0\) atau \(s=1\). Untuk \(s=0\): \(t=1\), dan \(t^3=1=1+0\) benar: titik \((1,1,1)\). Untuk \(s=1\): \(t=2\), \(t^3=8=1+7\) benar: titik \((2,4,8)\). Jadi dua titik potong. Tabrakan memerlukan \(t=s\): dari \(t=1+s\) mustahil. Kedua partikel tidak pernah bertabrakan, meskipun jalurnya berpotongan.</p></div>
+<figure><img src="assets/img/b13-1-kubik.png" alt="Kubik terpilin dan sekan"><figcaption>Kubik terpilin dan garis sekan yang memotongnya di \((1,1,1)\) dan \((2,4,8)\).</figcaption></figure>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Menganggap kurva dan parametrisasinya sama. Kurva adalah himpunan titik; parametrisasi juga menentukan arah dan kecepatan penelusuran.</li>
+<li>Lupa memeriksa daerah asal tiap komponen (akar, logaritma, penyebut).</li>
+<li>Menyamakan perpotongan kurva dengan tabrakan partikel.</li>
+<li>Pada parametrisasi irisan permukaan: mengambil satu proyeksi tetapi lupa memeriksa kedua persamaan permukaan.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\mathbf r(t)=\langle f,g,h\rangle\); limit dan kekontinuan dihitung per komponen.</li>
+<li>Kurva penting: garis \(\mathbf r_0+t\mathbf v\), heliks \(\langle a\cos t,a\sin t,bt\rangle\), kubik terpilin \(\langle t,t^2,t^3\rangle\).</li>
+<li>Parametrisasi irisan permukaan: parametrisasikan proyeksi, lalu selesaikan peubah ketiga.</li>
+<li>Perpotongan jalur \(\ne\) tabrakan.</li>
+</ul>
+<p>Berikutnya <a href="b13-2.html">13.2</a>: turunan dan integral fungsi vektor.</p>

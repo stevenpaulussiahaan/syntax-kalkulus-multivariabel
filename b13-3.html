@@ -1,0 +1,75 @@
+<p>Dua pertanyaan geometris alami pada kurva ruang: <em>berapa panjangnya?</em> dan <em>seberapa tajam ia melengkung?</em> Jawaban pertama adalah panjang busur; jawaban kedua adalah kelengkungan. Dari keduanya lahir kerangka \(\mathbf T,\mathbf N,\mathbf B\) yang bergerak sepanjang kurva.</p>
+
+<h2>1. Panjang busur</h2>
+<div class="box def"><span class="t">Panjang busur kurva ruang</span>
+<p>Untuk kurva mulus \(\mathbf r(t)=\langle f,g,h\rangle\), \(a\le t\le b\), yang ditelusuri tepat satu kali,
+\[ L=\int_a^b\sqrt{f'(t)^2+g'(t)^2+h'(t)^2}\,dt=\int_a^b|\mathbf r'(t)|\,dt. \]</p></div>
+<p><strong>Gagasan.</strong> Bagi \([a,b]\) menjadi selang kecil \(\Delta t\). Panjang ruas lurus antar titik \(\mathbf r(t_{i-1})\) dan \(\mathbf r(t_i)\) adalah \(\approx|\mathbf r'(t_i)|\Delta t\). Menjumlahkan dan mengambil limit memberi integral. Ini perluasan rumus di bidang (10.2) ke tiga dimensi.</p>
+<div class="box ex"><span class="t">Contoh 1 — panjang satu putaran heliks</span>
+<p>\(\mathbf r=\langle\cos t,\sin t,t\rangle\), \(|\mathbf r'|=\sqrt2\), \(0\le t\le2\pi\): \(L=\int_0^{2\pi}\sqrt2\,dt=2\sqrt2\,\pi\approx8{,}886\). Cek geometris: bila silinder dibuka, satu putaran berupa sisi miring segitiga siku-siku dengan alas \(2\pi\) (keliling) dan tinggi \(2\pi\): \(\sqrt{(2\pi)^2+(2\pi)^2}=2\pi\sqrt2\). Cocok.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — kubik terpilin</span>
+<p>\(\mathbf r=\langle t,t^2,t^3\rangle\), \(0\le t\le1\): \(|\mathbf r'|=\sqrt{1+4t^2+9t^4}\) tidak punya antiturunan elementer sederhana. Integrasi numerik (Simpson) memberi \(L\approx1{,}863\). Bandingkan jarak lurus dari \((0,0,0)\) ke \((1,1,1)\): \(\sqrt3\approx1{,}732\lt1{,}863\), sesuai harapan bahwa kurva lebih panjang dari ruas lurus.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — kurva bidang \(y=x^2\)</span>
+<p>Parametrisasi \(\langle t,t^2,0\rangle\), \(0\le t\le1\): \(L=\int_0^1\sqrt{1+4t^2}\,dt=\dfrac{2\sqrt5+\sinh^{-1}2}{4}\approx1{,}479\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — kurva lain, hasil tertutup</span>
+<p>\(\mathbf r=\langle2t,\ t^2,\ \tfrac13t^3\rangle\), \(0\le t\le3\): \(|\mathbf r'|=\sqrt{4+4t^2+t^4}=\sqrt{(t^2+2)^2}=t^2+2\). Maka \(L=\int_0^3(t^2+2)\,dt=9+6=15\).</p></div>
+
+<h2>2. Fungsi panjang busur dan parametrisasi dengan panjang busur</h2>
+<p>Fungsi panjang busur dari titik acuan \(t=a\):
+\[ s(t)=\int_a^t|\mathbf r'(u)|\,du,\qquad \frac{ds}{dt}=|\mathbf r'(t)|. \]
+Bila \(\mathbf r'\ne\mathbf0\), \(s\) naik tegas dan dapat dibalik: \(t=t(s)\). Kurva yang ditulis dalam \(s\), \(\mathbf r(t(s))\), disebut <strong>parametrisasi panjang busur</strong>; padanya \(|d\mathbf r/ds|=1\) (laju satu).</p>
+<div class="box ex"><span class="t">Contoh 5 — heliks dengan parameter \(s\)</span>
+<p>Untuk \(\langle\cos t,\sin t,t\rangle\) dengan acuan \(t=0\): \(s=\sqrt2\,t\Rightarrow t=s/\sqrt2\). Jadi \(\mathbf r(s)=\bigl\langle\cos\frac s{\sqrt2},\ \sin\frac s{\sqrt2},\ \frac s{\sqrt2}\bigr\rangle\). Pemeriksaan: \(\mathbf r'(s)=\frac1{\sqrt2}\langle-\sin,\cos,1\rangle\) dan \(|\mathbf r'(s)|=1\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — titik pada jarak tertentu</span>
+<p>Mulai dari \((1,0,0)\) bergerak sejauh \(4\) satuan sepanjang heliks pada arah \(t\) naik. Titiknya \(t=4/\sqrt2=2\sqrt2\approx2{,}828\), yaitu \((\cos2{,}828,\ \sin2{,}828,\ 2{,}828)\approx(-0{,}951,\ 0{,}309,\ 2{,}828)\).</p></div>
+
+<h2>3. Kelengkungan</h2>
+<p>Untuk kurva yang diparametrisasi dengan \(s\), vektor singgung satuan \(\mathbf T(s)\) berubah arah. Seberapa cepat arahnya berubah per satuan panjang busur adalah kelengkungannya.</p>
+<div class="box def"><span class="t">Kelengkungan</span>
+<p>\[ \kappa=\Bigl|\frac{d\mathbf T}{ds}\Bigr|=\frac{|\mathbf T'(t)|}{|\mathbf r'(t)|}. \]
+Garis lurus: \(\mathbf T\) konstan, \(\kappa=0\). Lingkaran jari-jari \(R\): \(\kappa=1/R\). <strong>Jari-jari kelengkungan</strong> adalah \(\rho=1/\kappa\).</p></div>
+<div class="box def"><span class="t">Rumus yang lebih praktis</span>
+<p>\[ \kappa(t)=\frac{|\mathbf r'(t)\times\mathbf r''(t)|}{|\mathbf r'(t)|^3}. \]
+Untuk kurva bidang \(y=f(x)\): \(\displaystyle\kappa(x)=\frac{|f''(x)|}{\bigl[1+f'(x)^2\bigr]^{3/2}}\).</p></div>
+<p><strong>Penurunan rumus \(\mathbf r'\times\mathbf r''\).</strong> Tulis \(\mathbf r'=|\mathbf r'|\mathbf T=v\mathbf T\) dengan \(v=ds/dt\). Turunkan: \(\mathbf r''=v'\mathbf T+v\mathbf T'\). Maka \(\mathbf r'\times\mathbf r''=v\mathbf T\times(v'\mathbf T+v\mathbf T')=v^2(\mathbf T\times\mathbf T')\) karena \(\mathbf T\times\mathbf T=\mathbf0\). Karena \(\mathbf T'\perp\mathbf T\) (13.2, Contoh 5), \(|\mathbf T\times\mathbf T'|=|\mathbf T||\mathbf T'|=|\mathbf T'|\). Jadi \(|\mathbf r'\times\mathbf r''|=v^2|\mathbf T'|\), dan \(\kappa=|\mathbf T'|/v=|\mathbf r'\times\mathbf r''|/v^3\). \(\blacksquare\)</p>
+<div class="box ex"><span class="t">Contoh 7 — heliks</span>
+<p>\(\mathbf r'=\langle-\sin t,\cos t,1\rangle\), \(\mathbf r''=\langle-\cos t,-\sin t,0\rangle\). \(\mathbf r'\times\mathbf r''=\langle\sin t,\,-\cos t,\,1\rangle\) (hitung: komponen \(i\): \(\cos t\cdot0-1\cdot(-\sin t)=\sin t\); \(j\): \(1\cdot(-\cos t)-(-\sin t)\cdot0=-\cos t\); \(k\): \(\sin^2t+\cos^2t=1\)). Panjangnya \(\sqrt2\); \(|\mathbf r'|^3=2\sqrt2\). \(\kappa=\dfrac{\sqrt2}{2\sqrt2}=\dfrac12\). Umumnya, untuk \(\langle a\cos t,a\sin t,bt\rangle\), \(\kappa=\dfrac a{a^2+b^2}\) konstan. Bila \(b=0\) kembali ke lingkaran: \(\kappa=1/a\).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — kubik terpilin di \(t=1\)</span>
+<p>\(\mathbf r'(1)=\langle1,2,3\rangle\), \(\mathbf r''(1)=\langle0,2,6\rangle\), \(\mathbf r'\times\mathbf r''=\langle12-6,\ 0-6,\ 2-0\rangle=\langle6,-6,2\rangle\), panjang \(\sqrt{76}=2\sqrt{19}\). \(|\mathbf r'|^3=14\sqrt{14}\). \(\kappa(1)=\dfrac{2\sqrt{19}}{14\sqrt{14}}\approx0{,}1664\), jari-jari kelengkungan \(\approx6{,}01\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — parabola \(y=x^2\)</span>
+<p>\(f'=2x\), \(f''=2\): \(\kappa(x)=\dfrac2{(1+4x^2)^{3/2}}\). Di titik puncak \(x=0\): \(\kappa=2\), jari-jari \(\frac12\) (paling melengkung). Di \(x=1\): \(\kappa=2/5^{3/2}\approx0{,}1789\). Untuk \(|x|\to\infty\), \(\kappa\to0\): parabola makin mendekati lurus.</p></div>
+<div class="box ex"><span class="t">Contoh 10 — kelengkungan maksimum</span>
+<p>Untuk \(y=e^x\): \(\kappa=\dfrac{e^x}{(1+e^{2x})^{3/2}}\). Turunkan: maksimum ketika \(1+e^{2x}=3e^{2x}\), yaitu \(e^{2x}=\tfrac12\), \(x=-\tfrac12\ln2\approx-0{,}347\). Nilainya \(\kappa=\dfrac{1/\sqrt2}{(3/2)^{3/2}}=\dfrac{2}{3\sqrt3}\approx0{,}385\).</p></div>
+
+<h2>4. Vektor normal dan binormal; bidang oskulasi</h2>
+<div class="box def"><span class="t">Kerangka TNB</span>
+<p>\[ \mathbf N=\frac{\mathbf T'(t)}{|\mathbf T'(t)|}\ \ (\text{normal utama}),\qquad\mathbf B=\mathbf T\times\mathbf N\ \ (\text{binormal}). \]
+\(\mathbf T,\mathbf N,\mathbf B\) saling tegak lurus dan satuan; \(\mathbf N\) menunjuk ke sisi cekung kurva. Bidang yang memuat \(\mathbf T\) dan \(\mathbf N\) adalah <strong>bidang oskulasi</strong> (normalnya \(\mathbf B\)); bidang yang memuat \(\mathbf N\) dan \(\mathbf B\) adalah <strong>bidang normal</strong> (normalnya \(\mathbf T\)). <strong>Lingkaran oskulasi</strong> berada di bidang oskulasi, berpusat di sisi \(\mathbf N\) pada jarak \(\rho=1/\kappa\), dan menyinggung kurva.</p></div>
+<figure><img src="assets/img/b13-3-tnb.png" alt="Kerangka TNB pada heliks"><figcaption>Vektor \(\mathbf T,\mathbf N,\mathbf B\) pada heliks.</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 11 — TNB heliks</span>
+<p>\(\mathbf T=\frac1{\sqrt2}\langle-\sin t,\cos t,1\rangle\), \(\mathbf T'=\frac1{\sqrt2}\langle-\cos t,-\sin t,0\rangle\), \(\mathbf N=\langle-\cos t,-\sin t,0\rangle\) (mengarah ke sumbu silinder). \(\mathbf B=\mathbf T\times\mathbf N=\frac1{\sqrt2}\langle\sin t,-\cos t,1\rangle\). Di \(t=0\): titik \((1,0,0)\), \(\mathbf B=\frac1{\sqrt2}\langle0,-1,1\rangle\); bidang oskulasi: \(-y+z=0\), yaitu \(z=y\). Bidang normal (normal \(\mathbf T(0)\propto\langle0,1,1\rangle\)): \(y+z=0\).</p></div>
+<div class="box ex"><span class="t">Contoh 12 — lingkaran oskulasi parabola</span>
+<p>Di titik puncak parabola \(y=x^2\): \(\kappa=2\), \(\rho=\tfrac12\), \(\mathbf N\) menunjuk ke atas. Lingkaran oskulasinya berpusat di \((0,\tfrac12)\) dengan persamaan \(x^2+(y-\tfrac12)^2=\tfrac14\). Lingkaran ini menempel erat pada parabola: keduanya bersinggungan dengan kelengkungan yang sama.</p></div>
+<figure><img src="assets/img/b13-3-oskulasi.png" alt="Lingkaran oskulasi"><figcaption>Lingkaran oskulasi parabola \(y=x^2\) di titik asal.</figcaption></figure>
+
+<h2>5. Torsi (pilihan)</h2>
+<p>Kelengkungan mengukur pembengkokan kurva dalam bidang oskulasi. <strong>Torsi</strong> \(\tau\) mengukur seberapa cepat bidang oskulasi itu sendiri berputar (kurva keluar dari bidangnya):
+\[ \tau=\frac{(\mathbf r'\times\mathbf r'')\cdot\mathbf r'''}{|\mathbf r'\times\mathbf r''|^2}. \]
+Kurva bidang mempunyai \(\tau=0\). Untuk heliks \(\mathbf r'''=\langle\sin t,-\cos t,0\rangle\) dan \(\mathbf r'\times\mathbf r''=\langle\sin t,-\cos t,1\rangle\): pembilang \(=1\), penyebut \(=2\), \(\tau=\tfrac12\). Untuk \(\langle a\cos t,a\sin t,bt\rangle\), \(\tau=\dfrac b{a^2+b^2}\).</p>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Menyamakan \(|\mathbf r'|\) dengan 1. Itu hanya benar untuk parametrisasi panjang busur.</li>
+<li>Memakai \(|\mathbf T'|\) sebagai kelengkungan tanpa membagi dengan \(|\mathbf r'|\) bila parameter bukan \(s\).</li>
+<li>Mengira \(\kappa\) konstan berarti lingkaran. Heliks juga mempunyai \(\kappa\) konstan.</li>
+<li>Salah memilih arah \(\mathbf N\): ia selalu menuju sisi cekung, tegak lurus \(\mathbf T\).</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(L=\int_a^b|\mathbf r'|\,dt\); \(ds/dt=|\mathbf r'|\).</li>
+<li>\(\kappa=|\mathbf T'|/|\mathbf r'|=|\mathbf r'\times\mathbf r''|/|\mathbf r'|^3\); untuk \(y=f(x)\): \(|f''|/(1+f'^2)^{3/2}\).</li>
+<li>\(\mathbf T,\mathbf N=\mathbf T'/|\mathbf T'|,\mathbf B=\mathbf T\times\mathbf N\); bidang oskulasi dan lingkaran oskulasi.</li>
+<li>Torsi mengukur keluarnya kurva dari bidang oskulasi.</li>
+</ul>
+<p>Berikutnya <a href="b13-4.html">13.4</a>: gerak dalam ruang.</p>

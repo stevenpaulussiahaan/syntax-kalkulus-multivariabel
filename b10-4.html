@@ -1,0 +1,74 @@
+<h2>1. Luas daerah kutub</h2>
+<p>Dasar dari semuanya adalah luas <em>juring</em> (sektor) lingkaran. Juring berjari-jari \(r\) dengan sudut pusat \(\theta\) (radian) memiliki luas
+\[ A=\tfrac12 r^2\theta, \tag{1} \]
+karena luasnya sebanding dengan sudut pusat: \(\dfrac{\theta}{2\pi}\cdot\pi r^2\).</p>
+<p>Misalkan \(\mathcal R\) adalah daerah yang dibatasi kurva \(r=f(\theta)\) dan dua sinar \(\theta=a\) dan \(\theta=b\), dengan \(f\) kontinu dan positif serta \(0\lt b-a\le2\pi\). Bagi \([a,b]\) menjadi \(n\) bagian sama lebar \(\Delta\theta\). Sinar-sinar pembagi memecah \(\mathcal R\) menjadi \(n\) irisan tipis.
+Irisan ke-\(i\) dihampiri juring berjari-jari \(f(\theta_i^*)\) dan sudut \(\Delta\theta\), maka luasnya \(\approx\tfrac12[f(\theta_i^*)]^2\Delta\theta\). Menjumlahkan lalu mengambil limit \(n\to\infty\) menghasilkan integral:</p>
+<div class="box def"><span class="t">Rumus luas</span>
+\[ A=\int_a^b\tfrac12\,[f(\theta)]^2\,d\theta=\int_a^b\tfrac12\,r^2\,d\theta. \]
+Bayangkan sinar yang berputar dari \(\theta=a\) ke \(\theta=b\) menyapu daerah itu.</div>
+
+<div class="box ex"><span class="t">Contoh 1 — satu daun mawar \(r=\cos2\theta\)</span>
+<p>Daun di sisi kanan disapu sinar dari \(\theta=-\tfrac\pi4\) sampai \(\tfrac\pi4\) (karena \(r\ge0\) di sana dan \(r=0\) di kedua ujungnya). Dengan simetri terhadap sumbu \(x\):
+\[ A=\int_{-\pi/4}^{\pi/4}\tfrac12\cos^22\theta\,d\theta=\int_0^{\pi/4}\cos^22\theta\,d\theta=\int_0^{\pi/4}\tfrac12(1+\cos4\theta)\,d\theta=\Bigl[\tfrac\theta2+\tfrac18\sin4\theta\Bigr]_0^{\pi/4}=\frac\pi8. \]
+Karena keempat daun kongruen, luas seluruh mawar \(=4\cdot\tfrac\pi8=\tfrac\pi2\).</p></div>
+<p>Kerjakan juga dengan alat: kalkulator Python, pilih <em>Luas daerah kutub</em>, \(r(t)=\cos(2*t)\), batas \(-pi/4\) sampai \(pi/4\), hasil \(\approx0.3927=\pi/8\).</p>
+
+<div class="box ex"><span class="t">Contoh 2 — luas kardioid utuh</span>
+<p>\(r=1+\sin\theta\), \(0\le\theta\le2\pi\):
+\[ A=\tfrac12\int_0^{2\pi}(1+2\sin\theta+\sin^2\theta)\,d\theta=\tfrac12\Bigl[\theta-2\cos\theta+\tfrac\theta2-\tfrac14\sin2\theta\Bigr]_0^{2\pi}=\tfrac12\cdot3\pi=\frac{3\pi}2. \]</p></div>
+
+<h2>2. Luas di antara dua kurva kutub</h2>
+<p>Bila \(\mathcal R\) dibatasi kurva dalam \(r=g(\theta)\) dan kurva luar \(r=f(\theta)\) untuk \(a\le\theta\le b\) (dengan \(f\ge g\ge0\)), luasnya adalah luas daerah luar dikurangi luas daerah dalam:
+\[ A=\tfrac12\int_a^b\bigl([f(\theta)]^2-[g(\theta)]^2\bigr)\,d\theta. \]</p>
+<div class="box ex"><span class="t">Contoh 3 — di dalam lingkaran, di luar kardioid</span>
+<p>Cari luas daerah di dalam \(r=3\sin\theta\) dan di luar \(r=1+\sin\theta\).</p>
+<p><strong>Langkah 1: titik potong.</strong> \(3\sin\theta=1+\sin\theta\Rightarrow\sin\theta=\tfrac12\Rightarrow\theta=\tfrac\pi6,\tfrac{5\pi}6\). Itulah batas \(a,b\).</p>
+<p><strong>Langkah 2: integral.</strong> Pada \(\tfrac\pi6\le\theta\le\tfrac{5\pi}6\), lingkaran adalah kurva luar. Karena daerah simetris terhadap sumbu \(y\) (\(\theta=\pi/2\)), hitung separuh lalu gandakan:
+\[ A=2\cdot\tfrac12\int_{\pi/6}^{\pi/2}\bigl(9\sin^2\theta-(1+2\sin\theta+\sin^2\theta)\bigr)d\theta=\int_{\pi/6}^{\pi/2}(8\sin^2\theta-2\sin\theta-1)\,d\theta. \]
+Gunakan \(\sin^2\theta=\tfrac12(1-\cos2\theta)\): integran menjadi \(3-4\cos2\theta-2\sin\theta\), sehingga
+\[ A=\Bigl[3\theta-2\sin2\theta+2\cos\theta\Bigr]_{\pi/6}^{\pi/2}=\Bigl(\tfrac{3\pi}2+0\Bigr)-\Bigl(\tfrac\pi2-\sqrt3+\sqrt3\Bigr)=\pi. \]
+(Perhatikan: di \(\theta=\pi/6\), \(-2\sin\tfrac\pi3=-\sqrt3\) dan \(2\cos\tfrac\pi6=\sqrt3\), sehingga saling menghapus.) Luas \(=\pi\).</p></div>
+<figure><img src="assets/img/b10-4-luas.png" alt="Luas kutub"><figcaption>Kiri: satu daun \(r=\cos2\theta\). Kanan: daerah di dalam lingkaran dan di luar kardioid pada Contoh 3.</figcaption></figure>
+
+<div class="box note"><span class="t">PERINGATAN: titik potong kurva kutub</span>
+<p>Karena satu titik memiliki banyak representasi, menyelesaikan \(f(\theta)=g(\theta)\) <em>tidak</em> selalu menemukan semua titik potong. Pada Contoh 3, lingkaran dan kardioid memotong di \((\tfrac32,\tfrac\pi6)\) dan \((\tfrac32,\tfrac{5\pi}6)\) <em>dan juga di kutub</em>.
+Kutub tidak ditemukan dari penyelesaian persamaan karena kutub bukan \((r,\theta)\) yang sama untuk kedua kurva: lingkaran mencapai kutub di \(\theta=0,\pi\) (\(3\sin\theta=0\)), sedangkan kardioid mencapainya di \(\theta=\tfrac{3\pi}2\).
+Pikirkan dua titik yang bergerak sepanjang kurva masing-masing saat \(\theta\) naik: mereka tidak <em>bertabrakan</em> di kutub karena tiba pada waktu berbeda, tetapi kurvanya tetap berpotongan di sana.</p>
+<p><strong>Saran:</strong> selalu gambar kedua kurva (dengan komputer bila perlu), dan periksa kutub secara terpisah.</p></div>
+
+<div class="box ex"><span class="t">Contoh 4 — semua titik potong \(r=\cos2\theta\) dan \(r=\tfrac12\)</span>
+<p>Dari \(\cos2\theta=\tfrac12\) diperoleh \(2\theta=\pm\tfrac\pi3+2k\pi\), jadi \(\theta=\tfrac\pi6,\tfrac{5\pi}6,\tfrac{7\pi}6,\tfrac{11\pi}6\): empat titik. Dari gambar ada empat titik lagi, yaitu \((\tfrac12,\tfrac\pi3),(\tfrac12,\tfrac{2\pi}3),(\tfrac12,\tfrac{4\pi}3),(\tfrac12,\tfrac{5\pi}3)\).
+Titik-titik ini ditemukan lewat simetri, atau dengan menulis lingkaran sebagai \(r=-\tfrac12\) dan menyelesaikan \(\cos2\theta=-\tfrac12\). Total delapan titik potong.</p></div>
+
+<h2>3. Panjang kurva kutub</h2>
+<p>Jadikan \(\theta\) parameter: \(x=r\cos\theta,\ y=r\sin\theta\), \(r=f(\theta)\). Turunkan:
+\[ \frac{dx}{d\theta}=\frac{dr}{d\theta}\cos\theta-r\sin\theta,\qquad\frac{dy}{d\theta}=\frac{dr}{d\theta}\sin\theta+r\cos\theta. \]
+Kuadratkan dan jumlahkan; suku silang \(\mp2r\,\tfrac{dr}{d\theta}\sin\theta\cos\theta\) saling menghapus dan \(\cos^2\theta+\sin^2\theta=1\):
+\[ \Bigl(\frac{dx}{d\theta}\Bigr)^2+\Bigl(\frac{dy}{d\theta}\Bigr)^2=\Bigl(\frac{dr}{d\theta}\Bigr)^2+r^2. \]
+Dengan rumus panjang kurva parametrik (Bagian 10.2) kita dapatkan</p>
+<div class="box def"><span class="t">Rumus panjang</span>
+\[ L=\int_a^b\sqrt{r^2+\Bigl(\frac{dr}{d\theta}\Bigr)^2}\;d\theta. \]</div>
+<div class="box ex"><span class="t">Contoh 5 — keliling kardioid</span>
+<p>\(r=1+\sin\theta\), \(\dfrac{dr}{d\theta}=\cos\theta\):
+\[ r^2+r'^2=1+2\sin\theta+\sin^2\theta+\cos^2\theta=2+2\sin\theta. \]
+Integral \(\int_0^{2\pi}\sqrt{2+2\sin\theta}\,d\theta\) dapat dihitung dengan mengalikan dan membagi dengan \(\sqrt{2-2\sin\theta}\), atau dengan identitas setengah-sudut (\(1+\sin\theta=2\sin^2(\tfrac\theta2+\tfrac\pi4)\)). Hasilnya \(L=8\). Periksa numerik di kalkulator Python (hasil \(\approx7.9999999\)).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — spiral \(r=\theta\)</span>
+<p>Di sini \(r=\theta\) dan \(dr/d\theta=1\), jadi
+\[ L=\int_0^{\pi}\sqrt{\theta^2+1}\,d\theta=\Bigl[\tfrac\theta2\sqrt{\theta^2+1}+\tfrac12\ln\bigl(\theta+\sqrt{\theta^2+1}\bigr)\Bigr]_0^{\pi}
+=\tfrac\pi2\sqrt{\pi^2+1}+\tfrac12\ln\bigl(\pi+\sqrt{\pi^2+1}\bigr)\approx5.18+0.93\approx6.11. \]
+(Antiturunan \(\int\sqrt{\theta^2+1}\,d\theta\) diperoleh dengan substitusi trigonometri \(\theta=\tan u\).)</p></div>
+
+<h2>4. Luas permukaan benda putar (kurva kutub)</h2>
+<p>Jika kurva \(r=f(\theta)\), \(a\le\theta\le b\), diputar mengelilingi sumbu kutub (sumbu \(x\)), maka dengan \(y=r\sin\theta\) dan elemen busur kutub di atas,
+\[ S=\int_a^b2\pi\,r\sin\theta\,\sqrt{r^2+\Bigl(\frac{dr}{d\theta}\Bigr)^2}\,d\theta. \]
+Untuk diputar mengelilingi sumbu \(y\), ganti \(\sin\theta\) dengan \(\cos\theta\) (karena \(x=r\cos\theta\)).</p>
+
+<h2>5. Ringkasan</h2>
+<table class="t">
+<tr><th>Besaran</th><th>Rumus</th></tr>
+<tr><td>Luas daerah sampai kutub</td><td>\(\tfrac12\int_a^b r^2\,d\theta\)</td></tr>
+<tr><td>Luas antara dua kurva</td><td>\(\tfrac12\int_a^b(r_{luar}^2-r_{dalam}^2)\,d\theta\)</td></tr>
+<tr><td>Panjang kurva</td><td>\(\int_a^b\sqrt{r^2+(dr/d\theta)^2}\,d\theta\)</td></tr>
+<tr><td>Luas permukaan putar (sumbu kutub)</td><td>\(\int_a^b2\pi r\sin\theta\sqrt{r^2+(dr/d\theta)^2}\,d\theta\)</td></tr>
+</table>

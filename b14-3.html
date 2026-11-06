@@ -1,0 +1,66 @@
+<p>Pada fungsi satu peubah, turunan mengukur laju perubahan. Pada fungsi dua peubah, laju perubahan bergantung pada arah. Langkah pertama yang paling sederhana: menggerakkan satu peubah saja dan menahan yang lain tetap.</p>
+
+<h2>1. Definisi dan notasi</h2>
+<div class="box def"><span class="t">Turunan parsial</span>
+<p>Untuk \(f(x,y)\):
+\[ f_x(a,b)=\lim_{h\to0}\frac{f(a+h,b)-f(a,b)}h,\qquad f_y(a,b)=\lim_{h\to0}\frac{f(a,b+h)-f(a,b)}h \]
+bila limitnya ada. Notasi lain: \(f_x=\dfrac{\partial f}{\partial x}=\dfrac{\partial z}{\partial x}=D_xf\).</p></div>
+<p><strong>Cara menghitung.</strong> Untuk \(f_x\): anggap \(y\) konstanta dan turunkan terhadap \(x\) dengan aturan biasa. Untuk \(f_y\): anggap \(x\) konstanta.</p>
+<div class="box ex"><span class="t">Contoh 1 — turunan polinomial</span>
+<p>\(f(x,y)=x^3+x^2y^3-2y^2\): \(f_x=3x^2+2xy^3\), \(f_y=3x^2y^2-4y\). Di \((2,1)\): \(f_x=12+4=16\), \(f_y=12-4=8\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — fungsi transenden</span>
+<p>\(f(x,y)=e^{xy}\sin(x+y)\): \(f_x=ye^{xy}\sin(x+y)+e^{xy}\cos(x+y)\), \(f_y=xe^{xy}\sin(x+y)+e^{xy}\cos(x+y)\). \(g(x,y)=\dfrac{x}{x^2+y^2}\): \(g_x=\dfrac{(x^2+y^2)-2x^2}{(x^2+y^2)^2}=\dfrac{y^2-x^2}{(x^2+y^2)^2}\), \(g_y=\dfrac{-2xy}{(x^2+y^2)^2}\).</p></div>
+
+<h2>2. Tafsir geometris dan laju perubahan</h2>
+<p>Grafik \(z=f(x,y)\) dipotong bidang \(y=b\) menghasilkan kurva \(z=f(x,b)\). \(f_x(a,b)\) adalah <strong>kemiringan garis singgung</strong> kurva ini di titik \((a,b,f(a,b))\). Serupa, \(f_y(a,b)\) adalah kemiringan kurva \(z=f(a,y)\). Sebagai laju perubahan: \(f_x\) adalah laju perubahan \(z\) terhadap \(x\) ketika \(y\) tetap.</p>
+<figure><img src="assets/img/b14-3-parsial.png" alt="Turunan parsial"><figcaption>Permukaan \(z=4-x^2-2y^2\); kurva merah (\(y=1\)) dan hijau (\(x=1\)) dengan garis singgungnya di \((1,1,1)\).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 3 — singgung pada irisan</span>
+<p>\(f=4-x^2-2y^2\), di \((1,1)\): \(f=1\), \(f_x=-2x=-2\), \(f_y=-4y=-4\). Garis singgung pada irisan \(y=1\): arah \(\langle1,0,-2\rangle\); pada irisan \(x=1\): arah \(\langle0,1,-4\rangle\). Keduanya menentukan bidang singgung (14.4).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — membaca kontur</span>
+<p>Pada peta suhu, jika \(T_x\gt0\) di sebuah titik, suhu naik bila kita bergerak ke timur (arah \(x\) positif). Bila \(T(x,y)=\frac{100}{1+x^2+2y^2}\) (14.1), di \((1,1)\): \(T_x=-\dfrac{200x}{(1+x^2+2y^2)^2}=-12{,}5\), \(T_y=-\dfrac{400y}{(\cdot)^2}=-25\). Suhu turun 12,5 derajat per satuan jarak ke arah \(x\) dan 25 derajat per satuan ke arah \(y\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — gas ideal</span>
+<p>\(PV=nRT\). Dengan \(P=\dfrac{nRT}V\): \(\dfrac{\partial P}{\partial V}=-\dfrac{nRT}{V^2}\) (tekanan turun bila volume naik pada suhu tetap) dan \(\dfrac{\partial P}{\partial T}=\dfrac{nR}V\). Hubungan siklik: \(\dfrac{\partial V}{\partial T}=\dfrac{nR}P\) dan \(\dfrac{\partial T}{\partial P}=\dfrac V{nR}\), sehingga
+\[ \frac{\partial P}{\partial V}\,\frac{\partial V}{\partial T}\,\frac{\partial T}{\partial P}=-\frac{nRT}{V^2}\cdot\frac{nR}P\cdot\frac V{nR}=-\frac{nRT}{PV}=-1. \]
+Hasilnya \(-1\), bukan \(+1\) seperti yang "tampak" bila \(\partial\) dianggap pecahan biasa.</p></div>
+
+<h2>3. Fungsi tiga peubah atau lebih</h2>
+<p>Turunkan terhadap satu peubah, anggap semua yang lain konstan.</p>
+<div class="box ex"><span class="t">Contoh 6 — tiga peubah</span>
+<p>\(f(x,y,z)=xy+yz^2+e^{xz}\): \(f_x=y+ze^{xz}\), \(f_y=x+z^2\), \(f_z=2yz+xe^{xz}\). Di \((1,2,0)\): \(f_x=2\), \(f_y=1\), \(f_z=1\).</p></div>
+
+<h2>4. Turunan parsial orde tinggi</h2>
+<p>\((f_x)_x=f_{xx}=\dfrac{\partial^2f}{\partial x^2}\), \((f_x)_y=f_{xy}=\dfrac{\partial^2f}{\partial y\,\partial x}\), dan seterusnya. Untuk \(f=x^3y^2-2x\,y+y^4\): \(f_x=3x^2y^2-2y\), \(f_y=2x^3y-2x+4y^3\); \(f_{xx}=6xy^2\), \(f_{xy}=6x^2y-2\), \(f_{yx}=6x^2y-2\), \(f_{yy}=2x^3+12y^2\).</p>
+<div class="box def"><span class="t">Teorema Clairaut</span>
+<p>Bila \(f_{xy}\) dan \(f_{yx}\) kontinu pada cakram yang memuat \((a,b)\), maka \(f_{xy}(a,b)=f_{yx}(a,b)\).</p></div>
+<p>Akibatnya, untuk fungsi yang cukup mulus urutan turunan tidak penting. Ini menghemat pekerjaan: untuk \(f=\sin(xy^2)+e^{x}\ln y\) lebih mudah memilih urutan yang menghasilkan ekspresi sederhana.</p>
+<div class="box ex"><span class="t">Contoh 7 — memilih urutan</span>
+<p>\(f(x,y,z)=e^{yz}\cos x+z^3y\). Untuk \(f_{zyx}\): turunkan lebih dulu terhadap \(x\): \(f_x=-e^{yz}\sin x\); lalu \(y\): \(-ze^{yz}\sin x\); lalu \(z\): \(-(1+yz)e^{yz}\sin x\). Mengubah urutan tidak mengubah hasil.</p></div>
+
+<h2>5. Persamaan diferensial parsial</h2>
+<div class="box ex"><span class="t">Contoh 8 — persamaan Laplace</span>
+<p>\(u_{xx}+u_{yy}=0\) dipenuhi \(u=e^x\sin y\): \(u_{xx}=e^x\sin y\), \(u_{yy}=-e^x\sin y\), jumlah 0. Juga \(u=\ln(x^2+y^2)\): \(u_x=\frac{2x}{x^2+y^2}\), \(u_{xx}=\frac{2(y^2-x^2)}{(x^2+y^2)^2}\), dan karena simetri \(u_{yy}=\frac{2(x^2-y^2)}{(x^2+y^2)^2}\); jumlah 0. Fungsi seperti ini disebut <em>harmonik</em>; mereka menggambarkan suhu keadaan tunak dan potensial listrik.</p></div>
+<div class="box ex"><span class="t">Contoh 9 — persamaan gelombang</span>
+<p>\(u_{tt}=c^2u_{xx}\). Untuk \(u=\sin(x-ct)\): \(u_{tt}=-c^2\sin(x-ct)\), \(u_{xx}=-\sin(x-ct)\), sehingga \(u_{tt}=c^2u_{xx}\). Gelombang yang merambat ke kanan dengan laju \(c\).</p></div>
+<div class="box ex"><span class="t">Contoh 10 — persamaan panas</span>
+<p>\(u_t=ku_{xx}\). Untuk \(u=e^{-kt}\sin x\): \(u_t=-ke^{-kt}\sin x\), \(u_{xx}=-e^{-kt}\sin x\), jadi \(u_t=ku_{xx}\). Pola sinus meluruh secara eksponensial karena panas menyebar.</p></div>
+
+<h2>6. Turunan implisit</h2>
+<div class="box ex"><span class="t">Contoh 11 — \(z\) sebagai fungsi implisit</span>
+<p>\(x^3+y^3+z^3=6xyz\) mendefinisikan \(z\) implisit. Turunkan terhadap \(x\) (anggap \(y\) tetap): \(3x^2+3z^2z_x=6yz+6xyz_x\Rightarrow z_x(3z^2-6xy)=6yz-3x^2\), jadi \(z_x=\dfrac{2yz-x^2}{z^2-2xy}\). Serupa \(z_y=\dfrac{2xz-y^2}{z^2-2xy}\). Di titik \((1,2,3)\) (periksa: \(1+8+27=36=6\cdot6\)): \(z_x=\dfrac{12-1}{9-4}=\dfrac{11}5\).</p></div>
+
+<h2>7. Kesalahan umum</h2>
+<ul>
+<li>Lupa menganggap peubah lain konstan, mis. menurunkan \(y\) pada \(f_x\).</li>
+<li>Menulis \(\partial z/\partial x=\) "\(dz/dx\)" begitu saja; notasi \(\partial\) menandakan peubah lain ditahan.</li>
+<li>Mengira Clairaut berlaku tanpa kekontinuan turunan orde dua.</li>
+<li>Kesalahan tanda pada turunan hasil bagi atau rantai.</li>
+</ul>
+
+<h2>8. Ringkasan</h2>
+<ul>
+<li>\(f_x\) menahan \(y\) tetap; \(f_y\) menahan \(x\) tetap. Geometris: kemiringan irisan.</li>
+<li>Turunan orde tinggi; Clairaut: \(f_{xy}=f_{yx}\) bila kontinu.</li>
+<li>Beberapa PDP penting: Laplace, gelombang, panas.</li>
+<li>Turunan implisit dengan menurunkan kedua ruas.</li>
+</ul>
+<p>Berikutnya <a href="b14-4.html">14.4 Bidang Singgung dan Hampiran Linear</a>.</p>

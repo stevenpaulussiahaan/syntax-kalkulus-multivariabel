@@ -1,0 +1,69 @@
+<p>Integral tentu menjumlahkan sepanjang sebuah selang pada sumbu. <strong>Integral garis</strong> menjumlahkan sepanjang sebuah <em>kurva</em> di bidang atau ruang. Ada dua jenis, tergantung apa yang dijumlahkan: besaran skalar (massa kawat) atau komponen medan vektor searah kurva (usaha).</p>
+
+<h2>1. Integral garis terhadap panjang busur</h2>
+<p>Misalkan \(C\) kurva mulus \(\mathbf r(t)=\langle x(t),y(t)\rangle\), \(a\le t\le b\), dan \(f\) fungsi skalar kontinu. Bagi \(C\) menjadi busur kecil dengan panjang \(\Delta s_i\), pilih titik contoh \((x_i^*,y_i^*)\), dan jumlahkan \(f(x_i^*,y_i^*)\Delta s_i\).</p>
+<div class="box def"><span class="t">Integral garis (terhadap \(s\))</span>
+<p>\[ \int_Cf(x,y)\,ds=\lim_{n\to\infty}\sum_{i=1}^nf(x_i^*,y_i^*)\Delta s_i=\int_a^bf\bigl(x(t),y(t)\bigr)\sqrt{x'(t)^2+y'(t)^2}\,dt. \]
+Di ruang: \(\int_Cf\,ds=\int_a^bf(x(t),y(t),z(t))\,|\mathbf r'(t)|\,dt\). Hasilnya tidak bergantung pada parametrisasi dan arah penelusuran.</p></div>
+<p>Dengan \(f\equiv1\) kita memperoleh panjang kurva \(L=\int_Cds\). Bila \(f\ge0\), \(\int_Cf\,ds\) adalah luas "tirai" yang berdiri di atas \(C\) setinggi \(f\).</p>
+<div class="box ex"><span class="t">Contoh 1 — setengah lingkaran</span>
+<p>\(\int_C(2+x^2y)\,ds\), \(C\) bagian atas lingkaran satuan: \(\mathbf r=\langle\cos t,\sin t\rangle\), \(0\le t\le\pi\), \(|\mathbf r'|=1\). \(\int_0^\pi(2+\cos^2t\sin t)\,dt=2\pi+\bigl[-\tfrac13\cos^3t\bigr]_0^\pi=2\pi+\tfrac23\approx6{,}950\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — massa kawat</span>
+<p>Kawat berbentuk heliks \(\mathbf r=\langle\cos t,\sin t,t\rangle\), \(0\le t\le2\pi\), dengan kerapatan linear \(\rho=z\) (g/cm). \(|\mathbf r'|=\sqrt2\). Massa \(=\int_Cz\,ds=\int_0^{2\pi}t\sqrt2\,dt=\sqrt2\cdot2\pi^2\approx27{,}9\) g. Panjang kawat \(=2\pi\sqrt2\approx8{,}886\) cm.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — kurva sepotong-sepotong</span>
+<p>\(\int_Cx\,ds\), \(C\) terdiri dari ruas \(C_1\) dari \((0,0)\) ke \((1,0)\) dan ruas \(C_2\) dari \((1,0)\) ke \((1,1)\). \(C_1\): \(x=t,y=0\), \(ds=dt\): \(\int_0^1t\,dt=\tfrac12\). \(C_2\): \(x=1,y=t\), \(ds=dt\): \(\int_0^11\,dt=1\). Jumlah \(\tfrac32\). Integral garis atas kurva sepotong-sepotong adalah jumlah integral masing-masing potong.</p></div>
+
+<h2>2. Integral garis terhadap \(x\) dan \(y\)</h2>
+<div class="box def"><span class="t">Terhadap \(x\) dan \(y\)</span>
+<p>\[ \int_CP\,dx=\int_a^bP(x(t),y(t))\,x'(t)\,dt,\qquad\int_CQ\,dy=\int_a^bQ(x(t),y(t))\,y'(t)\,dt, \]
+dan \(\int_CP\,dx+Q\,dy=\int_a^b\bigl[P\,x'(t)+Q\,y'(t)\bigr]dt\).</p></div>
+<p>Berbeda dengan \(ds\), integral ini <strong>berubah tanda bila arah kurva dibalik</strong> (\(\int_{-C}P\,dx=-\int_CP\,dx\)), karena \(\Delta x\) berganti tanda.</p>
+
+<h2>3. Integral garis medan vektor (usaha)</h2>
+<p>Bila gaya \(\mathbf F\) bekerja pada partikel yang bergerak sepanjang \(C\), usaha pada busur pendek \(\Delta s_i\) adalah \(\approx\mathbf F\cdot\mathbf T\,\Delta s_i\), dengan \(\mathbf T\) vektor singgung satuan.</p>
+<div class="box def"><span class="t">Integral garis medan vektor</span>
+<p>Untuk medan vektor kontinu \(\mathbf F\) dan kurva mulus \(C:\ \mathbf r(t)\), \(a\le t\le b\):
+\[ \int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F\bigl(\mathbf r(t)\bigr)\cdot\mathbf r'(t)\,dt=\int_C\mathbf F\cdot\mathbf T\,ds. \]
+Dalam komponen, \(\mathbf F=\langle P,Q,R\rangle\): \(\int_CP\,dx+Q\,dy+R\,dz\). Bila \(\mathbf F\) gaya, ini <strong>usaha</strong> yang dilakukan \(\mathbf F\) pada partikel sepanjang \(C\). Bila \(C\) tertutup, ditulis \(\oint_C\mathbf F\cdot d\mathbf r\) (<em>sirkulasi</em>).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — ketergantungan pada lintasan</span>
+<p>\(\mathbf F=\langle-y,x\rangle\), dari \((0,0)\) ke \((1,1)\) lewat dua lintasan (gambar).
+<br>\(C_1\): \(\mathbf r=\langle t,t^2\rangle\), \(\mathbf r'=\langle1,2t\rangle\), \(\mathbf F=\langle-t^2,t\rangle\): \(\int_0^1(-t^2+2t^2)\,dt=\tfrac13\).
+<br>\(C_2\): \(\mathbf r=\langle t,t\rangle\), \(\mathbf F=\langle-t,t\rangle\), \(\mathbf r'=\langle1,1\rangle\): \(\int_0^1(-t+t)\,dt=0\).
+<br>Dua lintasan berbeda, usaha berbeda: medan ini bukan konservatif (16.3).</p></div>
+<figure><img src="assets/img/b16-2-lintasan.png" alt="Dua lintasan"><figcaption>Dua lintasan dari \((0,0)\) ke \((1,1)\) dalam medan \(\langle-y,x\rangle\).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 5 — usaha sepanjang heliks</span>
+<p>\(\mathbf F=\langle x,y,z\rangle\), \(\mathbf r=\langle\cos t,\sin t,t\rangle\), \(0\le t\le2\pi\). \(\mathbf F\cdot\mathbf r'=\cos t(-\sin t)+\sin t\cos t+t=t\). \(\int_0^{2\pi}t\,dt=2\pi^2\approx19{,}74\). (Hasil sama dengan \(\frac12(|\mathbf r(2\pi)|^2-|\mathbf r(0)|^2)=\frac12(1+4\pi^2-1)\), karena medan ini konservatif.)</p></div>
+<div class="box ex"><span class="t">Contoh 6 — sirkulasi pada lingkaran</span>
+<p>\(\mathbf F=\langle-y,x\rangle\), \(C\) lingkaran satuan berlawanan arah jarum jam: \(\mathbf F\cdot\mathbf r'=(-\sin t)(-\sin t)+\cos t\cos t=1\), \(\oint_C\mathbf F\cdot d\mathbf r=2\pi\). Searah jarum jam: \(-2\pi\).</p></div>
+<div class="box ex"><span class="t">Contoh 7 — ruas garis</span>
+<p>\(\mathbf F=\langle xy,\ y-x,\ z\rangle\), \(C\): ruas dari \((0,0,0)\) ke \((1,2,3)\), \(\mathbf r=\langle t,2t,3t\rangle\), \(\mathbf r'=\langle1,2,3\rangle\). \(\mathbf F=\langle2t^2,t,3t\rangle\) (karena \(y-x=2t-t=t\)). \(\mathbf F\cdot\mathbf r'=2t^2+2t+9t=2t^2+11t\). \(\int_0^1(2t^2+11t)\,dt=\tfrac23+\tfrac{11}2=\tfrac{37}6\approx6{,}167\).</p></div>
+
+<h2>4. Fluks melalui kurva bidang</h2>
+<p>Untuk kurva \(C\) tertutup sederhana dan medan \(\mathbf F=\langle P,Q\rangle\), <strong>fluks keluar</strong> melalui \(C\) adalah \(\oint_C\mathbf F\cdot\mathbf n\,ds\) dengan \(\mathbf n\) normal satuan keluar; sama dengan \(\oint_CP\,dy-Q\,dx\) bila \(C\) berlawanan arah jarum jam.</p>
+<div class="box ex"><span class="t">Contoh 8 — fluks keluar</span>
+<p>\(\mathbf F=\langle x,y\rangle\) melalui lingkaran jari-jari \(R\): \(\mathbf n=\langle x,y\rangle/R\), \(\mathbf F\cdot\mathbf n=R\), \(\oint R\,ds=R\cdot2\pi R=2\pi R^2\) (untuk \(R=1\), \(2\pi\)). Lewat rumus \(P\,dy-Q\,dx\) dengan \(x=\cos t,y=\sin t\): \(\int_0^{2\pi}(\cos^2t+\sin^2t)\,dt=2\pi\).</p></div>
+
+<h2>5. Sifat-sifat</h2>
+<ul>
+<li>\(\int_{-C}\mathbf F\cdot d\mathbf r=-\int_C\mathbf F\cdot d\mathbf r\) (arah dibalik).</li>
+<li>\(\int_Cf\,ds\) tidak berubah bila arah dibalik.</li>
+<li>Nilai tidak bergantung pada parametrisasi selama arahnya sama.</li>
+<li>Linear: \(\int_C(\mathbf F+\mathbf G)\cdot d\mathbf r=\int_C\mathbf F\cdot d\mathbf r+\int_C\mathbf G\cdot d\mathbf r\).</li>
+<li>Kurva sepotong-sepotong: jumlahkan.</li>
+</ul>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Lupa faktor \(|\mathbf r'(t)|\) pada \(\int f\,ds\).</li>
+<li>Mengevaluasi \(\mathbf F\) pada titik, bukan pada \(\mathbf r(t)\).</li>
+<li>Mengabaikan arah: \(\int\mathbf F\cdot d\mathbf r\) berubah tanda bila arah dibalik.</li>
+<li>Menganggap nilai integral garis medan hanya bergantung pada ujung-ujung kurva (benar hanya untuk medan konservatif).</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\int_Cf\,ds=\int_a^bf(\mathbf r(t))|\mathbf r'(t)|\,dt\) (skalar).</li>
+<li>\(\int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F(\mathbf r(t))\cdot\mathbf r'(t)\,dt\) (usaha, sirkulasi).</li>
+<li>Arah penting untuk integral medan, tidak untuk \(\int f\,ds\).</li>
+</ul>
+<p>Berikutnya <a href="b16-3.html">16.3 Teorema Dasar untuk Integral Garis</a>.</p>

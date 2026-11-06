@@ -1,0 +1,73 @@
+<p>Sebagian besar besaran di dunia nyata bergantung pada lebih dari satu peubah: suhu di suatu titik bergantung pada posisi \((x,y,z)\) dan waktu \(t\); volume silinder bergantung pada \(r\) dan \(h\); hasil produksi bergantung pada tenaga kerja dan modal. Bab 14 mengembangkan kalkulus diferensial untuk fungsi seperti itu.</p>
+
+<h2>1. Definisi</h2>
+<div class="box def"><span class="t">Fungsi dua peubah</span>
+<p><strong>Fungsi dua peubah</strong> \(f\) adalah aturan yang mengaitkan setiap pasangan terurut \((x,y)\) dalam himpunan \(D\subseteq\mathbb R^2\) (<em>daerah asal</em>) dengan tepat satu bilangan real \(f(x,y)\). <em>Daerah hasil</em> (range) adalah himpunan semua nilai \(f(x,y)\). Fungsi tiga peubah \(f(x,y,z)\) didefinisikan serupa dengan \(D\subseteq\mathbb R^3\); fungsi \(n\) peubah \(f(x_1,\dots,x_n)\) memakai \(\mathbb R^n\).</p></div>
+<p>Bila daerah asal tidak disebutkan, kita ambil himpunan terbesar titik yang membuat rumusnya bermakna.</p>
+<div class="box ex"><span class="t">Contoh 1 — mencari daerah asal</span>
+<ol>
+<li>\(f(x,y)=\sqrt{9-x^2-y^2}\): syarat \(9-x^2-y^2\ge0\), jadi \(D=\{x^2+y^2\le9\}\), cakram tertutup berjari-jari 3. Daerah hasil \([0,3]\).</li>
+<li>\(f(x,y)=\ln(x+y-1)\): syarat \(x+y\gt1\), setengah bidang di atas garis \(y=1-x\) (tanpa garisnya). Daerah hasil \(\mathbb R\).</li>
+<li>\(f(x,y)=\dfrac{xy}{x^2-y^2}\): syarat \(x\ne\pm y\), seluruh bidang tanpa dua garis \(y=x\), \(y=-x\).</li>
+<li>\(f(x,y,z)=\sqrt{z-x^2-y^2}\;/\;\ln(4-z)\): syarat \(z\ge x^2+y^2\), \(z\lt4\), \(z\ne3\). Daerah di dalam paraboloid, di bawah bidang \(z=4\), tanpa bidang \(z=3\).</li>
+</ol></div>
+<div class="box ex"><span class="t">Contoh 2 — model nyata</span>
+<ul>
+<li>Bunga majemuk bulanan: \(A(P,r,t)=P\bigl(1+\tfrac r{12}\bigr)^{12t}\). \(A(1000;\,0{,}06;\,5)=1000(1{,}005)^{60}\approx1348{,}85\).</li>
+<li>Produksi Cobb–Douglas: \(P(L,K)=2L^{0,6}K^{0,4}\). \(P(100,100)=200\); bila tenaga kerja digandakan dan modal dipangkas setengah, \(P(200,50)=2\cdot200^{0,6}50^{0,4}\approx229{,}7\), naik sekitar 14,9%.</li>
+<li>Volume silinder: \(V(r,h)=\pi r^2h\).</li>
+</ul></div>
+
+<h2>2. Grafik</h2>
+<div class="box def"><span class="t">Grafik</span>
+<p>Grafik \(f\) dengan daerah asal \(D\) adalah himpunan \(\{(x,y,z)\in\mathbb R^3:\ z=f(x,y),\ (x,y)\in D\}\). Ini sebuah permukaan di ruang: tinggi permukaan di atas titik \((x,y)\) adalah \(f(x,y)\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — grafik \(f=4-x^2-y^2\)</span>
+<p>Grafiknya \(z=4-x^2-y^2\) adalah paraboloid eliptik yang membuka ke bawah (12.6) dengan puncak \((0,0,4)\). Ia memotong bidang \(xy\) di lingkaran \(x^2+y^2=4\). Bila kita batasi \(z\ge0\), diperoleh mangkuk terbalik di atas cakram jari-jari 2.</p></div>
+<figure><img src="assets/img/b14-1-grafik.png" alt="Grafik z=4-x^2-y^2"><figcaption>Grafik \(f(x,y)=4-x^2-y^2\) untuk \(z\ge0\).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 4 — grafik fungsi sederhana</span>
+<ul>
+<li>\(f(x,y)=3-x-y\): bidang miring (12.5) yang memotong sumbu di \(x=3,\,y=3,\,z=3\).</li>
+<li>\(f(x,y)=\sqrt{x^2+y^2}\): kerucut (belahan atas).</li>
+<li>\(f(x,y)=\sin x\): silinder bergelombang (peubah \(y\) tidak muncul).</li>
+<li>\(f(x,y)=xy\): permukaan pelana (paraboloid hiperbolik yang diputar).</li>
+</ul></div>
+
+<h2>3. Kurva ketinggian (kontur)</h2>
+<div class="box def"><span class="t">Kurva ketinggian</span>
+<p><strong>Kurva ketinggian</strong> (level curve) \(f\) adalah himpunan semua titik \((x,y)\) di daerah asal dengan \(f(x,y)=k\), dengan \(k\) konstanta. Ia adalah proyeksi ke bidang \(xy\) dari irisan grafik dengan bidang \(z=k\). <strong>Peta kontur</strong> adalah kumpulan kurva ketinggian untuk beberapa nilai \(k\).</p></div>
+<p>Pada peta topografi, garis kontur menghubungkan titik berketinggian sama; pada peta cuaca, <em>isoterm</em> menghubungkan titik bersuhu sama dan <em>isobar</em> titik bertekanan sama. Kontur yang rapat berarti permukaan curam; kontur yang renggang berarti landai.</p>
+<div class="box ex"><span class="t">Contoh 5 — kontur dua fungsi</span>
+<ul>
+<li>\(f=x^2+y^2\): kurva ketinggian \(x^2+y^2=k\) adalah lingkaran konsentris berjari-jari \(\sqrt k\) (\(k\gt0\)). Jarak jari-jari: untuk \(k=1,4,9\) jari-jarinya \(1,2,3\): kontur makin rapat ke arah luar karena permukaan makin curam.</li>
+<li>\(f=x^2-y^2\): \(x^2-y^2=k\) hiperbola; untuk \(k=0\) dua garis \(y=\pm x\). Pola khas pelana.</li>
+</ul></div>
+<figure><img src="assets/img/b14-1-kontur.png" alt="Kontur"><figcaption>Peta kontur \(z=x^2+y^2\) (kiri) dan \(z=x^2-y^2\) (kanan).</figcaption></figure>
+<div class="box ex"><span class="t">Contoh 6 — fungsi dari kontur</span>
+<p>Kurva ketinggian \(f(x,y)=\dfrac{y}{x^2}\) dengan \(f=k\): \(y=kx^2\), keluarga parabola yang melalui titik asal (tanpa titik asalnya). Jadi nilai \(k\) menyatakan "kelengkungan" parabola.</p></div>
+
+<h2>4. Fungsi tiga peubah dan permukaan ketinggian</h2>
+<p>Grafik \(f(x,y,z)\) berada di \(\mathbb R^4\) dan tidak dapat digambar. Kita memvisualisasikannya lewat <strong>permukaan ketinggian</strong> \(f(x,y,z)=k\).</p>
+<div class="box ex"><span class="t">Contoh 7 — permukaan ketinggian</span>
+<ul>
+<li>\(f=x^2+y^2+z^2\): \(f=k\) bola berjari-jari \(\sqrt k\), makin besar bola untuk \(k\) naik.</li>
+<li>\(f=x^2+y^2-z^2\): \(k\gt0\) hiperboloid satu lembar, \(k\lt0\) hiperboloid dua lembar, \(k=0\) kerucut (12.6).</li>
+<li>\(f=x+2y+3z\): bidang-bidang sejajar, \(x+2y+3z=k\).</li>
+<li>\(f=\dfrac1{\sqrt{x^2+y^2+z^2}}\): bola-bola konsentris; model potensial gravitasi atau listrik (potensial sama pada bola).</li>
+</ul></div>
+<div class="box ex"><span class="t">Contoh 8 — suhu</span>
+<p>Suhu pelat tipis \(T(x,y)=\dfrac{100}{1+x^2+2y^2}\) (derajat C). Isoterm \(T=20\): \(1+x^2+2y^2=5\Rightarrow x^2+2y^2=4\), sebuah elips dengan setengah sumbu 2 (arah \(x\)) dan \(\sqrt2\) (arah \(y\)). Suhu maksimum 100 di titik asal.</p></div>
+
+<h2>5. Kesalahan umum</h2>
+<ul>
+<li>Mengira kurva ketinggian adalah kurva pada grafik. Kurva ketinggian berada <em>di bidang \(xy\)</em>; kurva pada grafik adalah <em>jejak</em> di tinggi \(k\).</li>
+<li>Lupa membatasi daerah asal (akar, logaritma, penyebut).</li>
+<li>Mengira dua kurva ketinggian berbeda dapat berpotongan: karena \(f\) memberi tepat satu nilai di tiap titik, kurva ketinggian untuk \(k\) berbeda tidak pernah berpotongan.</li>
+</ul>
+
+<h2>6. Ringkasan</h2>
+<ul>
+<li>\(f:D\subseteq\mathbb R^n\to\mathbb R\); grafik fungsi dua peubah adalah permukaan \(z=f(x,y)\).</li>
+<li>Kurva ketinggian \(f(x,y)=k\); permukaan ketinggian \(f(x,y,z)=k\).</li>
+<li>Peta kontur menunjukkan kecuraman: rapat \(=\) curam.</li>
+</ul>
+<p>Berikutnya <a href="b14-2.html">14.2</a>: limit dan kekontinuan.</p>

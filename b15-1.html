@@ -1,0 +1,57 @@
+<p>Integral tentu \(\int_a^bf(x)\,dx\) menjumlahkan nilai \(f\) di sepanjang selang, dan mengukur luas di bawah kurva. Integral ganda dua menjumlahkan nilai \(f(x,y)\) di atas sebuah daerah di bidang dan mengukur <strong>volume</strong> di bawah permukaan.</p>
+
+<h2>1. Volume dan jumlah Riemann</h2>
+<p>Misalkan \(f(x,y)\ge0\) pada persegi panjang tertutup \(R=[a,b]\times[c,d]=\{(x,y):a\le x\le b,\ c\le y\le d\}\). Padatan \(S\) yang terletak di atas \(R\) dan di bawah grafik \(z=f(x,y)\) kita hampiri sebagai berikut:</p>
+<ol>
+<li>Bagi \([a,b]\) menjadi \(m\) selang lebar \(\Delta x=\frac{b-a}m\) dan \([c,d]\) menjadi \(n\) selang lebar \(\Delta y=\frac{d-c}n\). Ini membagi \(R\) menjadi \(mn\) persegi panjang kecil \(R_{ij}\) dengan luas \(\Delta A=\Delta x\Delta y\).</li>
+<li>Pilih titik contoh \((x_{ij}^*,y_{ij}^*)\) di tiap \(R_{ij}\). Balok di atas \(R_{ij}\) berketinggian \(f(x_{ij}^*,y_{ij}^*)\) mempunyai volume \(f(x_{ij}^*,y_{ij}^*)\Delta A\).</li>
+<li>Jumlahkan: \(V\approx\sum_{i=1}^m\sum_{j=1}^nf(x_{ij}^*,y_{ij}^*)\,\Delta A\) (<em>jumlah Riemann ganda</em>).</li>
+</ol>
+<figure><img src="assets/img/b15-1-riemann.png" alt="Jumlah Riemann"><figcaption>Hampiran volume di bawah \(z=16-x^2-2y^2\) dengan \(4\times4\) balok (titik tengah).</figcaption></figure>
+<div class="box def"><span class="t">Definisi integral ganda dua</span>
+<p>Integral ganda dua \(f\) atas persegi panjang \(R\):
+\[ \iint_Rf(x,y)\,dA=\lim_{m,n\to\infty}\sum_{i=1}^m\sum_{j=1}^nf(x_{ij}^*,y_{ij}^*)\,\Delta A, \]
+bila limit ada. Bila \(f\) kontinu (atau terbatas dan kontinu kecuali pada sejumlah hingga kurva mulus), limit ada dan tidak bergantung pada pilihan titik contoh. Bila \(f\ge0\), \(\iint_Rf\,dA\) adalah volume padatan di bawah grafik \(f\) dan di atas \(R\).</p></div>
+<div class="box ex"><span class="t">Contoh 1 — jumlah Riemann beberapa pilihan</span>
+<p>\(f(x,y)=16-x^2-2y^2\) pada \(R=[0,2]\times[0,2]\), \(m=n=2\) (\(\Delta A=1\)).
+<br><em>Titik sudut kiri-bawah:</em> \(f(0,0)+f(0,1)+f(1,0)+f(1,1)=16+14+15+13=58\).
+<br><em>Titik tengah</em> \((0{,}5;0{,}5),(0{,}5;1{,}5),(1{,}5;0{,}5),(1{,}5;1{,}5)\): \(15{,}25+11{,}25+13{,}25+9{,}25=49\).
+<br>Nilai sebenarnya \(\iint_Rf\,dA=48\) (dihitung di 15.2). Aturan titik tengah \((49)\) jauh lebih dekat dari sudut kiri-bawah \((58)\), karena \(f\) turun ke arah kanan dan atas sehingga sudut kiri-bawah selalu melebih-lebihkan.</p></div>
+<div class="box ex"><span class="t">Contoh 2 — hampiran tabel</span>
+<p>Curah hujan (cm) di empat titik tengah sebuah daerah \(4\times4\) km dibagi \(2\times2\): \(1{,}2;\ 0{,}8;\ 1{,}5;\ 1{,}1\). Tiap persegi \(2\times2\) km luasnya \(4\) km². Total volume air \(\approx4(1{,}2+0{,}8+1{,}5+1{,}1)=4(4{,}6)=18{,}4\) km²·cm. Rata-rata curah hujan \(=18{,}4/16=1{,}15\) cm.</p></div>
+
+<h2>2. Nilai rata-rata</h2>
+<div class="box def"><span class="t">Nilai rata-rata</span>
+<p>\[ f_{\text{rata}}=\frac1{A(R)}\iint_Rf(x,y)\,dA. \]
+Untuk contoh di atas: \(\frac1{4}\cdot48=12\).</p></div>
+
+<h2>3. Sifat-sifat</h2>
+<ul>
+<li>\(\iint_R[f+g]\,dA=\iint_Rf\,dA+\iint_Rg\,dA\).</li>
+<li>\(\iint_Rcf\,dA=c\iint_Rf\,dA\).</li>
+<li>Bila \(f\ge g\) pada \(R\), maka \(\iint_Rf\,dA\ge\iint_Rg\,dA\).</li>
+<li>Bila \(R=R_1\cup R_2\) tidak tumpang tindih (kecuali di batas), \(\iint_R=\iint_{R_1}+\iint_{R_2}\).</li>
+<li>\(m\,A(R)\le\iint_Rf\,dA\le M\,A(R)\) bila \(m\le f\le M\) pada \(R\).</li>
+<li>\(\iint_R1\,dA=A(R)\).</li>
+</ul>
+<div class="box ex"><span class="t">Contoh 3 — memakai kesimetrian</span>
+<p>\(\iint_R\dfrac{\sin x}{1+y^2}\,dA\) dengan \(R=[-\pi,\pi]\times[0,1]\). Karena \(\sin x\) fungsi ganjil terhadap \(x\) dan \(R\) simetris terhadap \(x=0\), integralnya \(=0\) tanpa perhitungan panjang.</p></div>
+<div class="box ex"><span class="t">Contoh 4 — batas nilai integral</span>
+<p>Pada \(R=[0,1]\times[0,2]\), \(1\le x^2+y^2+1\le6\). Maka \(2\le\iint_R(x^2+y^2+1)\,dA\le12\) (luas \(R=2\)).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — volume dari geometri</span>
+<p>\(\iint_R\sqrt{1-x^2}\,dA\) dengan \(R=[-1,1]\times[-2,2]\): grafik \(z=\sqrt{1-x^2}\) adalah setengah silinder lingkaran jari-jari 1 sepanjang sumbu \(y\) (panjang 4). Volume \(=\frac12\pi(1)^2\cdot4=2\pi\).</p></div>
+
+<h2>4. Kesalahan umum</h2>
+<ul>
+<li>Mengartikan integral ganda sebagai luas. \(\iint_Rf\,dA\) adalah volume (bila \(f\ge0\)); luas \(R\) adalah \(\iint_R1\,dA\).</li>
+<li>Menghitung jumlah Riemann tanpa mengalikan dengan \(\Delta A\).</li>
+<li>Mengabaikan nilai negatif: bagian di bawah bidang \(xy\) menyumbang volume bertanda negatif.</li>
+</ul>
+
+<h2>5. Ringkasan</h2>
+<ul>
+<li>\(\iint_Rf\,dA=\lim\sum f(x_{ij}^*,y_{ij}^*)\Delta A\); volume bila \(f\ge0\).</li>
+<li>Aturan titik tengah memberi hampiran yang baik.</li>
+<li>Sifat linear, aditif, monoton; nilai rata-rata \(=\frac1A\iint f\,dA\).</li>
+</ul>
+<p>Berikutnya <a href="b15-2.html">15.2</a>: cara menghitungnya dengan integral berulang.</p>

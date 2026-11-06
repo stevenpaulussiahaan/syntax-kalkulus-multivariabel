@@ -1,0 +1,87 @@
+<p>Pada subbab sebelumnya parabola didefinisikan lewat fokus dan direktriks, sedangkan elips dan hiperbola lewat dua fokus. Di sini ketiganya disatukan dalam satu definisi tunggal berbasis <em>satu fokus, satu direktriks, dan satu bilangan</em> (eksentrisitas).
+Bila fokus diletakkan di kutub, hasilnya adalah persamaan kutub yang sangat sederhana dan sangat cocok untuk gerak planet, satelit, dan komet.</p>
+
+<h2>1. Teorema fokus–direktriks</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Misalkan \(F\) titik tetap (fokus), \(\ell\) garis tetap (direktriks), dan \(e>0\) bilangan tetap (<strong>eksentrisitas</strong>). Himpunan semua titik \(P\) yang memenuhi
+\[ \frac{|PF|}{|P\ell|}=e \]
+(rasio jarak ke fokus terhadap jarak ke direktriks sama dengan \(e\)) adalah irisan kerucut:
+</p>
+<ul><li>elips bila \(e\lt 1\),</li><li>parabola bila \(e=1\),</li><li>hiperbola bila \(e>1\).</li></ul></div>
+
+<h3>Bukti</h3>
+<p>Untuk \(e=1\), syarat itu menjadi \(|PF|=|P\ell|\), yaitu definisi parabola.</p>
+<p>Umumnya, letakkan \(F\) di titik asal dan direktriks \(\ell\) pada garis \(x=d\) (\(d>0\)), tegak lurus sumbu kutub. Untuk \(P(r,\theta)\): \(|PF|=r\) dan \(|P\ell|=d-r\cos\theta\). Syarat \(|PF|=e|P\ell|\) menjadi
+\[ r=e\,(d-r\cos\theta). \tag{2} \]
+Kuadratkan dan konversi ke Cartesius (\(r^2=x^2+y^2\), \(r\cos\theta=x\)): \(x^2+y^2=e^2(d-x)^2=e^2d^2-2e^2dx+e^2x^2\), yaitu
+\[ (1-e^2)x^2+2de^2x+y^2=e^2d^2. \]
+Bila \(e\ne1\), lengkapkan kuadrat untuk \(x\):
+\[ \Bigl(x+\frac{e^2d}{1-e^2}\Bigr)^2\!\!\Big/\ \frac{e^2d^2}{(1-e^2)^2}\ +\ \frac{y^2}{\dfrac{e^2d^2}{1-e^2}}=1. \tag{3} \]
+Untuk \(e\lt 1\) penyebut kedua positif: persamaan elips dengan pusat \((h,0)\), \(h=-\dfrac{e^2d}{1-e^2}\) dan
+\[ a^2=\frac{e^2d^2}{(1-e^2)^2},\qquad b^2=\frac{e^2d^2}{1-e^2}. \]
+Maka \(c^2=a^2-b^2=\dfrac{e^4d^2}{(1-e^2)^2}\), sehingga \(c=\dfrac{e^2d}{1-e^2}=|h|\): fokus (titik asal) berjarak \(c\) dari pusat — sesuai fokus elips pada Bagian 10.5. Selain itu \(\dfrac ca=e\), yaitu <strong>eksentrisitas elips \(=c/a\)</strong>.
+Untuk \(e>1\), penyebut kedua negatif dan (3) adalah persamaan hiperbola dengan \(e=c/a\) pula. \(\blacksquare\)</p>
+
+<h2>2. Persamaan kutub irisan kerucut</h2>
+<p>Dari (2): \(r+er\cos\theta=ed\), sehingga \(r=\dfrac{ed}{1+e\cos\theta}\). Letak direktriks yang lain memberi variasi tanda dan fungsi:</p>
+<div class="box def"><span class="t">Teorema (persamaan kutub konik)</span>
+<p>Persamaan kutub berbentuk
+\[ r=\frac{ed}{1\pm e\cos\theta}\qquad\text{atau}\qquad r=\frac{ed}{1\pm e\sin\theta} \]
+adalah irisan kerucut dengan eksentrisitas \(e\) dan fokus di kutub.</p>
+<table class="t">
+<tr><th>Bentuk</th><th>Direktriks</th></tr>
+<tr><td>\(r=\dfrac{ed}{1+e\cos\theta}\)</td><td>\(x=d\) (di kanan fokus)</td></tr>
+<tr><td>\(r=\dfrac{ed}{1-e\cos\theta}\)</td><td>\(x=-d\) (di kiri fokus)</td></tr>
+<tr><td>\(r=\dfrac{ed}{1+e\sin\theta}\)</td><td>\(y=d\) (di atas fokus)</td></tr>
+<tr><td>\(r=\dfrac{ed}{1-e\sin\theta}\)</td><td>\(y=-d\) (di bawah fokus)</td></tr>
+</table></div>
+<p>Untuk menurunkan versi lain, ulangi derivasi tadi dengan jarak ke direktriks yang sesuai, mis. direktriks \(y=d\): \(|P\ell|=d-r\sin\theta\), menghasilkan \(r=\dfrac{ed}{1+e\sin\theta}\).</p>
+
+<div class="box ex"><span class="t">Contoh 1 — parabola</span>
+<p>Fokus di titik asal, direktriks \(y=-6\). Direktriks di bawah fokus: bentuk \(r=\dfrac{ed}{1-e\sin\theta}\), \(e=1,\ d=6\): \(r=\dfrac{6}{1-\sin\theta}\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — mengenali konik dari persamaan</span>
+<p>\(r=\dfrac{10}{3-2\cos\theta}\). Bagi pembilang dan penyebut dengan 3 agar penyebut berbentuk \(1\pm e\cos\theta\):
+\[ r=\frac{10/3}{1-\tfrac23\cos\theta}. \]
+Jadi \(e=\tfrac23\lt 1\): elips; \(ed=\tfrac{10}3\Rightarrow d=5\); direktriks \(x=-5\) (tanda minus). Puncak: \(\theta=0\to r=10\), titik \((10,0)\); \(\theta=\pi\to r=2\), titik \((-2,0)\) Cartesius. Panjang sumbu mayor \(=10+2=12\), \(a=6\); cek \(e=c/a\) dengan \(c=\tfrac{12}{2}-2=4\): \(4/6=\tfrac23\) ✓.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — hiperbola</span>
+<p>\(r=\dfrac{12}{2+4\sin\theta}=\dfrac{6}{1+2\sin\theta}\): \(e=2>1\) hiperbola, \(ed=6\Rightarrow d=3\), direktriks \(y=3\). Puncak muncul di \(\theta=\tfrac\pi2\), dengan \(r=\tfrac{6}{3}=2\), yaitu titik \((0,2)\); dan di \(\theta=\tfrac{3\pi}2\), dengan \(r=\tfrac{6}{1-2}=-6\), yaitu titik kutub \((-6,\tfrac{3\pi}2)=(6,\tfrac\pi2)\), atau \((0,6)\) di Cartesius. Jadi dua puncaknya \((0,2)\) dan \((0,6)\); pusat hiperbola \((0,4)\), \(a=2\), dan fokus (titik asal) berjarak \(c=4\) dari pusat sehingga \(e=c/a=2\) ✓.
+Asimtot sejajar sinar \(\theta=\tfrac{7\pi}6,\tfrac{11\pi}6\) (nilai \(\theta\) yang membuat \(1+2\sin\theta=0\)).</p></div>
+<figure><img src="assets/img/b10-6-contoh.png" alt="Contoh polar konik"></figure>
+
+<h3>Memutar konik</h3>
+<p>Grafik \(r=f(\theta-\alpha)\) adalah grafik \(r=f(\theta)\) yang diputar berlawanan arah jarum jam sebesar \(\alpha\) terhadap titik asal. Jadi elips Contoh 2 yang diputar \(\tfrac\pi4\) adalah \(r=\dfrac{10}{3-2\cos(\theta-\pi/4)}\), berputar di sekitar fokus kirinya. Bandingkan dengan persamaan Cartesius yang akan sangat panjang.</p>
+
+<h3>Pengaruh eksentrisitas</h3>
+<p>Untuk \(e\) mendekati 0, elips hampir lingkaran. Saat \(e\to1^-\) elips makin memanjang, lalu pada \(e=1\) menjadi parabola dan untuk \(e>1\) menjadi hiperbola yang cabangnya makin "lancip" (makin lurus) seiring \(e\) membesar.</p>
+<figure><img src="assets/img/b10-6-eksentrisitas.png" alt="Eksentrisitas"></figure>
+
+<h2>3. Hukum Kepler</h2>
+<div class="box def"><span class="t">Tiga hukum Kepler (1609, 1619)</span>
+<ol>
+<li>Planet mengitari Matahari dalam orbit elips dengan Matahari di salah satu fokus.</li>
+<li>Garis yang menghubungkan Matahari dan planet menyapu luas yang sama dalam waktu yang sama.</li>
+<li>Kuadrat periode revolusi sebanding dengan pangkat tiga panjang sumbu mayor orbit.</li>
+</ol></div>
+<p>Hukum-hukum ini juga berlaku untuk bulan, komet, dan satelit buatan yang dipengaruhi satu gaya gravitasi pusat. Pada Bab 13.4 hukum-hukum ini akan diturunkan dari hukum Newton.</p>
+
+<h3>Persamaan orbit dengan \(a\) dan \(e\)</h3>
+<p>Dalam astronomi lebih mudah memakai sumbu semimayor \(a\) dan eksentrisitas \(e\). Dari \(a^2=\dfrac{e^2d^2}{(1-e^2)^2}\) diperoleh \(ed=a(1-e^2)\), jadi persamaan orbit (Matahari di kutub, direktriks \(x=d\)):
+\[ \boxed{\,r=\frac{a(1-e^2)}{1+e\cos\theta}\,} \]
+Titik terdekat (<strong>perihelion</strong>) saat \(\theta=0\): \(r_{\min}=a(1-e)\). Titik terjauh (<strong>aphelion</strong>) saat \(\theta=\pi\): \(r_{\max}=a(1+e)\). (Karena \(\dfrac{a(1-e^2)}{1+e}=a(1-e)\) dan \(\dfrac{a(1-e^2)}{1-e}=a(1+e)\).)</p>
+<div class="box ex"><span class="t">Contoh 4 — orbit Bumi</span>
+<p>\(e\approx0.017\), panjang sumbu mayor \(2a\approx2.99\times10^8\) km, jadi \(a\approx1.495\times10^8\) km. Persamaan orbit:
+\[ r=\frac{1.495\times10^8(1-0.017^2)}{1+0.017\cos\theta}\approx\frac{1.49\times10^8}{1+0.017\cos\theta}. \]
+Perihelion: \(a(1-e)\approx1.47\times10^8\) km. Aphelion: \(a(1+e)\approx1.52\times10^8\) km. Selisihnya hanya sekitar 3%, sehingga orbit Bumi hampir lingkaran.</p></div>
+<div class="box ex"><span class="t">Contoh 5 — jarak aphelion Merkurius</span>
+<p>Bila \(e=0.206\) dan jarak minimum \(4.6\times10^7\) km, maka \(a(1-e)=4.6\times10^7\Rightarrow a=\dfrac{4.6\times10^7}{0.794}\approx5.79\times10^7\) km, dan jarak maksimum \(a(1+e)\approx5.79\times10^7\times1.206\approx6.99\times10^7\) km.</p></div>
+<div class="box ex"><span class="t">Contoh 6 — eksentrisitas dari data jarak</span>
+<p>Perihelion dan aphelion Pluto: \(4.43\times10^9\) dan \(7.37\times10^9\) km. Dari \(\dfrac{r_{\max}}{r_{\min}}=\dfrac{1+e}{1-e}=\dfrac{7.37}{4.43}\approx1.664\): \(1+e=1.664-1.664e\Rightarrow e=\dfrac{0.664}{2.664}\approx0.249\).</p></div>
+
+<h2>4. Ringkasan</h2>
+<ul>
+<li>Satu definisi menyatukan tiga konik: \(|PF|/|P\ell|=e\).</li>
+<li>Persamaan kutub dengan fokus di kutub: \(r=\dfrac{ed}{1\pm e\cos\theta}\) atau \(\dfrac{ed}{1\pm e\sin\theta}\).</li>
+<li>Untuk orbit elips: \(r=\dfrac{a(1-e^2)}{1+e\cos\theta}\); perihelion \(a(1-e)\), aphelion \(a(1+e)\).</li>
+<li>Rotasi sebesar \(\alpha\): ganti \(\theta\) dengan \(\theta-\alpha\).</li>
+</ul>
+<p>Dengan ini Bab 10 selesai. Lanjut ke <a href="chapter.php?s=b11-1">Bab 11.1 — Barisan</a>.</p>

@@ -1,0 +1,79 @@
+<p>Sampai sekarang suku deret berupa bilangan. Bila suku-sukunya adalah fungsi dari \(x\), deret itu mendefinisikan sebuah <em>fungsi</em> (nilainya jumlah deret untuk tiap \(x\) yang membuatnya konvergen). Kelas fungsi yang paling penting dibangun dari pangkat \(x\), mirip polinomial berderajat tak hingga: <strong>deret pangkat</strong>.</p>
+
+<h2>1. Definisi</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p><strong>Deret pangkat</strong> dalam \(x\) adalah deret berbentuk
+\[ \sum_{n=0}^\infty c_nx^n=c_0+c_1x+c_2x^2+c_3x^3+\cdots, \]
+dengan \(c_n\) konstanta (<strong>koefisien</strong>). Lebih umum, <strong>deret pangkat dalam \((x-a)\)</strong> (atau berpusat di \(a\)):
+\[ \sum_{n=0}^\infty c_n(x-a)^n=c_0+c_1(x-a)+c_2(x-a)^2+\cdots. \]</p></div>
+<p>Untuk tiap \(x\) tetap, ini adalah deret bilangan biasa yang kekonvergenannya dapat diuji. Pertanyaan kunci: <em>untuk \(x\) mana deretnya konvergen?</em> Selalu konvergen di pusat \(x=a\) (semua suku kecuali \(c_0\) nol).</p>
+<p>Contoh paling sederhana: deret geometri \(\sum_{n=0}^\infty x^n=1+x+x^2+\cdots\) konvergen ke \(\dfrac1{1-x}\) bila \(|x|\lt1\) dan divergen bila \(|x|\ge1\). Jadi daerah konvergennya adalah <em>selang</em> \((-1,1)\).</p>
+
+<h2>2. Uji rasio untuk deret pangkat</h2>
+<div class="box ex"><span class="t">Contoh 1 — \(\sum n!\,x^n\)</span>
+<p>Rasio: \(\left|\dfrac{(n+1)!x^{n+1}}{n!x^n}\right|=(n+1)|x|\to\infty\) bila \(x\ne0\). Divergen untuk semua \(x\ne0\); konvergen hanya di \(x=0\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — \(\sum\dfrac{(x-3)^n}{n}\)</span>
+<p>\(\left|\dfrac{(x-3)^{n+1}/(n+1)}{(x-3)^n/n}\right|=\dfrac n{n+1}|x-3|\to|x-3|\). Konvergen mutlak bila \(|x-3|\lt1\) (\(2\lt x\lt4\)), divergen bila \(|x-3|\gt1\). Titik ujung:</p>
+<ul><li>\(x=4\): \(\sum\frac1n\), harmonik, divergen.</li><li>\(x=2\): \(\sum\frac{(-1)^n}n\), konvergen (Leibniz).</li></ul>
+<p>Jadi daerah konvergen adalah \([2,4)\): ujung kiri ikut, ujung kanan tidak.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — \(\sum\dfrac{x^n}{n!}\)</span>
+<p>Rasio \(\dfrac{|x|}{n+1}\to0\lt1\) untuk <em>setiap</em> \(x\). Konvergen untuk semua bilangan real. (Ini deret untuk \(e^x\).)</p></div>
+
+<h2>3. Teorema radius kekonvergenan</h2>
+<div class="box def"><span class="t">Teorema</span>
+<p>Untuk deret pangkat \(\sum c_n(x-a)^n\), hanya ada tiga kemungkinan:</p>
+<ol>
+<li>deret konvergen hanya di \(x=a\);</li>
+<li>deret konvergen untuk semua \(x\);</li>
+<li>ada bilangan \(R\gt0\) sehingga deret konvergen mutlak bila \(|x-a|\lt R\) dan divergen bila \(|x-a|\gt R\).</li>
+</ol>
+<p>Bilangan \(R\) disebut <strong>radius kekonvergenan</strong> (\(R=0\) pada kasus 1, \(R=\infty\) pada kasus 2). Himpunan \(x\) tempat deret konvergen disebut <strong>selang kekonvergenan</strong>: \((a-R,a+R)\) ditambah mungkin salah satu atau kedua titik ujung.</p></div>
+<p><strong>Gagasan bukti.</strong> Jika deret konvergen di \(x=b\), maka suku-suku \(c_nb^n\) terbatas; untuk \(|x|\lt|b|\), \(|c_nx^n|\le M\,|x/b|^n\), yaitu dibatasi oleh deret geometri konvergen. Jadi kekonvergenan di satu titik memaksa kekonvergenan mutlak di semua titik yang lebih dekat ke pusat.</p>
+<p><strong>Cara menghitung \(R\).</strong> Terapkan uji rasio (atau akar) pada \(|c_n(x-a)^n|\); bila \(\lim\left|\dfrac{c_{n+1}}{c_n}\right|=L\), maka \(R=\dfrac1L\) (dengan \(R=\infty\) bila \(L=0\), \(R=0\) bila \(L=\infty\)). <strong>Titik ujung harus diperiksa tersendiri</strong>, karena uji rasio selalu gagal di sana (\(L=1\)).</p>
+<figure><img src="assets/img/b11-8-selang.png" alt="Selang kekonvergenan empat deret"><figcaption>Selang kekonvergenan beberapa deret. Titik penuh = ujung ikut, titik kosong = tidak; garis oranye menandai pusat.</figcaption></figure>
+
+<h2>4. Contoh mencari selang</h2>
+<div class="box ex"><span class="t">Contoh 4 — \(\sum\dfrac{x^n}{n^2}\)</span>
+<p>Rasio koefisien \(\frac{n^2}{(n+1)^2}\to1\), jadi \(R=1\). Ujung: \(x=1\): \(\sum\frac1{n^2}\) konvergen; \(x=-1\): \(\sum\frac{(-1)^n}{n^2}\) konvergen. Selang \([-1,1]\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — \(\sum\dfrac{(3x-2)^n}{n\,5^n}\)</span>
+<p>Uji rasio: \(\dfrac{|3x-2|}{5}\lt1\iff|3x-2|\lt5\iff-1\lt x\lt\dfrac73\). Ujung:</p>
+<ul>
+<li>\(x=-1\): \(3x-2=-5\), deret \(\sum\dfrac{(-5)^n}{n5^n}=\sum\dfrac{(-1)^n}n\), konvergen.</li>
+<li>\(x=\frac73\): \(3x-2=5\), deret \(\sum\frac1n\), divergen.</li>
+</ul>
+<p>Selang \([-1,\tfrac73)\). Perhatikan: pusatnya \(x=\frac23\) dan \(R=\frac53\) (bukan 5; faktor 3 pada \(3x\) harus dikeluarkan: \(|3x-2|=3|x-\frac23|\)).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — fungsi Bessel \(J_0(x)=\sum\dfrac{(-1)^nx^{2n}}{2^{2n}(n!)^2}\)</span>
+<p>Rasio: \(\dfrac{x^{2n+2}}{2^{2n+2}((n+1)!)^2}\cdot\dfrac{2^{2n}(n!)^2}{x^{2n}}=\dfrac{x^2}{4(n+1)^2}\to0\). Konvergen untuk semua \(x\) (\(R=\infty\)). Fungsi ini muncul pada getaran membran lingkaran (drum) dan penyebaran panas dalam silinder.</p></div>
+<div class="box ex"><span class="t">Contoh 7 — koefisien binomial tengah, \(\sum\binom{2n}{n}x^n\)</span>
+<p>Koefisien \(c_n=\dfrac{(2n)!}{(n!)^2}\); \(\dfrac{c_{n+1}}{c_n}=\dfrac{2(2n+1)}{n+1}\to4\), jadi \(R=\frac14\). Ujung \(x=\frac14\): suku \(\binom{2n}n4^{-n}\approx\dfrac1{\sqrt{\pi n}}\) (tidak menuju 0 secepat \(1/n\)); jumlahnya diverge karena \(\sum n^{-1/2}\) divergen. Ujung \(x=-\frac14\): berganti tanda, \(b_n=\binom{2n}n4^{-n}\) menurun (rasio \(\frac{2n+1}{2n+2}\lt1\)) dan \(\to0\), jadi konvergen. Selang \([-\frac14,\frac14)\).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — hanya ada pangkat genap: \(\sum\dfrac{x^{2n}}{4^n}\)</span>
+<p>Ini geometri dengan rasio \(\dfrac{x^2}{4}\): konvergen bila \(x^2\lt4\), yaitu \(|x|\lt2\). Ujung \(x=\pm2\): suku \(=1\), divergen. Selang \((-2,2)\), \(R=2\). (Uji rasio pada koefisien saja salah karena banyak koefisien nol; gunakan uji rasio pada <em>suku</em>.)</p></div>
+
+<h2>5. Turunan dan integral deret pangkat</h2>
+<div class="box def"><span class="t">Teorema (diferensiasi dan integrasi suku demi suku)</span>
+<p>Jika \(f(x)=\sum c_n(x-a)^n\) mempunyai radius \(R\gt0\), maka \(f\) terdiferensialkan pada \((a-R,a+R)\), dan
+\[ f'(x)=\sum_{n=1}^\infty nc_n(x-a)^{n-1},\qquad\int f(x)\,dx=C+\sum_{n=0}^\infty c_n\frac{(x-a)^{n+1}}{n+1}. \]
+Kedua deret ini mempunyai radius kekonvergenan yang <em>sama</em> dengan \(R\) (selang di titik ujung boleh berubah).</p></div>
+<p>Artinya deret pangkat boleh diturunkan dan diintegralkan seperti polinomial, tetapi hanya di dalam selang \(|x-a|\lt R\).</p>
+<div class="box ex"><span class="t">Contoh 9 — turunan deret geometri</span>
+<p>\(\sum_{n=0}^\infty x^n=\dfrac1{1-x}\) pada \(|x|\lt1\). Turunkan: \(\sum_{n=1}^\infty nx^{n-1}=\dfrac1{(1-x)^2}\), \(|x|\lt1\). Ujung \(x=\pm1\) kini divergen (suku tidak menuju 0), jadi selang tetap \((-1,1)\).</p></div>
+<div class="box ex"><span class="t">Contoh 10 — turunan \(e^x\)</span>
+<p>Misalkan \(f(x)=\sum\frac{x^n}{n!}\) (Contoh 3). \(f'(x)=\sum_{n=1}^\infty\dfrac{nx^{n-1}}{n!}=\sum_{n=1}^\infty\dfrac{x^{n-1}}{(n-1)!}=f(x)\). Jadi \(f'=f\) dan \(f(0)=1\), maka \(f(x)=e^x\). Ini penjelasan mengapa deret itu mewakili fungsi eksponensial.</p></div>
+<div class="box ex"><span class="t">Contoh 11 — menyelesaikan persamaan diferensial dengan deret</span>
+<p>Cari deret pangkat solusi \(y''=-y\), \(y(0)=0\), \(y'(0)=1\). Tulis \(y=\sum c_nx^n\); \(y''=\sum_{n=2}^\infty n(n-1)c_nx^{n-2}\). Menyamakan koefisien \(x^n\): \((n+2)(n+1)c_{n+2}=-c_n\). Dari \(y(0)=0\): \(c_0=0\); \(y'(0)=1\): \(c_1=1\). Maka \(c_2=0\), \(c_3=-\frac16\), \(c_5=\frac1{120},\ldots\) yaitu \(y=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots=\sin x\).</p></div>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Lupa memeriksa titik ujung selang.</li>
+<li>Salah mengira radius pada deret seperti \(\sum(3x-2)^n\): ubah ke bentuk \(|x-a|\lt R\).</li>
+<li>Memakai rasio koefisien bila ada koefisien nol; pakai rasio suku lengkap.</li>
+<li>Menganggap selang turunan sama persis dengan selang fungsi (titik ujung bisa berubah).</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>Deret pangkat: \(\sum c_n(x-a)^n\); selang kekonvergenannya berpusat di \(a\) dengan radius \(R\in[0,\infty]\).</li>
+<li>Hitung \(R\) dengan uji rasio/akar; periksa ujung dengan uji lain.</li>
+<li>Boleh diturunkan dan diintegralkan suku demi suku dalam \(|x-a|\lt R\).</li>
+</ul>
+<p>Selanjutnya <a href="b11-9.html">11.9</a>: menyatakan fungsi-fungsi sebagai deret pangkat.</p>

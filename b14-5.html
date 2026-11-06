@@ -1,0 +1,67 @@
+<p>Pada satu peubah, aturan rantai berbunyi \(\frac{dy}{dt}=\frac{dy}{dx}\frac{dx}{dt}\). Bila fungsi luar bergantung pada beberapa peubah antara yang masing-masing bergantung pada peubah lain, kita menjumlahkan lintasan perubahan.</p>
+
+<h2>1. Aturan rantai: satu peubah bebas</h2>
+<div class="box def"><span class="t">Aturan rantai (kasus 1)</span>
+<p>Misalkan \(z=f(x,y)\) terdiferensialkan, dengan \(x=g(t)\), \(y=h(t)\) terturunkan. Maka
+\[ \frac{dz}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}. \]</p></div>
+<p><strong>Alasan.</strong> Perubahan \(\Delta t\) menyebabkan \(\Delta x,\Delta y\), dan dari keterdiferensialan (14.4) \(\Delta z\approx f_x\Delta x+f_y\Delta y\). Bagi dengan \(\Delta t\) dan ambil limit. Intinya: \(z\) berubah lewat dua "jalur", \(x\) dan \(y\), dan sumbangannya dijumlahkan.</p>
+<div class="box ex"><span class="t">Contoh 1 — rantai langsung</span>
+<p>\(z=x^2y+3xy^4\), \(x=\sin2t\), \(y=\cos t\). Di \(t=0\): \(x=0,\,y=1\). \(z_x=2xy+3y^4=3\), \(z_y=x^2+12xy^3=0\), \(x'=2\cos2t=2\), \(y'=-\sin t=0\). \(\dfrac{dz}{dt}=3\cdot2+0\cdot0=6\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — kerucut yang berubah</span>
+<p>Volume kerucut \(V=\frac13\pi r^2h\). Jari-jari bertambah \(2\) cm/s dan tinggi berkurang \(3\) cm/s. Pada saat \(r=10\), \(h=15\): \(\dfrac{dV}{dt}=\dfrac{2\pi rh}3\dfrac{dr}{dt}+\dfrac{\pi r^2}3\dfrac{dh}{dt}=\dfrac{2\pi\cdot150}3(2)+\dfrac{100\pi}3(-3)=200\pi-100\pi=100\pi\approx314{,}2\ \text{cm}^3/\text{s}\). Volume bertambah.</p></div>
+<div class="box ex"><span class="t">Contoh 3 — gerak sepanjang kurva</span>
+<p>Suhu \(T(x,y)=\dfrac{100}{1+x^2+2y^2}\) dan partikel bergerak sepanjang \(x=t\), \(y=t\). Pada \(t=1\): \(T_x=-12{,}5\), \(T_y=-25\) (14.3), \(x'=y'=1\). \(\dfrac{dT}{dt}=-12{,}5-25=-37{,}5\) derajat per satuan waktu: partikel merasakan suhu yang menurun.</p></div>
+
+<h2>2. Aturan rantai: dua peubah bebas</h2>
+<div class="box def"><span class="t">Aturan rantai (kasus 2)</span>
+<p>Bila \(z=f(x,y)\) dengan \(x=g(s,t)\), \(y=h(s,t)\), maka
+\[ \frac{\partial z}{\partial s}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial s}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial s},\qquad \frac{\partial z}{\partial t}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial t}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial t}. \]</p></div>
+<div class="box note"><span class="t">Diagram pohon</span>
+<p>Gambarkan \(z\) di atas, cabang ke \(x\) dan \(y\) (turunan \(\partial z/\partial x\), \(\partial z/\partial y\)), lalu dari tiap \(x,y\) cabang ke \(s,t\). Turunan \(\partial z/\partial s\) adalah jumlah hasil kali sepanjang semua lintasan dari \(z\) ke \(s\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — dua peubah bebas</span>
+<p>\(z=e^x\sin y\), \(x=st^2\), \(y=s^2t\). \(z_x=e^x\sin y\), \(z_y=e^x\cos y\); \(x_s=t^2\), \(x_t=2st\), \(y_s=2st\), \(y_t=s^2\).
+\[ z_s=e^x\sin y\,t^2+e^x\cos y\,2st,\qquad z_t=e^x\sin y\,2st+e^x\cos y\,s^2. \]
+Di \(s=1,t=2\): \(x=4\), \(y=2\); \(z_s=e^4(4\sin2+4\cos2)\approx107{,}7\) dan \(z_t=e^4(4\sin2+\cos2)\approx175{,}9\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — tiga peubah antara</span>
+<p>\(w=x^2+yz\), \(x=u+v\), \(y=uv\), \(z=u-v\). Aturan rantai: \(w_u=2x\cdot1+z\cdot v+y\cdot1\). Di \(u=1,v=2\): \(x=3,y=2,z=-1\): \(w_u=6-2+2=6\). Cek langsung: \(w=(u+v)^2+u^2v-uv^2\), \(w_u=2(u+v)+2uv-v^2=6+4-4=6\). Juga \(w_v=2x+zu-y=6-1-2=3\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — koordinat kutub</span>
+<p>Untuk \(z=f(x,y)\) dengan \(x=r\cos\theta\), \(y=r\sin\theta\): \(z_r=f_x\cos\theta+f_y\sin\theta\) dan \(z_\theta=-f_xr\sin\theta+f_yr\cos\theta\). Dari sini diperoleh \(z_r^2+\dfrac1{r^2}z_\theta^2=f_x^2+f_y^2\). Untuk \(f=x^2+y^2\) (jadi \(z=r^2\)): \(z_r=2r\), \(z_\theta=0\), dan memang \(f_x^2+f_y^2=4x^2+4y^2=4r^2\).</p></div>
+
+<h2>3. Aturan rantai umum</h2>
+<p>Bila \(u\) fungsi \(n\) peubah \(x_1,\dots,x_n\), dan tiap \(x_i\) fungsi \(m\) peubah \(t_1,\dots,t_m\), maka untuk setiap \(j\):
+\[ \frac{\partial u}{\partial t_j}=\sum_{i=1}^n\frac{\partial u}{\partial x_i}\frac{\partial x_i}{\partial t_j}. \]
+Hitung per lintasan dan jumlahkan.</p>
+
+<h2>4. Turunan implisit</h2>
+<div class="box def"><span class="t">Teorema fungsi implisit (bentuk turunan)</span>
+<p>Bila \(F(x,y)=0\) mendefinisikan \(y\) sebagai fungsi terturunkan dari \(x\) dan \(F_y\ne0\), maka
+\[ \frac{dy}{dx}=-\frac{F_x}{F_y}. \]
+Untuk \(F(x,y,z)=0\) mendefinisikan \(z=f(x,y)\), dengan \(F_z\ne0\):
+\[ \frac{\partial z}{\partial x}=-\frac{F_x}{F_z},\qquad\frac{\partial z}{\partial y}=-\frac{F_y}{F_z}. \]</p></div>
+<p><strong>Alasan.</strong> Turunkan \(F(x,y(x))=0\) terhadap \(x\) dengan aturan rantai: \(F_x\cdot1+F_y\frac{dy}{dx}=0\).</p>
+<div class="box ex"><span class="t">Contoh 7 — kurva folium</span>
+<p>\(x^3+y^3=6xy\), \(F=x^3+y^3-6xy\): \(F_x=3x^2-6y\), \(F_y=3y^2-6x\). \(\dfrac{dy}{dx}=-\dfrac{3x^2-6y}{3y^2-6x}=\dfrac{2y-x^2}{y^2-2x}\). Di \((3,3)\): \(\dfrac{6-9}{9-6}=-1\). Garis singgung: \(y-3=-(x-3)\), yaitu \(x+y=6\).</p></div>
+<div class="box ex"><span class="t">Contoh 8 — permukaan implisit</span>
+<p>\(x^3+y^3+z^3=6xyz\): \(F_x=3x^2-6yz\), \(F_z=3z^2-6xy\). \(z_x=-\dfrac{3x^2-6yz}{3z^2-6xy}=\dfrac{2yz-x^2}{z^2-2xy}\), sama dengan yang diperoleh di 14.3, tetapi lebih cepat. Di \((1,2,3)\): \(z_x=\frac{11}5\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — kurva ketinggian</span>
+<p>Kurva ketinggian \(f(x,y)=k\): \(\dfrac{dy}{dx}=-\dfrac{f_x}{f_y}\). Untuk \(f=x^2+2y^2\) di \((2,1)\): \(-\dfrac{4}{4}=-1\), kemiringan garis singgung kontur \(-1\). Bandingkan dengan gradien \(\langle4,4\rangle\), yang tegak lurus arah \(\langle1,-1\rangle\) (14.6).</p></div>
+
+<h2>5. Turunan orde dua dengan aturan rantai</h2>
+<div class="box ex"><span class="t">Contoh 10 — rantai dua kali</span>
+<p>Bila \(z=f(x,y)\), \(x=t^2\), \(y=t^3\), maka \(\dfrac{dz}{dt}=2tf_x+3t^2f_y\). Turunkan lagi (\(f_x,f_y\) sendiri fungsi \(t\)): \(\dfrac{d^2z}{dt^2}=2f_x+2t\bigl(2t\,f_{xx}+3t^2f_{xy}\bigr)+6tf_y+3t^2\bigl(2t\,f_{yx}+3t^2f_{yy}\bigr)\). Untuk \(f=xy\) (jadi \(z=t^5\)): \(f_x=y=t^3\), \(f_y=x=t^2\), \(f_{xy}=1\), \(f_{xx}=f_{yy}=0\): \(2t^3+2t(3t^2)+6t\cdot t^2+3t^2(2t)=2t^3+6t^3+6t^3+6t^3=20t^3\); dan memang \((t^5)''=20t^3\).</p></div>
+
+<h2>6. Kesalahan umum</h2>
+<ul>
+<li>Menghilangkan salah satu lintasan (lupa suku \(f_y\,dy/dt\)).</li>
+<li>Menulis \(dz/dt\) dengan \(d\) untuk turunan parsial, atau \(\partial\) pada turunan fungsi satu peubah.</li>
+<li>Pada turunan implisit, lupa tanda minus di \(-F_x/F_y\).</li>
+<li>Lupa mengevaluasi \(x,y\) di titik sebelum mensubstitusi ke turunan parsial.</li>
+</ul>
+
+<h2>7. Ringkasan</h2>
+<ul>
+<li>\(\dfrac{dz}{dt}=z_xx'+z_yy'\); untuk dua peubah bebas jumlahkan lintasan.</li>
+<li>Diagram pohon membantu mengorganisasi lintasan.</li>
+<li>Implisit: \(dy/dx=-F_x/F_y\), \(z_x=-F_x/F_z\).</li>
+</ul>
+<p>Berikutnya <a href="b14-6.html">14.6 Turunan Berarah dan Vektor Gradien</a>.</p>

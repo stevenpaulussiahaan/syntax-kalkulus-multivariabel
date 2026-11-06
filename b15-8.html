@@ -1,0 +1,53 @@
+<p>Seperti koordinat kutub memudahkan integral ganda atas cakram, <strong>koordinat tabung</strong> (silinder) memudahkan integral rangkap tiga atas padatan yang mempunyai sumbu simetri.</p>
+
+<h2>1. Koordinat tabung</h2>
+<p>Titik \(P\) di ruang dinyatakan oleh \((r,\theta,z)\): \((r,\theta)\) adalah koordinat kutub proyeksi \(P\) pada bidang \(xy\), dan \(z\) adalah ketinggian.</p>
+<figure><img src="assets/img/b15-8-tabung.png" alt="Koordinat tabung"><figcaption>Koordinat tabung \((r,\theta,z)\).</figcaption></figure>
+<div class="box def"><span class="t">Konversi</span>
+<p>\[ x=r\cos\theta,\quad y=r\sin\theta,\quad z=z;\qquad r^2=x^2+y^2,\quad\tan\theta=\frac yx. \]
+Permukaan sederhana: \(r=c\) silinder, \(\theta=c\) setengah bidang vertikal, \(z=c\) bidang mendatar, \(z=r\) kerucut, \(z=r^2\) paraboloid.</p></div>
+<div class="box ex"><span class="t">Contoh 1 — mengubah koordinat</span>
+<ul>
+<li>Titik tabung \((2,\tfrac{2\pi}3,1)\): \(x=2\cos\frac{2\pi}3=-1\), \(y=2\sin\frac{2\pi}3=\sqrt3\), \(z=1\): \((-1,\sqrt3,1)\).</li>
+<li>Titik Kartesius \((3,-3,-7)\): \(r=\sqrt{18}=3\sqrt2\), \(\tan\theta=-1\) dan titik di kuadran IV, \(\theta=-\frac\pi4\) (atau \(\frac{7\pi}4\)), \(z=-7\).</li>
+<li>Persamaan \(z=x^2+y^2\) menjadi \(z=r^2\); \(x^2+y^2+z^2=4\) menjadi \(r^2+z^2=4\).</li>
+</ul></div>
+
+<h2>2. Integral rangkap tiga dalam koordinat tabung</h2>
+<p>Bila \(E=\{(r,\theta,z):\alpha\le\theta\le\beta,\ h_1(\theta)\le r\le h_2(\theta),\ u_1(r\cos\theta,r\sin\theta)\le z\le u_2(r\cos\theta,r\sin\theta)\}\), maka
+\[ \iiint_Ef\,dV=\int_\alpha^\beta\int_{h_1(\theta)}^{h_2(\theta)}\int_{u_1}^{u_2}f(r\cos\theta,r\sin\theta,z)\;r\,dz\,dr\,d\theta. \]
+Elemen volume: \(dV=r\,dz\,dr\,d\theta\) (elemen luas kutub \(r\,dr\,d\theta\) dikalikan \(dz\)).</p>
+<div class="box ex"><span class="t">Contoh 2 — volume di antara paraboloid dan bidang</span>
+<p>Padatan di dalam paraboloid \(z=x^2+y^2\) di bawah bidang \(z=4\): \(r^2\le z\le4\), \(0\le r\le2\). \(V=\int_0^{2\pi}\int_0^2\int_{r^2}^4r\,dz\,dr\,d\theta=2\pi\int_0^2(4-r^2)r\,dr=2\pi(8-4)=8\pi\).</p></div>
+<div class="box ex"><span class="t">Contoh 3 — antara dua paraboloid putar</span>
+<p>Padatan antara \(z=r^2\) dan \(z=8-r^2\): perpotongan \(r^2=8-r^2\Rightarrow r=2\). \(V=2\pi\int_0^2(8-2r^2)r\,dr=2\pi(16-8)=16\pi\approx50{,}27\).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — integran dengan \(\sqrt{x^2+y^2}\)</span>
+<p>\(\displaystyle\iiint_E\sqrt{x^2+y^2}\,dV\), \(E\) di dalam silinder \(x^2+y^2=9\), antara \(z=-2\) dan \(z=5\): \(\int_0^{2\pi}\int_0^3\int_{-2}^5r\cdot r\,dz\,dr\,d\theta=2\pi\cdot9\cdot7=126\pi\approx395{,}8\).</p></div>
+<div class="box ex"><span class="t">Contoh 5 — momen inersia silinder</span>
+<p>Silinder padat jari-jari \(a\), tinggi \(h\), kerapatan konstan \(\rho\), sumbu = sumbu \(z\). \(I_z=\rho\int_0^{2\pi}\int_0^a\int_0^hr^2\cdot r\,dz\,dr\,d\theta=\rho\cdot2\pi\cdot h\cdot\tfrac{a^4}4=\tfrac12(\rho\pi a^2h)a^2=\tfrac12ma^2\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — di dalam bola dan di atas kerucut</span>
+<p>Padatan \(E\) di dalam bola \(x^2+y^2+z^2\le4\) dan di atas kerucut \(z\ge\sqrt{x^2+y^2}\). Dalam tabung: \(r\le z\le\sqrt{4-r^2}\), dan \(r\le\sqrt{4-r^2}\Rightarrow r\le\sqrt2\). \(V=2\pi\int_0^{\sqrt2}\bigl(\sqrt{4-r^2}-r\bigr)r\,dr=2\pi\Bigl[-\tfrac13(4-r^2)^{3/2}-\tfrac{r^3}3\Bigr]_0^{\sqrt2}=2\pi\Bigl(-\tfrac{2\sqrt2}3-\tfrac{2\sqrt2}3+\tfrac83\Bigr)=\dfrac{8\pi}3\bigl(2-\sqrt2\bigr)\approx4{,}907\). (Bentuk "kerucut es krim"; ulangi dengan koordinat bola di 15.9.)</p></div>
+<div class="box ex"><span class="t">Contoh 7 — pusat massa kerucut</span>
+<p>Kerucut padat \(r\le z\le h\), kerapatan konstan. Volume: \(\int_0^{2\pi}\int_0^h\int_r^hr\,dz\,dr\,d\theta=2\pi\int_0^h(h-r)r\,dr=2\pi\tfrac{h^3}6=\tfrac{\pi h^3}3\). \(\iiint z\,dV=2\pi\int_0^h\int_r^hzr\,dz\,dr=2\pi\int_0^h\tfrac{h^2-r^2}2r\,dr=2\pi\cdot\tfrac{h^4}8=\tfrac{\pi h^4}4\). \(\bar z=\dfrac{\pi h^4/4}{\pi h^3/3}=\dfrac{3h}4\), diukur dari titik puncak (yaitu \(\frac h4\) dari alas).</p></div>
+
+<h2>3. Kapan memakai koordinat tabung?</h2>
+<ul>
+<li>Padatan: silinder, paraboloid putar, kerucut berporos sumbu \(z\), padatan yang proyeksinya pada bidang \(xy\) adalah cakram atau cincin.</li>
+<li>Integran memuat \(x^2+y^2\).</li>
+<li>Bila sumbu simetri adalah sumbu lain, tukar peran peubah (mis. \(y=r\cos\theta\), \(z=r\sin\theta\) dan \(x\) sebagai tinggi).</li>
+</ul>
+
+<h2>4. Kesalahan umum</h2>
+<ul>
+<li>Lupa faktor \(r\).</li>
+<li>Salah menentukan batas \(r\) dari proyeksi: batas \(r\) harus dari proyeksi padatan pada bidang \(xy\), bukan dari satu permukaan saja.</li>
+<li>Lupa mengubah \(z=x^2+y^2\) menjadi \(z=r^2\), atau \(x^2+y^2+z^2\) menjadi \(r^2+z^2\).</li>
+</ul>
+
+<h2>5. Ringkasan</h2>
+<ul>
+<li>\(x=r\cos\theta\), \(y=r\sin\theta\), \(z=z\); \(dV=r\,dz\,dr\,d\theta\).</li>
+<li>Cocok untuk padatan yang berporos pada satu sumbu.</li>
+<li>Penerapan: volume, massa, pusat massa, momen inersia.</li>
+</ul>
+<p>Berikutnya <a href="b15-9.html">15.9 Koordinat Bola</a>.</p>

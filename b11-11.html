@@ -1,0 +1,87 @@
+<p>Pada 11.10 kita melihat bahwa deret Taylor bisa mewakili fungsi secara tepat. Dalam praktik kita hampir selalu memotong deret setelah beberapa suku dan memakai <strong>polinomial Taylor</strong> sebagai hampiran. Pertanyaan pentingnya: <em>seberapa besar galatnya, dan berapa suku yang cukup?</em> Subbab ini menjawabnya, lalu memakainya pada hampiran nilai, limit, dan masalah fisika.</p>
+
+<h2>1. Polinomial Taylor</h2>
+<div class="box def"><span class="t">Definisi</span>
+<p>Polinomial Taylor derajat \(n\) dari \(f\) di \(a\) adalah jumlah parsial deret Taylor:
+\[ T_n(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k. \]
+Sisa (galat) hampiran: \(R_n(x)=f(x)-T_n(x)\).</p></div>
+<ul>
+<li>\(T_1(x)=f(a)+f'(a)(x-a)\): <em>hampiran linear</em> (garis singgung).</li>
+<li>\(T_2(x)=T_1(x)+\frac{f''(a)}2(x-a)^2\): <em>hampiran kuadrat</em>, memperhitungkan kelengkungan.</li>
+</ul>
+<p>\(T_n\) adalah polinomial berderajat \(\le n\) yang nilai dan turunan \(1,\ldots,n\)-nya <strong>sama</strong> dengan \(f\) di \(a\). Karena itu ia sangat akurat dekat \(a\) dan makin kurang akurat bila menjauh.</p>
+
+<div class="box ex"><span class="t">Contoh 1 — \(T_n\) untuk \(f(x)=\ln x\) di \(a=1\)</span>
+<p>\(f'=\frac1x,\ f''=-\frac1{x^2},\ f'''=\frac2{x^3},\ f^{(4)}=-\frac6{x^4}\). Di \(x=1\): \(f=0,\ 1,\ -1,\ 2,\ -6\). Maka
+\[ T_3(x)=(x-1)-\frac{(x-1)^2}2+\frac{(x-1)^3}3. \]
+(Sama dengan deret \(\ln(1+u)\) dengan \(u=x-1\).) Nilai \(T_3(1{,}2)=0{,}2-0{,}02+0{,}00267=0{,}18267\), sedangkan \(\ln1{,}2=0{,}18232\).</p></div>
+<div class="box ex"><span class="t">Contoh 2 — \(T_3\) untuk \(f(x)=\cos x\) di \(a=\frac\pi3\)</span>
+<p>\(f=\frac12,\ f'=-\frac{\sqrt3}2,\ f''=-\frac12,\ f'''=\frac{\sqrt3}2\). Maka
+\[ T_3(x)=\frac12-\frac{\sqrt3}2\Bigl(x-\frac\pi3\Bigr)-\frac14\Bigl(x-\frac\pi3\Bigr)^2+\frac{\sqrt3}{12}\Bigl(x-\frac\pi3\Bigr)^3. \]</p></div>
+
+<h2>2. Seberapa baik hampiran? Sisa Taylor</h2>
+<div class="box def"><span class="t">Teorema Taylor (bentuk Lagrange)</span>
+<p>Jika \(f\) mempunyai turunan ke-\((n+1)\) pada interval yang memuat \(a\) dan \(x\), maka ada bilangan \(z\) antara \(a\) dan \(x\) sehingga
+\[ R_n(x)=\frac{f^{(n+1)}(z)}{(n+1)!}(x-a)^{n+1}. \]</p></div>
+<div class="box def"><span class="t">Ketaksamaan Taylor</span>
+<p>Jika \(|f^{(n+1)}(t)|\le M\) untuk semua \(t\) antara \(a\) dan \(x\), maka
+\[ |R_n(x)|\le\frac M{(n+1)!}|x-a|^{n+1}. \]</p></div>
+<p><strong>Gagasan bukti</strong> (untuk \(n=1\), arah \(x\gt a\)): \(R_1(a)=R_1'(a)=0\) dan \(R_1''=f''\). Bila \(|f''|\le M\), maka \(|R_1'(t)|\le M(t-a)\) dengan integrasi dari \(a\) dan kemudian \(|R_1(x)|\le\frac M2(x-a)^2\). Pengulangan argumen ini sebanyak \(n+1\) kali menghasilkan ketaksamaan umum.</p>
+<p>Bila \(R_n(x)\to0\) untuk \(n\to\infty\), maka deret Taylor konvergen ke \(f(x)\). Pembuktian pada 11.10 untuk \(e^x,\sin x,\cos x\) memakai ketaksamaan ini dan fakta \(\frac{|x|^n}{n!}\to0\).</p>
+
+<h2>3. Menghampiri nilai</h2>
+<div class="box ex"><span class="t">Contoh 3 — menghitung \(\sin0{,}5\)</span>
+<p>Pakai \(T_5(x)=x-\dfrac{x^3}6+\dfrac{x^5}{120}\) di \(a=0\):
+\[ T_5(0{,}5)=0{,}5-0{,}0208333+0{,}00026042=0{,}479427. \]
+Galat: turunan ke-6 dari \(\sin\) dibatasi \(M=1\), jadi \(|R_5(0{,}5)|\le\dfrac{0{,}5^6}{6!}=\dfrac{1}{46\,080}\approx2{,}2\times10^{-5}\). Nilai sebenarnya \(0{,}4794255\); galat nyata \(1{,}5\times10^{-6}\) (jauh di bawah batas; batas Taylor adalah <em>jaminan</em>, bukan perkiraan galat).</p></div>
+<div class="box ex"><span class="t">Contoh 4 — menghitung \(e\) dengan galat \(\lt10^{-5}\)</span>
+<p>Untuk \(f=e^x\) di 0 dan \(x=1\): turunan semuanya \(e^t\le e\lt3\) pada \([0,1]\). Jadi \(|R_n(1)|\le\dfrac3{(n+1)!}\). Syarat \(\lt10^{-5}\): \((n+1)!\gt3\times10^5\). Karena \(9!=362\,880\), cukup \(n=8\). Maka
+\[ e\approx\sum_{k=0}^{8}\frac1{k!}=2{,}718279,\qquad\text{galat sebenarnya }3{,}1\times10^{-6}. \]</p></div>
+<div class="box ex"><span class="t">Contoh 5 — akar pangkat tiga dengan deret binomial</span>
+<p>\(\sqrt[3]{8{,}2}=2\sqrt[3]{1+0{,}025}\). Binomial dengan \(k=\frac13\): \((1+x)^{1/3}\approx1+\dfrac x3-\dfrac{x^2}9\). Untuk \(x=0{,}025\): \(1+0{,}008333-0{,}0000694=1{,}008264\), sehingga \(\sqrt[3]{8{,}2}\approx2{,}016528\). Nilai sebenarnya \(2{,}016530\). Galat \(\approx2\times10^{-6}\), sesuai suku berikutnya \(\frac{5x^3}{81}\cdot2\approx1{,}9\times10^{-6}\).</p></div>
+<div class="box ex"><span class="t">Contoh 6 — \(\ln1{,}5\) dan batas selang</span>
+<p>\(\ln(1+x)\) pada \(x=0{,}5\) (di dalam selang \((-1,1]\)): deret berganti tanda \(0{,}5-0{,}125+0{,}0417-0{,}0156+\cdots\). \(T_3=0{,}4167\), \(T_5=0{,}4073\), \(T_{10}=0{,}40543\) vs \(\ln1{,}5=0{,}405465\). Karena berganti tanda, galat \(\le\) suku berikutnya.</p></div>
+<figure><img src="assets/img/b11-11-ln.png" alt="Polinomial Taylor ln(1+x)"><figcaption>Polinomial Taylor \(\ln(1+x)\): hampiran baik hanya untuk \(-1\lt x\le1\). Di luar selang itu (garis putus-putus di \(x=1\)), makin tinggi derajat, makin buruk.</figcaption></figure>
+
+<div class="box ex"><span class="t">Contoh 7 — galat \(T_4\) untuk \(\cos x\) pada \(x=1\)</span>
+<p>\(T_4(1)=1-\frac12+\frac1{24}=0{,}541667\). Karena suku \(x^5\) dari \(\cos x\) bernilai nol, \(T_4=T_5\), sehingga kita boleh memakai ketaksamaan Taylor dengan \(n=5\) dan turunan ke-6 (\(f^{(6)}=-\cos x\), \(M=1\)): \(|R_5(1)|\le\dfrac1{6!}=0{,}001389\). Galat nyata \(\cos1-T_4(1)=-0{,}001364\), tepat di bawah batas.</p></div>
+<figure><img src="assets/img/b11-11-galat.png" alt="Galat dan batas Taylor"><figcaption>Galat sebenarnya \(|\cos x-T_4(x)|\) dan batas Taylor \(x^6/720\) hampir berimpit pada skala logaritmik.</figcaption></figure>
+
+<h2>4. Apa yang menentukan keakuratan?</h2>
+<ul>
+<li><strong>Jarak \(|x-a|\)</strong>: galat tumbuh seperti \(|x-a|^{n+1}\); makin dekat pusat makin baik.</li>
+<li><strong>Derajat \(n\)</strong>: biasanya makin besar makin baik, asalkan \(x\) di dalam selang kekonvergenan.</li>
+<li><strong>Pusat \(a\)</strong>: pilih \(a\) dekat nilai yang diinginkan dan yang turunannya mudah dihitung (mis. \(a=8\) untuk \(\sqrt[3]{8{,}2}\)).</li>
+</ul>
+
+<h2>5. Limit yang rumit</h2>
+<div class="box ex"><span class="t">Contoh 8 — \(\displaystyle\lim_{x\to0}\frac{\cos x-1+\frac{x^2}2}{x^4}\)</span>
+<p>\(\cos x=1-\frac{x^2}2+\frac{x^4}{24}-\cdots\), jadi pembilangnya \(\dfrac{x^4}{24}-\cdots\). Limit \(=\dfrac1{24}\).</p></div>
+<div class="box ex"><span class="t">Contoh 9 — \(\displaystyle\lim_{x\to0}\frac{\sin x-x\cos x}{x^3}\)</span>
+<p>\(x\cos x=x-\frac{x^3}2+\frac{x^5}{24}-\cdots\) dan \(\sin x=x-\frac{x^3}6+\cdots\). Selisih \(=\bigl(-\frac16+\frac12\bigr)x^3+\cdots=\dfrac{x^3}3+\cdots\). Limit \(=\dfrac13\).</p></div>
+
+<h2>6. Penerapan dalam fisika</h2>
+<div class="box ex"><span class="t">Contoh 10 — energi relativistik</span>
+<p>Energi total partikel bermassa \(m\) dengan kecepatan \(v\): \(E=\dfrac{mc^2}{\sqrt{1-v^2/c^2}}\). Misalkan \(u=v^2/c^2\). Deret binomial \((1-u)^{-1/2}=1+\tfrac12u+\tfrac38u^2+\cdots\) memberi
+\[ E=mc^2+\tfrac12mv^2+\tfrac38\frac{mv^4}{c^2}+\cdots \]
+Suku pertama adalah energi diam, suku kedua adalah energi kinetik klasik. Untuk \(v=0{,}1c\), energi kinetik sebenarnya \((\gamma-1)mc^2=0{,}005038\,mc^2\), sedangkan hampiran klasik \(\frac12mv^2=0{,}005\,mc^2\): selisih kurang dari 1%.</p></div>
+<div class="box ex"><span class="t">Contoh 11 — bandul sederhana</span>
+<p>Persamaan gerak bandul: \(\theta''=-\frac gL\sin\theta\). Karena \(\sin\theta=\theta-\frac{\theta^3}6+\cdots\), untuk simpangan kecil kita ganti \(\sin\theta\approx\theta\), sehingga \(\theta''=-\frac gL\theta\) (osilator harmonik, lihat <a href="b17-3.html">17.3</a>). Galat hampiran \(\lt\frac{\theta^3}6\): pada \(\theta=0{,}2\) rad (sekitar \(11^\circ\)) hanya \(0{,}0013\), kurang dari 1% dari \(\theta\).</p></div>
+<div class="box ex"><span class="t">Contoh 12 — hampiran integral</span>
+<p>Gelombang optik memakai \(\int_0^x\frac{\sin t}t\,dt\) (fungsi sinus integral) yang tidak punya antiturunan elementer. Deret: \(\frac{\sin t}t=1-\frac{t^2}6+\frac{t^4}{120}-\cdots\), jadi \(\int_0^x\frac{\sin t}tdt=x-\frac{x^3}{18}+\frac{x^5}{600}-\cdots\), berlaku untuk semua \(x\).</p></div>
+
+<h2>7. Kesalahan umum</h2>
+<ul>
+<li>Memakai polinomial Taylor jauh dari pusat atau di luar selang kekonvergenan.</li>
+<li>Menyamakan batas Taylor dengan galat sebenarnya (batas biasanya lebih longgar).</li>
+<li>Lupa memakai turunan ke-\((n+1)\), bukan ke-\(n\), pada sisa.</li>
+<li>Memakai derajat \(n\) tetapi menghitung \(M\) dari turunan yang salah.</li>
+</ul>
+
+<h2>8. Ringkasan</h2>
+<ul>
+<li>\(T_n\) adalah polinomial yang cocok dengan \(f\) beserta \(n\) turunan pertamanya di \(a\); \(R_n=f-T_n\).</li>
+<li>\(|R_n(x)|\le\dfrac M{(n+1)!}|x-a|^{n+1}\) bila \(|f^{(n+1)}|\le M\).</li>
+<li>Dipakai untuk menghampiri nilai, menentukan banyak suku, menghitung limit, dan menyederhanakan model fisika.</li>
+</ul>
+<p>Dengan ini Bab 11 selesai. Bab 12 membuka materi tiga dimensi.</p>
